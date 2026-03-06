@@ -123,54 +123,58 @@ export function HeroSection() {
           .no-scrollbar::-webkit-scrollbar { display: none; }
           .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         ` }} />
-        <div className="mt-6 sm:mt-12 md:mt-16 bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/5 rounded-xl px-2 sm:px-4 md:px-8 py-3 sm:py-5 md:py-6 relative overflow-hidden">
-          <div className="flex items-center justify-between gap-1.5 sm:gap-4 md:gap-6 lg:gap-8 overflow-x-auto no-scrollbar">
+        <div className="mt-6 sm:mt-12 md:mt-16 bg-[#0d0d0d]/80 backdrop-blur-sm border border-white/5 rounded-xl px-3 sm:px-4 md:px-8 py-4 sm:py-5 md:py-6 relative overflow-hidden">
+          {/* Stats Row */}
+          <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-12 mb-4 sm:mb-0">
             {/* Stat 1 */}
-            <div className="text-center flex-shrink-0 min-w-[65px] sm:min-w-[90px]">
-              <span className="font-[family-name:var(--font-display)] text-lg sm:text-2xl md:text-3xl font-black text-white block">$6K+</span>
-              <span className="text-[6px] sm:text-[8px] md:text-[10px] text-[#777] tracking-tighter uppercase mt-0.5 block leading-tight">RECEITA MÉDIA<br />MENSAL</span>
+            <div className="text-center">
+              <span className="font-[family-name:var(--font-display)] text-2xl sm:text-2xl md:text-3xl font-black text-white block">$6K+</span>
+              <span className="text-[8px] sm:text-[8px] md:text-[10px] text-[#777] tracking-tighter uppercase mt-0.5 block leading-tight">RECEITA MÉDIA<br />MENSAL POR<br />CRIADOR</span>
             </div>
 
             {/* Stat 2 */}
-            <div className="text-center flex-shrink-0 min-w-[65px] sm:min-w-[90px]">
-              <span className="font-[family-name:var(--font-display)] text-lg sm:text-2xl md:text-3xl font-black text-white block">500M+</span>
-              <span className="text-[6px] sm:text-[8px] md:text-[10px] text-[#777] tracking-tighter uppercase mt-0.5 block leading-tight">VIEWS<br />GERADAS</span>
+            <div className="text-center">
+              <span className="font-[family-name:var(--font-display)] text-2xl sm:text-2xl md:text-3xl font-black text-white block">500M+</span>
+              <span className="text-[8px] sm:text-[8px] md:text-[10px] text-[#777] tracking-tighter uppercase mt-0.5 block leading-tight">TOTAL DE VIEWS<br />GERADAS</span>
             </div>
 
             {/* Stat 3 */}
-            <div className="text-center flex-shrink-0 min-w-[50px] sm:min-w-[80px]">
-              <span className="font-[family-name:var(--font-display)] text-lg sm:text-2xl md:text-3xl font-black text-white block">87%</span>
-              <span className="text-[6px] sm:text-[8px] md:text-[10px] text-[#777] tracking-tighter uppercase mt-0.5 block leading-tight">TAXA DE<br />SUCESSO</span>
+            <div className="text-center">
+              <span className="font-[family-name:var(--font-display)] text-2xl sm:text-2xl md:text-3xl font-black text-white block">87%</span>
+              <span className="text-[8px] sm:text-[8px] md:text-[10px] text-[#777] tracking-tighter uppercase mt-0.5 block leading-tight">TAXA DE SUCESSO</span>
             </div>
+          </div>
 
+          {/* Badges Row */}
+          <div className="flex items-center justify-center gap-3 sm:gap-4 sm:mt-4">
             {/* Badge Comunidade */}
-            <div className="flex items-center gap-1 sm:gap-2 bg-[#1a1a1a]/80 border border-white/10 rounded-lg px-1.5 py-1 sm:px-3 sm:py-2 flex-shrink-0">
-              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-md bg-[#dc2626] flex items-center justify-center">
-                <Shield className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
+            <div className="flex items-center gap-2 bg-[#1a1a1a]/80 border border-white/10 rounded-lg px-3 py-2 sm:px-3 sm:py-2">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#dc2626] flex items-center justify-center">
+                <Shield className="w-3.5 h-3.5 text-white" />
               </div>
               <div className="text-left">
-                <div className="flex items-center gap-0.5 sm:gap-1">
-                  <span className="text-white font-bold text-[10px] sm:text-sm">4.9</span>
+                <div className="flex items-center gap-1">
+                  <span className="text-white font-bold text-xs sm:text-sm">4.9</span>
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-1.5 sm:w-2.5 h-1.5 sm:h-2.5 fill-primary text-primary" />
+                      <Star key={i} className="w-2 sm:w-2.5 h-2 sm:h-2.5 fill-primary text-primary" />
                     ))}
                   </div>
                 </div>
-                <span className="text-[7px] sm:text-[10px] text-[#777]">Comunidade</span>
+                <span className="text-[8px] sm:text-[10px] text-[#777]">Comunidade</span>
               </div>
             </div>
 
             {/* Badge Garantia */}
-            <div className="flex items-center gap-1 sm:gap-2 bg-[#1a1a1a]/80 border border-white/10 rounded-lg px-1.5 py-1 sm:px-3 sm:py-2 flex-shrink-0">
-              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-md bg-[#dc2626] flex items-center justify-center">
-                <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <div className="flex items-center gap-2 bg-[#1a1a1a]/80 border border-white/10 rounded-lg px-3 py-2 sm:px-3 sm:py-2">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#dc2626] flex items-center justify-center">
+                <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
               </div>
               <div className="text-left">
-                <span className="text-white font-bold text-[10px] sm:text-sm block leading-tight">Garantia 7 dias</span>
+                <span className="text-white font-bold text-xs sm:text-sm block leading-tight">Garantia 7<br />dias</span>
               </div>
             </div>
           </div>
