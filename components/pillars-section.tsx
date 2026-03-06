@@ -117,7 +117,7 @@ export function PillarsSection() {
   useEffect(() => {
     if (!isVisible || isComplete) return
 
-    const stepDuration = 3500 // Base duration for progress
+    const stepDuration = 2200 // Base duration for progress
     const waitDuration = 800 // Wait at 100%
     const progressInterval = 30 // Smoother update
 
@@ -155,7 +155,7 @@ export function PillarsSection() {
             }, 500)
           }, 4000)
         }
-      }, 700) // Hold at 100% for 700ms
+      }, 500) // Hold at 100% for 500ms
       return () => clearTimeout(waitTimer)
     }
   }, [progress, activeStep, isComplete])
