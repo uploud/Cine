@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineTube.IA - Edicao de Video 100% Automatica com IA</title>
+  <meta name="description" content="Transforme seus videos com IA. Cortes inteligentes, roteiro automatico, montagem cinematografica. Monetize no YouTube, TikTok e Instagram sem aparecer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: hsl(45, 95%, 55%);
+      --primary-fg: hsl(45, 15%, 8%);
+      --green: rgba(30,255,0,1);
+      --bg-dark: #080808;
+      --bg-section: hsl(220,20%,5%);
+      --bg-card: hsl(220,20%,10%);
+      --text: hsl(45, 20%, 95%);
+      --text-muted: hsl(45, 15%, 65%);
+      --border: hsl(45, 30%, 25%);
+      --font-sans: 'Inter', sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+    }
+    body { font-family: var(--font-sans); background: var(--bg-dark); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Animations */
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes yellow-pulse { 0%,100% { box-shadow: 0 0 0 0 hsla(45,90%,50%,0.7); } 50% { box-shadow: 0 0 0 10px hsla(45,90%,50%,0); } }
+    @keyframes scroll-channels { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes confetti-fall { 0% { transform: translateY(0) rotate(0deg); opacity:1; } 100% { transform: translateY(200px) rotate(720deg); opacity:0; } }
+    @keyframes fade-in { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes progress-fill { from { width: 0%; } to { width: 97%; } }
+    @keyframes pulse-green { 0%,100% { box-shadow: 0 0 0 0 rgba(30,255,0,0.5); } 50% { box-shadow: 0 0 0 12px rgba(30,255,0,0); } }
+
+    .animate-scroll { animation: scroll 20s linear infinite; display: flex; }
+    .animate-scroll-channels { animation: scroll-channels 30s linear infinite; display: flex; }
+    .animate-scroll-channels:hover { animation-play-state: paused; }
+    .animate-yellow-pulse { animation: yellow-pulse 2s infinite; }
+    .animate-pulse-green { animation: pulse-green 2s infinite; }
+    .fade-in { animation: fade-in 0.6s ease-out forwards; }
+
+    /* Marquee */
+    .marquee { background: var(--primary); padding: 10px 0; overflow: hidden; white-space: nowrap; }
+    .marquee-inner { display: flex; }
+    .marquee-item { font-family: monospace; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #000; padding: 0 32px; }
+    .marquee-dot { color: rgba(0,0,0,0.4); margin: 0 12px; }
+
+    /* Header */
+    .header { position: sticky; top: 0; z-index: 50; background: #121212; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; max-width: 1200px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 8px; }
+    .logo img { width: 32px; height: 32px; border-radius: 4px; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; font-weight: 700; }
+    .logo-cine { color: #fff; }
+    .logo-tube { color: #ef4444; }
+    .nav-links { display: none; gap: 24px; }
+    .nav-links a { font-size: 14px; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    @media(min-width:768px) { .nav-links { display: flex; } }
+
+    /* Hero */
+    .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 32px 16px; overflow: hidden; background: var(--bg-section); }
+    .hero-content { position: relative; z-index: 10; max-width: 1000px; margin: 0 auto; padding: 48px 0 32px; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(24px, 5vw, 64px); font-weight: 900; margin-bottom: 16px; letter-spacing: 1px; line-height: 1.1; }
+    .hero h1 .accent { color: var(--primary); font-style: italic; }
+    .hero .subtitle { font-size: clamp(12px, 2vw, 18px); color: var(--text-muted); max-width: 560px; margin: 0 auto 24px; font-weight: 300; line-height: 1.6; }
+    .hero-stats { display: flex; align-items: center; justify-content: center; gap: 48px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,215,0,0.15); }
+    .hero-stat { text-align: center; }
+    .hero-stat-value { font-family: var(--font-display); font-size: clamp(20px, 3vw, 36px); font-weight: 700; color: var(--primary); display: block; }
+    .hero-stat-label { font-size: 10px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; }
+
+    /* VSL Player */
+    .vsl-container { position: relative; width: 100%; max-width: 800px; margin: 0 auto 24px; }
+    .vsl-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .vsl-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    /* Sections */
+    .section { padding: 48px 12px; }
+    .section-dark { background: var(--bg-section); }
+    .section-darker { background: #0f0f0f; }
+    .section-card-bg { background: var(--bg-card); }
+    .section-title { font-family: var(--font-display); font-size: clamp(20px, 4vw, 48px); font-weight: 700; text-align: center; margin-bottom: 16px; line-height: 1.2; }
+    .section-title .accent { color: var(--primary); font-style: italic; }
+    .section-subtitle { color: var(--text-muted); text-align: center; font-size: clamp(12px, 1.5vw, 16px); max-width: 600px; margin: 0 auto 32px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+    /* Video Showcase */
+    .video-showcase { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; border: 2px solid rgba(255,215,0,0.3); box-shadow: 0 20px 25px -5px rgba(255,215,0,0.1); }
+    .video-showcase iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    /* Pillars / Steps */
+    .steps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    @media(min-width:768px) { .steps-grid { grid-template-columns: repeat(5, 1fr); gap: 16px; } }
+    .step-card { background: #0d0d0d; border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 16px; text-align: center; position: relative; transition: all 0.3s; }
+    .step-card:hover { border-color: rgba(34,197,94,0.3); transform: translateY(-2px); }
+    .step-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); padding: 2px 12px; border-radius: 99px; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+    .step-badge-ai { background: #ef4444; color: #fff; }
+    .step-badge-user { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.2); color: #fff; }
+    .step-icon { width: 40px; height: 40px; margin: 8px auto 12px; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .step-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .step-subtitle { font-size: 10px; color: var(--text-muted); }
+
+    /* AI Tools */
+    .tools-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media(min-width:640px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
+    .tool-card { background: #080808; border: 1px solid rgba(255,215,0,0.15); border-radius: 12px; padding: 24px; transition: all 0.3s; }
+    .tool-card:hover { border-color: rgba(255,215,0,0.3); transform: translateY(-4px); }
+    .tool-icon { width: 48px; height: 48px; background: rgba(255,215,0,0.12); border: 1px solid rgba(255,215,0,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+    .tool-title { font-family: var(--font-display); font-size: clamp(16px, 2vw, 24px); font-weight: 700; margin-bottom: 8px; }
+    .tool-desc { font-size: clamp(12px, 1.5vw, 16px); color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+    .tool-video { margin-top: 16px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,215,0,0.1); }
+    .tool-video video { width: 100%; display: block; }
+
+    /* Channels Carousel */
+    .channels-scroll { display: flex; overflow: hidden; }
+    .channel-item { flex-shrink: 0; width: 280px; margin: 0 12px; }
+    @media(min-width:768px) { .channel-item { width: 380px; } }
+    .channel-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s; }
+    .channel-item:hover img { border-color: rgba(255,215,0,0.3); transform: scale(1.02); }
+
+    /* Community */
+    .community-scroll { display: flex; overflow-x: auto; gap: 16px; padding-bottom: 16px; scrollbar-width: none; }
+    .community-scroll::-webkit-scrollbar { display: none; }
+    .community-item { flex-shrink: 0; width: 60%; }
+    @media(min-width:768px) { .community-item { width: 40%; } }
+
+    /* Bonus */
+    .bonus-scroll { display: flex; overflow-x: auto; gap: 16px; padding: 0 16px 16px; scrollbar-width: none; }
+    .bonus-scroll::-webkit-scrollbar { display: none; }
+    .bonus-item { flex-shrink: 0; width: 70%; }
+    @media(min-width:768px) { .bonus-item { width: 45%; } }
+    .bonus-item img { border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
+    .bonus-item:hover img { transform: scale(1.02); }
+
+    /* Offer Card */
+    .offer-card { background: var(--bg-card); border-radius: 24px; padding: 24px; border: 2px solid rgba(255,215,0,0.3); max-width: 640px; margin: 0 auto; box-shadow: 0 0 5px hsl(45 90% 50%), 0 0 10px hsl(45 90% 50%), 0 0 15px hsl(45 90% 50%); }
+    @media(min-width:640px) { .offer-card { padding: 40px; } }
+    .offer-title { font-family: var(--font-display); font-size: clamp(18px, 3vw, 40px); font-weight: 700; color: var(--green); text-align: center; margin-bottom: 8px; }
+    .offer-subtitle { font-size: clamp(10px, 1.2vw, 14px); color: var(--text-muted); text-align: center; margin-bottom: 16px; }
+    .offer-logo { display: block; margin: 0 auto 24px; width: 80px; height: 80px; object-fit: contain; }
+    @media(min-width:640px) { .offer-logo { width: 120px; height: 120px; } }
+
+    /* Progress Bar */
+    .progress-wrapper { margin-bottom: 24px; }
+    .progress-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; font-weight: 700; }
+    .progress-label { color: var(--text); }
+    .progress-value { color: var(--green); }
+    .progress-bar { width: 100%; height: 14px; background: hsl(220,20%,15%); border-radius: 99px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+    .progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, rgba(30,255,0,1), rgba(30,255,0,0.7)); box-shadow: 0 0 10px rgba(30,255,0,0.5); animation: progress-fill 1.5s ease-out forwards; }
+    .progress-note { font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 8px; }
+    .progress-note .green { color: var(--green); font-weight: 700; }
+    .progress-note .gold { color: var(--primary); font-weight: 700; }
+
+    /* Offer List */
+    .offer-section-title { font-family: var(--font-display); font-size: clamp(16px, 2vw, 24px); font-weight: 700; margin-bottom: 12px; }
+    .offer-section-title .accent { color: var(--primary); }
+    .offer-list { list-style: none; border-top: 1px solid rgba(255,255,255,0.05); }
+    .offer-list li { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: clamp(12px, 1.5vw, 16px); }
+    .offer-check { color: var(--green); font-size: 16px; }
+
+    /* Price */
+    .price-wrapper { text-align: center; margin: 24px 0; }
+    .price-old { font-size: 12px; color: var(--text-muted); text-decoration: line-through; }
+    .price-current { font-family: var(--font-display); font-size: clamp(36px, 6vw, 64px); font-weight: 900; color: var(--primary); line-height: 1; margin: 4px 0; }
+    .price-installment { font-size: 14px; color: var(--text-muted); }
+
+    /* Trust Icons */
+    .trust-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; margin-bottom: 24px; font-size: 10px; color: var(--text-muted); }
+    .trust-icon svg { width: 24px; height: 24px; margin: 0 auto 4px; color: var(--primary); }
+    @media(min-width:640px) { .trust-icon svg { width: 32px; height: 32px; } .trust-icons { font-size: 12px; } }
+
+    /* CTA Button */
+    .cta-btn { display: block; width: 100%; padding: 16px; font-size: clamp(14px, 2vw, 22px); font-weight: 700; color: #000; background: var(--green); border: none; border-radius: 6px; cursor: pointer; text-align: center; transition: background 0.2s; }
+    .cta-btn:hover { background: #22c55e; }
+    .cta-btn-gold { background: var(--primary); color: var(--primary-fg); }
+    .cta-btn-gold:hover { opacity: 0.9; }
+
+    /* FAQ */
+    .faq-item { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .faq-item summary { padding: 16px; font-weight: 700; font-size: clamp(14px, 1.5vw, 18px); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::after { content: '\25BC'; color: var(--green); transition: transform 0.2s; font-size: 12px; }
+    .faq-item[open] summary::after { transform: rotate(180deg); }
+    .faq-item p { padding: 0 16px 16px; font-size: clamp(12px, 1.3vw, 16px); color: var(--text-muted); line-height: 1.6; }
+
+    /* Final CTA */
+    .final-cta { text-align: center; padding: 64px 16px; position: relative; overflow: hidden; }
+    .final-cta h2 { font-family: var(--font-display); font-size: clamp(24px, 4vw, 56px); font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
+    .final-cta .accent { color: var(--primary); font-style: italic; }
+    .final-cta p { color: var(--text-muted); font-size: clamp(14px, 1.5vw, 18px); max-width: 480px; margin: 0 auto 32px; font-weight: 300; }
+
+    /* Footer */
+    .footer { padding: 32px 16px; border-top: 1px solid rgba(255,215,0,0.15); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    @media(min-width:768px) { .footer { flex-direction: row; justify-content: space-between; } }
+    .footer-logo { display: flex; align-items: center; gap: 12px; }
+    .footer-logo img { width: 30px; height: 30px; border-radius: 4px; }
+    .footer-logo span { font-family: monospace; font-size: 14px; color: var(--primary); letter-spacing: 2px; }
+    .footer-copy { font-size: 12px; color: var(--text-muted); }
+
+    /* WhatsApp Button */
+    .whatsapp-btn { position: fixed; bottom: 16px; right: 16px; z-index: 999; display: flex; align-items: center; gap: 8px; background: #25D366; color: #fff; font-weight: 700; border-radius: 99px; padding: 12px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); transition: all 0.2s; font-size: 14px; }
+    .whatsapp-btn:hover { background: #20bd5a; transform: scale(1.05); box-shadow: 0 0 20px rgba(37,211,102,0.4); }
+    .whatsapp-btn svg { width: 24px; height: 24px; }
+    .whatsapp-label { display: none; }
+    @media(min-width:640px) { .whatsapp-label { display: inline; } }
+
+    /* Target Audience */
+    .target-card { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 8px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,215,0,0.15); transition: all 0.3s; margin-bottom: 12px; }
+    .target-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 0 20px rgba(255,215,0,0.1); }
+    .target-icon { flex-shrink: 0; font-size: 24px; color: var(--primary); margin-top: 2px; }
+    .target-title { font-size: clamp(16px, 2vw, 22px); font-weight: 700; margin-bottom: 4px; }
+    .target-desc { font-size: clamp(12px, 1.3vw, 16px); color: var(--text-muted); line-height: 1.5; }
+    .not-for-you { background: rgba(255,255,255,0.02); border: 1px solid rgba(239,68,68,0.3); border-radius: 8px; padding: 24px; margin-top: 32px; }
+    .not-for-you h3 { text-align: center; color: #ef4444; font-size: clamp(18px, 2.5vw, 28px); font-weight: 700; margin-bottom: 16px; }
+    .not-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+    .not-icon { color: #ef4444; font-size: 20px; flex-shrink: 0; }
+
+    /* Authority Section */
+    .authority-text { font-size: clamp(14px, 1.5vw, 20px); line-height: 1.6; text-align: center; margin-bottom: 24px; }
+    .authority-text.accent { color: var(--primary); font-weight: 700; }
+
+    /* Utility */
+    .text-center { text-align: center; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-8 { margin-bottom: 32px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .inline-btn { display: inline-flex; align-items: center; padding: 14px 32px; font-weight: 700; font-size: clamp(12px, 1.5vw, 18px); border-radius: 6px; transition: opacity 0.2s; }
+    .inline-btn:hover { opacity: 0.9; }
+    .bg-green { background: var(--green); color: #000; }
+    .bg-gold { background: var(--primary); color: var(--primary-fg); }
+  </style>
+</head>
+<body>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Fale conosco pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-label">Fale Conosco</span>
+  </a>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="animate-scroll" style="width: max-content;">
+      <span class="marquee-item">CINETUBE.IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">EDICAO AUTOMATICA COM IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">CORTES INTELIGENTES <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONTAGEM AUTOMATICA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">SEM APARECER <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONETIZE SEU CANAL <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">CINETUBE.IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">EDICAO AUTOMATICA COM IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">CORTES INTELIGENTES <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONTAGEM AUTOMATICA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">SEM APARECER <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONETIZE SEU CANAL <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">CINETUBE.IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">EDICAO AUTOMATICA COM IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">CORTES INTELIGENTES <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONTAGEM AUTOMATICA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">SEM APARECER <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONETIZE SEU CANAL <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">CINETUBE.IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">EDICAO AUTOMATICA COM IA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">CORTES INTELIGENTES <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONTAGEM AUTOMATICA <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">SEM APARECER <span class="marquee-dot">&#10022;</span></span>
+      <span class="marquee-item">MONETIZE SEU CANAL <span class="marquee-dot">&#10022;</span></span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="https://i.imgur.com/cinetube-logo.png" alt="CineTube.IA" onerror="this.style.display='none'">
+        <span class="logo-text"><span class="logo-cine">CINE</span><span class="logo-tube">TUBE</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#como-funciona">Recursos</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#exemplos">Exemplos</a>
+        <a href="#offer-section">Precos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Edicao de Video<br><span class="accent">100% Automatica</span></h1>
+        <p class="subtitle">O CineTube pega seu video bruto e sua ideia. A IA cuida de tudo: cortes, montagem, ritmo, legenda e entrega o video pronto para publicar e monetizar no YouTube, YouTube Short, TikTok, Instagram. Tudo automatizado para economizar seu tempo e aumentar o engajamento do publico.</p>
+
+        <!-- VSL Player -->
+        <div class="vsl-container">
+          <div class="vsl-wrapper">
+            <iframe src="https://www.youtube.com/embed/r14Lin6bGoc?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=r14Lin6bGoc" title="VSL Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">12x</span>
+            <span class="hero-stat-label">Mais rapido</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Automatico</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">0</span>
+            <span class="hero-stat-label">Habilidade</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Showcase -->
+    <section class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">SEUS VIDEOS IRAO FICAR DESSE MESMO FORMATO, APENAS COM 2 APPS E UM CLICK: <span class="accent">ASSIM</span></h2>
+        <div style="max-width:768px;margin:0 auto;">
+          <div class="video-showcase">
+            <iframe src="https://www.youtube.com/embed/_rT1Dnc0aq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars / Steps -->
+    <section id="como-funciona" class="section" style="background: linear-gradient(to bottom, #0a0a0a, #0f0f0f);">
+      <div class="container">
+        <p class="section-subtitle">Mande Seus VIDEOS sua ideia. A IA cuida do roteiro, voz, edicao e legendas.</p>
+        <h2 class="section-title">Tudo em <span class="accent">piloto automatico.</span></h2>
+        <div class="steps-grid">
+          <div class="step-card"><span class="step-badge step-badge-user">VOCE</span><div class="step-icon">&#9000;</div><div class="step-title">Digite seu tema</div><div class="step-subtitle">Zero bloqueio criativo</div></div>
+          <div class="step-card"><span class="step-badge step-badge-ai">CINETUBE</span><div class="step-icon">&#128221;</div><div class="step-title">Roteiro Automatico</div><div class="step-subtitle">Roteiro viral criado</div></div>
+          <div class="step-card"><span class="step-badge step-badge-ai">CINETUBE</span><div class="step-icon">&#127908;</div><div class="step-title">Narracao Neural</div><div class="step-subtitle">Voz impecavel</div></div>
+          <div class="step-card"><span class="step-badge step-badge-ai">CINETUBE</span><div class="step-icon">&#10024;</div><div class="step-title">Edicao Completa</div><div class="step-subtitle">Video profissional</div></div>
+          <div class="step-card"><span class="step-badge step-badge-user">VOCE</span><div class="step-icon">&#11015;</div><div class="step-title">Baixar e Postar</div><div class="step-subtitle">Pronto para monetizar</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Tools -->
+    <section class="section section-darker">
+      <div class="container">
+        <div class="mb-8">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <span style="width:32px;height:1px;background:var(--green);display:block;"></span>
+            <span style="font-family:monospace;font-size:11px;letter-spacing:2px;color:var(--green);text-transform:uppercase;">Ferramentas de IA</span>
+          </div>
+          <h2 style="font-family:var(--font-display);font-size:clamp(20px,4vw,48px);font-weight:700;line-height:1.2;">Tudo que voce precisa<br><span style="color:var(--primary);font-style:italic;">em uma plataforma</span></h2>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-icon">&#9986;</div>
+            <div class="tool-title">Cortes Inteligentes</div>
+            <div class="tool-desc">A IA detecta silencios, repeticoes e partes desnecessarias. Faz os cortes automaticamente mantendo o melhor do conteudo.</div>
+            <div class="tool-video"><video autoplay muted loop playsinline><source src="https://i.imgur.com/7tHXGxQ.mp4" type="video/mp4"></video></div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">&#128221;</div>
+            <div class="tool-title">Roteiro Automatico</div>
+            <div class="tool-desc">Gere roteiros completos para seus videos com IA. Insira o tema, a IA cria um roteiro otimizado para engajamento e retencao.</div>
+            <div class="tool-video"><video autoplay muted loop playsinline><source src="https://i.imgur.com/xQO2AVr.mp4" type="video/mp4"></video></div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">&#128737;</div>
+            <div class="tool-title">Anti-Direitos Autorais</div>
+            <div class="tool-desc">Sistema de protecao que processa o video para evitar bloqueios e strikes. Publique sem medo de perder o canal.</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">&#127919;</div>
+            <div class="tool-title">Montagem Cinematografica</div>
+            <div class="tool-desc">Ritmo, transicoes e pacing profissional aplicados automaticamente. Seus videos vao ter a cara de producoes de alto nivel.</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;">
+          <div class="tool-card">
+            <div class="tool-icon">&#128421;</div>
+            <div class="tool-title">Area de Membros Completa</div>
+            <div class="tool-desc">Acesse todos os seus projetos, historico de edicoes, templates e treinamentos em um so lugar. Interface limpa e intuitiva.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Channels -->
+    <section id="exemplos" class="section" style="background:#0a0a0a;overflow:hidden;">
+      <div class="container text-center mb-8">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.2);border-radius:99px;padding:4px 16px;margin-bottom:16px;">
+          <span style="font-family:monospace;font-size:11px;letter-spacing:2px;color:var(--primary);text-transform:uppercase;">Exemplos</span>
+        </div>
+        <h2 class="section-title">Alguns dos nossos <span class="accent">canais</span></h2>
+      </div>
+      <div style="position:relative;">
+        <div class="channels-scroll animate-scroll-channels">
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/IIWh8XN.png" alt="Canal 1"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/0fWerxK.png" alt="Canal 2"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/G1KCaG0.png" alt="Canal 3"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/g2eNmpM.jpeg" alt="Canal 4"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/TrUNy3d.png" alt="Canal 5"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/jQgti8k.png" alt="Canal 6"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/IIWh8XN.png" alt="Canal 1"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/0fWerxK.png" alt="Canal 2"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/G1KCaG0.png" alt="Canal 3"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/g2eNmpM.jpeg" alt="Canal 4"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/TrUNy3d.png" alt="Canal 5"></a>
+          <a href="https://www.youtube.com/@tulioproducoes" target="_blank" class="channel-item"><img src="https://i.imgur.com/jQgti8k.png" alt="Canal 6"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community / Feedbacks -->
+    <section class="section section-dark">
+      <div class="container">
+        <h2 class="section-title mb-8">Veja os Resultados de Quem Decidiu Agir</h2>
+        <div class="community-scroll" style="max-width:900px;margin:0 auto;">
+          <div class="community-item"><img src="https://i.imgur.com/JiKeuhV.jpeg" alt="Feedback 1" style="border-radius:8px;"></div>
+          <div class="community-item"><img src="https://i.imgur.com/K2TjyRh.jpeg" alt="Feedback 2" style="border-radius:8px;"></div>
+          <div class="community-item"><img src="https://i.imgur.com/AtO75qO.jpeg" alt="Feedback 3" style="border-radius:8px;"></div>
+          <div class="community-item"><img src="https://i.imgur.com/bxJbVz9.jpeg" alt="Feedback 4" style="border-radius:8px;"></div>
+          <div class="community-item"><img src="https://i.imgur.com/QEForsw.jpeg" alt="Feedback 5" style="border-radius:8px;"></div>
+          <div class="community-item"><img src="https://i.imgur.com/8Cn24hc.jpeg" alt="Feedback 6" style="border-radius:8px;"></div>
+          <div class="community-item"><img src="https://i.imgur.com/aOPuifu.jpeg" alt="Feedback 7" style="border-radius:8px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonus -->
+    <section class="section section-card-bg">
+      <div class="container">
+        <h2 class="section-title" style="color:var(--primary);">+ 4 BONUS EXCLUSIVOS COMPRANDO <span class="accent">SOMENTE HOJE:</span></h2>
+        <div class="bonus-scroll" style="max-width:900px;margin:24px auto 0;">
+          <div class="bonus-item"><img src="https://i.imgur.com/Ue41aRp.png" alt="Bonus 1"></div>
+          <div class="bonus-item"><img src="https://i.imgur.com/BHoz6wz.png" alt="Bonus 2"></div>
+          <div class="bonus-item"><img src="https://i.imgur.com/umIxdRs.png" alt="Bonus 3"></div>
+          <div class="bonus-item"><img src="https://i.imgur.com/sbECyCb.png" alt="Bonus 4"></div>
+          <div class="bonus-item"><img src="https://i.imgur.com/Ue41aRp.png" alt="Bonus 1"></div>
+          <div class="bonus-item"><img src="https://i.imgur.com/BHoz6wz.png" alt="Bonus 2"></div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="#offer-section" class="inline-btn bg-green animate-yellow-pulse">QUERO GARANTIR MEUS BONUS AGORA</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section id="offer-section" class="section section-dark" style="padding-top:48px;padding-bottom:48px;">
+      <!-- Video above offer -->
+      <div style="max-width:640px;margin:0 auto 32px;border-radius:8px;overflow:hidden;">
+        <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/rd9ff7UV9gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <!-- Offer Card -->
+      <div class="offer-card">
+        <div class="text-center">
+          <div class="offer-title">ACESSO VITALICIO AO SISTEMA COMPLETO</div>
+          <div class="offer-subtitle">Produto 100% digital - acesso enviado por e-mail imediatamente apos a compra.</div>
+          <img src="https://i.imgur.com/cinetube-logo.png" alt="CineTube.IA Logo" class="offer-logo" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-wrapper">
+          <div class="progress-header">
+            <span class="progress-label">VAGAS ILIMITADAS</span>
+            <span class="progress-value">97% JA PREENCHIDA</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="progress-note">
+            Para ter acesso <span class="green">VITALICIO</span> garanta agora! Quando encher, o acesso passa a ser <span class="gold">mensal e anual</span>.
+          </div>
+        </div>
+
+        <div class="offer-section-title">CineTube.IA <span class="accent">Completo</span></div>
+        <ul class="offer-list">
+          <li><span class="offer-check">&#10003;</span> Acesso completo a plataforma SaaS</li>
+          <li><span class="offer-check">&#10003;</span> Cortes inteligentes com IA ilimitado</li>
+          <li><span class="offer-check">&#10003;</span> Roteiro automatico para qualquer nicho</li>
+          <li><span class="offer-check">&#10003;</span> Protecao anti-direitos autorais</li>
+          <li><span class="offer-check">&#10003;</span> Area de membros + treinamentos</li>
+          <li><span class="offer-check">&#10003;</span> 4 bonus exclusivos</li>
+          <li><span class="offer-check">&#10003;</span> Suporte prioritario</li>
+        </ul>
+
+        <div class="price-wrapper">
+          <div class="price-old">De R$ 197,00</div>
+          <div class="price-current">R$77,80</div>
+          <div class="price-installment">ou 12x de R$ 7,90</div>
+        </div>
+
+        <div class="trust-icons">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div>Checkout Seguro</div>
+          </div>
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 01-8 0"></path></svg>
+            <div>Satisfacao Garantida</div>
+          </div>
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+            <div>Privacidade Protegida</div>
+          </div>
+        </div>
+
+        <a href="https://www.ggcheckout.com/checkout/v4/Z8YoalNwP9YZYRDCZq0e" class="cta-btn animate-pulse-green">GARANTA SUA VAGA AGORA!</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-dark">
+      <div class="container" style="max-width:768px;">
+        <h2 class="section-title"><span class="accent">Duvidas</span> Frequentes</h2>
+        <div style="margin-top:24px;">
+          <details class="faq-item"><summary>Preciso saber editar videos para usar o CineTube.IA?</summary><p>Nao! O CineTube.IA foi criado justamente para quem nao sabe editar. A IA faz toda a edicao automaticamente - voce so faz o upload do video bruto e recebe o resultado final pronto.</p></details>
+          <details class="faq-item"><summary>Funciona para qualquer tipo de video e plataforma?</summary><p>Sim! Funciona para YouTube, TikTok, Instagram Reels e qualquer plataforma de video. Ideal para criadores de conteudo de todos os tipos - vlogs, tutoriais, reviews, entretenimento e muito mais. Nossa IA e treinada para identificar o melhor conteudo independente do tema ou formato.</p></details>
+          <details class="faq-item"><summary>Funciona para canais Dark tambem?</summary><p>Com certeza! O CineTube.IA e perfeito para canais Dark (canais sem mostrar o rosto). A IA gera roteiros, faz cortes, monta o video e aplica protecao anti-direitos autorais - tudo automaticamente. E a forma mais eficiente de escalar canais Dark no YouTube, TikTok e Instagram.</p></details>
+          <details class="faq-item"><summary>E so para YouTubers?</summary><p>De jeito nenhum! O CineTube.IA e para qualquer criador de conteudo - YouTubers, TikTokers, Instagrammers, Reels, Shorts e qualquer pessoa que queira produzir videos profissionais com IA. Se voce cria conteudo em video, essa ferramenta e para voce.</p></details>
+          <details class="faq-item"><summary>Vou ter problemas de direitos autorais no YouTube?</summary><p>O CineTube.IA inclui um sistema anti-direitos autorais que processa seus videos para minimizar o risco de strikes. Ensinamos toda a metodologia para publicar com seguranca em qualquer plataforma.</p></details>
+          <details class="faq-item"><summary>Em quanto tempo verei resultado?</summary><p>Com nossa metodologia, e possivel ter o canal configurado e publicando conteudo em ate 12 dias. Os resultados financeiros dependem da consistencia, mas ja temos membros monetizados em menos de 60 dias.</p></details>
+          <details class="faq-item"><summary>Tenho garantia de reembolso?</summary><p>Sim! Voce tem 7 dias de garantia incondicional. Se por qualquer motivo nao ficar satisfeito, devolvemos 100% do seu dinheiro sem perguntas.</p></details>
+        </div>
+        <div class="text-center mt-8">
+          <a href="#offer-section" class="inline-btn bg-green animate-yellow-pulse">COMECAR AGORA E MUDAR MINHA VIDA</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" style="background:#080808;">
+      <h2>Chega de editar<br><span class="accent">video manualmente</span></h2>
+      <p>Deixe a IA fazer o trabalho pesado enquanto voce foca em crescer seu canal e monetizar.</p>
+      <a href="#offer-section" class="inline-btn bg-gold" style="gap:12px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        QUERO COMECAR AGORA
+      </a>
+      <div style="margin-top:16px;font-size:12px;color:var(--text-muted);letter-spacing:1px;">&#128737; Garantia de 7 dias - Risco zero</div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="https://i.imgur.com/cinetube-logo.png" alt="CineTube.IA" onerror="this.style.display='none'">
+      <span>CINETUBE.IA</span>
+    </div>
+    <p class="footer-copy">&copy; 2025 CineTube.IA - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
