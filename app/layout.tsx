@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "O primeiro aplicativo de I.A. que transforma qualquer pessoa em dono de canais lucrativos no YouTube postando vídeos de filmes e séries",
   generator: "v0.app",
   icons: {
-    icon: "/images/cinetube-logo.png",
+    icon: "/favicon.png",
   },
 }
 
