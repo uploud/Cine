@@ -509,32 +509,16 @@ export function PillarsSection() {
               </h3>
             </div>
 
-            <div className="relative mx-auto aspect-[9/16] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] rounded-[2rem] sm:rounded-[3rem] border-8 border-[#1a1a1a] bg-[#050505] shadow-2xl shadow-primary/20 overflow-hidden group">
-              {/* Phone Frame Shine */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none z-10" />
-              
-              {/* Video Content */}
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="https://i.imgur.com/7tHXGxQ.mp4" type="video/mp4" />
-              </video>
-
-              {/* Interaction Overlay */}
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
-                    <Sparkles className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-[10px] font-bold text-white tracking-widest uppercase">Cinetube.IA Engine</span>
-                </div>
-                <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-primary w-2/3 animate-pulse" />
-                </div>
+            <div className="max-w-3xl mx-auto">
+              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/50">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/_rT1Dnc0aq4"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </ScrollReveal>
