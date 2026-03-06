@@ -180,7 +180,7 @@ export function PillarsSection() {
           <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2 hidden lg:block" />
 
           {/* Steps Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
             {steps.map((step, index) => {
               const isActive = index === activeStep && !isComplete
               const isDone = index < activeStep || isComplete
