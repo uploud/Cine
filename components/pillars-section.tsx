@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react"
 import { Terminal, FileText, Mic, Wand2, Download, Check, Sparkles } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 interface Step {
   id: number
@@ -192,7 +193,7 @@ export function PillarsSection() {
                 <div
                   key={step.id}
                   className={`
-                    relative h-full rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 transition-all duration-500
+                    relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
                     ${isActive
                       ? "bg-gradient-to-b from-[#1a2a1a] to-[#0f1a0f] border-2 border-[#22c55e]/50 shadow-lg shadow-[#22c55e]/10 scale-[1.02] sm:scale-105 z-10"
                       : isDone
@@ -207,23 +208,22 @@ export function PillarsSection() {
                   {/* Badge */}
                   <div
                     className={`
-                      absolute -top-2 sm:-top-3 left-1/2 -translate-x-1/2 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-[10px] font-bold tracking-wider
-                      flex items-center gap-1
+                      absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] sm:text-[10px] font-bold tracking-wider
+                      flex items-center gap-1.5
                       ${step.badgeType === "ai"
                         ? "bg-[#ef4444] text-white"
                         : "bg-[#1a1a1a] border border-white/20 text-white"
                       }
                     `}
                   >
-                    <Sparkles className="w-2 h-2 sm:w-3 sm:h-3" />
-                    <span className="hidden sm:inline">{step.badge}</span>
-                    <span className="sm:hidden">{step.badgeType === "ai" ? "IA" : "EU"}</span>
+                    <Sparkles className="w-3 h-3" />
+                    <span>{step.badge}</span>
                   </div>
 
                   {/* Icon */}
                   <div
                     className={`
-                      w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-2 sm:mb-3 md:mb-4 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300
+                      w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-3 sm:mb-3 md:mb-4 rounded-xl flex items-center justify-center transition-all duration-300
                       ${isActive
                         ? "bg-[#22c55e]/20 text-[#22c55e]"
                         : isDone
@@ -232,14 +232,14 @@ export function PillarsSection() {
                       }
                     `}
                   >
-                    <StepIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <StepIcon className="w-5 h-5 sm:w-5 sm:h-5" />
                   </div>
 
                   {/* Title */}
                   <h3
                     className={`
-                      font-[family-name:var(--font-display)] text-[10px] sm:text-xs md:text-sm lg:text-base font-bold text-center mb-1 sm:mb-2 transition-colors leading-tight
-                      ${isActive ? "text-[#22c55e]" : isDone ? "text-white" : "text-white/80"}
+                      font-[family-name:var(--font-display)] text-sm sm:text-xs md:text-sm lg:text-base font-bold text-center mb-2 sm:mb-2 transition-colors leading-tight
+                      ${isActive ? "text-[#22c55e]" : isDone ? "text-[#22c55e]" : "text-[#22c55e]"}
                     `}
                   >
                     {step.title}
@@ -258,7 +258,7 @@ export function PillarsSection() {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground text-center mb-2 sm:mb-4 leading-tight hidden sm:block">
+                    <p className="text-xs sm:text-[10px] md:text-xs text-muted-foreground text-center mb-3 sm:mb-4 leading-relaxed">
                       {step.subtitle}
                     </p>
                   )}
@@ -491,13 +491,54 @@ export function PillarsSection() {
 
         {/* Complete Message */}
         {isComplete && (
-          <div className="text-center mt-6 sm:mt-8 md:mt-12 animate-fade-in">
+          <div className="text-center mt-6 sm:mt-8 md:mt-12 animate-fade-in mb-8">
             <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-full px-4 sm:px-6 py-2 sm:py-3">
               <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#22c55e]" />
               <span className="text-[#22c55e] font-bold text-xs sm:text-sm md:text-base">Pronto para publicar e monetizar!</span>
             </div>
           </div>
         )}
+
+        {/* Result Highlight */}
+        <div className="mt-12 sm:mt-16 md:mt-24 max-w-4xl mx-auto">
+          <ScrollReveal animation="fade-up" duration={700}>
+            <div className="text-center mb-8 sm:mb-12">
+              <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight uppercase tracking-tight">
+                SEUS VÍDEOS IRÃO FICAR <span className="text-primary">DESSE MESMO FORMATO</span>, <br className="hidden sm:block" />
+                APENAS COM 1 APP E UM CLICK: <span className="text-primary">ASSIM</span>
+              </h3>
+            </div>
+
+            <div className="relative mx-auto aspect-[9/16] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] rounded-[2rem] sm:rounded-[3rem] border-8 border-[#1a1a1a] bg-[#050505] shadow-2xl shadow-primary/20 overflow-hidden group">
+              {/* Phone Frame Shine */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none z-10" />
+              
+              {/* Video Content */}
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="https://i.imgur.com/7tHXGxQ.mp4" type="video/mp4" />
+              </video>
+
+              {/* Interaction Overlay */}
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
+                    <Sparkles className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-[10px] font-bold text-white tracking-widest uppercase">Cinetube.IA Engine</span>
+                </div>
+                <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full bg-primary w-2/3 animate-pulse" />
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   )
