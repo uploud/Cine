@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { HeroSection } from "@/components/hero-section"
+import { Marquee } from "@/components/marquee"
 import { AiToolsSection } from "@/components/ai-tools-section"
 import { PillarsSection } from "@/components/pillars-section"
 import { BonusSection } from "@/components/bonus-section"
@@ -20,6 +21,10 @@ export default function Home() {
 
         <ScrollReveal animation="fade-up" delay={0} duration={700}>
           <CommunitySection />
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-in" delay={0} duration={500}>
+          <Marquee />
         </ScrollReveal>
 
         <ScrollReveal animation="slide-up" delay={0} duration={800}>
