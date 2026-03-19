@@ -18,19 +18,6 @@ export function OfferSection() {
 
   return (
     <section id="offer-section" className="py-8 sm:py-10 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-[hsl(220,20%,5%)] overflow-hidden">
-      {/* Nova copy sobre como usar */}
-      <div className="max-w-sm sm:max-w-md lg:max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-12 lg:mb-16 text-center">
-        <p className="text-xs sm:text-sm md:text-base text-primary font-semibold uppercase tracking-widest mb-2">
-          Como usar o CineTube
-        </p>
-        <h2 className="font-[family-name:var(--font-display)] font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-3 md:mb-4">
-          Veja Como é Fácil Usar<br />
-          <span className="text-[rgba(30,255,0,1)]">O Nosso Gerador de Vídeos</span>
-        </h2>
-        <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
-          O Aplicativo Funciona para Celular e Computador.
-        </p>
-      </div>
 
       <div className="max-w-sm sm:max-w-md lg:max-w-2xl mx-auto">
         <div className="bg-[hsl(220,20%,10%)] text-foreground rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 border-2 border-primary/50 relative w-full shadow-[0_0_5px_hsl(45_90%_50%),0_0_10px_hsl(45_90%_50%),0_0_15px_hsl(45_90%_50%)]">

@@ -170,14 +170,15 @@ export function PillarsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight">
-            Como usar o CineTube para automação no YouTube em <span className="text-primary">passos simples</span>
+          <p className="text-xs sm:text-sm md:text-base text-primary font-semibold uppercase tracking-widest mb-2">
+            Como usar o CineTube
+          </p>
+          <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight mb-3 sm:mb-4">
+            Veja Como é Fácil Usar<br />
+            <span className="text-primary">O Nosso Gerador de Vídeos</span>
           </h2>
           <p className="text-muted-foreground text-xs sm:text-sm md:text-base mt-3 sm:mt-4 max-w-2xl mx-auto">
-            Mande sua ideia. A IA cuida do roteiro, voz, edição e legendas.
-          </p>
-          <p className="text-primary font-bold text-sm sm:text-base md:text-lg mt-2">
-            Tudo em piloto automático.
+            O Aplicativo Funciona para Celular e Computador.
           </p>
         </div>
 
