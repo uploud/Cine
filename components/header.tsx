@@ -13,25 +13,22 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/5">
-      <div className="flex items-center justify-between px-4 md:px-8 lg:px-12 py-3">
-        {/* Logo centralizada no mobile e esquerda no desktop (ajustado para centralizar conforme pedido) */}
-        <div className="flex-1 flex justify-center md:justify-start">
-          <Link href="/" className="flex items-center">
-            <Image 
-              src="/logo-cinetube.png" 
-              alt="Cinetube.IA" 
-              width={150} 
-              height={40} 
-              className="h-8 sm:h-10 w-auto object-contain"
-              priority
-            />
-          </Link>
-        </div>
+    <header className="sticky top-0 z-50 w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/5 h-16 sm:h-20">
+      <div className="relative h-full px-4 md:px-8 lg:px-12 flex items-center justify-center">
+        {/* Logo centralizada perfeitamente */}
+        <Link href="/" className="inline-block">
+          <Image 
+            src="/logo-cinetube.png" 
+            alt="Cinetube.IA" 
+            width={180} 
+            height={50} 
+            className="h-10 sm:h-12 w-auto object-contain"
+            priority
+          />
+        </Link>
 
-        {/* Botão lateral que some no mobile ou fica discreto? O usuário pediu para centralizar a logo. 
-            Vou deixar o CTA apenas no desktop para manter a logo centralizada no mobile. */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Botão lateral absoluto no desktop para não tirar a logo do centro */}
+        <div className="absolute right-4 md:right-8 lg:right-12 hidden md:block">
           <a
             href="#offer-section"
             onClick={handleCtaClick}
