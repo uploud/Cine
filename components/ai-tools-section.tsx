@@ -4,16 +4,16 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 export function AiToolsSection() {
   const features = [
     {
-      icon: "&#9986;",
-      title: "Cortes Inteligentes",
-      description: "A IA detecta silencios, repeticoes e partes desnecessarias. Faz os cortes automaticamente mantendo o melhor do conteudo.",
-      video: "https://i.imgur.com/7tHXGxQ.mp4",
-    },
-    {
       icon: "&#128221;",
       title: "Roteiro Automatico",
       description: "Gere roteiros completos para seus videos com IA. Insira o tema, a IA cria um roteiro otimizado para engajamento e retencao.",
       video: "https://i.imgur.com/xQO2AVr.mp4",
+    },
+    {
+      icon: "&#9986;",
+      title: "Cortes Inteligentes",
+      description: "A IA detecta silencios, repeticoes e partes desnecessarias. Faz os cortes automaticamente mantendo o melhor do conteudo.",
+      video: "https://i.imgur.com/7tHXGxQ.mp4",
     },
     {
       icon: null,
