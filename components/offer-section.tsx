@@ -46,15 +46,8 @@ export function OfferSection() {
               <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-white/5">
                 <span className="text-[rgba(30,255,0,1)] mt-0.5">📱</span>
                 <div>
-                  <span className="font-bold text-[rgba(30,255,0,1)]">App 1: BuilderScript</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">A IA assiste o filme, escolhe as melhores falas e cria o roteiro pra você.</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-white/5">
-                <span className="text-[rgba(30,255,0,1)] mt-0.5">📱</span>
-                <div>
-                  <span className="font-bold text-[rgba(30,255,0,1)]">App 2: SmartEdit</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Gera cortes e marcações automáticas. Você só faz o toque final.</p>
+                  <span className="font-bold text-[rgba(30,255,0,1)]">App CineTube.IA</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p>
                 </div>
               </li>
               <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-white/5">
