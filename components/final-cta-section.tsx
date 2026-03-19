@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { Play } from "lucide-react"
+import Image from "next/image"
 
 export function FinalCtaSection() {
   const scrollToOffer = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -34,9 +34,14 @@ export function FinalCtaSection() {
             <Play className="w-4 h-4 sm:w-5 sm:h-5" />
             QUERO COMECAR AGORA
           </a>
-          <div className="flex items-center justify-center gap-2 mt-4 sm:mt-6 text-xs sm:text-sm text-muted-foreground tracking-wider">
-            <span className="text-base sm:text-lg">&#128737;</span>
-            Garantia de 7 dias — Risco zero
+          <div className="flex justify-center mt-6 sm:mt-8">
+            <Image 
+              src="/garantia-7-dias.png" 
+              alt="Garantia de 7 dias" 
+              width={200} 
+              height={100} 
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+            />
           </div>
         </div>
       </div>
