@@ -60,7 +60,7 @@ export function OfferSection() {
               <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-white/5">
                 <span className="text-[rgba(30,255,0,1)] mt-0.5">🎓</span>
                 <div>
-                  <span className="font-bold text-foreground">Acesso ao Treinamento Cine Builder Academy</span>
+                  <span className="font-bold text-foreground">Acesso ao Treinamento Cine Tube Academy</span>
                   <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Passo a passo pra montar seu canal e começar a lucrar.</p>
                 </div>
               </li>
