@@ -36,8 +36,9 @@ export function ChannelsSection() {
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
             <span className="font-mono text-[10px] sm:text-xs tracking-widest text-primary uppercase">Exemplos</span>
           </div>
-          <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2">
-            Alguns dos nossos <span className="text-primary">canais</span>
+          <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight">
+            Gere Vídeos Únicos e Inéditos<br />
+            <span className="text-primary">de Forma Simples e Automática</span>
           </h2>
         </div>
       </div>
