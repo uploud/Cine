@@ -51,6 +51,8 @@ const StarsBackground = () => (
   </div>
 )
 
+import Image from "next/image"
+
 export function HeroSection() {
   const [currentNiche, setCurrentNiche] = useState(0)
   const [fade, setFade] = useState(true)
@@ -68,11 +70,23 @@ export function HeroSection() {
   }, [niches.length])
 
   return (
-    <section className="relative flex items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-[#080808] min-h-[80vh]">
+    <section className="relative flex items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-[#080808] min-h-screen">
       <StarsBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#080808]" />
 
-      <div className="relative z-10 max-w-5xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24">
+      <div className="relative z-10 max-w-5xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 flex flex-col items-center">
+        {/* Logo integrada no topo da Hero */}
+        <div className="mb-8 md:mb-12">
+          <Image 
+            src="/logo-cinetube.png" 
+            alt="Cinetube.IA" 
+            width={220} 
+            height={60} 
+            className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+            priority
+          />
+        </div>
+
         {/* Glow neon fraco atrás do título */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/20 blur-[120px] rounded-full pointer-events-none -z-10" />
 

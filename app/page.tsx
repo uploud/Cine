@@ -1,5 +1,4 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { AiToolsSection } from "@/components/ai-tools-section"
 import { PillarsSection } from "@/components/pillars-section"
@@ -14,7 +13,6 @@ import { CommunitySection } from "@/components/community-section"
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#080808] text-foreground">
-      <Header />
       <main>
         {/* Hero não precisa de animação de entrada — já está visível */}
         <HeroSection />
