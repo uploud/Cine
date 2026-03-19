@@ -1,64 +1,9 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
 import { Shield, ShoppingBag, Lock } from "lucide-react"
 import Image from "next/image"
 import { buildCheckoutURL } from "@/lib/url-params"
-
-function ProgressBar() {
-  const [progress, setProgress] = useState(0)
-  const [displayProgress, setDisplayProgress] = useState(0)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setProgress(97), 500)
-    return () => clearTimeout(timer)
-  }, [])
-
-  // Sync display percentage with animated bar
-  useEffect(() => {
-    if (progress > 0) {
-      const duration = 1000
-      const steps = 60
-      const increment = progress / steps
-      const intervalTime = duration / steps
-
-      let current = 0
-      const timer = setInterval(() => {
-        current += increment
-        if (current >= progress) {
-          setDisplayProgress(progress)
-          clearInterval(timer)
-        } else {
-          setDisplayProgress(Math.floor(current))
-        }
-      }, intervalTime)
-      return () => clearInterval(timer)
-    }
-  }, [progress])
-
-  return (
-    <div className="mb-4 sm:mb-5 md:mb-8">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-xs sm:text-sm font-bold text-foreground">VAGAS ILIMITADAS</span>
-        <span className="text-xs sm:text-sm font-bold text-[rgba(30,255,0,1)]">{displayProgress}% JA PREENCHIDA</span>
-      </div>
-      <div className="w-full h-3 sm:h-4 bg-[hsl(220,20%,15%)] rounded-full overflow-hidden border border-white/10">
-        <div
-          className="h-full rounded-full transition-all duration-1000 ease-out"
-          style={{
-            width: `${progress}%`,
-            background: "linear-gradient(90deg, rgba(30,255,0,1), rgba(30,255,0,0.7))",
-            boxShadow: "0 0 10px rgba(30,255,0,0.5)",
-          }}
-        />
-      </div>
-      <p className="text-[10px] sm:text-xs text-muted-foreground mt-2 text-center">
-        Para ter acesso <span className="text-[rgba(30,255,0,1)] font-bold">VITALICIO</span> garanta agora! Quando encher, o acesso passa a ser <span className="text-primary font-bold">mensal e anual</span>.
-      </p>
-    </div>
-  )
-}
 
 
 
@@ -104,7 +49,7 @@ export function OfferSection() {
             />
           </div>
 
-          <ProgressBar />
+
 
           <div className="mb-4 sm:mb-5 md:mb-8 lg:mb-10">
             <h4 className="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">
