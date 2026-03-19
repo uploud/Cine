@@ -1,7 +1,6 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { HeroSection } from "@/components/hero-section"
 import { AiToolsSection } from "@/components/ai-tools-section"
 import { PillarsSection } from "@/components/pillars-section"
 import { BonusSection } from "@/components/bonus-section"
