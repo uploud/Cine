@@ -476,6 +476,18 @@ export function PillarsSection() {
                   allowFullScreen
                 />
               </div>
+
+              {/* Vídeo 3: Anime */}
+              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/50">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/ANnHwcWenR8"
+                  title="YouTube video player 3"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
