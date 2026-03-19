@@ -145,9 +145,9 @@ export function OfferSection() {
           <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
             <div className="text-xs sm:text-sm text-muted-foreground line-through tracking-wider mb-1">De R$ 197,00</div>
             <div className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-none mb-1 sm:mb-2">
-              R$77,80
+              R$57,97
             </div>
-            <div className="text-xs sm:text-sm md:text-base text-muted-foreground">ou 12x de R$ 7,90</div>
+            <div className="text-xs sm:text-sm md:text-base text-muted-foreground">ou 12x de R$ 5,89</div>
           </div>
 
           <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 text-center text-[10px] sm:text-xs md:text-sm lg:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-8 lg:mb-10">
