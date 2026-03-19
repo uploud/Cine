@@ -1,8 +1,6 @@
 export function Marquee() {
   const items = [
-    "Mande Seus VIDEOS sua ideia.",
-    "A IA cuida do roteiro, voz, edição e legendas.",
-    "TUDO EM PILOTO AUTOMÁTICO",
+    "Escolha seu filme ou série e a IA gera o seu vídeo completo.",
     "CINETUBE.IA",
     "MONETIZE SEU CANAL",
   ]

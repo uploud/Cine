@@ -17,44 +17,36 @@ interface Step {
 const steps: Step[] = [
   {
     id: 1,
-    badge: "VOCE",
+    badge: "ETAPA 1",
     badgeType: "user",
     icon: Terminal,
-    title: "Coloca o video mp4 que vc abaixou",
-    subtitle: "ou coloca o link do video pode ser direto do youtube mesmo",
+    title: "Escolha um filme ou série de preferência",
+    subtitle: "Selecione o conteúdo que você quer transformar em um vídeo viral.",
   },
   {
     id: 2,
-    badge: "CINETUBE",
+    badge: "ETAPA 2",
     badgeType: "ai",
     icon: FileText,
-    title: "Roteiro Automatico",
-    subtitle: "Roteiro viral criado",
+    title: "Roteiro Automático",
+    subtitle: "O aplicativo lê o seu filme ou série e cria um roteiro otimizado para engajamento.",
   },
   {
     id: 3,
-    badge: "CINETUBE",
+    badge: "ETAPA 3",
     badgeType: "ai",
-    icon: Mic,
-    title: "Narracao Neural",
-    subtitle: "Voz impecavel",
+    icon: Wand2,
+    title: "Cortes Inteligentes",
+    subtitle: "A IA detecta os melhores momentos, faz cortes precisos e monta tudo no automático.",
+    tags: ["Dinâmico", "Legendas", "SFX"],
   },
   {
     id: 4,
-    badge: "CINETUBE",
-    badgeType: "ai",
-    icon: Wand2,
-    title: "Edicao Completa",
-    subtitle: "Video profissional",
-    tags: ["B-Rolls", "Legendas", "Musica", "SFX"],
-  },
-  {
-    id: 5,
-    badge: "VOCE",
+    badge: "ETAPA 4",
     badgeType: "user",
     icon: Download,
     title: "Baixar e Postar",
-    subtitle: "Pronto para monetizar",
+    subtitle: "Seu vídeo inédito está pronto para ser publicado e monetizado.",
   },
 ]
 
@@ -188,7 +180,7 @@ export function PillarsSection() {
           <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2 hidden lg:block" />
 
           {/* Steps Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
             {steps.map((step, index) => {
               const isActive = index === activeStep && !isComplete
               const isDone = index < activeStep || isComplete
@@ -273,61 +265,48 @@ export function PillarsSection() {
                   {/* Progress Bar or Checkmark */}
                   {isActive ? (
                     <div className="space-y-1 sm:space-y-2 mt-auto">
-                      {/* Animação Visual Específica para o Passo 1 */}
+                      {/* Animação Visual Específica para o Passo 1 (Escolha) */}
                       {step.id === 1 && (
                         <div className="mb-3 relative h-16 w-full bg-[#050505] rounded-md border border-white/5 flex flex-col items-center justify-center overflow-hidden">
-                          <div className="absolute top-1 left-2 text-[5px] text-white/20 uppercase font-mono tracking-widest">Ação Detectada</div>
+                          <div className="absolute top-1 left-2 text-[5px] text-white/20 uppercase font-mono tracking-widest">Escolha do Usuário</div>
 
-                          {/* Simulação de Colar Link */}
-                          <div className="w-[90%] h-6 bg-white/5 rounded-md flex items-center px-2 mb-1.5 border border-white/5 relative overflow-hidden">
+                          {/* Simulação de Escolha de Filme */}
+                          <div className="w-[90%] h-6 bg-white/5 rounded-md flex items-center px-2 mb-1.5 border border-white/10 relative overflow-hidden">
                             <div className="absolute inset-0 bg-primary/5 opacity-0" style={{
-                              animation: 'paste-blink 3s infinite'
+                              animation: 'selection-blink 3s infinite'
                             }} />
                             <div className="text-[7px] text-primary font-mono whitespace-nowrap overflow-hidden translate-y-[0.5px]" style={{
-                              animation: 'instant-paste 3s infinite'
+                              animation: 'movie-select 3s infinite'
                             }}>
-                              https://youtube.com/watch?v=Cinetube_AI
+                              🎬 Gladiador II (2024)
                             </div>
-                            <div className="ml-auto flex items-center gap-1 opacity-50" style={{
-                              animation: 'paste-icon 3s infinite'
-                            }}>
-                              <FileText className="w-2 h-2 text-primary" />
+                            <div className="ml-auto flex items-center gap-1 opacity-50">
+                              <Check className="w-2 h-2 text-primary" />
                             </div>
                           </div>
 
-                          {/* Simulação de Drag & Drop Melhorada */}
                           <div className="flex items-center gap-1.5" style={{
-                            animation: 'drop-smooth 4s infinite'
+                            animation: 'fade-in-out 3s infinite'
                           }}>
-                            <div className="w-4 h-4 rounded bg-white/5 flex items-center justify-center">
-                              <Download className="w-2.5 h-2.5 text-primary" />
-                            </div>
-                            <span className="text-[7px] text-white/80 font-mono uppercase tracking-tighter">video_bruto.mp4</span>
+                            <span className="text-[7px] text-white/60 font-mono uppercase tracking-tighter">Conteúdo selecionado com sucesso</span>
                           </div>
 
                           <style dangerouslySetInnerHTML={{
                             __html: `
-                            @keyframes instant-paste {
-                              0%, 20% { opacity: 0; transform: scale(0.95); }
-                              25% { opacity: 1; transform: scale(1); }
-                              70% { opacity: 1; transform: scale(1); }
-                              75%, 100% { opacity: 0; transform: scale(1); }
+                            @keyframes movie-select {
+                              0%, 20% { opacity: 0; transform: translateY(5px); }
+                              30%, 70% { opacity: 1; transform: translateY(0); }
+                              80%, 100% { opacity: 0; transform: translateY(-5px); }
                             }
-                            @keyframes paste-blink {
-                              24% { opacity: 0; }
-                              25% { opacity: 1; }
-                              30% { opacity: 0; }
+                            @keyframes selection-blink {
+                              29% { opacity: 0; }
+                              30% { opacity: 1; }
+                              35% { opacity: 0; }
                             }
-                            @keyframes paste-icon {
-                              0%, 15% { transform: scale(1); opacity: 0.5; }
-                              20% { transform: scale(1.2); opacity: 1; }
-                              30% { transform: scale(1); opacity: 0.5; }
-                            }
-                            @keyframes drop-smooth {
-                              0%, 40% { opacity: 0; transform: translateY(-8px); }
-                              50% { opacity: 1; transform: translateY(0); }
-                              90% { opacity: 1; transform: translateY(0); }
-                              100% { opacity: 0; transform: translateY(5px); }
+                            @keyframes fade-in-out {
+                              0%, 40% { opacity: 0; }
+                              50%, 80% { opacity: 1; }
+                              90%, 100% { opacity: 0; }
                             }
                           ` }} />
                         </div>
@@ -371,52 +350,8 @@ export function PillarsSection() {
                         </div>
                       )}
 
-                      {/* Animação Visual Específica para o Passo 3 (Narração) */}
+                      {/* Animação Visual Específica para o Passo 3 (Cortes) */}
                       {step.id === 3 && (
-                        <div className="mb-3 relative h-16 w-full bg-[#050505] rounded-md border border-white/5 flex flex-col items-center justify-center overflow-hidden">
-                          <div className="absolute top-1 left-2 text-[5px] text-white/20 uppercase font-mono tracking-widest">Processando Audio</div>
-
-                          {/* Modelos de TTS */}
-                          <div className="flex gap-1 mb-1.5 mt-2">
-                            {['ElevenLabs', 'OpenAI TTS'].map((model, i) => (
-                              <div key={model} className="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[6px] text-white/60 font-mono" style={{
-                                animation: `audio-pulse 2s ease-in-out infinite ${i * 1}s`
-                              }}>
-                                {model}
-                              </div>
-                            ))}
-                          </div>
-
-                          {/* Ondas Sonoras Animadas */}
-                          <div className="flex items-end gap-[2px] h-4 mb-1.5">
-                            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((bar) => (
-                              <div
-                                key={bar}
-                                className="w-[2px] bg-primary rounded-full"
-                                style={{
-                                  animation: `wave-rise ${0.5 + Math.random()}s ease-in-out infinite alternate`,
-                                  height: '20%'
-                                }}
-                              />
-                            ))}
-                          </div>
-
-                          <style dangerouslySetInnerHTML={{
-                            __html: `
-                            @keyframes audio-pulse {
-                              0%, 100% { opacity: 0.4; transform: scale(0.98); }
-                              50% { opacity: 1; transform: scale(1.02); color: #1eff00; border-color: rgba(30,255,0,0.3); }
-                            }
-                            @keyframes wave-rise {
-                              0% { height: 20%; }
-                              100% { height: 100%; }
-                            }
-                          ` }} />
-                        </div>
-                      )}
-
-                      {/* Animação Visual Específica para o Passo 4 (Edição) */}
-                      {step.id === 4 && (
                         <div className="mb-3 relative h-16 w-full bg-[#050505] rounded-md border border-white/5 flex flex-col items-center justify-center overflow-hidden">
                           <div className="absolute top-1 left-2 text-[5px] text-white/20 uppercase font-mono tracking-widest">Renderizando IA</div>
 
@@ -462,12 +397,13 @@ export function PillarsSection() {
                       )}
 
                       <div className="flex items-center justify-between text-[8px] sm:text-[10px]">
-                        <span className={`font-mono tracking-wider hidden sm:inline transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#ef4444]"}`}>
-                          {step.id === 1 ? "ANALISANDO" : step.id === 2 ? "ESCREVENDO ROTEIRO" : step.id === 3 ? "SINTETIZANDO VOZ" : step.id === 4 ? "MONTANDO VIDEO" : "PROCESSANDO"}
+                        <span className={`font-mono tracking-wider hidden sm:inline transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#1eff00]"}`}>
+                          {step.id === 1 ? "ESCOLHANDO FILME" : step.id === 2 ? "CRIANDO ROTEIRO" : step.id === 3 ? "FAZENDO CORTES" : step.id === 4 ? "PRONTO PARA POSTAR" : "PROCESSANDO"}
                         </span>
-                        <span className={`font-mono sm:hidden transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#ef4444]"}`}>...</span>
-                        <span className={`font-mono transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#ef4444]"}`}>{Math.round(progress)}%</span>
+                        <span className={`font-mono sm:hidden transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#1eff00]"}`}>...</span>
+                        <span className={`font-mono transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#1eff00]"}`}>{Math.round(progress)}%</span>
                       </div>
+
                       <div className="h-1 bg-white/10 rounded-full overflow-hidden">
                         <div
                           className={`h-full transition-all duration-75 ${progress >= 100 ? "bg-[#22c55e]" : "bg-[#ef4444]"}`}
