@@ -96,7 +96,7 @@ export function OfferSection() {
           <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
             <p className="text-xs sm:text-sm md:text-base text-primary font-bold uppercase tracking-wider mb-2">💰 Investimento Único</p>
             <div className="text-xs sm:text-sm text-muted-foreground line-through tracking-wider mb-1">De R$ 197,00</div>
-            <div className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-none mb-1 sm:mb-2">
+            <div className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-primary leading-none mb-1 sm:mb-2">
               R$67
             </div>
             <div className="text-xs sm:text-sm md:text-base text-muted-foreground">ou 12x de R$ 6,81</div>
