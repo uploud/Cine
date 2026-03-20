@@ -31,7 +31,7 @@ export function OfferSection() {
               Acesso ao APP enviado por e-mail imediatamente após a compra.
             </p>
             <img
-              src="/images/cinetube-logo-3d.png"
+              src="/logo-cinetube.png"
               alt="CineTube.IA Logo"
               className="mx-auto mb-3 md:mb-6 w-32 sm:w-40 md:w-48 lg:w-52 h-auto object-contain"
             />
