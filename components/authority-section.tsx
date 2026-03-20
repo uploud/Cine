@@ -10,11 +10,11 @@ export function AuthoritySection() {
       <div className="relative max-w-5xl mx-auto">
         <div className="flex justify-center mb-8 md:mb-12">
           <Image
-            src="/images/cinetube-logo.png"
+            src="/logo-cinetube.png"
             alt="CineTube.IA"
-            width={200}
-            height={200}
-            className="w-32 h-32 md:w-48 md:h-48 object-contain"
+            width={220}
+            height={60}
+            className="w-40 h-auto md:w-56 object-contain"
           />
         </div>
 
