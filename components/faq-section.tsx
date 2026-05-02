@@ -5,9 +5,9 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 const faqs = [
   {
-    question: "Preciso saber editar videos para usar o CineTube.IA?",
+    question: "Preciso saber editar videos para usar o Wintube?",
     answer:
-      "Nao! O CineTube.IA foi criado justamente para quem nao sabe editar. A IA faz toda a edicao automaticamente — voce so faz o upload do video bruto e recebe o resultado final pronto.",
+      "Nao! O Wintube foi criado justamente para quem nao sabe editar. A IA faz toda a edicao automaticamente — voce so faz o upload do video bruto e recebe o resultado final pronto.",
   },
   {
     question: "Funciona para qualquer tipo de video e plataforma?",
@@ -17,17 +17,17 @@ const faqs = [
   {
     question: "Funciona para canais Dark tambem?",
     answer:
-      "Com certeza! O CineTube.IA e perfeito para canais Dark (canais sem mostrar o rosto). A IA gera roteiros, faz cortes, monta o video e aplica protecao anti-direitos autorais — tudo automaticamente. E a forma mais eficiente de escalar canais Dark no YouTube, TikTok e Instagram.",
+      "Com certeza! O Wintube e perfeito para canais Dark (canais sem mostrar o rosto). A IA gera roteiros, faz cortes, monta o video e aplica protecao anti-direitos autorais — tudo automaticamente. E a forma mais eficiente de escalar canais Dark no YouTube, TikTok e Instagram.",
   },
   {
     question: "E so para YouTubers?",
     answer:
-      "De jeito nenhum! O CineTube.IA e para qualquer criador de conteudo — YouTubers, TikTokers, Instagrammers, Reels, Shorts e qualquer pessoa que queira produzir videos profissionais com IA. Se voce cria conteudo em video, essa ferramenta e para voce.",
+      "De jeito nenhum! O Wintube e para qualquer criador de conteudo — YouTubers, TikTokers, Instagrammers, Reels, Shorts e qualquer pessoa que queira produzir videos profissionais com IA. Se voce cria conteudo em video, essa ferramenta e para voce.",
   },
   {
     question: "Vou ter problemas de direitos autorais no YouTube?",
     answer:
-      "O CineTube.IA inclui um sistema anti-direitos autorais que processa seus videos para minimizar o risco de strikes. Ensinamos toda a metodologia para publicar com seguranca em qualquer plataforma.",
+      "O Wintube inclui um sistema anti-direitos autorais que processa seus videos para minimizar o risco de strikes. Ensinamos toda a metodologia para publicar com seguranca em qualquer plataforma.",
   },
   {
     question: "Em quanto tempo verei resultado?",

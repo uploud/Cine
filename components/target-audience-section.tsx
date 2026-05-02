@@ -39,13 +39,13 @@ export function TargetAudienceSection() {
       <div className="container mx-auto max-w-5xl">
         <ScrollReveal animation="fade-up">
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-4 md:mb-6 text-balance">
-            PARA QUEM E O <span className="text-primary">CINETUBE.IA ACADEMY</span>?
+            PARA QUEM E O <span className="text-primary">WINTUBE ACADEMY</span>?
           </h2>
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={200}>
           <p className="text-base md:text-lg lg:text-xl text-center text-muted-foreground mb-8 md:mb-12 lg:mb-16 max-w-4xl mx-auto leading-relaxed">
-            O CineTube.IA Academy e pra quem quer viver o lado lucrativo do YouTube — sem precisar ser influencer,
+            O Wintube Academy e pra quem quer viver o lado lucrativo do YouTube — sem precisar ser influencer,
             aparecer na camera ou gastar meses aprendendo edicao.
           </p>
         </ScrollReveal>

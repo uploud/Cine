@@ -1,7 +1,7 @@
 export function Marquee() {
   const items = [
     "Escolha seu filme ou série e a IA gera o seu vídeo completo.",
-    "CINETUBE.IA",
+    "WINTUBE",
     "MONETIZE SEU CANAL",
   ]
 

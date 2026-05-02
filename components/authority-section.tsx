@@ -10,8 +10,8 @@ export function AuthoritySection() {
       <div className="relative max-w-5xl mx-auto">
         <div className="flex justify-center mb-8 md:mb-12">
           <Image
-            src="/logo-cinetube.png"
-            alt="CineTube.IA"
+            src="/logo.png"
+            alt="Wintube"
             width={220}
             height={60}
             className="w-40 h-auto md:w-56 object-contain"
@@ -30,7 +30,7 @@ export function AuthoritySection() {
             className="rounded-lg md:rounded-xl shadow-xl w-full mb-12 md:mb-16 lg:mb-24"
           />
           <p className="text-base md:text-lg lg:text-xl text-primary font-bold leading-relaxed text-center">
-            ✨ O CineTube.IA foi criado para simplificar todo o processo. ⚡ Voce nao precisa aparecer em frente as cameras, nao precisa implorar por inscritos, e consegue escalar seu canal de filmes e series de forma rapida, facil e segura.
+            ✨ O Wintube foi criado para simplificar todo o processo. ⚡ Voce nao precisa aparecer em frente as cameras, nao precisa implorar por inscritos, e consegue escalar seu canal de filmes e series de forma rapida, facil e segura.
           </p>
           <div className="flex flex-col gap-3 md:gap-6 lg:gap-8"></div>
           <p className="text-base md:text-lg lg:text-xl text-foreground mt-4 md:mt-8 lg:mt-10 leading-relaxed text-center">

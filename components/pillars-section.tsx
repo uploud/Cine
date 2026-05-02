@@ -163,7 +163,7 @@ export function PillarsSection() {
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <p className="text-xs sm:text-sm md:text-base text-primary font-semibold uppercase tracking-widest mb-2">
-            Como usar o CineTube
+            Como usar o Wintube
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight mb-3 sm:mb-4">
             Veja Como é Fácil Usar<br />

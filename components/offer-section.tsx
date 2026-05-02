@@ -31,8 +31,8 @@ export function OfferSection() {
               Acesso ao APP enviado por e-mail imediatamente após a compra.
             </p>
             <img
-              src="/logo-cinetube.png"
-              alt="CineTube.IA Logo"
+              src="/logo.png"
+              alt="Wintube Logo"
               className="mx-auto mb-3 md:mb-6 w-32 sm:w-40 md:w-48 lg:w-52 h-auto object-contain"
             />
           </div>
@@ -46,7 +46,7 @@ export function OfferSection() {
               <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-white/5">
                 <span className="text-[rgba(30,255,0,1)] mt-0.5">📱</span>
                 <div>
-                  <span className="font-bold text-[rgba(30,255,0,1)]">App CineTube.IA</span>
+                  <span className="font-bold text-[rgba(30,255,0,1)]">App Wintube</span>
                   <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p>
                 </div>
               </li>
@@ -60,7 +60,7 @@ export function OfferSection() {
               <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-white/5">
                 <span className="text-[rgba(30,255,0,1)] mt-0.5">🎓</span>
                 <div>
-                  <span className="font-bold text-foreground">Acesso ao Treinamento Cine Tube Academy</span>
+                  <span className="font-bold text-foreground">Acesso ao Treinamento Wintube Academy</span>
                   <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Passo a passo pra montar seu canal e começar a lucrar.</p>
                 </div>
               </li>

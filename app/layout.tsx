@@ -11,12 +11,12 @@ import { Dancing_Script } from "next/font/google"
 const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-cursive" })
 
 export const metadata: Metadata = {
-  title: "CineTube.IA - Crie Canais Lucrativos no YouTube",
+  title: "Wintube - Crie Canais Lucrativos no YouTube",
   description:
     "O primeiro aplicativo de I.A. que transforma qualquer pessoa em dono de canais lucrativos no YouTube postando vídeos de filmes e séries",
   generator: "v0.app",
   icons: {
-    icon: "/favicon.png",
+    icon: "/logo.png",
   },
 }
 

@@ -18,8 +18,8 @@ export function Header() {
         {/* Logo centralizada perfeitamente */}
         <Link href="/" className="inline-block">
           <Image 
-            src="/logo-cinetube.png" 
-            alt="Cinetube.IA" 
+            src="/logo.png" 
+            alt="Wintube" 
             width={180} 
             height={50} 
             className="h-10 sm:h-12 w-auto object-contain"
