@@ -442,55 +442,7 @@ export function PillarsSection() {
           </div>
         )}
 
-        {/* Result Highlight */}
-        <div className="mt-12 sm:mt-16 md:mt-24 max-w-4xl mx-auto">
-          <ScrollReveal animation="fade-up" duration={700}>
-            <div className="text-center mb-8 sm:mb-12">
-              <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight uppercase tracking-tight">
-                SEUS VÍDEOS IRÃO FICAR <span className="text-primary">DESSE MESMO FORMATO</span>, <br className="hidden sm:block" />
-                APENAS COM 1 APP E UM CLICK: <span className="text-primary">ASSIM</span>
-              </h3>
-            </div>
 
-            <div className="max-w-3xl mx-auto space-y-6 md:space-y-10">
-              {/* Vídeo 1: Filme/Série */}
-              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/20">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/lcJ8BVEo15U"
-                  title="YouTube video player 1"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              {/* Vídeo 2: Desenho/Animação */}
-              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/20">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/MAZ0mWdoUYI"
-                  title="YouTube video player 2"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              {/* Vídeo 3: Anime */}
-              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/20">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/ANnHwcWenR8"
-                  title="YouTube video player 3"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
       </div>
     </section>
   )
