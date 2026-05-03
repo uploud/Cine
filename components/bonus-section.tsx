@@ -1,23 +1,10 @@
 "use client"
 
 import type React from "react"
-import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { CheckCircle2, XCircle, ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
-const bonuses = [
-  "/images/bonus1.png",
-  "/images/bonus2.png",
-  "/images/bonus3.png",
-  "/images/bonus4.png",
-]
-
 export function BonusSection() {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
-
   const scrollToOffer = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     const offerSection = document.getElementById("offer-section")
@@ -26,106 +13,94 @@ export function BonusSection() {
     }
   }
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current
-    if (!scrollContainer) return
+  const isFor = [
+    "Criadores que querem crescer no YouTube sem aparecer na câmera.",
+    "Pessoas cansadas de perder horas editando vídeos manualmente.",
+    "Quem quer transformar filmes, séries e animes em canais lucrativos usando IA.",
+    "Criadores que querem postar vídeos todos os dias no piloto automático.",
+    "Quem quer monetizar canais dark sem depender de editor, roteirista ou equipe.",
+    "Pessoas que querem escalar canais com vídeos únicos e mais seguros contra bloqueios.",
+  ]
 
-    let scrollAmount = 0
-    const scrollSpeed = 0.5 // pixels per frame
-
-    const autoScroll = () => {
-      if (!scrollContainer) return
-
-      scrollAmount += scrollSpeed
-      scrollContainer.scrollLeft = scrollAmount
-
-      // Reset when reaching the end
-      if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-        scrollAmount = 0
-      }
-
-      requestAnimationFrame(autoScroll)
-    }
-
-    const animationId = requestAnimationFrame(autoScroll)
-
-    return () => cancelAnimationFrame(animationId)
-  }, [])
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current
-    if (!scrollContainer) return
-
-    const updateScrollButtons = () => {
-      setCanScrollLeft(scrollContainer.scrollLeft > 0)
-      setCanScrollRight(scrollContainer.scrollLeft < scrollContainer.scrollWidth - scrollContainer.clientWidth - 10)
-    }
-
-    scrollContainer.addEventListener("scroll", updateScrollButtons)
-    updateScrollButtons()
-
-    return () => scrollContainer.removeEventListener("scroll", updateScrollButtons)
-  }, [])
+  const isNotFor = [
+    "Quem prefere continuar editando vídeo por vídeo manualmente.",
+    "Pessoas que acham que vão ganhar dinheiro sem postar conteúdo.",
+    "Quem quer resultados rápidos sem aprender o método.",
+    "Criadores acomodados que continuam usando conteúdo genérico igual todo mundo.",
+    "Pessoas que não querem aproveitar IA para crescer mais rápido no YouTube.",
+    "Quem prefere perder tempo tentando fazer tudo sozinho ao invés de automatizar.",
+  ]
 
   return (
-    <section className="py-8 sm:py-10 md:py-16 px-3 sm:px-4 bg-card overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 px-4 bg-background overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
-          <div className="text-center mb-4 sm:mb-6 md:mb-10">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-[family-name:var(--font-display)] font-bold mb-4 max-w-3xl mx-auto leading-tight px-2 text-primary">
-              + 4 BONUS EXCLUSIVOS COMPRANDO <span className="text-primary">SOMENTE HOJE:</span>
+          <div className="text-center mb-6 sm:mb-8 md:mb-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-display)] font-black mb-3 leading-tight uppercase tracking-tighter">
+              A <span className="text-primary underline underline-offset-4 decoration-2">WinTube</span> Serve Para Você?
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto relative group">
-          {/* Carousel Container */}
-          <div
-            ref={scrollRef}
-            className="flex overflow-x-hidden gap-2 sm:gap-4 md:gap-6 pb-4 px-2 sm:px-4 md:px-8"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {bonuses.map((src, index) => (
-              <div key={index} className="flex-shrink-0 w-[75%] sm:w-[70%] md:w-[45%]">
-                <div className="transition-transform duration-300 hover:scale-[1.02]">
-                  <Image
-                    src={src || "/placeholder.svg"}
-                    alt={`Bonus Exclusivo ${(index % bonuses.length) + 1}`}
-                    width={800}
-                    height={400}
-                    className="rounded-md md:rounded-lg shadow-xl w-full h-auto border border-transparent hover:border-primary/20 transition-all duration-300"
-                  />
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+          {/* Card: Para Quem É */}
+          <ScrollReveal animation="fade-up" delay={200}>
+            <div className="bg-[#f0fdf4] border border-green-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-green-300">
+              <div className="text-center mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-green-700 uppercase tracking-tight">
+                  PARA QUEM É?
+                </h3>
               </div>
-            ))}
-            {/* Duplicate set for auto-scroll loop but without animations to avoid clutter */}
-            {bonuses.map((src, index) => (
-              <div
-                key={`loop-${index}`}
-                className="flex-shrink-0 w-[75%] sm:w-[70%] md:w-[45%]"
-              >
-                <div className="transition-transform duration-300 hover:scale-[1.02]">
-                  <Image
-                    src={src || "/placeholder.svg"}
-                    alt={`Bonus Exclusivo ${(index % bonuses.length) + 1}`}
-                    width={800}
-                    height={400}
-                    className="rounded-md md:rounded-lg shadow-xl w-full h-auto border border-transparent hover:border-primary/20 transition-all duration-300"
-                  />
-                </div>
+              <ul className="space-y-3 sm:space-y-4">
+                {isFor.map((point, index) => (
+                  <li key={index} className="flex gap-3 items-start group">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <p className="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">
+                      {point}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
+
+          {/* Card: Para Quem Não É */}
+          <ScrollReveal animation="fade-up" delay={400}>
+            <div className="bg-[#fef2f2] border border-red-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-red-300">
+              <div className="text-center mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-red-700 uppercase tracking-tight">
+                  PARA QUEM <span className="underline decoration-red-400">NÃO É?</span>
+                </h3>
               </div>
-            ))}
-          </div>
+              <ul className="space-y-3 sm:space-y-4">
+                {isNotFor.map((point, index) => (
+                  <li key={index} className="flex gap-3 items-start group">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <p className="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">
+                      {point}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
         </div>
 
-        <div className="text-center mt-6 sm:mt-8 md:mt-12">
-          <a
-            href="#offer-section"
-            onClick={scrollToOffer}
-            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-white rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary"
-          >
-            QUERO GARANTIR MEUS BONUS AGORA
-          </a>
+        <div className="text-center">
+          <ScrollReveal animation="zoom-in" delay={600}>
+            <a
+              href="#offer-section"
+              onClick={scrollToOffer}
+              className="group inline-flex items-center gap-2 sm:gap-3 bg-primary text-white font-black text-xs sm:text-sm md:text-base lg:text-xl px-6 py-4 sm:px-8 sm:py-5 rounded-full shadow-[0_5px_15px_rgba(0,163,255,0.2)] hover:shadow-[0_10px_25px_rgba(0,163,255,0.4)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter"
+            >
+              <span>QUERO TER ACESSO AO APLICATIVO</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1" />
+            </a>
+          </ScrollReveal>
         </div>
       </div>
     </section>

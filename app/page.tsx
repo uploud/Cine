@@ -18,11 +18,6 @@ export default function Home() {
         {/* Hero não precisa de animação de entrada — já está visível */}
         <HeroSection />
 
-
-        <ScrollReveal animation="fade-up" delay={0} duration={700}>
-          <CommunitySection />
-        </ScrollReveal>
-
         <ScrollReveal animation="fade-in" delay={0} duration={500}>
           <Marquee />
         </ScrollReveal>
@@ -47,6 +42,10 @@ export default function Home() {
           <div id="offer-section">
             <OfferSection />
           </div>
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-up" delay={0} duration={700}>
+          <CommunitySection />
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={0} duration={700}>
