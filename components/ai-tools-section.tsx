@@ -16,25 +16,21 @@ export function AiToolsSection() {
       video: "https://i.imgur.com/7tHXGxQ.mp4",
     },
     {
-      icon: null,
-      title: null,
-      description: null,
       image: "/anti-direitos-autorais.png",
+      alt: "Anti-Direitos Autorais",
     },
     {
-      icon: null,
-      title: null,
-      description: null,
       image: "/montagem-cinematografica.png",
+      alt: "Montagem Cinematográfica",
     },
   ]
 
   return (
     <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-muted overflow-hidden">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12">
-        <div className="mb-8 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-5">
-            <span className="w-6 sm:w-8 h-px bg-primary/10" />
+        <div className="mb-8 sm:mb-12 md:mb-16 text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-5">
+            <span className="w-6 sm:w-8 h-px bg-primary/20" />
             <span className="font-mono text-[10px] sm:text-xs tracking-widest text-[#22c55e] uppercase">Ferramentas de IA</span>
           </div>
           <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight uppercase">
@@ -42,38 +38,31 @@ export function AiToolsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 120} duration={600}>
-              {feature.image ? (
-                /* Card com imagem (Anti-Direitos Autorais) */
-                <div className="bg-background border border-primary/20 h-full rounded-lg sm:rounded-xl overflow-hidden transition-all hover:border-primary/20 hover:-translate-y-1 group relative">
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <Image
-                    src={feature.image}
-                    alt="Anti-Direitos Autorais"
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ) : (
-                /* Cards normais com ícone + texto */
-                <div className="bg-background border border-primary/20 h-full rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden transition-all hover:border-primary/20 hover:-translate-y-1 group">
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
-                    <span dangerouslySetInnerHTML={{ __html: feature.icon! }} />
-                  </div>
-                  <h3 className="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-light leading-relaxed">
-                    {feature.description}
-                  </p>
-                  {feature.video && (
-                    <div className="mt-4 sm:mt-6">
+              <div className="bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                {feature.title && (
+                  <>
+                    <div className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4 sm:mb-6">
+                      <span dangerouslySetInnerHTML={{ __html: feature.icon! }} />
+                    </div>
+                    <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed mb-6">
+                      {feature.description}
+                    </p>
+                  </>
+                )}
+
+                <div className="mt-auto">
+                  <div className="relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center">
+                    {feature.video ? (
                       <video
-                        className="w-full rounded-lg border border-primary/20 bg-background"
+                        className="w-full h-full object-contain"
                         autoPlay
                         muted
                         loop
@@ -81,24 +70,31 @@ export function AiToolsSection() {
                       >
                         <source src={feature.video} type="video/mp4" />
                       </video>
-                    </div>
-                  )}
+                    ) : (
+                      <Image
+                        src={feature.image!}
+                        alt={feature.alt!}
+                        fill
+                        className="object-contain p-2"
+                      />
+                    )}
+                  </div>
                 </div>
-              )}
+              </div>
             </ScrollReveal>
           ))}
         </div>
 
-        <div className="mt-3 sm:mt-4 md:mt-6">
+        <div className="mt-4 md:mt-6">
           <ScrollReveal animation="fade-up" delay={480} duration={600}>
-            <div className="bg-background border border-primary/20 rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 transition-all hover:border-primary/20 group">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
+            <div className="bg-background border border-primary/20 rounded-2xl p-5 sm:p-6 md:p-8 transition-all hover:border-primary/40 group">
+              <div className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4">
                 &#128421;
               </div>
-              <h3 className="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3">
+              <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold mb-2">
                 Area de Membros Completa
               </h3>
-              <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+              <p className="text-sm text-muted-foreground font-light leading-relaxed">
                 Acesse todos os seus projetos, historico de edicoes, templates e treinamentos em um so lugar. Interface limpa e intuitiva.
               </p>
             </div>
