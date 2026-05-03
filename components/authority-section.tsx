@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function AuthoritySection() {
   return (
-    <section className="relative py-8 md:py-16 lg:py-20 px-3 md:px-6 lg:px-8 bg-[hsl(220,20%,5%)] overflow-hidden">
+    <section className="relative py-8 md:py-16 lg:py-20 px-3 md:px-6 lg:px-8 bg-background overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <Image src="/images/design-mode/pRHrC4W.png" alt="Background" fill className="object-cover" />
       </div>

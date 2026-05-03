@@ -82,7 +82,7 @@ export function VSLPlayer({ videoUrl }: { videoUrl: string }) {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto mb-4 sm:mb-6 md:mb-10 lg:mb-12 px-2 sm:px-0">
-      <div className="relative w-full bg-black rounded-lg overflow-hidden shadow-2xl aspect-video">
+      <div className="relative w-full bg-background rounded-lg overflow-hidden shadow-2xl aspect-video">
         <iframe
           ref={iframeRef}
           className="w-full h-full absolute inset-0"
@@ -95,14 +95,14 @@ export function VSLPlayer({ videoUrl }: { videoUrl: string }) {
         {/* Unmute Prompt */}
         {showUnmutePrompt && (
           <div
-            className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer z-10"
+            className="absolute inset-0 flex items-center justify-center bg-background/40 cursor-pointer z-10"
             onClick={handleUnmute}
           >
             <div className="flex flex-col items-center gap-2 sm:gap-3 animate-pulse">
               <div className="bg-primary rounded-full p-3 sm:p-4 shadow-lg">
                 {isMuted ? <VolumeX className="w-6 h-6 sm:w-8 sm:h-8 text-black" /> : <Volume2 className="w-6 h-6 sm:w-8 sm:h-8 text-black" />}
               </div>
-              <p className="text-white text-sm sm:text-lg md:text-xl font-bold px-3 sm:px-4 py-1.5 sm:py-2 bg-black/70 rounded-lg">
+              <p className="text-foreground text-sm sm:text-lg md:text-xl font-bold px-3 sm:px-4 py-1.5 sm:py-2 bg-background/70 rounded-lg">
                 Clique para ouvir
               </p>
             </div>

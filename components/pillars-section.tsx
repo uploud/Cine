@@ -59,7 +59,7 @@ function CardConfetti({ active }: { active: boolean }) {
     left: Math.random() * 100,
     delay: Math.random() * 0.3,
     duration: 1 + Math.random() * 0.8,
-    color: ["#FFD700", "#ef4444", "#22c55e", "#3b82f6", "#f97316"][Math.floor(Math.random() * 5)],
+    color: ["#00A3FF", "#ef4444", "#00A3FF", "#3b82f6", "#f97316"][Math.floor(Math.random() * 5)],
   }))
 
   return (
@@ -157,7 +157,7 @@ export function PillarsSection() {
     <section
       ref={sectionRef}
       id="como-funciona"
-      className="py-12 sm:py-16 md:py-24 lg:py-32 px-3 sm:px-4 md:px-8 lg:px-12 bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f] relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 lg:py-32 px-3 sm:px-4 md:px-8 lg:px-12 bg-gradient-to-b from-background to-muted relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -194,10 +194,10 @@ export function PillarsSection() {
                   className={`
                     relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
                     ${isActive
-                      ? "bg-gradient-to-b from-[#1a2a1a] to-[#0f1a0f] border-2 border-[#22c55e]/50 shadow-lg shadow-[#22c55e]/10 scale-[1.02] sm:scale-105 z-10"
+                      ? "bg-gradient-to-b from-background to-muted border-2 border-[#00A3FF]/50 shadow-lg shadow-[#00A3FF]/10 scale-[1.02] sm:scale-105 z-10"
                       : isDone
-                        ? "bg-[#111] border border-[#22c55e]/30"
-                        : "bg-[#0d0d0d] border border-white/5"
+                        ? "bg-muted border border-[#00A3FF]/30"
+                        : "bg-background border border-border"
                     }
                   `}
                 >
@@ -210,8 +210,8 @@ export function PillarsSection() {
                       absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] sm:text-[10px] font-bold tracking-wider
                       flex items-center gap-1.5
                       ${step.badgeType === "ai"
-                        ? "bg-[#ef4444] text-white"
-                        : "bg-[#1a1a1a] border border-white/20 text-white"
+                        ? "bg-[#ef4444] text-foreground"
+                        : "bg-background border border-border text-foreground"
                       }
                     `}
                   >
@@ -224,9 +224,9 @@ export function PillarsSection() {
                     className={`
                       w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-3 sm:mb-3 md:mb-4 rounded-xl flex items-center justify-center transition-all duration-300
                       ${isActive
-                        ? "bg-[#22c55e]/20 text-[#22c55e]"
+                        ? "bg-[#00A3FF]/20 text-[#00A3FF]"
                         : isDone
-                          ? "bg-[#22c55e]/10 text-[#22c55e]"
+                          ? "bg-[#00A3FF]/10 text-[#00A3FF]"
                           : "bg-white/5 text-muted-foreground"
                       }
                     `}
@@ -238,7 +238,7 @@ export function PillarsSection() {
                   <h3
                     className={`
                       font-[family-name:var(--font-display)] text-sm sm:text-xs md:text-sm lg:text-base font-bold text-center mb-2 sm:mb-2 transition-colors leading-tight
-                      ${isActive ? "text-[#22c55e]" : isDone ? "text-[#22c55e]" : "text-[#22c55e]"}
+                      ${isActive ? "text-[#00A3FF]" : isDone ? "text-[#00A3FF]" : "text-[#00A3FF]"}
                     `}
                   >
                     {step.title}
@@ -250,7 +250,7 @@ export function PillarsSection() {
                       {step.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-1.5 sm:px-2 py-0.5 bg-white/10 rounded text-[8px] sm:text-[10px] text-white/70"
+                          className="px-1.5 sm:px-2 py-0.5 bg-white/10 rounded text-[8px] sm:text-[10px] text-foreground/70"
                         >
                           {tag}
                         </span>
@@ -267,11 +267,11 @@ export function PillarsSection() {
                     <div className="space-y-1 sm:space-y-2 mt-auto">
                       {/* Animação Visual Específica para o Passo 1 (Escolha) */}
                       {step.id === 1 && (
-                        <div className="mb-3 relative h-16 w-full bg-[#050505] rounded-md border border-white/5 flex flex-col items-center justify-center overflow-hidden">
-                          <div className="absolute top-1 left-2 text-[5px] text-white/20 uppercase font-mono tracking-widest">Escolha do Usuário</div>
+                        <div className="mb-3 relative h-16 w-full bg-background rounded-md border border-border flex flex-col items-center justify-center overflow-hidden">
+                          <div className="absolute top-1 left-2 text-[5px] text-foreground/20 uppercase font-mono tracking-widest">Escolha do Usuário</div>
 
                           {/* Simulação de Escolha de Filme */}
-                          <div className="w-[90%] h-6 bg-white/5 rounded-md flex items-center px-2 mb-1.5 border border-white/10 relative overflow-hidden">
+                          <div className="w-[90%] h-6 bg-white/5 rounded-md flex items-center px-2 mb-1.5 border border-border relative overflow-hidden">
                             <div className="absolute inset-0 bg-primary/5 opacity-0" style={{
                               animation: 'selection-blink 3s infinite'
                             }} />
@@ -288,7 +288,7 @@ export function PillarsSection() {
                           <div className="flex items-center gap-1.5" style={{
                             animation: 'fade-in-out 3s infinite'
                           }}>
-                            <span className="text-[7px] text-white/60 font-mono uppercase tracking-tighter">Conteúdo selecionado com sucesso</span>
+                            <span className="text-[7px] text-foreground/60 font-mono uppercase tracking-tighter">Conteúdo selecionado com sucesso</span>
                           </div>
 
                           <style dangerouslySetInnerHTML={{
@@ -313,13 +313,13 @@ export function PillarsSection() {
                       )}
                       {/* Animação Visual Específica para o Passo 2 (Roteiro) */}
                       {step.id === 2 && (
-                        <div className="mb-3 relative h-16 w-full bg-[#050505] rounded-md border border-white/5 flex flex-col items-center justify-center overflow-hidden">
-                          <div className="absolute top-1 left-2 text-[5px] text-white/20 uppercase font-mono tracking-widest">Processando IA</div>
+                        <div className="mb-3 relative h-16 w-full bg-background rounded-md border border-border flex flex-col items-center justify-center overflow-hidden">
+                          <div className="absolute top-1 left-2 text-[5px] text-foreground/20 uppercase font-mono tracking-widest">Processando IA</div>
 
                           {/* Modelos de IA */}
                           <div className="flex gap-1 mb-1.5">
                             {['Claude 3.5', 'GPT-4o', 'Gemini Ultra'].map((model, i) => (
-                              <div key={model} className="px-1.5 py-1 rounded bg-white/5 border border-white/10 text-[6px] text-white/60 font-mono flex items-center gap-1" style={{
+                              <div key={model} className="px-1.5 py-1 rounded bg-white/5 border border-border text-[6px] text-foreground/60 font-mono flex items-center gap-1" style={{
                                 animation: `model-pulse 1.33s ease-in-out infinite ${i * 0.44}s`
                               }}>
                                 <Sparkles className="w-1.5 h-1.5" />
@@ -352,8 +352,8 @@ export function PillarsSection() {
 
                       {/* Animação Visual Específica para o Passo 3 (Cortes) */}
                       {step.id === 3 && (
-                        <div className="mb-3 relative h-16 w-full bg-[#050505] rounded-md border border-white/5 flex flex-col items-center justify-center overflow-hidden">
-                          <div className="absolute top-1 left-2 text-[5px] text-white/20 uppercase font-mono tracking-widest">Renderizando IA</div>
+                        <div className="mb-3 relative h-16 w-full bg-background rounded-md border border-border flex flex-col items-center justify-center overflow-hidden">
+                          <div className="absolute top-1 left-2 text-[5px] text-foreground/20 uppercase font-mono tracking-widest">Renderizando IA</div>
 
                           {/* Timeline de Edição Simulação */}
                           <div className="w-[90%] h-8 relative flex flex-col gap-1">
@@ -397,16 +397,16 @@ export function PillarsSection() {
                       )}
 
                       <div className="flex items-center justify-between text-[8px] sm:text-[10px]">
-                        <span className={`font-mono tracking-wider hidden sm:inline transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#1eff00]"}`}>
+                        <span className={`font-mono tracking-wider hidden sm:inline transition-colors duration-300 ${progress >= 100 ? "text-[#00A3FF]" : "text-[#1eff00]"}`}>
                           {step.id === 1 ? "ESCOLHANDO FILME" : step.id === 2 ? "CRIANDO ROTEIRO" : step.id === 3 ? "FAZENDO CORTES" : step.id === 4 ? "PRONTO PARA POSTAR" : "PROCESSANDO"}
                         </span>
-                        <span className={`font-mono sm:hidden transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#1eff00]"}`}>...</span>
-                        <span className={`font-mono transition-colors duration-300 ${progress >= 100 ? "text-[#22c55e]" : "text-[#1eff00]"}`}>{Math.round(progress)}%</span>
+                        <span className={`font-mono sm:hidden transition-colors duration-300 ${progress >= 100 ? "text-[#00A3FF]" : "text-[#1eff00]"}`}>...</span>
+                        <span className={`font-mono transition-colors duration-300 ${progress >= 100 ? "text-[#00A3FF]" : "text-[#1eff00]"}`}>{Math.round(progress)}%</span>
                       </div>
 
                       <div className="h-1 bg-white/10 rounded-full overflow-hidden">
                         <div
-                          className={`h-full transition-all duration-75 ${progress >= 100 ? "bg-[#22c55e]" : "bg-[#ef4444]"}`}
+                          className={`h-full transition-all duration-75 ${progress >= 100 ? "bg-[#00A3FF]" : "bg-[#ef4444]"}`}
                           style={{ width: `${progress}%` }}
                         />
                       </div>
@@ -417,8 +417,8 @@ export function PillarsSection() {
                         className={`
                           w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-all duration-300
                           ${isDone
-                            ? "bg-[#22c55e] text-white"
-                            : "bg-white/5 border border-white/10"
+                            ? "bg-[#00A3FF] text-foreground"
+                            : "bg-white/5 border border-border"
                           }
                         `}
                       >
@@ -435,9 +435,9 @@ export function PillarsSection() {
         {/* Complete Message */}
         {isComplete && (
           <div className="text-center mt-6 sm:mt-8 md:mt-12 animate-fade-in mb-8">
-            <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-full px-4 sm:px-6 py-2 sm:py-3">
-              <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#22c55e]" />
-              <span className="text-[#22c55e] font-bold text-xs sm:text-sm md:text-base">Pronto para publicar e monetizar!</span>
+            <div className="inline-flex items-center gap-2 bg-[#00A3FF]/10 border border-[#00A3FF]/30 rounded-full px-4 sm:px-6 py-2 sm:py-3">
+              <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A3FF]" />
+              <span className="text-[#00A3FF] font-bold text-xs sm:text-sm md:text-base">Pronto para publicar e monetizar!</span>
             </div>
           </div>
         )}

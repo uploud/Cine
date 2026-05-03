@@ -13,7 +13,7 @@ import { CommunitySection } from "@/components/community-section"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#080808] text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <main>
         {/* Hero não precisa de animação de entrada — já está visível */}
         <HeroSection />

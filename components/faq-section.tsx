@@ -53,7 +53,7 @@ export function FaqSection() {
   }
 
   return (
-    <section id="faq" className="py-8 sm:py-10 md:py-12 px-3 sm:px-4 bg-[hsl(220,20%,5%)] overflow-hidden">
+    <section id="faq" className="py-8 sm:py-10 md:py-12 px-3 sm:px-4 bg-background overflow-hidden">
       <div className="max-w-3xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
@@ -65,10 +65,10 @@ export function FaqSection() {
         <div className="flex flex-col gap-2 sm:gap-3">
           {faqs.map((faq, index) => (
             <ScrollReveal key={index} animation="fade-up" delay={index * 80} duration={500}>
-              <details className="bg-[hsl(220,20%,10%)]/50 border border-border rounded-lg p-3 sm:p-4 group">
+              <details className="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group">
                 <summary className="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2">
                   <span className="flex-1">{faq.question}</span>
-                  <span className="shrink-0 group-open:rotate-180 transition-transform text-[rgba(30,255,0,1)]">&#9660;</span>
+                  <span className="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">&#9660;</span>
                 </summary>
                 <p className="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">{faq.answer}</p>
               </details>
@@ -80,7 +80,7 @@ export function FaqSection() {
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-yellow-pulse bg-[rgba(30,255,0,1)] text-center leading-tight"
+            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary text-center leading-tight"
           >
             COMECAR AGORA E MUDAR MINHA VIDA
           </a>

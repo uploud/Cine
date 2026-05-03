@@ -14,8 +14,8 @@ export function FinalCtaSection() {
   }
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-[#080808] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(255,215,0,0.1),transparent_70%),radial-gradient(ellipse_40%_30%_at_20%_20%,rgba(30,255,0,0.05),transparent)]" />
+    <section className="py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(0,163,255,),transparent_70%),radial-gradient(ellipse_40%_30%_at_20%_20%,rgba(30,255,0,0.05),transparent)]" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4 sm:mb-6 px-2">
@@ -29,7 +29,7 @@ export function FinalCtaSection() {
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center gap-2 sm:gap-3 bg-primary text-primary-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-wider uppercase px-6 py-4 sm:px-8 sm:py-5 md:px-12 md:py-6 lg:px-16 rounded hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(255,215,0,0.3)]"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-primary text-primary-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-wider uppercase px-6 py-4 sm:px-8 sm:py-5 md:px-12 md:py-6 lg:px-16 rounded hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(0,163,255,)]"
           >
             <Play className="w-4 h-4 sm:w-5 sm:h-5" />
             QUERO COMECAR AGORA

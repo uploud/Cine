@@ -14,7 +14,7 @@ export function StorySection() {
   }
 
   return (
-    <section className="py-12 px-4 bg-[hsl(220,20%,10%)]">
+    <section className="py-12 px-4 bg-card">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-6">
@@ -53,7 +53,7 @@ export function StorySection() {
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center px-10 py-5 text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-yellow-pulse bg-primary"
+            className="inline-flex items-center px-10 py-5 text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary"
           >
             NÃO QUERO PERDER ESSA OPORTUNIDADE
           </a>

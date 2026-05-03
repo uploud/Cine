@@ -2,7 +2,7 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function VideoShowcaseSection() {
   return (
-    <section className="py-10 md:py-16 px-3 md:px-4 bg-[hsl(220,20%,5%)] overflow-hidden">
+    <section className="py-10 md:py-16 px-3 md:px-4 bg-background overflow-hidden">
       <div className="max-w-5xl mx-auto px-2 md:px-4">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-6 md:mb-10 max-w-3xl mx-auto">

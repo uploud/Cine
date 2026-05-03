@@ -30,7 +30,7 @@ const channels = [
 
 export function ChannelsSection() {
   return (
-    <section id="exemplos" className="py-10 sm:py-12 md:py-16 lg:py-24 bg-[#0a0a0a] overflow-hidden">
+    <section id="exemplos" className="py-10 sm:py-12 md:py-16 lg:py-24 bg-background overflow-hidden">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-12 mb-6 sm:mb-8 md:mb-12">
         <div className="text-center">
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
@@ -57,14 +57,14 @@ export function ChannelsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-[#111] rounded-lg sm:rounded-xl overflow-hidden border border-white/5 group-hover:border-primary/30 transition-all group-hover:scale-[1.02]">
+                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/30 transition-all group-hover:scale-[1.02]">
                   <Image
                     src={channel.src || "/placeholder.svg"}
                     alt={`Canal ${index + 1}`}
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </a>
             </div>
@@ -80,14 +80,14 @@ export function ChannelsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-[#111] rounded-lg sm:rounded-xl overflow-hidden border border-white/5 group-hover:border-primary/30 transition-all group-hover:scale-[1.02]">
+                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/30 transition-all group-hover:scale-[1.02]">
                   <Image
                     src={channel.src || "/placeholder.svg"}
                     alt={`Canal ${index + 1}`}
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </a>
             </div>
@@ -95,8 +95,8 @@ export function ChannelsSection() {
         </div>
 
         {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
       </div>
 
     </section>

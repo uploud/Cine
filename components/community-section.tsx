@@ -41,7 +41,7 @@ export function CommunitySection() {
   }, [])
 
   return (
-    <section className="py-10 sm:py-12 md:py-16 px-3 sm:px-4 bg-[hsl(220,20%,5%)] overflow-hidden">
+    <section className="py-10 sm:py-12 md:py-16 px-3 sm:px-4 bg-background overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-display)] font-bold mb-3 sm:mb-4 max-w-3xl mx-auto px-2">

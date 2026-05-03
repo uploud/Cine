@@ -68,7 +68,7 @@ export function BonusSection() {
   }, [])
 
   return (
-    <section className="py-8 sm:py-10 md:py-16 px-3 sm:px-4 bg-[hsl(220,20%,10%)] overflow-hidden">
+    <section className="py-8 sm:py-10 md:py-16 px-3 sm:px-4 bg-card overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-4 sm:mb-6 md:mb-10">
@@ -122,7 +122,7 @@ export function BonusSection() {
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-yellow-pulse bg-[rgba(43,255,0,1)]"
+            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-[rgba(43,255,0,1)]"
           >
             QUERO GARANTIR MEUS BONUS AGORA
           </a>

@@ -13,7 +13,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/5 h-16 sm:h-20">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border h-16 sm:h-20">
       <div className="relative h-full px-4 md:px-8 lg:px-12 flex items-center justify-center">
         {/* Logo centralizada perfeitamente */}
         <Link href="/" className="inline-block">
