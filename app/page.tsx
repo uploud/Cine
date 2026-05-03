@@ -11,6 +11,8 @@ import { FaqSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { CommunitySection } from "@/components/community-section"
 
+import { VideoShowcaseSection } from "@/components/video-showcase-section"
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -28,6 +30,10 @@ export default function Home() {
 
         <ScrollReveal animation="fade-up" delay={0} duration={700}>
           <AiToolsSection />
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-up" delay={0} duration={700}>
+          <VideoShowcaseSection />
         </ScrollReveal>
 
         <ScrollReveal animation="zoom-in" delay={0} duration={700}>

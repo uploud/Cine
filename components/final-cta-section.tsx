@@ -34,14 +34,21 @@ export function FinalCtaSection() {
             <Play className="w-4 h-4 sm:w-5 sm:h-5" />
             QUERO COMECAR AGORA
           </a>
-          <div className="flex justify-center mt-6 sm:mt-8">
+          <div className="flex flex-col items-center mt-6 sm:mt-8">
             <Image 
               src="/garantia-7-dias.png" 
               alt="Garantia de 7 dias" 
               width={200} 
               height={100} 
-              className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain mb-4"
             />
+            <p className="text-muted-foreground text-xs sm:text-sm max-w-sm mx-auto leading-relaxed px-4">
+              Não se preocupe, você tem 7 dias de garantia incondicional
+              para testar à vontade e ver se realmente gosta.
+              Se por qualquer motivo você não ficar 100% satisfeito, nós
+              devolvemos o seu dinheiro. Basta solicitar o reembolso
+              de forma rápida pelo nosso suporte.
+            </p>
           </div>
         </div>
       </div>
