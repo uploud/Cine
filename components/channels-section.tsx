@@ -33,7 +33,7 @@ export function ChannelsSection() {
     <section id="exemplos" className="py-10 sm:py-12 md:py-16 lg:py-24 bg-background overflow-hidden">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-12 mb-6 sm:mb-8 md:mb-12">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
+          <div className="inline-flex items-center gap-2 bg-primary border border-primary/20 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
             <span className="font-mono text-[10px] sm:text-xs tracking-widest text-primary uppercase">Exemplos</span>
           </div>
           <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight">
@@ -57,7 +57,7 @@ export function ChannelsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/30 transition-all group-hover:scale-[1.02]">
+                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]">
                   <Image
                     src={channel.src || "/placeholder.svg"}
                     alt={`Canal ${index + 1}`}
@@ -80,7 +80,7 @@ export function ChannelsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/30 transition-all group-hover:scale-[1.02]">
+                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]">
                   <Image
                     src={channel.src || "/placeholder.svg"}
                     alt={`Canal ${index + 1}`}

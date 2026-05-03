@@ -53,7 +53,7 @@ export function TargetAudienceSection() {
         <div className="grid gap-6 md:gap-8 lg:gap-10 mb-12 md:mb-16 lg:mb-20">
           {targetPoints.map((point, index) => (
             <ScrollReveal key={index} animation="fade-up" delay={index * 100}>
-              <div className="flex gap-4 md:gap-6 items-start p-4 md:p-6 lg:p-8 rounded-lg bg-card border border-primary/20 transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_rgba(0,163,255,)] hover:-translate-y-1 group">
+              <div className="flex gap-4 md:gap-6 items-start p-4 md:p-6 lg:p-8 rounded-lg bg-card border border-primary/20 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_20px_rgba(0,163,255,)] hover:-translate-y-1 group">
                 <div className="flex-shrink-0 mt-1 transition-transform group-hover:scale-110 duration-300">
                   <CheckCircle2 className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary" />
                 </div>

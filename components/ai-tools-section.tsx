@@ -34,7 +34,7 @@ export function AiToolsSection() {
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-5">
-            <span className="w-6 sm:w-8 h-px bg-primary" />
+            <span className="w-6 sm:w-8 h-px bg-primary/10" />
             <span className="font-mono text-[10px] sm:text-xs tracking-widest text-[#22c55e] uppercase">Ferramentas de IA</span>
           </div>
           <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight uppercase">
@@ -47,7 +47,7 @@ export function AiToolsSection() {
             <ScrollReveal key={i} animation="fade-up" delay={i * 120} duration={600}>
               {feature.image ? (
                 /* Card com imagem (Anti-Direitos Autorais) */
-                <div className="bg-background border border-[rgba(0,163,255,)] h-full rounded-lg sm:rounded-xl overflow-hidden transition-all hover:border-[rgba(0,163,255,)] hover:-translate-y-1 group relative">
+                <div className="bg-background border border-primary/20 h-full rounded-lg sm:rounded-xl overflow-hidden transition-all hover:border-primary/20 hover:-translate-y-1 group relative">
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <Image
                     src={feature.image}
@@ -59,9 +59,9 @@ export function AiToolsSection() {
                 </div>
               ) : (
                 /* Cards normais com ícone + texto */
-                <div className="bg-background border border-[rgba(0,163,255,)] h-full rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden transition-all hover:border-[rgba(0,163,255,)] hover:-translate-y-1 group">
+                <div className="bg-background border border-primary/20 h-full rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden transition-all hover:border-primary/20 hover:-translate-y-1 group">
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(0,163,255,)] border border-[rgba(0,163,255,)] rounded-lg flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
                     <span dangerouslySetInnerHTML={{ __html: feature.icon! }} />
                   </div>
                   <h3 className="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3">
@@ -73,7 +73,7 @@ export function AiToolsSection() {
                   {feature.video && (
                     <div className="mt-4 sm:mt-6">
                       <video
-                        className="w-full rounded-lg border border-[rgba(0,163,255,)] bg-background"
+                        className="w-full rounded-lg border border-primary/20 bg-background"
                         autoPlay
                         muted
                         loop
@@ -91,8 +91,8 @@ export function AiToolsSection() {
 
         <div className="mt-3 sm:mt-4 md:mt-6">
           <ScrollReveal animation="fade-up" delay={480} duration={600}>
-            <div className="bg-background border border-[rgba(0,163,255,)] rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 transition-all hover:border-[rgba(0,163,255,)] group">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(0,163,255,)] border border-[rgba(0,163,255,)] rounded-lg flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
+            <div className="bg-background border border-primary/20 rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 transition-all hover:border-primary/20 group">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-6">
                 &#128421;
               </div>
               <h3 className="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3">

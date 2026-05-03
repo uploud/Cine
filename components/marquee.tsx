@@ -6,7 +6,7 @@ export function Marquee() {
   ]
 
   return (
-    <div className="bg-primary py-2.5 overflow-hidden whitespace-nowrap">
+    <div className="bg-primary/10 py-2.5 overflow-hidden whitespace-nowrap">
       <div className="flex animate-scroll">
         {[...Array(4)].map((_, i) => (
           <div key={i} className="flex">

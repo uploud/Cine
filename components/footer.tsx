@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="py-8 md:py-10 px-4 md:px-12 border-t border-[rgba(0,163,255,)] flex flex-col md:flex-row items-center justify-between gap-5">
+    <footer className="py-8 md:py-10 px-4 md:px-12 border-t border-primary/20 flex flex-col md:flex-row items-center justify-between gap-5">
       <div className="flex items-center">
         <Image 
           src="/logo.png" 

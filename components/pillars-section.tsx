@@ -272,7 +272,7 @@ export function PillarsSection() {
 
                           {/* Simulação de Escolha de Filme */}
                           <div className="w-[90%] h-6 bg-white/5 rounded-md flex items-center px-2 mb-1.5 border border-border relative overflow-hidden">
-                            <div className="absolute inset-0 bg-primary/5 opacity-0" style={{
+                            <div className="absolute inset-0 bg-primary/10 opacity-0" style={{
                               animation: 'selection-blink 3s infinite'
                             }} />
                             <div className="text-[7px] text-primary font-mono whitespace-nowrap overflow-hidden translate-y-[0.5px]" style={{
@@ -330,8 +330,8 @@ export function PillarsSection() {
 
                           {/* Simulação de Escrita */}
                           <div className="w-[85%] space-y-1">
-                            <div className="h-1 bg-primary/20 rounded-full overflow-hidden">
-                              <div className="h-full bg-primary" style={{ animation: 'typing-bar 4s infinite' }} />
+                            <div className="h-1 bg-primary/10 rounded-full overflow-hidden">
+                              <div className="h-full bg-primary/10" style={{ animation: 'typing-bar 4s infinite' }} />
                             </div>
                             <div className="h-0.5 bg-white/5 rounded-full w-[60%]" />
                           </div>
@@ -360,20 +360,20 @@ export function PillarsSection() {
                             {/* Track de Imagem */}
                             <div className="h-2 w-full bg-white/5 rounded-sm flex gap-0.5 overflow-hidden">
                               {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="h-full bg-primary/40 rounded-sm" style={{
+                                <div key={i} className="h-full bg-primary/10 rounded-sm" style={{
                                   width: `${20 + Math.random() * 20}%`,
                                   animation: `edit-glow 2s ease-in-out infinite alternate ${i * 0.5}s`
                                 }} />
                               ))}
                             </div>
                             {/* Track de Legenda */}
-                            <div className="h-1.5 w-[70%] mx-auto bg-primary/20 rounded-full overflow-hidden relative">
-                              <div className="h-full bg-primary/80" style={{ animation: 'subtitle-scroll 4s linear infinite' }} />
+                            <div className="h-1.5 w-[70%] mx-auto bg-primary/10 rounded-full overflow-hidden relative">
+                              <div className="h-full bg-primary/10" style={{ animation: 'subtitle-scroll 4s linear infinite' }} />
                             </div>
                             {/* Track de SFX */}
                             <div className="h-1 w-full bg-white/5 rounded-full flex gap-1 justify-around">
                               {[1, 2, 3, 4, 5, 6].map((i) => (
-                                <div key={i} className="w-1 h-1 bg-primary/30 rounded-full" style={{ animation: 'sfx-ping 2s infinite alternate' }} />
+                                <div key={i} className="w-1 h-1 bg-primary/10 rounded-full" style={{ animation: 'sfx-ping 2s infinite alternate' }} />
                               ))}
                             </div>
                           </div>
@@ -454,7 +454,7 @@ export function PillarsSection() {
 
             <div className="max-w-3xl mx-auto space-y-6 md:space-y-10">
               {/* Vídeo 1: Filme/Série */}
-              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/50">
+              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/20">
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
                   src="https://www.youtube.com/embed/lcJ8BVEo15U"
@@ -466,7 +466,7 @@ export function PillarsSection() {
               </div>
 
               {/* Vídeo 2: Desenho/Animação */}
-              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/50">
+              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/20">
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
                   src="https://www.youtube.com/embed/MAZ0mWdoUYI"
@@ -478,7 +478,7 @@ export function PillarsSection() {
               </div>
 
               {/* Vídeo 3: Anime */}
-              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/50">
+              <div className="relative pb-[56.25%] h-0 rounded-md md:rounded-lg overflow-hidden shadow-[0_20px_25px_-5px_hsl(var(--primary)/20%),0_10px_10px_-5px_hsl(var(--primary)/20%)] border-2 border-primary/20">
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
                   src="https://www.youtube.com/embed/ANnHwcWenR8"

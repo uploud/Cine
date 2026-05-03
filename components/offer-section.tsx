@@ -20,7 +20,7 @@ export function OfferSection() {
     <section id="offer-section" className="py-8 sm:py-10 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-background overflow-hidden">
 
       <div className="max-w-sm sm:max-w-md lg:max-w-2xl mx-auto">
-        <div className="bg-card text-foreground rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 border-2 border-primary/50 relative w-full shadow-[0_0_5px_rgba(0,163,255,0.3),0_0_15px_rgba(0,163,255,0.2)]">
+        <div className="bg-card text-foreground rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 border-2 border-primary/20 relative w-full shadow-[0_0_5px_rgba(0,163,255,0.3),0_0_15px_rgba(0,163,255,0.2)]">
 
           {/* Seção: Acesso ao APP */}
           <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
@@ -68,7 +68,7 @@ export function OfferSection() {
           </div>
 
           {/* Seção: Bônus Exclusivos */}
-          <div className="mb-4 sm:mb-5 md:mb-8 lg:mb-10 bg-muted rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-primary/30">
+          <div className="mb-4 sm:mb-5 md:mb-8 lg:mb-10 bg-muted rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-primary/20">
             <h4 className="font-[family-name:var(--font-display)] text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4 text-center">
               🎁 <span className="text-primary">Bônus Exclusivos</span>
             </h4>
@@ -123,7 +123,7 @@ export function OfferSection() {
             <a
               href={buildCheckoutURL(checkoutUrl)}
               onClick={redirectToCheckout}
-              className="block w-full py-3 sm:py-4 md:py-6 lg:py-8 text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-black rounded-md text-center hover:bg-primary/90 transition-colors bg-primary"
+              className="block w-full py-3 sm:py-4 md:py-6 lg:py-8 text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-white rounded-md text-center hover:bg-primary transition-colors bg-primary"
             >
               GARANTA SUA VAGA AGORA!
             </a>

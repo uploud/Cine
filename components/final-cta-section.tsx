@@ -29,7 +29,7 @@ export function FinalCtaSection() {
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center gap-2 sm:gap-3 bg-primary text-primary-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-wider uppercase px-6 py-4 sm:px-8 sm:py-5 md:px-12 md:py-6 lg:px-16 rounded hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(0,163,255,)]"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-primary text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-wider uppercase px-6 py-4 sm:px-8 sm:py-5 md:px-12 md:py-6 lg:px-16 rounded hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(0,163,255,0.3)]"
           >
             <Play className="w-4 h-4 sm:w-5 sm:h-5" />
             QUERO COMECAR AGORA

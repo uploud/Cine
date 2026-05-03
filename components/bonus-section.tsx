@@ -93,7 +93,7 @@ export function BonusSection() {
                     alt={`Bonus Exclusivo ${(index % bonuses.length) + 1}`}
                     width={800}
                     height={400}
-                    className="rounded-md md:rounded-lg shadow-xl w-full h-auto border border-transparent hover:border-primary/50 transition-all duration-300"
+                    className="rounded-md md:rounded-lg shadow-xl w-full h-auto border border-transparent hover:border-primary/20 transition-all duration-300"
                   />
                 </div>
               </div>
@@ -110,7 +110,7 @@ export function BonusSection() {
                     alt={`Bonus Exclusivo ${(index % bonuses.length) + 1}`}
                     width={800}
                     height={400}
-                    className="rounded-md md:rounded-lg shadow-xl w-full h-auto border border-transparent hover:border-primary/50 transition-all duration-300"
+                    className="rounded-md md:rounded-lg shadow-xl w-full h-auto border border-transparent hover:border-primary/20 transition-all duration-300"
                   />
                 </div>
               </div>
@@ -122,7 +122,7 @@ export function BonusSection() {
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-[rgba(43,255,0,1)]"
+            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-white rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary"
           >
             QUERO GARANTIR MEUS BONUS AGORA
           </a>

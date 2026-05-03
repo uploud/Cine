@@ -99,7 +99,7 @@ export function VSLPlayer({ videoUrl }: { videoUrl: string }) {
             onClick={handleUnmute}
           >
             <div className="flex flex-col items-center gap-2 sm:gap-3 animate-pulse">
-              <div className="bg-primary rounded-full p-3 sm:p-4 shadow-lg">
+              <div className="bg-primary/10 rounded-full p-3 sm:p-4 shadow-lg">
                 {isMuted ? <VolumeX className="w-6 h-6 sm:w-8 sm:h-8 text-black" /> : <Volume2 className="w-6 h-6 sm:w-8 sm:h-8 text-black" />}
               </div>
               <p className="text-foreground text-sm sm:text-lg md:text-xl font-bold px-3 sm:px-4 py-1.5 sm:py-2 bg-background/70 rounded-lg">
@@ -112,7 +112,7 @@ export function VSLPlayer({ videoUrl }: { videoUrl: string }) {
         {/* Custom Progress Bar */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gray-800 z-20">
           <div
-            className="h-full bg-primary transition-all duration-300 ease-out"
+            className="h-full bg-primary/10 transition-all duration-300 ease-out"
             style={{
               width: `${visualProgress * 100}%`,
               transitionTimingFunction: "cubic-bezier(0.2, 0.9, 0.2, 1)",
