@@ -4,11 +4,10 @@ import { useEffect, useRef } from "react"
 import Image from "next/image"
 
 const feedbacks = [
-  "/images/feedbacks/fb1.png",
-  "/images/feedbacks/fb2.jpg",
-  "/images/feedbacks/fb3.jpg",
-  "/images/feedbacks/fb4.jpg",
-  "/images/feedbacks/fb5.png",
+  "/images/results/result1.jpg",
+  "/images/results/result2.jpg",
+  "/images/results/result3.jpg",
+  "/images/results/result4.png",
 ]
 
 export function CommunitySection() {
