@@ -1,927 +1,202 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CineTube.IA - Crie Canais Lucrativos no YouTube com IA</title>
-  <meta name="description" content="O primeiro aplicativo de I.A. que transforma qualquer pessoa em dono de canais lucrativos no YouTube postando vídeos de filmes e séries." />
-  <link rel="icon" href="./images/cinetube-logo-3d.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-52SKX3W8');
-  </script>
-
-  <!-- UTMify -->
-  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck="true"
-    data-utmify-prevent-subids="true"
-    data-utmify-ignore-iframe="true"
-    data-utmify-is-cartpanda="true"
-    async defer></script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green: #16A34A;
-      --green-light: #22C55E;
-      --green-neon: #1EFF00;
-      --green-bg: #F0FDF4;
-      --gold: #EAB308;
-      --bg-white: #FFFFFF;
-      --bg-light: #F8FAFC;
-      --bg-gray: #F1F5F9;
-      --text-dark: #0F172A;
-      --text-mid: #334155;
-      --text-light: #64748B;
-      --border: #E2E8F0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
-      --radius: 16px;
-      --radius-sm: 12px;
-      --radius-full: 9999px;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text-dark);
-      background: var(--bg-white);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-    a { text-decoration: none; color: inherit; }
-    button { border: none; background: none; cursor: pointer; font-family: inherit; }
-
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-    /* ===== HEADER ===== */
-    .header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .header-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 12px 24px; max-width: 1200px; margin: 0 auto;
-    }
-    .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.03em; color: var(--text-dark); }
-    .logo span { color: var(--green); }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { font-size: 0.9rem; color: var(--text-light); font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text-dark); }
-    .header-cta {
-      background: var(--green); color: white; font-weight: 700;
-      padding: 10px 24px; border-radius: var(--radius-full);
-      font-size: 0.85rem; letter-spacing: 0.02em; transition: all 0.2s;
-      box-shadow: 0 2px 8px rgba(22,163,74,0.3);
-    }
-    .header-cta:hover { background: var(--green-light); transform: scale(1.03); }
-    .mobile-menu-btn { display: none; color: var(--text-dark); padding: 8px; }
-    .mobile-menu { display: none; }
-
-    /* ===== HERO ===== */
-    .hero {
-      background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
-      padding: 80px 0 60px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(22,163,74,0.06), transparent 70%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-    }
-    .hero-title {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 900; line-height: 1.1; letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-    .hero-title .highlight {
-      background: linear-gradient(135deg, var(--green), var(--green-neon));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-subtitle {
-      font-size: 1.1rem; color: var(--text-light); line-height: 1.7;
-      margin-bottom: 32px; max-width: 480px;
-    }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: linear-gradient(135deg, var(--green), var(--green-light));
-      color: white; font-weight: 700; font-size: 1rem;
-      padding: 16px 36px; border-radius: var(--radius-full);
-      transition: all 0.3s; box-shadow: 0 4px 14px rgba(22,163,74,0.35);
-    }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(22,163,74,0.4); }
-    .hero-cta svg { width: 20px; height: 20px; }
-    .hero-video-wrapper {
-      position: relative;
-      border-radius: 20px; overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
-      background: #000;
-    }
-    .hero-video-wrapper iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
-
-    /* ===== VALUE PROP ===== */
-    .value-prop {
-      padding: 80px 0; background: var(--bg-white);
-      text-align: center;
-    }
-    .value-prop h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-      font-weight: 900; line-height: 1.15; letter-spacing: -0.02em;
-      max-width: 800px; margin: 0 auto 16px;
-    }
-    .value-prop h2 .highlight {
-      background: linear-gradient(135deg, var(--green), var(--green-neon));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .value-prop p {
-      font-size: 1.05rem; color: var(--text-light);
-      max-width: 620px; margin: 0 auto 32px; line-height: 1.7;
-    }
-    .pills {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
-    }
-    .pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--bg-white); border: 1px solid var(--border);
-      padding: 10px 20px; border-radius: var(--radius-full);
-      font-size: 0.9rem; font-weight: 500; color: var(--text-mid);
-      box-shadow: var(--shadow-sm); transition: all 0.2s;
-    }
-    .pill:hover { border-color: var(--green); color: var(--green); }
-    .pill-icon { font-size: 1.1rem; }
-
-    /* ===== HOW IT WORKS ===== */
-    .how-it-works {
-      padding: 80px 0; background: var(--bg-gray);
-    }
-    .section-label {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.8rem; font-weight: 600; color: var(--green);
-      text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(1.5rem, 3vw, 2.4rem);
-      font-weight: 900; line-height: 1.15; letter-spacing: -0.02em;
-      margin-bottom: 48px;
-    }
-    .section-title .highlight {
-      background: linear-gradient(135deg, var(--green), var(--green-neon));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .step-card {
-      background: var(--bg-white); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 36px 32px;
-      position: relative; transition: all 0.3s;
-      box-shadow: var(--shadow-sm);
-    }
-    .step-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(22,163,74,0.3);
-    }
-    .step-number {
-      position: absolute; top: -14px; left: 24px;
-      width: 32px; height: 32px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--green), var(--green-light));
-      color: white; font-size: 0.75rem; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 6px rgba(22,163,74,0.3);
-    }
-    .step-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      background: var(--green-bg); display: flex;
-      align-items: center; justify-content: center;
-      font-size: 1.4rem; margin-bottom: 16px; color: var(--green);
-    }
-    .step-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
-    .step-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
-
-    /* ===== VIDEO SECTION ===== */
-    .video-section {
-      padding: 80px 0; background: var(--bg-white);
-      text-align: center;
-    }
-    .video-embed {
-      max-width: 800px; margin: 0 auto;
-      border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow-lg); border: 1px solid var(--border);
-    }
-    .video-embed iframe {
-      width: 100%; aspect-ratio: 16/9; display: block; border: none;
-    }
-
-    /* ===== FEATURES GRID ===== */
-    .features {
-      padding: 80px 0; background: var(--bg-gray);
-    }
-    .features-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-    .feature-card {
-      background: var(--bg-white); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 32px 28px;
-      transition: all 0.3s; box-shadow: var(--shadow-sm);
-    }
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(22,163,74,0.25);
-    }
-    .feature-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      background: var(--green-bg); display: flex;
-      align-items: center; justify-content: center;
-      font-size: 1.3rem; margin-bottom: 16px; color: var(--green);
-    }
-    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
-    .feature-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
-
-    /* ===== DEMO 2-COLUMN ===== */
-    .demo-section {
-      padding: 80px 0; background: var(--bg-white);
-    }
-    .demo-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-    }
-    .demo-video {
-      border-radius: 20px; overflow: hidden;
-      box-shadow: var(--shadow-lg); border: 1px solid var(--border);
-    }
-    .demo-video video, .demo-video iframe {
-      width: 100%; aspect-ratio: 16/9; display: block; border: none;
-    }
-
-    /* ===== BENEFITS ===== */
-    .benefits {
-      padding: 80px 0; background: var(--bg-gray);
-      text-align: center;
-    }
-    .benefits-card {
-      max-width: 700px; margin: 0 auto;
-      background: var(--bg-white); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 48px 40px;
-      box-shadow: var(--shadow-md);
-    }
-    .check-list { list-style: none; text-align: left; }
-    .check-list li {
-      display: flex; align-items: center; gap: 14px;
-      padding: 16px 0; border-bottom: 1px solid var(--border);
-      font-size: 1rem; font-weight: 500; color: var(--text-mid);
-    }
-    .check-list li:last-child { border-bottom: none; }
-    .check-icon {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--green-bg); display: flex;
-      align-items: center; justify-content: center;
-      color: var(--green); font-size: 0.85rem; flex-shrink: 0;
-    }
-
-    /* ===== CHANNELS ===== */
-    .channels {
-      padding: 80px 0; background: var(--bg-white);
-      overflow: hidden; text-align: center;
-    }
-    .channels-scroll {
-      display: flex; gap: 20px;
-      animation: scrollChannels 30s linear infinite;
-    }
-    .channel-thumb {
-      flex-shrink: 0; width: 320px;
-      border-radius: var(--radius-sm); overflow: hidden;
-      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-      transition: all 0.3s;
-    }
-    .channel-thumb:hover { transform: scale(1.03); box-shadow: var(--shadow-lg); }
-    .channel-thumb img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
-    @keyframes scrollChannels {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* ===== BONUS ===== */
-    .bonus {
-      padding: 80px 0; background: var(--bg-gray);
-      text-align: center;
-    }
-    .bonus-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-      max-width: 900px; margin: 0 auto;
-    }
-    .bonus-card {
-      border-radius: var(--radius); overflow: hidden;
-      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-      transition: all 0.3s;
-    }
-    .bonus-card:hover { transform: scale(1.03); box-shadow: var(--shadow-lg); border-color: rgba(22,163,74,0.3); }
-    .bonus-card img { width: 100%; display: block; }
-
-    /* ===== OFFER ===== */
-    .offer {
-      padding: 80px 0; background: var(--bg-white);
-      text-align: center;
-    }
-    .offer-card {
-      max-width: 600px; margin: 0 auto;
-      background: var(--bg-white); border: 2px solid var(--green);
-      border-radius: 24px; padding: 48px 40px;
-      box-shadow: 0 0 30px rgba(22,163,74,0.12), var(--shadow-lg);
-      position: relative;
-    }
-    .offer-badge {
-      position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(135deg, var(--green), var(--green-light));
-      color: white; font-weight: 700; font-size: 0.8rem;
-      padding: 8px 24px; border-radius: var(--radius-full);
-      letter-spacing: 0.05em; text-transform: uppercase;
-      box-shadow: 0 4px 12px rgba(22,163,74,0.3);
-    }
-    .offer-logo { width: 160px; margin: 16px auto 24px; }
-    .offer-list { list-style: none; text-align: left; margin-bottom: 32px; }
-    .offer-list li {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 0; font-size: 0.95rem; color: var(--text-mid);
-      border-bottom: 1px solid var(--border);
-    }
-    .offer-list li:last-child { border-bottom: none; }
-    .offer-list .check { color: var(--green); font-weight: 700; font-size: 1.1rem; }
-    .price-old {
-      font-size: 0.95rem; color: var(--text-light);
-      text-decoration: line-through; margin-bottom: 4px;
-    }
-    .price-current {
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      font-weight: 900; color: var(--green);
-      line-height: 1; margin-bottom: 4px; letter-spacing: -0.03em;
-    }
-    .price-installment { font-size: 0.95rem; color: var(--text-light); margin-bottom: 28px; }
-    .offer-cta {
-      display: block; width: 100%;
-      background: linear-gradient(135deg, var(--green), var(--green-light));
-      color: white; font-weight: 800; font-size: 1.15rem;
-      padding: 20px; border-radius: var(--radius-sm);
-      text-align: center; transition: all 0.3s;
-      box-shadow: 0 4px 14px rgba(22,163,74,0.35);
-      cursor: pointer;
-    }
-    .offer-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(22,163,74,0.4); }
-    .trust-row {
-      display: flex; justify-content: center; gap: 32px;
-      margin-top: 24px;
-    }
-    .trust-item {
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      font-size: 0.75rem; color: var(--text-light);
-    }
-    .trust-item svg { width: 24px; height: 24px; color: var(--green); }
-    .payment-flags { max-width: 360px; margin: 20px auto 0; opacity: 0.7; }
-
-    /* ===== FAQ ===== */
-    .faq {
-      padding: 80px 0; background: var(--bg-gray);
-    }
-    .faq-list { max-width: 700px; margin: 0 auto; }
-    .faq-item {
-      background: var(--bg-white); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); margin-bottom: 12px;
-      overflow: hidden; box-shadow: var(--shadow-sm);
-    }
-    .faq-item summary {
-      padding: 20px 24px; font-weight: 600; font-size: 1rem;
-      cursor: pointer; list-style: none;
-      display: flex; align-items: center; justify-content: space-between;
-      color: var(--text-dark); transition: color 0.2s;
-    }
-    .faq-item summary:hover { color: var(--green); }
-    .faq-item summary::after { content: '▼'; font-size: 0.7rem; color: var(--green); transition: transform 0.3s; }
-    .faq-item[open] summary::after { transform: rotate(180deg); }
-    .faq-item p { padding: 0 24px 20px; font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
-
-    /* ===== FINAL CTA ===== */
-    .final-cta {
-      padding: 100px 0; background: var(--bg-white);
-      text-align: center; position: relative; overflow: hidden;
-    }
-    .final-cta::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(22,163,74,0.08), transparent 70%);
-      pointer-events: none;
-    }
-    .final-cta h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 900; line-height: 1.15; letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-    .final-cta p {
-      font-size: 1.05rem; color: var(--text-light);
-      max-width: 500px; margin: 0 auto 32px; line-height: 1.7;
-    }
-    .final-cta .guarantee {
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px; margin-top: 16px; font-size: 0.9rem; color: var(--text-light);
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      padding: 32px 0; background: var(--bg-gray);
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    .footer-inner {
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .footer p { font-size: 0.8rem; color: var(--text-light); }
-
-    /* ===== WHATSAPP BTN ===== */
-    .whatsapp-btn {
-      position: fixed; bottom: 24px; right: 24px; z-index: 999;
-      width: 56px; height: 56px; border-radius: 50%;
-      background: #25D366; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 14px rgba(37,211,102,0.4);
-      transition: all 0.3s;
-    }
-    .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
-    .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
-
-    /* ===== ANIMATIONS ===== */
-    .fade-up {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .hero { padding: 48px 0 40px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 36px; text-align: center; }
-      .hero-subtitle { margin: 0 auto 24px; }
-      .hero-text { order: 1; }
-      .hero-video-wrapper { order: 2; }
-      .nav-links { display: none; }
-      .mobile-menu-btn { display: block; }
-      .mobile-menu.open { display: block; }
-      .mobile-menu {
-        position: absolute; top: 100%; left: 0; right: 0;
-        background: white; border-bottom: 1px solid var(--border);
-        padding: 16px 24px;
-      }
-      .mobile-menu a {
-        display: block; padding: 12px 0; font-size: 0.95rem;
-        color: var(--text-mid); border-bottom: 1px solid var(--border);
-      }
-      .steps-grid { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr; }
-      .demo-grid { grid-template-columns: 1fr; }
-      .bonus-grid { grid-template-columns: 1fr; }
-      .trust-row { gap: 16px; flex-wrap: wrap; }
-      .footer-inner { flex-direction: column; gap: 12px; }
-      .channels-scroll { gap: 12px; }
-      .channel-thumb { width: 240px; }
-      .offer-card { padding: 36px 24px; }
-      .benefits-card { padding: 32px 24px; }
-      .value-prop, .how-it-works, .video-section, .features,
-      .demo-section, .benefits, .channels, .bonus, .offer, .faq, .final-cta {
-        padding: 56px 0;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- GTM noscript -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52SKX3W8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="#" class="logo">CINETUBE<span>.IA</span></a>
-      <nav class="nav-links">
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#ferramentas">Ferramentas</a>
-        <a href="#exemplos">Exemplos</a>
-        <a href="#offer-section">Preços</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a href="#offer-section" class="header-cta">Começar Agora</a>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-      </button>
-    </div>
-    <nav class="mobile-menu" id="mobileMenu">
-      <a href="#como-funciona">Como Funciona</a>
-      <a href="#ferramentas">Ferramentas</a>
-      <a href="#exemplos">Exemplos</a>
-      <a href="#offer-section">Preços</a>
-      <a href="#faq">FAQ</a>
-      <a href="#offer-section" style="color: var(--green); font-weight: 700;">Começar Agora →</a>
-    </nav>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text fade-up">
-          <h1 class="hero-title">
-            Crie canais lucrativos no YouTube com <span class="highlight">IA.</span>
-          </h1>
-          <p class="hero-subtitle">
-            O primeiro aplicativo de I.A. que transforma qualquer pessoa em dono de canais lucrativos no YouTube, postando vídeos de filmes e séries — sem aparecer, sem editar.
-          </p>
-          <a href="#offer-section" class="hero-cta">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-            COMEÇAR AGORA
-          </a>
-        </div>
-        <div class="hero-video-wrapper fade-up" style="transition-delay: 0.2s;">
-          <iframe src="https://www.youtube.com/embed/_rT1Dnc0aq4" title="CineTube.IA Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== VALUE PROPOSITION ===== -->
-  <section class="value-prop">
-    <div class="container">
-      <div class="fade-up">
-        <h2>Editar vídeos não é difícil. Difícil é criar vídeos que <span class="highlight">monetizam em escala.</span></h2>
-        <p>Quem vence no YouTube não é quem tem mais talento. É quem produz mais conteúdo, mais rápido e com mais consistência.</p>
-        <div class="pills">
-          <div class="pill"><span class="pill-icon">⚡</span> Edição automática</div>
-          <div class="pill"><span class="pill-icon">🎭</span> Sem aparecer</div>
-          <div class="pill"><span class="pill-icon">🛡️</span> Anti-copyright</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how-it-works" id="como-funciona">
-    <div class="container">
-      <div class="fade-up" style="text-align: center;">
-        <div class="section-label">Passo a Passo</div>
-        <h2 class="section-title">Crie qualquer vídeo seguindo <span class="highlight">fluxos visuais simples</span></h2>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card fade-up">
-          <div class="step-number">01</div>
-          <div class="step-icon">🎬</div>
-          <h3>Escolha o Vídeo</h3>
-          <p>Selecione o filme, série ou conteúdo que deseja usar como base para o seu canal.</p>
-        </div>
-        <div class="step-card fade-up" style="transition-delay: 0.1s;">
-          <div class="step-number">02</div>
-          <div class="step-icon">☁️</div>
-          <h3>Upload na Plataforma</h3>
-          <p>Faça o upload do vídeo bruto direto na plataforma. A IA cuida de todo o resto.</p>
-        </div>
-        <div class="step-card fade-up" style="transition-delay: 0.2s;">
-          <div class="step-number">03</div>
-          <div class="step-icon">🤖</div>
-          <h3>IA Edita Automaticamente</h3>
-          <p>Cortes, roteiro, montagem e proteção anti-copyright. Tudo automático em minutos.</p>
-        </div>
-        <div class="step-card fade-up" style="transition-delay: 0.3s;">
-          <div class="step-number">04</div>
-          <div class="step-icon">🚀</div>
-          <h3>Baixe e Publique</h3>
-          <p>Baixe o vídeo finalizado e publique no YouTube. Pronto para monetizar.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== VIDEO TUTORIAL ===== -->
-  <section class="video-section">
-    <div class="container">
-      <div class="fade-up" style="text-align: center; margin-bottom: 40px;">
-        <div class="section-label">Veja na Prática</div>
-        <h2 class="section-title">Como usar a <span class="highlight">CineTube.IA</span></h2>
-      </div>
-      <div class="video-embed fade-up">
-        <iframe src="https://www.youtube.com/embed/rd9ff7UV9gc" title="Tutorial CineTube.IA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FEATURES ===== -->
-  <section class="features" id="ferramentas">
-    <div class="container">
-      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
-        <div class="section-label">Ferramentas de IA</div>
-        <h2 class="section-title">O que você pode criar <span class="highlight">com a CineTube.IA</span></h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card fade-up">
-          <div class="feature-icon">✂️</div>
-          <h3>Cortes Inteligentes</h3>
-          <p>A IA detecta silêncios, repetições e partes desnecessárias. Faz os cortes automaticamente.</p>
-        </div>
-        <div class="feature-card fade-up" style="transition-delay: 0.05s;">
-          <div class="feature-icon">📝</div>
-          <h3>Roteiro Automático</h3>
-          <p>Gere roteiros completos para seus vídeos otimizados para engajamento e retenção.</p>
-        </div>
-        <div class="feature-card fade-up" style="transition-delay: 0.1s;">
-          <div class="feature-icon">🛡️</div>
-          <h3>Anti-Direitos Autorais</h3>
-          <p>Sistema de proteção que processa o vídeo para evitar bloqueios e strikes no canal.</p>
-        </div>
-        <div class="feature-card fade-up" style="transition-delay: 0.15s;">
-          <div class="feature-icon">🎬</div>
-          <h3>Montagem Cinematográfica</h3>
-          <p>Ritmo, transições e pacing profissional aplicados automaticamente aos seus vídeos.</p>
-        </div>
-        <div class="feature-card fade-up" style="transition-delay: 0.2s;">
-          <div class="feature-icon">🖥️</div>
-          <h3>Área de Membros</h3>
-          <p>Acesse projetos, histórico de edições, templates e treinamentos em um só lugar.</p>
-        </div>
-        <div class="feature-card fade-up" style="transition-delay: 0.25s;">
-          <div class="feature-icon">💬</div>
-          <h3>Suporte Prioritário</h3>
-          <p>Acesso ao grupo exclusivo de alunos e suporte direto para tirar qualquer dúvida.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== DEMO / SEUS VÍDEOS ===== -->
-  <section class="demo-section">
-    <div class="container">
-      <div class="demo-grid">
-        <div class="fade-up">
-          <div class="section-label">Resultado Final</div>
-          <h2 class="section-title" style="margin-bottom: 16px;">Crie vídeos <span class="highlight">ultra profissionais</span> com poucos cliques</h2>
-          <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 24px;">
-            A CineTube.IA usa inteligência artificial avançada para editar, cortar e montar seus vídeos com qualidade cinematográfica.
-          </p>
-          <div class="pills" style="justify-content: flex-start;">
-            <div class="pill"><span class="pill-icon">✨</span> 100% automático</div>
-            <div class="pill"><span class="pill-icon">⏱️</span> Em minutos</div>
-            <div class="pill"><span class="pill-icon">📲</span> Pronto para postar</div>
-          </div>
-        </div>
-        <div class="demo-video fade-up" style="transition-delay: 0.2s;">
-          <video autoplay muted loop playsinline>
-            <source src="https://i.imgur.com/7tHXGxQ.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BENEFITS ===== -->
-  <section class="benefits">
-    <div class="container">
-      <div class="fade-up" style="margin-bottom: 40px;">
-        <h2 class="section-title">Escalar seu canal não é postar mais. <span class="highlight">É produzir melhor.</span></h2>
-      </div>
-      <div class="benefits-card fade-up">
-        <ul class="check-list">
-          <li><span class="check-icon">✓</span> Produzir vídeos profissionais sem saber editar</li>
-          <li><span class="check-icon">✓</span> Automatizar o processo de edição e montagem</li>
-          <li><span class="check-icon">✓</span> Evitar strikes de direitos autorais</li>
-          <li><span class="check-icon">✓</span> Monetizar mais rápido com consistência</li>
-          <li><span class="check-icon">✓</span> Escalar canais com previsibilidade</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CHANNELS ===== -->
-  <section class="channels" id="exemplos">
-    <div class="container" style="margin-bottom: 40px;">
-      <div class="fade-up">
-        <div class="section-label">Exemplos</div>
-        <h2 class="section-title">Alguns dos nossos <span class="highlight">canais</span></h2>
-      </div>
-    </div>
-    <div style="overflow: hidden;">
-      <div class="channels-scroll">
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/IIWh8XN.png" alt="Canal 1" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/0fWerxK.png" alt="Canal 2" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/G1KCaG0.png" alt="Canal 3" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/g2eNmpM.jpeg" alt="Canal 4" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/TrUNy3d.png" alt="Canal 5" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/jQgti8k.png" alt="Canal 6" loading="lazy" /></a>
-        <!-- duplicate for seamless scroll -->
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/IIWh8XN.png" alt="Canal 1" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/0fWerxK.png" alt="Canal 2" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/G1KCaG0.png" alt="Canal 3" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/g2eNmpM.jpeg" alt="Canal 4" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/TrUNy3d.png" alt="Canal 5" loading="lazy" /></a>
-        <a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer" class="channel-thumb"><img src="https://i.imgur.com/jQgti8k.png" alt="Canal 6" loading="lazy" /></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BONUS ===== -->
-  <section class="bonus">
-    <div class="container">
-      <div class="fade-up" style="margin-bottom: 40px;">
-        <h2 class="section-title">+ 4 Bônus Exclusivos comprando <span class="highlight">somente hoje</span></h2>
-      </div>
-      <div class="bonus-grid fade-up">
-        <div class="bonus-card"><img src="./images/bonus1.png" alt="Bônus Exclusivo 1" loading="lazy" /></div>
-        <div class="bonus-card"><img src="./images/bonus2.png" alt="Bônus Exclusivo 2" loading="lazy" /></div>
-        <div class="bonus-card"><img src="./images/bonus3.png" alt="Bônus Exclusivo 3" loading="lazy" /></div>
-        <div class="bonus-card"><img src="./images/bonus4.png" alt="Bônus Exclusivo 4" loading="lazy" /></div>
-      </div>
-      <div style="text-align: center; margin-top: 36px;">
-        <a href="#offer-section" class="hero-cta">QUERO GARANTIR MEUS BÔNUS</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== OFFER ===== -->
-  <section class="offer" id="offer-section">
-    <div class="container">
-      <div class="offer-card fade-up">
-        <div class="offer-badge">🔥 Oferta Limitada</div>
-        <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--green); margin-top: 8px; margin-bottom: 4px;">ACESSO VITALÍCIO AO SISTEMA COMPLETO</h3>
-        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 16px;">Produto 100% digital — acesso enviado por e-mail imediatamente após a compra.</p>
-        <img src="./images/cinetube-logo-3d.png" alt="CineTube.IA Logo" class="offer-logo" />
-
-        <ul class="offer-list">
-          <li><span class="check">✓</span> Acesso completo à plataforma SaaS</li>
-          <li><span class="check">✓</span> Cortes inteligentes com IA ilimitado</li>
-          <li><span class="check">✓</span> Roteiro automático para qualquer nicho</li>
-          <li><span class="check">✓</span> Proteção anti-direitos autorais</li>
-          <li><span class="check">✓</span> Área de membros + treinamentos</li>
-          <li><span class="check">✓</span> 4 bônus exclusivos</li>
-          <li><span class="check">✓</span> Suporte prioritário</li>
-        </ul>
-
-        <div class="price-old">De R$ 197,00</div>
-        <div class="price-current">R$57,97</div>
-        <div class="price-installment">ou 12x de R$ 5,82</div>
-
-        <div class="trust-row" style="margin-bottom: 24px;">
-          <div class="trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-            <span>Checkout Seguro</span>
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span>Satisfação Garantida</span>
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Privacidade Protegida</span>
-          </div>
-        </div>
-
-        <a href="https://www.ggcheckout.com/checkout/v4/Z8YoalNwP9YZYRDCZq0e" class="offer-cta" id="checkout-btn">GARANTA SUA VAGA AGORA!</a>
-
-        <img src="./images/pagamento_v2.png" alt="Formas de Pagamento" class="payment-flags" />
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
-        <h2 class="section-title"><span class="highlight">Dúvidas</span> Frequentes</h2>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item fade-up">
-          <summary>Preciso saber editar vídeos para usar o CineTube.IA?</summary>
-          <p>Não! O CineTube.IA foi criado justamente para quem não sabe editar. A IA faz toda a edição automaticamente — você só faz o upload do vídeo bruto e recebe o resultado final pronto.</p>
-        </details>
-        <details class="faq-item fade-up">
-          <summary>Funciona para qualquer tipo de vídeo e plataforma?</summary>
-          <p>Sim! Funciona para YouTube, TikTok, Instagram Reels e qualquer plataforma de vídeo. Ideal para criadores de conteúdo de todos os tipos — vlogs, tutoriais, reviews, entretenimento e muito mais.</p>
-        </details>
-        <details class="faq-item fade-up">
-          <summary>Funciona para canais Dark também?</summary>
-          <p>Com certeza! O CineTube.IA é perfeito para canais Dark (canais sem mostrar o rosto). A IA gera roteiros, faz cortes, monta o vídeo e aplica proteção anti-direitos autorais — tudo automaticamente.</p>
-        </details>
-        <details class="faq-item fade-up">
-          <summary>É só para YouTubers?</summary>
-          <p>De jeito nenhum! O CineTube.IA é para qualquer criador de conteúdo — YouTubers, TikTokers, Instagrammers, Reels, Shorts e qualquer pessoa que queira produzir vídeos profissionais com IA.</p>
-        </details>
-        <details class="faq-item fade-up">
-          <summary>Vou ter problemas de direitos autorais no YouTube?</summary>
-          <p>O CineTube.IA inclui um sistema anti-direitos autorais que processa seus vídeos para minimizar o risco de strikes. Ensinamos toda a metodologia para publicar com segurança em qualquer plataforma.</p>
-        </details>
-        <details class="faq-item fade-up">
-          <summary>Em quanto tempo verei resultado?</summary>
-          <p>Com nossa metodologia, é possível ter o canal configurado e publicando conteúdo em até 12 dias. Os resultados financeiros dependem da consistência, mas já temos membros monetizados em menos de 60 dias.</p>
-        </details>
-        <details class="faq-item fade-up">
-          <summary>Tenho garantia de reembolso?</summary>
-          <p>Sim! Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito, devolvemos 100% do seu dinheiro sem perguntas.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FINAL CTA ===== -->
-  <section class="final-cta">
-    <div class="container">
-      <div class="fade-up">
-        <h2>Chega de editar<br/><span class="highlight">vídeo manualmente</span></h2>
-        <p>Deixe a IA fazer o trabalho pesado enquanto você foca em crescer seu canal e monetizar.</p>
-        <a href="#offer-section" class="hero-cta" style="font-size: 1rem;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-          QUERO COMEÇAR AGORA
-        </a>
-        <div class="guarantee">
-          <span>🛡️</span> Garantia de 7 dias — Risco zero
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="logo" style="font-size: 1.2rem;">CINETUBE<span>.IA</span></div>
-        <p>© 2025 CineTube.IA — Todos os direitos reservados</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ===== WHATSAPP ===== -->
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-
-  <script>
-    // Mobile menu toggle
-    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    });
-    // Close mobile menu on link click
-    document.querySelectorAll('.mobile-menu a').forEach(a => {
-      a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Fade-up animation on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // UTMify checkout redirect
-    document.getElementById('checkout-btn').addEventListener('click', function(e) {
-      e.preventDefault();
-      let url = this.href;
-      const params = new URLSearchParams(window.location.search);
-      if (params.toString()) {
-        url += (url.includes('?') ? '&' : '?') + params.toString();
-      }
-      window.location.href = url;
-    });
-  </script>
-
-</body>
-</html>
+<!DOCTYPE html><!--X8C0uXBpv0u05tImALq4_--><html lang="pt-BR"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/logo.png"/><link rel="preload" as="image" href="/images/pagamento_v2.png"/><link rel="stylesheet" href="/_next/static/css/841d1790418be31c.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/546e188627a23506.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-097f756bb0bc5ef8.js"/><script src="/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" async=""></script><script src="/_next/static/chunks/255-293e44824f2ec188.js" async=""></script><script src="/_next/static/chunks/main-app-4f6c041eb0f3fe35.js" async=""></script><script src="/_next/static/chunks/app/layout-60230b158cb8ea68.js" async=""></script><script src="/_next/static/chunks/419-e27c490ce6fd7b93.js" async=""></script><script src="/_next/static/chunks/app/page-89b4e15b14bfd629.js" async=""></script><title>Wintube - Crie Canais Lucrativos no YouTube</title><meta name="description" content="O primeiro aplicativo de I.A. que transforma qualquer pessoa em dono de canais lucrativos no YouTube postando vídeos de filmes e séries"/><meta name="generator" content="v0.app"/><link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="500x500"/><link rel="icon" href="/logo.png"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="__variable_f367f3 __variable_dd5b2f __variable_ed3508 __variable_b75cb0 font-outfit antialiased"><div hidden=""><!--$--><!--/$--></div><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=952543821027667&amp;ev=PageView&amp;noscript=1"/></noscript><div class="min-h-screen bg-background text-foreground"><main><section class="relative flex items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-background min-h-[80vh]"><div class="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div><div class="relative z-10 max-w-7xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"><div class="text-center lg:text-left"><div class="absolute top-1/2 left-1/2 lg:left-1/4 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10"></div><h1 class="font-[family-name:var(--font-display)] text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl mb-4 md:mb-8 text-foreground drop-shadow-md text-balance leading-[1.1] font-black tracking-tighter uppercase relative">Lucre com YouTube Postando Vídeos de <br class="sm:hidden"/><span class="relative inline-block"><div class="absolute inset-0 bg-primary/10 blur-[25px] rounded-full transition-all duration-300 opacity-100 scale-125 -z-10"></div><span class="relative inline-block transition-all duration-300 opacity-100 translate-y-0 text-primary">FILMES</span></span><br/><span class="text-foreground">Sem Aparecer, Sem Criar Roteiros e Sem Bloqueios por Direitos Autorais!</span></h1><div class="mb-6 md:mb-10 lg:max-w-xl"><p class="text-[11px] sm:text-sm md:text-base lg:text-lg text-muted-foreground font-normal leading-tight inline-block border-b border-foreground/20 pb-0.5">Monte seu canal de filmes e séries com IA e comece a lucrar em até <span class="text-primary font-bold">12 dias</span>, mesmo sem aparecer.</p></div><div class="flex justify-center lg:justify-start"><a href="#offer-section" class="group relative flex items-center justify-center gap-3 bg-primary text-white font-black text-sm sm:text-base md:text-xl lg:text-2xl px-8 py-5 sm:px-10 sm:py-6 md:px-12 md:py-7 rounded-xl shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_40px_rgba(0,163,255,0.5)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 fill-current"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg><span>Quero Lucrar agora</span><div class="absolute inset-0 rounded-xl overflow-hidden pointer-events-none"><div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out skew-x-[-20deg]"></div></div></a></div></div><div class="relative group"><div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div><div class="relative aspect-video lg:aspect-square xl:aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-2xl"><video src="https://i.imgur.com/au0aAsj.mp4" autoPlay="" controls="" loop="" playsInline="" class="w-full h-full object-cover"></video><div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div></div></div></div></div></section><div class="
+        
+        opacity-0
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:0ms"><div class="bg-primary/10 py-2.5 overflow-hidden whitespace-nowrap"><div class="flex animate-scroll"><div class="flex"><span class="font-mono text-xs font-bold tracking-widest text-black px-8">Escolha seu filme ou série e a IA gera o seu vídeo completo.<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">WINTUBE<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">MONETIZE SEU CANAL<!-- --> <span class="text-black/40 mx-3">✦</span></span></div><div class="flex"><span class="font-mono text-xs font-bold tracking-widest text-black px-8">Escolha seu filme ou série e a IA gera o seu vídeo completo.<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">WINTUBE<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">MONETIZE SEU CANAL<!-- --> <span class="text-black/40 mx-3">✦</span></span></div><div class="flex"><span class="font-mono text-xs font-bold tracking-widest text-black px-8">Escolha seu filme ou série e a IA gera o seu vídeo completo.<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">WINTUBE<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">MONETIZE SEU CANAL<!-- --> <span class="text-black/40 mx-3">✦</span></span></div><div class="flex"><span class="font-mono text-xs font-bold tracking-widest text-black px-8">Escolha seu filme ou série e a IA gera o seu vídeo completo.<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">WINTUBE<!-- --> <span class="text-black/40 mx-3">✦</span></span><span class="font-mono text-xs font-bold tracking-widest text-black px-8">MONETIZE SEU CANAL<!-- --> <span class="text-black/40 mx-3">✦</span></span></div></div></div></div><div class="
+        
+        opacity-0 translate-y-20
+        transition-all ease-out will-change-transform
+      " style="transition-duration:800ms;transition-delay:0ms"><section id="como-funciona" class="py-12 sm:py-16 md:py-24 lg:py-32 px-3 sm:px-4 md:px-8 lg:px-12 bg-gradient-to-b from-background to-muted relative overflow-hidden"><div class="max-w-7xl mx-auto"><div class="text-center mb-8 sm:mb-12 md:mb-16"><p class="text-xs sm:text-sm md:text-base text-primary font-semibold uppercase tracking-widest mb-2">Como usar o Wintube</p><h2 class="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight mb-3 sm:mb-4">Veja Como é Fácil Usar<br/><span class="text-primary">O Nosso Gerador de Vídeos</span></h2><p class="text-muted-foreground text-xs sm:text-sm md:text-base mt-3 sm:mt-4 max-w-2xl mx-auto">O Aplicativo Funciona para Celular e Computador.</p></div><div class="relative"><div class="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-y-1/2 hidden lg:block"></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5"><div class="
+                    relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
+                    bg-gradient-to-b from-background to-muted border-2 border-[#00A3FF]/50 shadow-lg shadow-[#00A3FF]/10 scale-[1.02] sm:scale-105 z-10
+                  "><div class="
+                      absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] sm:text-[10px] font-bold tracking-wider
+                      flex items-center gap-1.5
+                      bg-background border border-border text-foreground
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-3 h-3"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg><span>ETAPA 1</span></div><div class="
+                      w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-3 sm:mb-3 md:mb-4 rounded-xl flex items-center justify-center transition-all duration-300
+                      bg-[#00A3FF]/20 text-[#00A3FF]
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-5 h-5 sm:w-5 sm:h-5"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" x2="20" y1="19" y2="19"></line></svg></div><h3 class="
+                      font-[family-name:var(--font-display)] text-sm sm:text-xs md:text-sm lg:text-base font-bold text-center mb-2 sm:mb-2 transition-colors leading-tight
+                      text-[#00A3FF]
+                    ">Escolha um filme ou série de preferência</h3><p class="text-xs sm:text-[10px] md:text-xs text-muted-foreground text-center mb-3 sm:mb-4 leading-relaxed">Selecione o conteúdo que você quer transformar em um vídeo viral.</p><div class="space-y-1 sm:space-y-2 mt-auto"><div class="mb-3 relative h-16 w-full bg-background rounded-md border border-border flex flex-col items-center justify-center overflow-hidden"><div class="absolute top-1 left-2 text-[5px] text-foreground/20 uppercase font-mono tracking-widest">Escolha do Usuário</div><div class="w-[90%] h-6 bg-white/5 rounded-md flex items-center px-2 mb-1.5 border border-border relative overflow-hidden"><div class="absolute inset-0 bg-primary/10 opacity-0" style="animation:selection-blink 3s infinite"></div><div class="text-[7px] text-primary font-mono whitespace-nowrap overflow-hidden translate-y-[0.5px]" style="animation:movie-select 3s infinite">🎬 Gladiador II (2024)</div><div class="ml-auto flex items-center gap-1 opacity-50"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check w-2 h-2 text-primary"><path d="M20 6 9 17l-5-5"></path></svg></div></div><div class="flex items-center gap-1.5" style="animation:fade-in-out 3s infinite"><span class="text-[7px] text-foreground/60 font-mono uppercase tracking-tighter">Conteúdo selecionado com sucesso</span></div><style>
+                            @keyframes movie-select {
+                              0%, 20% { opacity: 0; transform: translateY(5px); }
+                              30%, 70% { opacity: 1; transform: translateY(0); }
+                              80%, 100% { opacity: 0; transform: translateY(-5px); }
+                            }
+                            @keyframes selection-blink {
+                              29% { opacity: 0; }
+                              30% { opacity: 1; }
+                              35% { opacity: 0; }
+                            }
+                            @keyframes fade-in-out {
+                              0%, 40% { opacity: 0; }
+                              50%, 80% { opacity: 1; }
+                              90%, 100% { opacity: 0; }
+                            }
+                          </style></div><div class="flex items-center justify-between text-[8px] sm:text-[10px]"><span class="font-mono tracking-wider hidden sm:inline transition-colors duration-300 text-[#1eff00]">ESCOLHANDO FILME</span><span class="font-mono sm:hidden transition-colors duration-300 text-[#1eff00]">...</span><span class="font-mono transition-colors duration-300 text-[#1eff00]">0<!-- -->%</span></div><div class="h-1 bg-white/10 rounded-full overflow-hidden"><div class="h-full transition-all duration-75 bg-[#ef4444]" style="width:0%"></div></div></div></div><div class="
+                    relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
+                    bg-background border border-border
+                  "><div class="
+                      absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] sm:text-[10px] font-bold tracking-wider
+                      flex items-center gap-1.5
+                      bg-[#ef4444] text-foreground
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-3 h-3"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg><span>ETAPA 2</span></div><div class="
+                      w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-3 sm:mb-3 md:mb-4 rounded-xl flex items-center justify-center transition-all duration-300
+                      bg-white/5 text-muted-foreground
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text w-5 h-5 sm:w-5 sm:h-5"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></div><h3 class="
+                      font-[family-name:var(--font-display)] text-sm sm:text-xs md:text-sm lg:text-base font-bold text-center mb-2 sm:mb-2 transition-colors leading-tight
+                      text-[#00A3FF]
+                    ">Roteiro Automático</h3><p class="text-xs sm:text-[10px] md:text-xs text-muted-foreground text-center mb-3 sm:mb-4 leading-relaxed">O aplicativo lê o seu filme ou série e cria um roteiro otimizado para engajamento.</p><div class="flex justify-center"><div class="
+                          w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-all duration-300
+                          bg-white/5 border border-border
+                        "></div></div></div><div class="
+                    relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
+                    bg-background border border-border
+                  "><div class="
+                      absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] sm:text-[10px] font-bold tracking-wider
+                      flex items-center gap-1.5
+                      bg-[#ef4444] text-foreground
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-3 h-3"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg><span>ETAPA 3</span></div><div class="
+                      w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-3 sm:mb-3 md:mb-4 rounded-xl flex items-center justify-center transition-all duration-300
+                      bg-white/5 text-muted-foreground
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wand-sparkles w-5 h-5 sm:w-5 sm:h-5"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"></path><path d="m14 7 3 3"></path><path d="M5 6v4"></path><path d="M19 14v4"></path><path d="M10 2v2"></path><path d="M7 8H3"></path><path d="M21 16h-4"></path><path d="M11 3H9"></path></svg></div><h3 class="
+                      font-[family-name:var(--font-display)] text-sm sm:text-xs md:text-sm lg:text-base font-bold text-center mb-2 sm:mb-2 transition-colors leading-tight
+                      text-[#00A3FF]
+                    ">Cortes Inteligentes</h3><p class="text-xs sm:text-[10px] md:text-xs text-muted-foreground text-center mb-3 sm:mb-4 leading-relaxed">A IA detecta os melhores momentos, faz cortes precisos e monta tudo no automático.</p><div class="flex justify-center"><div class="
+                          w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-all duration-300
+                          bg-white/5 border border-border
+                        "></div></div></div><div class="
+                    relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
+                    bg-background border border-border
+                  "><div class="
+                      absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] sm:text-[10px] font-bold tracking-wider
+                      flex items-center gap-1.5
+                      bg-background border border-border text-foreground
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-3 h-3"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg><span>ETAPA 4</span></div><div class="
+                      w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-3 sm:mb-3 md:mb-4 rounded-xl flex items-center justify-center transition-all duration-300
+                      bg-white/5 text-muted-foreground
+                    "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download w-5 h-5 sm:w-5 sm:h-5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></div><h3 class="
+                      font-[family-name:var(--font-display)] text-sm sm:text-xs md:text-sm lg:text-base font-bold text-center mb-2 sm:mb-2 transition-colors leading-tight
+                      text-[#00A3FF]
+                    ">Baixar e Postar</h3><p class="text-xs sm:text-[10px] md:text-xs text-muted-foreground text-center mb-3 sm:mb-4 leading-relaxed">Seu vídeo inédito está pronto para ser publicado e monetizado.</p><div class="flex justify-center"><div class="
+                          w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-all duration-300
+                          bg-white/5 border border-border
+                        "></div></div></div></div></div></div></section></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><section class="py-10 sm:py-12 md:py-16 lg:py-20 bg-muted overflow-hidden"><div class="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12"><div class="mb-8 sm:mb-12 md:mb-16 text-center md:text-left"><div class="flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-5"><span class="w-6 sm:w-8 h-px bg-primary/20"></span><span class="font-mono text-[10px] sm:text-xs tracking-widest text-[#22c55e] uppercase">Ferramentas de IA</span></div><h2 class="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight uppercase">Tudo que voce precisa<br/><span class="text-primary">em uma plataforma</span></h2></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:0ms"><div class="bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4 sm:mb-6"><span>&#128221;</span></div><h3 class="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold mb-2">Roteiro Automatico</h3><p class="text-sm md:text-base text-muted-foreground font-light leading-relaxed mb-6">Gere roteiros completos para seus videos com IA. Insira o tema, a IA cria um roteiro otimizado para engajamento e retencao.</p><div class="mt-auto"><div class="relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center"><video class="w-full h-full object-contain" autoPlay="" muted="" loop="" playsInline=""><source src="https://i.imgur.com/xQO2AVr.mp4" type="video/mp4"/></video></div></div></div></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:120ms"><div class="bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4 sm:mb-6"><span>&#9986;</span></div><h3 class="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold mb-2">Cortes Inteligentes</h3><p class="text-sm md:text-base text-muted-foreground font-light leading-relaxed mb-6">A IA detecta silencios, repeticoes e partes desnecessarias. Faz os cortes automaticamente mantendo o melhor do conteudo.</p><div class="mt-auto"><div class="relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center"><video class="w-full h-full object-contain" autoPlay="" muted="" loop="" playsInline=""><source src="https://i.imgur.com/7tHXGxQ.mp4" type="video/mp4"/></video></div></div></div></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:240ms"><div class="bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="mt-auto"><div class="relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center"><img alt="Anti-Direitos Autorais" loading="lazy" decoding="async" data-nimg="fill" class="object-contain p-2" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/anti-direitos-autorais.png"/></div></div></div></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:360ms"><div class="bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><div class="mt-auto"><div class="relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center"><img alt="Montagem Cinematográfica" loading="lazy" decoding="async" data-nimg="fill" class="object-contain p-2" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/montagem-cinematografica.png"/></div></div></div></div></div><div class="mt-4 md:mt-6"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:480ms"><div class="bg-background border border-primary/20 rounded-2xl p-5 sm:p-6 md:p-8 transition-all hover:border-primary/40 group"><div class="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4">🖥</div><h3 class="font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold mb-2">Area de Membros Completa</h3><p class="text-sm text-muted-foreground font-light leading-relaxed">Acesse todos os seus projetos, historico de edicoes, templates e treinamentos em um so lugar. Interface limpa e intuitiva.</p></div></div></div></div></section></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><section class="py-8 sm:py-12 md:py-16 px-4 bg-background overflow-hidden border-t border-border/50"><div class="max-w-6xl mx-auto"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><div class="text-center mb-8 sm:mb-12"><h2 class="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black leading-tight uppercase tracking-tighter">SEUS VÍDEOS IRÃO FICAR <span class="text-primary">DESSE MESMO FORMATO</span>, <br/>APENAS COM 1 APP E UM CLICK: <span class="text-primary">ASSIM</span></h2></div></div><div class="flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center items-center md:items-stretch"><div class="w-full md:w-1/3 max-w-[450px]"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:200ms"><div class="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/lcJ8BVEo15U" title="YouTube video player 1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></div></div><div class="w-full md:w-1/3 max-w-[450px]"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:400ms"><div class="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/MAZ0mWdoUYI" title="YouTube video player 2" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></div></div><div class="w-full md:w-1/3 max-w-[450px]"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:600ms"><div class="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/ANnHwcWenR8" title="YouTube video player 3" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></div></div></div></div></section></div><div class="
+        
+        opacity-0 scale-90
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><section id="exemplos" class="py-10 sm:py-12 md:py-16 lg:py-24 bg-background overflow-hidden"><div class="max-w-6xl mx-auto px-3 sm:px-4 md:px-12 mb-6 sm:mb-8 md:mb-12"><div class="text-center"><div class="inline-flex items-center gap-2 bg-primary border border-primary/20 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6"><span class="font-mono text-[10px] sm:text-xs tracking-widest text-primary uppercase">Exemplos</span></div><h2 class="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight">Gere Vídeos Únicos e Inéditos<br/><span class="text-primary">de Forma Simples e Automática</span></h2></div></div><div class="relative"><div class="flex animate-scroll-channels"><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 1" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/IIWh8XN.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 2" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/0fWerxK.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 3" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/G1KCaG0.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 4" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/g2eNmpM.jpeg"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 5" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/TrUNy3d.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 6" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/jQgti8k.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 1" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/IIWh8XN.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 2" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/0fWerxK.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 3" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/G1KCaG0.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 4" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/g2eNmpM.jpeg"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 5" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/TrUNy3d.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div><div class="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"><a href="https://www.youtube.com/@tulioproducoes" target="_blank" rel="noopener noreferrer"><div class="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]"><img alt="Canal 6" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="https://i.imgur.com/jQgti8k.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div></div></a></div></div><div class="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div><div class="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div></div></section></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><section class="py-12 sm:py-16 md:py-24 px-4 bg-background overflow-hidden"><div class="max-w-5xl mx-auto"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><div class="text-center mb-6 sm:mb-8 md:mb-10"><h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-display)] font-black mb-3 leading-tight uppercase tracking-tighter">A <span class="text-primary underline underline-offset-4 decoration-2">WinTube</span> Serve Para Você?</h2></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:200ms"><div class="bg-[#f0fdf4] border border-green-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-green-300"><div class="text-center mb-4 sm:mb-6"><h3 class="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-green-700 uppercase tracking-tight">PARA QUEM É?</h3></div><ul class="space-y-3 sm:space-y-4"><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">Criadores que querem crescer no YouTube sem aparecer na câmera.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">Pessoas cansadas de perder horas editando vídeos manualmente.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">Quem quer transformar filmes, séries e animes em canais lucrativos usando IA.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">Criadores que querem postar vídeos todos os dias no piloto automático.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">Quem quer monetizar canais dark sem depender de editor, roteirista ou equipe.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">Pessoas que querem escalar canais com vídeos únicos e mais seguros contra bloqueios.</p></li></ul></div></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:400ms"><div class="bg-[#fef2f2] border border-red-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-red-300"><div class="text-center mb-4 sm:mb-6"><h3 class="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-red-700 uppercase tracking-tight">PARA QUEM <span class="underline decoration-red-400">NÃO É?</span></h3></div><ul class="space-y-3 sm:space-y-4"><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">Quem prefere continuar editando vídeo por vídeo manualmente.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">Pessoas que acham que vão ganhar dinheiro sem postar conteúdo.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">Quem quer resultados rápidos sem aprender o método.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">Criadores acomodados que continuam usando conteúdo genérico igual todo mundo.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">Pessoas que não querem aproveitar IA para crescer mais rápido no YouTube.</p></li><li class="flex gap-3 items-start group"><div class="flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></div><p class="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">Quem prefere perder tempo tentando fazer tudo sozinho ao invés de automatizar.</p></li></ul></div></div></div><div class="text-center"><div class="
+        
+        opacity-0 scale-90
+        transition-all ease-out will-change-transform
+      " style="transition-duration:600ms;transition-delay:600ms"><a href="#offer-section" class="group inline-flex items-center gap-2 sm:gap-3 bg-primary text-white font-black text-xs sm:text-sm md:text-base lg:text-xl px-6 py-4 sm:px-8 sm:py-5 rounded-full shadow-[0_5px_15px_rgba(0,163,255,0.2)] hover:shadow-[0_10px_25px_rgba(0,163,255,0.4)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter"><span>QUERO TER ACESSO AO APLICATIVO</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div></div></section></div><div class="
+        
+        opacity-0 translate-y-20
+        transition-all ease-out will-change-transform
+      " style="transition-duration:800ms;transition-delay:0ms"><div id="offer-section"><section id="offer-section" class="py-8 sm:py-10 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-background overflow-hidden"><div class="max-w-sm sm:max-w-md lg:max-w-2xl mx-auto"><div class="bg-card text-foreground rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 border-2 border-primary/20 relative w-full shadow-[0_0_5px_rgba(0,163,255,0.3),0_0_15px_rgba(0,163,255,0.2)]"><div class="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10"><p class="font-[family-name:var(--font-display)] font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl mb-2 md:mb-4 text-primary leading-tight">ACESSO AO APP COMPLETO</p><p class="text-[10px] sm:text-xs md:text-sm lg:text-base text-muted-foreground mb-3 md:mb-6 px-2">Acesso ao APP enviado por e-mail imediatamente após a compra.</p><img src="/logo.png" alt="Wintube Logo" class="mx-auto mb-3 md:mb-6 w-32 sm:w-40 md:w-48 lg:w-52 h-auto object-contain"/></div><div class="mb-4 sm:mb-5 md:mb-8 lg:mb-10"><h4 class="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 underline underline-offset-4">VOCÊ VAI RECEBER:</h4><ul class="flex flex-col gap-3 sm:gap-4 text-xs sm:text-sm md:text-base"><li class="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border"><span class="text-primary mt-0.5">📱</span><div><span class="font-bold text-primary">App Wintube</span><p class="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p></div></li><li class="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border"><span class="text-primary mt-0.5">🛡️</span><div><span class="font-bold text-foreground">Guia Anti-Direitos Autorais</span><p class="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Ensina como ajustar vídeos pra evitar bloqueios e manter monetização ativa.</p></div></li><li class="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border"><span class="text-primary mt-0.5">🎓</span><div><span class="font-bold text-foreground">Acesso ao Treinamento Wintube Academy</span><p class="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Passo a passo pra montar seu canal e começar a lucrar.</p></div></li></ul></div><div class="mb-4 sm:mb-5 md:mb-8 lg:mb-10 bg-muted rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-primary/20"><h4 class="font-[family-name:var(--font-display)] text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4 text-center">🎁 <span class="text-primary">Bônus Exclusivos</span></h4><ul class="flex flex-col gap-2 text-xs sm:text-sm md:text-base"><li class="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border"><span class="text-primary">✦</span>Guia de Monetização em 7 Dias</li><li class="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border"><span class="text-primary">✦</span>Modelos prontos de thumbs e capas</li><li class="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border"><span class="text-primary">✦</span>Mini curso de Edição com IA</li><li class="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2"><span class="text-primary">✦</span>Acesso ao grupo fechado de alunos</li></ul></div><div class="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10"><p class="text-xs sm:text-sm md:text-base text-primary font-bold uppercase tracking-wider mb-2">💰 Investimento Único</p><div class="text-xs sm:text-sm text-muted-foreground line-through tracking-wider mb-1">De R$ 197,00</div><div class="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-primary leading-none mb-1 sm:mb-2">R$57,97</div><div class="text-xs sm:text-sm md:text-base text-muted-foreground">ou 12x de R$ 5,82</div></div><div class="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 text-center text-[10px] sm:text-xs md:text-sm lg:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-8 lg:mb-10"><div class="flex flex-col items-center gap-1 sm:gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-primary"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg><span>Checkout Seguro</span></div><div class="flex flex-col items-center gap-1 sm:gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-primary"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span>Satisfação Garantida</span></div><div class="flex flex-col items-center gap-1 sm:gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-primary"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>Privacidade Protegida</span></div></div><div class="mt-4 sm:mt-5 md:mt-8"><a href="https://checkout.wiven.com.br/checkout/cmq2m4gph0t7701q2we9p9ktn?offer=H7FZ0C4" class="block w-full py-3 sm:py-4 md:py-6 lg:py-8 text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-white rounded-md text-center hover:bg-primary transition-colors bg-primary">GARANTA SUA VAGA AGORA!</a></div><div class="mt-4 sm:mt-5 md:mt-8 flex justify-center"><img src="/images/pagamento_v2.png" alt="Formas de Pagamento" class="w-full max-w-[500px] h-auto object-contain opacity-80"/></div></div></div></section></div></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><section class="py-10 sm:py-12 md:py-16 px-3 sm:px-4 bg-background overflow-hidden"><div class="max-w-5xl mx-auto"><div class="text-center mb-6 sm:mb-8 md:mb-10"><h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-display)] font-bold mb-3 sm:mb-4 max-w-3xl mx-auto px-2">Veja os Resultados de Quem Decidiu Agir</h2></div><div class="max-w-4xl mx-auto"><div class="flex overflow-x-hidden gap-3 sm:gap-4 pb-4" style="scrollbar-width:none;-ms-overflow-style:none"><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 1" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result1.jpg"/></div><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 2" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result2.jpg"/></div><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 3" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result3.jpg"/></div><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 4" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result4.png"/></div><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 5" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result1.jpg"/></div><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 6" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result2.jpg"/></div><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 7" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result3.jpg"/></div><div class="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]"><img alt="Feedback 8" loading="lazy" width="400" height="600" decoding="async" data-nimg="1" class="w-full h-auto object-contain rounded-lg shadow-md" style="color:transparent" src="/images/results/result4.png"/></div></div></div></div></section></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><section id="faq" class="py-8 sm:py-10 md:py-12 px-3 sm:px-4 bg-background overflow-hidden"><div class="max-w-3xl mx-auto"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><div class="text-center mb-6 sm:mb-8 md:mb-12"><h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-display)] font-bold mb-2 sm:mb-3 md:mb-4"><span class="text-primary">Duvidas</span> Frequentes</h2></div></div><div class="flex flex-col gap-2 sm:gap-3"><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:0ms"><details class="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group"><summary class="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2"><span class="flex-1">Preciso saber editar videos para usar o Wintube?</span><span class="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">▼</span></summary><p class="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">Nao! O Wintube foi criado justamente para quem nao sabe editar. A IA faz toda a edicao automaticamente — voce so faz o upload do video bruto e recebe o resultado final pronto.</p></details></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:80ms"><details class="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group"><summary class="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2"><span class="flex-1">Funciona para qualquer tipo de video e plataforma?</span><span class="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">▼</span></summary><p class="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">Sim! Funciona para YouTube, TikTok, Instagram Reels e qualquer plataforma de video. Ideal para criadores de conteudo de todos os tipos — vlogs, tutoriais, reviews, entretenimento e muito mais. Nossa IA e treinada para identificar o melhor conteudo independente do tema ou formato.</p></details></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:160ms"><details class="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group"><summary class="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2"><span class="flex-1">Funciona para canais Dark tambem?</span><span class="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">▼</span></summary><p class="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">Com certeza! O Wintube e perfeito para canais Dark (canais sem mostrar o rosto). A IA gera roteiros, faz cortes, monta o video e aplica protecao anti-direitos autorais — tudo automaticamente. E a forma mais eficiente de escalar canais Dark no YouTube, TikTok e Instagram.</p></details></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:240ms"><details class="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group"><summary class="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2"><span class="flex-1">E so para YouTubers?</span><span class="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">▼</span></summary><p class="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">De jeito nenhum! O Wintube e para qualquer criador de conteudo — YouTubers, TikTokers, Instagrammers, Reels, Shorts e qualquer pessoa que queira produzir videos profissionais com IA. Se voce cria conteudo em video, essa ferramenta e para voce.</p></details></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:320ms"><details class="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group"><summary class="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2"><span class="flex-1">Vou ter problemas de direitos autorais no YouTube?</span><span class="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">▼</span></summary><p class="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">O Wintube inclui um sistema anti-direitos autorais que processa seus videos para minimizar o risco de strikes. Ensinamos toda a metodologia para publicar com seguranca em qualquer plataforma.</p></details></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:400ms"><details class="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group"><summary class="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2"><span class="flex-1">Em quanto tempo verei resultado?</span><span class="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">▼</span></summary><p class="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">Com nossa metodologia, e possivel ter o canal configurado e publicando conteudo em ate 12 dias. Os resultados financeiros dependem da consistencia, mas ja temos membros monetizados em menos de 60 dias.</p></details></div><div class="
+        
+        opacity-0 translate-y-12
+        transition-all ease-out will-change-transform
+      " style="transition-duration:500ms;transition-delay:480ms"><details class="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group"><summary class="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2"><span class="flex-1">Tenho garantia de reembolso?</span><span class="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">▼</span></summary><p class="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">Sim! Voce tem 7 dias de garantia incondicional. Se por qualquer motivo nao ficar satisfeito, devolvemos 100% do seu dinheiro sem perguntas.</p></details></div></div><div class="text-center mt-6 sm:mt-8 md:mt-12"><a href="#offer-section" class="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary text-center leading-tight">COMECAR AGORA E MUDAR MINHA VIDA</a></div></div></section></div><div class="
+        
+        opacity-0 scale-90
+        transition-all ease-out will-change-transform
+      " style="transition-duration:700ms;transition-delay:0ms"><section class="py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-background relative overflow-hidden"><div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(0,163,255,),transparent_70%),radial-gradient(ellipse_40%_30%_at_20%_20%,rgba(30,255,0,0.05),transparent)]"></div><div class="max-w-4xl mx-auto text-center relative z-10"><h2 class="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4 sm:mb-6 px-2">Chega de editar<br/><span class="text-primary uppercase">video manualmente</span></h2><p class="text-muted-foreground text-sm sm:text-base md:text-lg max-w-lg mx-auto mb-6 sm:mb-8 md:mb-10 font-light leading-relaxed px-4">Deixe a IA fazer o trabalho pesado enquanto voce foca em crescer seu canal e monetizar.</p><div><a href="#offer-section" class="inline-flex items-center gap-2 sm:gap-3 bg-primary text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-wider uppercase px-6 py-4 sm:px-8 sm:py-5 md:px-12 md:py-6 lg:px-16 rounded hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(0,163,255,0.3)]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-4 h-4 sm:w-5 sm:h-5"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>QUERO COMECAR AGORA</a><div class="flex flex-col items-center mt-10 sm:mt-14"><img alt="Garantia de 7 dias" loading="lazy" width="400" height="200" decoding="async" data-nimg="1" class="h-20 sm:h-28 md:h-36 w-auto object-contain mb-6 sm:mb-8 transition-transform hover:scale-105 duration-500" style="color:transparent" src="/garantia-7-dias.png"/><div class="text-foreground/90 text-sm sm:text-base md:text-xl max-w-2xl mx-auto leading-relaxed px-4 space-y-4"><p>Não se preocupe, você tem <span class="font-bold text-foreground">7 dias de garantia incondicional</span> para testar à vontade e ver se realmente gosta.</p><p>Se por qualquer motivo você não ficar 100% satisfeito, nós <span class="font-bold text-foreground">devolvemos o seu dinheiro</span>. Basta solicitar o reembolso de forma rápida pelo nosso suporte.</p></div></div></div></div></section></div></main><footer class="py-8 md:py-10 px-4 md:px-12 border-t border-primary/20 flex flex-col md:flex-row items-center justify-between gap-5"><div class="flex items-center"><img alt="Wintube" loading="lazy" width="150" height="40" decoding="async" data-nimg="1" class="h-8 md:h-10 w-auto object-contain" style="color:transparent" src="/logo.png"/></div><p class="text-xs text-muted-foreground">© 2025 Wintube — Todos os direitos reservados</p></footer></div><!--$--><!--/$--><script src="/_next/static/chunks/webpack-097f756bb0bc5ef8.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[1402,[\"177\",\"static/chunks/app/layout-60230b158cb8ea68.js\"],\"\"]\n3:I[9766,[],\"\"]\n4:I[8924,[],\"\"]\n5:I[8536,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"HeroSection\"]\n6:I[6985,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"ScrollReveal\"]\n17:I[7150,[],\"\"]\n:HL[\"/_next/static/css/841d1790418be31c.css\",\"style\"]\n:HL[\"/_next/static/css/546e188627a23506.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"X8C0uXBpv0u05tImALq4_\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/841d1790418be31c.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/546e188627a23506.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"pt-BR\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"$L2\",null,{\"id\":\"facebook-pixel\",\"strategy\":\"afterInteractive\",\"children\":\"\\n            !function(f,b,e,v,n,t,s)\\n            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?\\n            n.callMethod.apply(n,arguments):n.queue.push(arguments)};\\n            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\\n            n.queue=[];t=b.createElement(e);t.async=!0;\\n            t.src=v;s=b.getElementsByTagName(e)[0];\\n            s.parentNode.insertBefore(t,s)}(window, document,'script',\\n            'https://connect.facebook.net/en_US/fbevents.js');\\n            fbq('init', '952543821027667');\\n            fbq('track', 'PageView');\\n          \"}]}],[\"$\",\"body\",null,{\"className\":\"__variable_f367f3 __variable_dd5b2f __variable_ed3508 __variable_b75cb0 font-outfit antialiased\",\"children\":[[\"$\",\"noscript\",null,{\"children\":[\"$\",\"img\",null,{\"height\":\"1\",\"width\":\"1\",\"style\":{\"display\":\"none\"},\"src\":\"https://www.facebook.com/tr?id=952543821027667\u0026ev=PageView\u0026noscript=1\"}]}],[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"div\",null,{\"className\":\"min-h-screen bg-background text-foreground\",\"children\":[[\"$\",\"main\",null,{\"children\":[[\"$\",\"$L5\",null,{}],[\"$\",\"$L6\",null,{\"animation\":\"fade-in\",\"delay\":0,\"duration\":500,\"children\":[\"$\",\"div\",null,{\"className\":\"bg-primary/10 py-2.5 overflow-hidden whitespace-nowrap\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex animate-scroll\",\"children\":[[\"$\",\"div\",\"0\",{\"className\":\"flex\",\"children\":[[\"$\",\"span\",\"0-0\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"Escolha seu filme ou série e a IA gera o seu vídeo completo.\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}],[\"$\",\"span\",\"0-1\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"WINTUBE\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}],[\"$\",\"span\",\"0-2\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"MONETIZE SEU CANAL\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}]]}],[\"$\",\"div\",\"1\",{\"className\":\"flex\",\"children\":[[\"$\",\"span\",\"1-0\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"Escolha seu filme ou série e a IA gera o seu vídeo completo.\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}],[\"$\",\"span\",\"1-1\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"WINTUBE\",\" \",\"$L7\"]}],\"$L8\"]}],\"$L9\",\"$La\"]}]}]}],\"$Lb\",\"$Lc\",\"$Ld\",\"$Le\",\"$Lf\",\"$L10\",\"$L11\",\"$L12\",\"$L13\"]}],\"$L14\"]}],null,\"$L15\"]}],{},null,false]},null,false],\"$L16\",false]],\"m\":\"$undefined\",\"G\":[\"$17\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"18:I[3299,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"PillarsSection\"]\n1d:I[1356,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"Image\"]\n28:I[3729,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"BonusSection\"]\n29:I[6621,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"OfferSection\"]\n2a:I[7827,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"CommunitySection\"]\n2b:I[6096,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"FaqSection\"]\n2c:I[8269,[\"419\",\"static/chunks/419-e27c490ce6fd7b93.js\",\"974\",\"static/chunks/app/page-89b4e15b14bfd629.js\"],\"FinalCtaSection\"]\n2d:I[4431,[],\"OutletBoundary\"]\n2f:I[5278,[],\"AsyncMetadataOutlet\"]\n31:I[4431,[],\"ViewportBoundary\"]\n33:I[4431,[],\"MetadataBoundary\"]\n34:\"$Sreact.suspense\"\n7:[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]\n8:[\"$\",\"span\",\"1-2\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"MONETIZE SEU CANAL\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}]\n"])</script><script>self.__next_f.push([1,"9:[\"$\",\"div\",\"2\",{\"className\":\"flex\",\"children\":[[\"$\",\"span\",\"2-0\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"Escolha seu filme ou série e a IA gera o seu vídeo completo.\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}],[\"$\",\"span\",\"2-1\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"WINTUBE\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}],[\"$\",\"span\",\"2-2\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"MONETIZE SEU CANAL\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"a:[\"$\",\"div\",\"3\",{\"className\":\"flex\",\"children\":[[\"$\",\"span\",\"3-0\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"Escolha seu filme ou série e a IA gera o seu vídeo completo.\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}],[\"$\",\"span\",\"3-1\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"WINTUBE\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}],[\"$\",\"span\",\"3-2\",{\"className\":\"font-mono text-xs font-bold tracking-widest text-black px-8\",\"children\":[\"MONETIZE SEU CANAL\",\" \",[\"$\",\"span\",null,{\"className\":\"text-black/40 mx-3\",\"children\":\"✦\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"b:[\"$\",\"$L6\",null,{\"animation\":\"slide-up\",\"delay\":0,\"duration\":800,\"children\":[\"$\",\"$L18\",null,{}]}]\n"])</script><script>self.__next_f.push([1,"c:[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":0,\"duration\":700,\"children\":[\"$\",\"section\",null,{\"className\":\"py-10 sm:py-12 md:py-16 lg:py-20 bg-muted overflow-hidden\",\"children\":[\"$\",\"div\",null,{\"className\":\"max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12\",\"children\":[[\"$\",\"div\",null,{\"className\":\"mb-8 sm:mb-12 md:mb-16 text-center md:text-left\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-5\",\"children\":[[\"$\",\"span\",null,{\"className\":\"w-6 sm:w-8 h-px bg-primary/20\"}],[\"$\",\"span\",null,{\"className\":\"font-mono text-[10px] sm:text-xs tracking-widest text-[#22c55e] uppercase\",\"children\":\"Ferramentas de IA\"}]]}],[\"$\",\"h2\",null,{\"className\":\"font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight uppercase\",\"children\":[\"Tudo que voce precisa\",[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"text-primary\",\"children\":\"em uma plataforma\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8\",\"children\":[[\"$\",\"$L6\",\"0\",{\"animation\":\"fade-up\",\"delay\":0,\"duration\":600,\"children\":[\"$\",\"div\",null,{\"className\":\"bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}],[[\"$\",\"div\",null,{\"className\":\"w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4 sm:mb-6\",\"children\":[\"$\",\"span\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\u0026#128221;\"}}]}],[\"$\",\"h3\",null,{\"className\":\"font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold mb-2\",\"children\":\"Roteiro Automatico\"}],[\"$\",\"p\",null,{\"className\":\"text-sm md:text-base text-muted-foreground font-light leading-relaxed mb-6\",\"children\":\"Gere roteiros completos para seus videos com IA. Insira o tema, a IA cria um roteiro otimizado para engajamento e retencao.\"}]],[\"$\",\"div\",null,{\"className\":\"mt-auto\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center\",\"children\":[\"$\",\"video\",null,{\"className\":\"w-full h-full object-contain\",\"autoPlay\":true,\"muted\":true,\"loop\":true,\"playsInline\":true,\"children\":[\"$\",\"source\",null,{\"src\":\"https://i.imgur.com/xQO2AVr.mp4\",\"type\":\"video/mp4\"}]}]}]}]]}]}],[\"$\",\"$L6\",\"1\",{\"animation\":\"fade-up\",\"delay\":120,\"duration\":600,\"children\":[\"$\",\"div\",null,{\"className\":\"bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}],[[\"$\",\"div\",null,{\"className\":\"w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4 sm:mb-6\",\"children\":[\"$\",\"span\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\u0026#9986;\"}}]}],[\"$\",\"h3\",null,{\"className\":\"font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold mb-2\",\"children\":\"Cortes Inteligentes\"}],[\"$\",\"p\",null,{\"className\":\"text-sm md:text-base text-muted-foreground font-light leading-relaxed mb-6\",\"children\":\"A IA detecta silencios, repeticoes e partes desnecessarias. Faz os cortes automaticamente mantendo o melhor do conteudo.\"}]],[\"$\",\"div\",null,{\"className\":\"mt-auto\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center\",\"children\":\"$L19\"}]}]]}]}],\"$L1a\",\"$L1b\"]}],\"$L1c\"]}]}]}]\n"])</script><script>self.__next_f.push([1,"d:[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":0,\"duration\":700,\"children\":[\"$\",\"section\",null,{\"className\":\"py-8 sm:py-12 md:py-16 px-4 bg-background overflow-hidden border-t border-border/50\",\"children\":[\"$\",\"div\",null,{\"className\":\"max-w-6xl mx-auto\",\"children\":[[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"duration\":700,\"children\":[\"$\",\"div\",null,{\"className\":\"text-center mb-8 sm:mb-12\",\"children\":[\"$\",\"h2\",null,{\"className\":\"font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black leading-tight uppercase tracking-tighter\",\"children\":[\"SEUS VÍDEOS IRÃO FICAR \",[\"$\",\"span\",null,{\"className\":\"text-primary\",\"children\":\"DESSE MESMO FORMATO\"}],\", \",[\"$\",\"br\",null,{}],\"APENAS COM 1 APP E UM CLICK: \",[\"$\",\"span\",null,{\"className\":\"text-primary\",\"children\":\"ASSIM\"}]]}]}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center items-center md:items-stretch\",\"children\":[[\"$\",\"div\",null,{\"className\":\"w-full md:w-1/3 max-w-[450px]\",\"children\":[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":200,\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black\",\"children\":[\"$\",\"iframe\",null,{\"className\":\"absolute inset-0 w-full h-full\",\"src\":\"https://www.youtube.com/embed/lcJ8BVEo15U\",\"title\":\"YouTube video player 1\",\"frameBorder\":\"0\",\"allow\":\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\",\"allowFullScreen\":true}]}]}]}],[\"$\",\"div\",null,{\"className\":\"w-full md:w-1/3 max-w-[450px]\",\"children\":[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":400,\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black\",\"children\":[\"$\",\"iframe\",null,{\"className\":\"absolute inset-0 w-full h-full\",\"src\":\"https://www.youtube.com/embed/MAZ0mWdoUYI\",\"title\":\"YouTube video player 2\",\"frameBorder\":\"0\",\"allow\":\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\",\"allowFullScreen\":true}]}]}]}],[\"$\",\"div\",null,{\"className\":\"w-full md:w-1/3 max-w-[450px]\",\"children\":[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":600,\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black\",\"children\":[\"$\",\"iframe\",null,{\"className\":\"absolute inset-0 w-full h-full\",\"src\":\"https://www.youtube.com/embed/ANnHwcWenR8\",\"title\":\"YouTube video player 3\",\"frameBorder\":\"0\",\"allow\":\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\",\"allowFullScreen\":true}]}]}]}]]}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"e:[\"$\",\"$L6\",null,{\"animation\":\"zoom-in\",\"delay\":0,\"duration\":700,\"children\":[\"$\",\"section\",null,{\"id\":\"exemplos\",\"className\":\"py-10 sm:py-12 md:py-16 lg:py-24 bg-background overflow-hidden\",\"children\":[[\"$\",\"div\",null,{\"className\":\"max-w-6xl mx-auto px-3 sm:px-4 md:px-12 mb-6 sm:mb-8 md:mb-12\",\"children\":[\"$\",\"div\",null,{\"className\":\"text-center\",\"children\":[[\"$\",\"div\",null,{\"className\":\"inline-flex items-center gap-2 bg-primary border border-primary/20 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6\",\"children\":[\"$\",\"span\",null,{\"className\":\"font-mono text-[10px] sm:text-xs tracking-widest text-primary uppercase\",\"children\":\"Exemplos\"}]}],[\"$\",\"h2\",null,{\"className\":\"font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight\",\"children\":[\"Gere Vídeos Únicos e Inéditos\",[\"$\",\"br\",null,{}],[\"$\",\"span\",null,{\"className\":\"text-primary\",\"children\":\"de Forma Simples e Automática\"}]]}]]}]}],[\"$\",\"div\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex animate-scroll-channels\",\"children\":[[[\"$\",\"div\",\"first-0\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/IIWh8XN.png\",\"alt\":\"Canal 1\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}],[\"$\",\"div\",\"first-1\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/0fWerxK.png\",\"alt\":\"Canal 2\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}],[\"$\",\"div\",\"first-2\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/G1KCaG0.png\",\"alt\":\"Canal 3\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}],[\"$\",\"div\",\"first-3\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/g2eNmpM.jpeg\",\"alt\":\"Canal 4\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}],\"$L1e\",\"$L1f\"],[\"$L20\",\"$L21\",\"$L22\",\"$L23\",\"$L24\",\"$L25\"]]}],\"$L26\",\"$L27\"]}]]}]}]\n"])</script><script>self.__next_f.push([1,"f:[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":0,\"duration\":700,\"children\":[\"$\",\"$L28\",null,{}]}]\n10:[\"$\",\"$L6\",null,{\"animation\":\"slide-up\",\"delay\":0,\"duration\":800,\"threshold\":0.05,\"children\":[\"$\",\"div\",null,{\"id\":\"offer-section\",\"children\":[\"$\",\"$L29\",null,{}]}]}]\n11:[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":0,\"duration\":700,\"children\":[\"$\",\"$L2a\",null,{}]}]\n12:[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":0,\"duration\":700,\"children\":[\"$\",\"$L2b\",null,{}]}]\n13:[\"$\",\"$L6\",null,{\"animation\":\"zoom-in\",\"delay\":0,\"duration\":700,\"children\":[\"$\",\"$L2c\",null,{}]}]\n14:[\"$\",\"footer\",null,{\"className\":\"py-8 md:py-10 px-4 md:px-12 border-t border-primary/20 flex flex-col md:flex-row items-center justify-between gap-5\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex items-center\",\"children\":[\"$\",\"$L1d\",null,{\"src\":\"/logo.png\",\"alt\":\"Wintube\",\"width\":150,\"height\":40,\"className\":\"h-8 md:h-10 w-auto object-contain\"}]}],[\"$\",\"p\",null,{\"className\":\"text-xs text-muted-foreground\",\"children\":\"© 2025 Wintube — Todos os direitos reservados\"}]]}]\n15:[\"$\",\"$L2d\",null,{\"children\":[\"$L2e\",[\"$\",\"$L2f\",null,{\"promise\":\"$@30\"}]]}]\n16:[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L31\",null,{\"children\":\"$L32\"}],null],[\"$\",\"$L33\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$34\",null,{\"fallback\":null,\"children\":\"$L35\"}]}]}]]}]\n"])</script><script>self.__next_f.push([1,"19:[\"$\",\"video\",null,{\"className\":\"w-full h-full object-contain\",\"autoPlay\":true,\"muted\":true,\"loop\":true,\"playsInline\":true,\"children\":[\"$\",\"source\",null,{\"src\":\"https://i.imgur.com/7tHXGxQ.mp4\",\"type\":\"video/mp4\"}]}]\n"])</script><script>self.__next_f.push([1,"1a:[\"$\",\"$L6\",\"2\",{\"animation\":\"fade-up\",\"delay\":240,\"duration\":600,\"children\":[\"$\",\"div\",null,{\"className\":\"bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}],\"$undefined\",[\"$\",\"div\",null,{\"className\":\"mt-auto\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center\",\"children\":[\"$\",\"$L1d\",null,{\"src\":\"/anti-direitos-autorais.png\",\"alt\":\"Anti-Direitos Autorais\",\"fill\":true,\"className\":\"object-contain p-2\"}]}]}]]}]}]\n"])</script><script>self.__next_f.push([1,"1b:[\"$\",\"$L6\",\"3\",{\"animation\":\"fade-up\",\"delay\":360,\"duration\":600,\"children\":[\"$\",\"div\",null,{\"className\":\"bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}],\"$undefined\",[\"$\",\"div\",null,{\"className\":\"mt-auto\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center\",\"children\":[\"$\",\"$L1d\",null,{\"src\":\"/montagem-cinematografica.png\",\"alt\":\"Montagem Cinematográfica\",\"fill\":true,\"className\":\"object-contain p-2\"}]}]}]]}]}]\n"])</script><script>self.__next_f.push([1,"1c:[\"$\",\"div\",null,{\"className\":\"mt-4 md:mt-6\",\"children\":[\"$\",\"$L6\",null,{\"animation\":\"fade-up\",\"delay\":480,\"duration\":600,\"children\":[\"$\",\"div\",null,{\"className\":\"bg-background border border-primary/20 rounded-2xl p-5 sm:p-6 md:p-8 transition-all hover:border-primary/40 group\",\"children\":[[\"$\",\"div\",null,{\"className\":\"w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4\",\"children\":\"🖥\"}],[\"$\",\"h3\",null,{\"className\":\"font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold mb-2\",\"children\":\"Area de Membros Completa\"}],[\"$\",\"p\",null,{\"className\":\"text-sm text-muted-foreground font-light leading-relaxed\",\"children\":\"Acesse todos os seus projetos, historico de edicoes, templates e treinamentos em um so lugar. Interface limpa e intuitiva.\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"1e:[\"$\",\"div\",\"first-4\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/TrUNy3d.png\",\"alt\":\"Canal 5\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"1f:[\"$\",\"div\",\"first-5\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/jQgti8k.png\",\"alt\":\"Canal 6\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"20:[\"$\",\"div\",\"second-0\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/IIWh8XN.png\",\"alt\":\"Canal 1\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"21:[\"$\",\"div\",\"second-1\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/0fWerxK.png\",\"alt\":\"Canal 2\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"22:[\"$\",\"div\",\"second-2\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/G1KCaG0.png\",\"alt\":\"Canal 3\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"23:[\"$\",\"div\",\"second-3\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/g2eNmpM.jpeg\",\"alt\":\"Canal 4\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"24:[\"$\",\"div\",\"second-4\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/TrUNy3d.png\",\"alt\":\"Canal 5\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"25:[\"$\",\"div\",\"second-5\",{\"className\":\"flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://www.youtube.com/@tulioproducoes\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"$\",\"div\",null,{\"className\":\"relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]\",\"children\":[[\"$\",\"$L1d\",null,{\"src\":\"https://i.imgur.com/jQgti8k.png\",\"alt\":\"Canal 6\",\"fill\":true,\"className\":\"object-cover\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity\"}]]}]}]}]\n"])</script><script>self.__next_f.push([1,"26:[\"$\",\"div\",null,{\"className\":\"absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none\"}]\n27:[\"$\",\"div\",null,{\"className\":\"absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none\"}]\n"])</script><script>self.__next_f.push([1,"32:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n2e:null\n"])</script><script>self.__next_f.push([1,"36:I[622,[],\"IconMark\"]\n30:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Wintube - Crie Canais Lucrativos no YouTube\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"O primeiro aplicativo de I.A. que transforma qualquer pessoa em dono de canais lucrativos no YouTube postando vídeos de filmes e séries\"}],[\"$\",\"meta\",\"2\",{\"name\":\"generator\",\"content\":\"v0.app\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"500x500\"}],[\"$\",\"link\",\"4\",{\"rel\":\"icon\",\"href\":\"/logo.png\"}],[\"$\",\"$L36\",\"5\",{}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script><script>self.__next_f.push([1,"35:\"$30:metadata\"\n"])</script></body></html>
