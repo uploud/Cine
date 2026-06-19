@@ -94,9 +94,16 @@ export function AiToolsSection() {
               <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold mb-2">
                 Area de Membros Completa
               </h3>
-              <p className="text-sm text-muted-foreground font-light leading-relaxed">
+              <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
                 Acesse todos os seus projetos, historico de edicoes, templates e treinamentos em um so lugar. Interface limpa e intuitiva.
               </p>
+              <div className="rounded-xl overflow-hidden border border-primary/10 shadow-lg bg-black/5">
+                <img
+                  src="https://i.imgur.com/FXyZUCV.gif"
+                  alt="Area de Membros Completa"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
