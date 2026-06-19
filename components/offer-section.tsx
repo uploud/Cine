@@ -8,7 +8,7 @@ import { buildCheckoutURL } from "@/lib/url-params"
 
 
 export function OfferSection() {
-  const checkoutUrl = "https://larissainfo.mycartpanda.com/checkout/210179551:1"
+  const checkoutUrl = "https://checkout.wiven.com.br/checkout/cmq2m4gph0t7701q2we9p9ktn?offer=H7FZ0C4"
 
   const redirectToCheckout = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
