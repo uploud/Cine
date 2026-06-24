@@ -127,8 +127,7 @@ export function OfferSection() {
           {/* CTA */}
           <div className="mt-4 sm:mt-5 md:mt-8 flex justify-center">
             <a
-              onClick={(e) => e.preventDefault()}
-              href="https://pay.hotmart.com/I106472337F?checkoutMode=2"
+              href="https://pay.hotmart.com/I106472337F"
               className="hotmart-fb hotmart__button-checkout"
             >
               <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar" />
