@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import React, { useEffect } from "react"
 import { Shield, ShoppingBag, Lock } from "lucide-react"
 import Image from "next/image"
 import { buildCheckoutURL } from "@/lib/url-params"
@@ -8,13 +8,19 @@ import { buildCheckoutURL } from "@/lib/url-params"
 
 
 export function OfferSection() {
-  const checkoutUrl = "https://larissainfo.mycartpanda.com/checkout/210179551:1"
-
-  const redirectToCheckout = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    const url = buildCheckoutURL(checkoutUrl)
-    window.location.href = url
-  }
+  useEffect(() => {
+    function importHotmart() {
+      const imported = document.createElement('script');
+      imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+      document.head.appendChild(imported);
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+      document.head.appendChild(link);
+    }
+    importHotmart();
+  }, []);
 
   return (
     <section id="offer-section" className="py-8 sm:py-10 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-background overflow-hidden">
@@ -119,13 +125,13 @@ export function OfferSection() {
           </div>
 
           {/* CTA */}
-          <div className="mt-4 sm:mt-5 md:mt-8">
+          <div className="mt-4 sm:mt-5 md:mt-8 flex justify-center">
             <a
-              href={buildCheckoutURL(checkoutUrl)}
-              onClick={redirectToCheckout}
-              className="block w-full py-3 sm:py-4 md:py-6 lg:py-8 text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-white rounded-md text-center hover:bg-primary transition-colors bg-primary"
+              onClick={(e) => e.preventDefault()}
+              href="https://pay.hotmart.com/I106472337F?checkoutMode=2"
+              className="hotmart-fb hotmart__button-checkout"
             >
-              GARANTA SUA VAGA AGORA!
+              <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar" />
             </a>
           </div>
 
