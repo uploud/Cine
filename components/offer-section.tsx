@@ -8,7 +8,7 @@ import { buildCheckoutURL } from "@/lib/url-params"
 
 
 export function OfferSection() {
-  const checkoutUrl = "https://pay.kiwify.com.br/AuJ9v8J"
+  const checkoutUrl = "https://pay.kiwify.com.br/yTa2MmY"
 
   const redirectToCheckout = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
