@@ -80,28 +80,7 @@ export function AiToolsSection() {
           ))}
         </div>
 
-        <div className="mt-4 md:mt-6">
-          <ScrollReveal animation="fade-up" delay={480} duration={600}>
-            <div className="bg-background border border-primary/20 rounded-2xl p-5 sm:p-6 md:p-8 transition-all hover:border-primary/40 group">
-              <div className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4">
-                &#128421;
-              </div>
-              <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold mb-2">
-                Area de Membros Completa
-              </h3>
-              <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
-                Acesse todos os seus projetos, historico de edicoes, templates e treinamentos em um so lugar. Interface limpa e intuitiva.
-              </p>
-              <div className="rounded-xl overflow-hidden border border-primary/10 shadow-lg bg-black/5">
-                <img
-                  src="https://i.imgur.com/FXyZUCV.gif"
-                  alt="Area de Membros Completa"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
+
       </div>
     </section>
   )
