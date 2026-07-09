@@ -37,7 +37,7 @@ export function AiToolsSection() {
           </p>
           <div className="mt-8 rounded-2xl overflow-hidden border border-primary/20 shadow-2xl">
             <img
-              src="https://i.imgur.com/H5iJr2Q.png"
+              src="https://i.imgur.com/YlXzbyY.png"
               alt="Sistema completo para gerar vídeos no automático"
               className="w-full h-auto object-cover"
             />
