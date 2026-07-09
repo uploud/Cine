@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React from "react"
 import { Play, Star, Shield } from "lucide-react"
 
 
@@ -54,20 +54,7 @@ const StarsBackground = () => (
 import Image from "next/image"
 
 export function HeroSection() {
-  const [currentNiche, setCurrentNiche] = useState(0)
-  const [fade, setFade] = useState(true)
-  const niches = ["FILMES", "SÉRIES", "ANIMES", "MÚSICAS"]
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false)
-      setTimeout(() => {
-        setCurrentNiche((prev) => (prev + 1) % niches.length)
-        setFade(true)
-      }, 300)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [niches.length])
 
   return (
     <section className="relative flex items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-background min-h-[80vh]">
@@ -79,22 +66,17 @@ export function HeroSection() {
           <div className="text-center w-full">
             {/* Logo Wintube */}
             <div className="flex justify-center mb-6 md:mb-10">
-              <img src="/logo.png" alt="Wintube" className="h-16 sm:h-20 md:h-24 lg:h-28 object-contain" />
+              <img src="https://i.imgur.com/tqVJPWa.png" alt="Wintube" className="h-16 sm:h-20 md:h-24 lg:h-28 object-contain" />
             </div>
 
             {/* Glow neon fraco atrás do título */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
             <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-8 text-foreground drop-shadow-md text-balance leading-[1.1] font-black tracking-tighter uppercase relative">
-              Lucre com YouTube Postando Vídeos de <br className="sm:hidden" />
-              <span className="relative inline-block">
-                <div className={`absolute inset-0 bg-primary/10 blur-[25px] rounded-full transition-all duration-300 ${fade ? 'opacity-100 scale-125' : 'opacity-0 scale-50'} -z-10`} />
-                <span className={`relative inline-block transition-all duration-300 ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'} text-primary`}>
-                  {niches[currentNiche]}
-                </span>
-              </span>
-              <br />
-              <span className="text-foreground">Sem Aparecer, Sem Criar Roteiros e Sem Bloqueios por Direitos Autorais!</span>
+              Lucre com YouTube <br className="hidden sm:block" />
+              Postando Vídeos de <span className="text-primary">Filmes, Séries e Animes</span> <br className="hidden md:block" />
+              Sem Aparecer, Sem Criar Roteiros <br className="hidden lg:block" />
+              e Sem Bloqueios por Direitos Autorais!
             </h1>
 
             <div className="mb-6 md:mb-10 max-w-2xl mx-auto">
