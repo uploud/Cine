@@ -2,27 +2,27 @@ import Image from "next/image"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function AiToolsSection() {
-  const features = [
+  const steps = [
     {
-      icon: "&#128221;",
-      title: "Roteiro Automatico",
-      description: "Gere roteiros completos para seus videos com IA. Insira o tema, a IA cria um roteiro otimizado para engajamento e retencao.",
-      video: "https://i.imgur.com/xQO2AVr.mp4",
+      title: "1. Faça o Download das Cenas",
+      description: "Basta copiar o link das cenas dos seus filmes, séries ou animes do YouTube e colar no aplicativo que ele irá baixar automaticamente.",
     },
     {
-      icon: "&#9986;",
-      title: "Cortes Inteligentes",
-      description: "A IA detecta silencios, repeticoes e partes desnecessarias. Faz os cortes automaticamente mantendo o melhor do conteudo.",
-      video: "https://i.imgur.com/7tHXGxQ.mp4",
+      title: "2. Transcreva as Falas das Cenas",
+      description: "Ao clicar no botão \"Transcrever Cenas\", o sistema trancreve todas as falas que existem na cena de forma automática para a geração do roteiro com IA.",
     },
     {
-      image: "/anti-direitos-autorais.png",
-      alt: "Anti-Direitos Autorais",
+      title: "3. Corte as Melhores Partes",
+      description: "Após gerar o roteiro com IA, basta colar o roteiro no campo vazio e clicar nos botões \"Cortar Cenas\"e \"Cortar B-rolls\"para o corte automático das melhores partes das cenas.",
     },
     {
-      image: "/montagem-cinematografica.png",
-      alt: "Montagem Cinematográfica",
+      title: "4. Gere a Montagem Automática",
+      description: "Após a criação dos cortes, basta clicar no botão \"Criar Montagem Completa\" para que o sistema faça toda a montagem do seu vídeo de forma automática. O estilo da montagem é pensado para que não infriga nenhuma política de copyright do YouTube.",
     },
+    {
+      title: "5. Adicione a Música de Fundo",
+      description: "Ao finalizar toda a montagem do vídeo, basta subir a montagem final no aplicativo e colar o link da música de fundo do seu vídeo, que o sistema irá baixar a trilha direto do YouTube e irá sonorizar o seu vídeo.",
+    }
   ]
 
   return (
@@ -35,7 +35,7 @@ export function AiToolsSection() {
           <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-semibold text-foreground">
             Um sistema completo para gerar vídeos no automático em poucos passos.
           </p>
-          <div className="mt-8 rounded-2xl overflow-hidden border-[3px] border-[#0ea5e9] shadow-2xl max-w-4xl mx-auto">
+          <div className="mt-6 md:mt-8 rounded-2xl overflow-hidden border-[3px] border-[#0ea5e9] shadow-2xl max-w-2xl mx-auto">
             <img
               src="https://i.imgur.com/YlXzbyY.png"
               alt="Sistema completo para gerar vídeos no automático"
@@ -44,48 +44,28 @@ export function AiToolsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-          {features.map((feature, i) => (
-            <ScrollReveal key={i} animation="fade-up" delay={i * 120} duration={600}>
-              <div className="bg-background border border-primary/20 h-full rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden transition-all hover:border-primary/40 hover:-translate-y-1 group flex flex-col">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                {feature.title && (
-                  <>
-                    <div className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center text-xl mb-4 sm:mb-6">
-                      <span dangerouslySetInnerHTML={{ __html: feature.icon! }} />
-                    </div>
-                    <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed mb-6">
-                      {feature.description}
-                    </p>
-                  </>
-                )}
+        <div className="mt-16 md:mt-24 mb-10 text-center">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+            Veja o <span className="text-[#0ea5e9]">Passo a Passo</span> Abaixo! ⬇️
+          </h2>
+        </div>
 
-                <div className="mt-auto">
-                  <div className="relative aspect-video rounded-xl overflow-hidden border border-primary/10 bg-black/5 flex items-center justify-center">
-                    {feature.video ? (
-                      <video
-                        className="w-full h-full object-contain"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      >
-                        <source src={feature.video} type="video/mp4" />
-                      </video>
-                    ) : (
-                      <Image
-                        src={feature.image!}
-                        alt={feature.alt!}
-                        fill
-                        className="object-contain p-2"
-                      />
-                    )}
-                  </div>
+        <div className="flex flex-col gap-6 md:gap-10 max-w-4xl mx-auto">
+          {steps.map((step, i) => (
+            <ScrollReveal key={i} animation="fade-up" delay={i * 120} duration={600}>
+              <div className="bg-background border-[3px] border-[#0ea5e9] rounded-3xl p-6 sm:p-8 md:p-10 text-center shadow-xl">
+                <h3 className="font-[family-name:var(--font-display)] text-[#0ea5e9] text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6">
+                  {step.title}
+                </h3>
+                
+                {/* Espaço reservado para as imagens futuras */}
+                <div className="w-full h-48 sm:h-64 md:h-80 bg-muted/50 rounded-xl border-2 border-dashed border-[#0ea5e9]/40 flex items-center justify-center mb-6">
+                  <span className="text-muted-foreground font-medium text-lg">Espaço reservado para a imagem</span>
                 </div>
+
+                <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground">
+                  {step.description}
+                </p>
               </div>
             </ScrollReveal>
           ))}
