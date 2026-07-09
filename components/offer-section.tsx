@@ -18,8 +18,24 @@ export function OfferSection() {
 
   return (
     <section id="offer-section" className="py-8 sm:py-10 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-background overflow-hidden">
+      <div className="max-w-sm sm:max-w-md lg:max-w-3xl mx-auto">
+        
+        {/* Vídeo */}
+        <div className="relative group mb-8 sm:mb-12">
+          <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+          <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
+            <video
+              src="https://i.imgur.com/au0aAsj.mp4"
+              autoPlay
+              controls
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+          </div>
+        </div>
 
-      <div className="max-w-sm sm:max-w-md lg:max-w-2xl mx-auto">
         <div className="bg-card text-foreground rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 border-2 border-primary/20 relative w-full shadow-[0_0_5px_rgba(0,163,255,0.3),0_0_15px_rgba(0,163,255,0.2)]">
 
           {/* Seção: Acesso ao APP */}

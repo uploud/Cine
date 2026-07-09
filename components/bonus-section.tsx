@@ -90,18 +90,7 @@ export function BonusSection() {
           </ScrollReveal>
         </div>
 
-        <div className="text-center">
-          <ScrollReveal animation="zoom-in" delay={600}>
-            <a
-              href="#offer-section"
-              onClick={scrollToOffer}
-              className="group inline-flex items-center gap-2 sm:gap-3 bg-primary text-white font-black text-xs sm:text-sm md:text-base lg:text-xl px-6 py-4 sm:px-8 sm:py-5 rounded-full shadow-[0_5px_15px_rgba(0,163,255,0.2)] hover:shadow-[0_10px_25px_rgba(0,163,255,0.4)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter"
-            >
-              <span>QUERO TER ACESSO AO APLICATIVO</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1" />
-            </a>
-          </ScrollReveal>
-        </div>
+
       </div>
     </section>
   )

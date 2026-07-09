@@ -73,10 +73,10 @@ export function HeroSection() {
     <section className="relative flex items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-background min-h-[80vh]">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
 
-      <div className="relative z-10 max-w-7xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Coluna da Esquerda: Conteúdo de Texto */}
-          <div className="text-center lg:text-left">
+      <div className="relative z-10 max-w-5xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center text-center">
+          {/* Conteúdo de Texto */}
+          <div className="text-center w-full">
             {/* Glow neon fraco atrás do título */}
             <div className="absolute top-1/2 left-1/2 lg:left-1/4 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
@@ -99,7 +99,7 @@ export function HeroSection() {
             </div>
 
             {/* Botão CTA Principal */}
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center mt-8">
               <a
                 href="#offer-section"
                 onClick={(e) => {
@@ -117,21 +117,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Coluna da Direita: Vídeo */}
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
-            <div className="relative aspect-video lg:aspect-square xl:aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
-              <video
-                src="https://i.imgur.com/au0aAsj.mp4"
-                autoPlay
-                controls
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
