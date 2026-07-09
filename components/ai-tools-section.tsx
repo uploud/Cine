@@ -35,6 +35,13 @@ export function AiToolsSection() {
           <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground">
             Um sistema completo para gerar vídeos no automático em poucos passos.
           </p>
+          <div className="mt-8 rounded-2xl overflow-hidden border border-primary/20 shadow-2xl">
+            <img
+              src="https://i.imgur.com/H5iJr2Q.png"
+              alt="Sistema completo para gerar vídeos no automático"
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
