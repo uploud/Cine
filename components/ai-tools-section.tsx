@@ -28,18 +28,18 @@ export function AiToolsSection() {
   return (
     <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-muted overflow-hidden">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12">
-        <div className="mb-8 sm:mb-12 md:mb-16 text-center md:text-left">
-          <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight uppercase">
-            Tudo Que Você Precisa em Um Único Sistema
+        <div className="mb-8 sm:mb-12 md:mb-16 text-center">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+            Tudo Que Você Precisa em <span className="text-[#0ea5e9]">Um<br /> Único Sistema</span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-semibold text-foreground">
             Um sistema completo para gerar vídeos no automático em poucos passos.
           </p>
-          <div className="mt-8 rounded-2xl overflow-hidden border border-primary/20 shadow-2xl">
+          <div className="mt-8 rounded-2xl overflow-hidden border-[3px] border-[#0ea5e9] shadow-2xl max-w-4xl mx-auto">
             <img
               src="https://i.imgur.com/YlXzbyY.png"
               alt="Sistema completo para gerar vídeos no automático"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>
