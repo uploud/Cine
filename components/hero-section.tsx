@@ -72,16 +72,17 @@ export function HeroSection() {
             {/* Glow neon fraco atrás do título */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-            <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-8 text-foreground drop-shadow-md text-balance leading-[1.1] font-black tracking-tighter uppercase relative">
-              Lucre com YouTube <br className="hidden sm:block" />
-              Postando Vídeos de <span className="text-primary">Filmes, Séries e Animes</span> <br className="hidden md:block" />
-              Sem Aparecer, Sem Criar Roteiros <br className="hidden lg:block" />
-              e Sem Bloqueios por Direitos Autorais!
+            <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-foreground drop-shadow-md text-balance leading-[1.05] font-black tracking-tight max-w-4xl mx-auto relative">
+              Lucre com <span className="underline decoration-4 underline-offset-4">YouTube</span><br />
+              Postando Vídeos de <span className="text-primary">Filmes, Séries e</span><br className="hidden sm:block" />
+              <span className="text-primary">Animes</span> Sem Aparecer, Sem Criar<br className="hidden sm:block" />
+              Roteiros e Sem Bloqueios por<br className="hidden sm:block" />
+              Direitos Autorais!
             </h1>
 
             <div className="mb-6 md:mb-10 max-w-2xl mx-auto">
-              <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-muted-foreground font-normal leading-tight inline-block border-b border-foreground/20 pb-0.5">
-                Monte seu canal de filmes e séries com IA e comece a lucrar em até <span className="text-primary font-bold">12 dias</span>, mesmo sem aparecer.
+              <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-foreground font-bold leading-tight inline-block pb-0.5">
+                Monte seu <span className="underline decoration-2 underline-offset-2">canal de filmes e séries</span> com IA e comece a lucrar em até <span className="text-primary font-bold">12 dias</span>, mesmo sem aparecer.
               </p>
             </div>
 
