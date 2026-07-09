@@ -20,6 +20,13 @@ export function OfferSection() {
     <section id="offer-section" className="py-8 sm:py-10 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-background overflow-hidden">
       <div className="max-w-sm sm:max-w-md lg:max-w-3xl mx-auto">
         
+        {/* Título do Vídeo */}
+        <div className="text-center mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight uppercase text-foreground">
+            Depoimento de <span className="text-primary">Direitos Autorais</span> com o Sistema da Wintube
+          </h2>
+        </div>
+
         {/* Vídeo */}
         <div className="relative group mb-8 sm:mb-12">
           <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity duration-500" />

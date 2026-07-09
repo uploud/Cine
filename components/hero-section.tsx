@@ -78,7 +78,7 @@ export function HeroSection() {
           {/* Conteúdo de Texto */}
           <div className="text-center w-full">
             {/* Glow neon fraco atrás do título */}
-            <div className="absolute top-1/2 left-1/2 lg:left-1/4 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
             <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl mb-4 md:mb-8 text-foreground drop-shadow-md text-balance leading-[1.1] font-black tracking-tighter uppercase relative">
               Lucre com YouTube Postando Vídeos de <br className="sm:hidden" />
@@ -92,7 +92,7 @@ export function HeroSection() {
               <span className="text-foreground">Sem Aparecer, Sem Criar Roteiros e Sem Bloqueios por Direitos Autorais!</span>
             </h1>
 
-            <div className="mb-6 md:mb-10 lg:max-w-xl">
+            <div className="mb-6 md:mb-10 max-w-2xl mx-auto">
               <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-muted-foreground font-normal leading-tight inline-block border-b border-foreground/20 pb-0.5">
                 Monte seu canal de filmes e séries com IA e comece a lucrar em até <span className="text-primary font-bold">12 dias</span>, mesmo sem aparecer.
               </p>
