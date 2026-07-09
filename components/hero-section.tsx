@@ -73,14 +73,19 @@ export function HeroSection() {
     <section className="relative flex items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-background min-h-[80vh]">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
 
-      <div className="relative z-10 max-w-5xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Conteúdo de Texto */}
           <div className="text-center w-full">
+            {/* Logo Wintube */}
+            <div className="flex justify-center mb-6 md:mb-10">
+              <img src="/logo.png" alt="Wintube" className="h-16 sm:h-20 md:h-24 lg:h-28 object-contain" />
+            </div>
+
             {/* Glow neon fraco atrás do título */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-            <h1 className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl mb-4 md:mb-8 text-foreground drop-shadow-md text-balance leading-[1.1] font-black tracking-tighter uppercase relative">
+            <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-8 text-foreground drop-shadow-md text-balance leading-[1.1] font-black tracking-tighter uppercase relative">
               Lucre com YouTube Postando Vídeos de <br className="sm:hidden" />
               <span className="relative inline-block">
                 <div className={`absolute inset-0 bg-primary/10 blur-[25px] rounded-full transition-all duration-300 ${fade ? 'opacity-100 scale-125' : 'opacity-0 scale-50'} -z-10`} />
