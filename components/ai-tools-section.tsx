@@ -29,13 +29,12 @@ export function AiToolsSection() {
     <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-muted overflow-hidden">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12">
         <div className="mb-8 sm:mb-12 md:mb-16 text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-5">
-            <span className="w-6 sm:w-8 h-px bg-primary/20" />
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-[#22c55e] uppercase">Ferramentas de IA</span>
-          </div>
           <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight uppercase">
-            Tudo que voce precisa<br /><span className="text-primary">em uma plataforma</span>
+            Tudo Que Você Precisa em Um Único Sistema
           </h2>
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground">
+            Um sistema completo para gerar vídeos no automático em poucos passos.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
