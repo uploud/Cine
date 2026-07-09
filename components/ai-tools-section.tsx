@@ -6,22 +6,27 @@ export function AiToolsSection() {
     {
       title: "1. Faça o Download das Cenas",
       description: "Basta copiar o link das cenas dos seus filmes, séries ou animes do YouTube e colar no aplicativo que ele irá baixar automaticamente.",
+      image: "https://i.imgur.com/XAqO21B.png",
     },
     {
       title: "2. Transcreva as Falas das Cenas",
       description: "Ao clicar no botão \"Transcrever Cenas\", o sistema trancreve todas as falas que existem na cena de forma automática para a geração do roteiro com IA.",
+      image: "https://i.imgur.com/uxTyJ0i.png",
     },
     {
       title: "3. Corte as Melhores Partes",
       description: "Após gerar o roteiro com IA, basta colar o roteiro no campo vazio e clicar nos botões \"Cortar Cenas\"e \"Cortar B-rolls\"para o corte automático das melhores partes das cenas.",
+      image: "https://i.imgur.com/papRju9.png",
     },
     {
       title: "4. Gere a Montagem Automática",
       description: "Após a criação dos cortes, basta clicar no botão \"Criar Montagem Completa\" para que o sistema faça toda a montagem do seu vídeo de forma automática. O estilo da montagem é pensado para que não infriga nenhuma política de copyright do YouTube.",
+      image: "https://i.imgur.com/AaT4QLV.png",
     },
     {
       title: "5. Adicione a Música de Fundo",
       description: "Ao finalizar toda a montagem do vídeo, basta subir a montagem final no aplicativo e colar o link da música de fundo do seu vídeo, que o sistema irá baixar a trilha direto do YouTube e irá sonorizar o seu vídeo.",
+      image: "https://i.imgur.com/A18YWy3.png",
     }
   ]
 
@@ -58,9 +63,13 @@ export function AiToolsSection() {
                   {step.title}
                 </h3>
                 
-                {/* Espaço reservado para as imagens futuras */}
-                <div className="w-full h-48 sm:h-64 md:h-80 bg-muted/50 rounded-xl border-2 border-dashed border-[#0ea5e9]/40 flex items-center justify-center mb-6">
-                  <span className="text-muted-foreground font-medium text-lg">Espaço reservado para a imagem</span>
+                {/* Imagem do passo */}
+                <div className="w-full rounded-xl overflow-hidden border border-[#0ea5e9]/20 flex items-center justify-center mb-6">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
 
                 <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground">
