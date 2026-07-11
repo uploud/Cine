@@ -86,6 +86,17 @@ export function HeroSection() {
               </p>
             </div>
 
+            {/* VSL (Vídeo de Vendas) */}
+            <div className="relative max-w-4xl mx-auto w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,163,255,0.2)] mb-8 border border-primary/20 bg-black">
+              <iframe 
+                src="https://screenapp.io/app/v/4D0vcH_Jah" 
+                className="w-full h-full border-none"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Apresentação Wintube"
+              />
+            </div>
+
             {/* Botão CTA Principal */}
             <div className="flex justify-center mt-8">
               <a
