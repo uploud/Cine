@@ -10,6 +10,7 @@ import { ChannelsSection } from "@/components/channels-section"
 import { FaqSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { CommunitySection } from "@/components/community-section"
+import { AgencyBadge } from "@/components/agency-badge"
 
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
 
@@ -48,6 +49,10 @@ export default function Home() {
           <div id="offer-section">
             <OfferSection />
           </div>
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-up" delay={0} duration={700}>
+          <AgencyBadge />
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={0} duration={700}>
