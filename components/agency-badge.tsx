@@ -6,15 +6,8 @@ export function AgencyBadge() {
       <div className="max-w-4xl w-full rounded-3xl border border-primary/20 bg-[#0d0d12] p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10 shadow-[0_0_30px_rgba(168,85,247,0.15)]">
         {/* Imagem / Logo da Agência */}
         <div className="relative shrink-0">
-          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-[#1a1a24] bg-gradient-to-b from-[#1a1a24] to-[#0a0a0f] flex items-center justify-center shadow-2xl relative z-10">
-            <div className="text-center flex flex-col items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8 text-[#d4af37] mb-1 opacity-80">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-              </svg>
-              <span className="block font-bold text-3xl sm:text-4xl leading-none tracking-tighter" style={{ fontFamily: 'var(--font-display)', background: 'linear-gradient(to bottom, #f3d785, #b8860b)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
-                Wintube
-              </span>
-            </div>
+          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-[#1a1a24] bg-white flex items-center justify-center shadow-2xl relative z-10 p-2 sm:p-4">
+            <img src="/logo.png" alt="Wintube Logo" className="w-full h-auto object-contain scale-110" />
           </div>
           <div className="absolute -bottom-2 -right-2 bg-[#0095f6] rounded-full p-1 border-4 border-[#0d0d12] z-20">
             <CheckCircle2 className="w-6 h-6 text-white fill-current" />
