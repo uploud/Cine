@@ -14,7 +14,7 @@ export function AgencyBadge() {
         {/* Imagem / Logo da Agência */}
         <div className="relative shrink-0">
           <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-gray-100 bg-white flex items-center justify-center shadow-lg relative z-10 p-2 sm:p-4">
-            <img src="/logo.png" alt="Wintube Logo" className="w-full h-auto object-contain scale-110" />
+            <img src="https://i.imgur.com/AKafc3U.gif" alt="Wintube Logo" className="w-full h-auto object-contain scale-110" />
           </div>
           <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 z-20 shadow-sm">
             <VerifiedBadge className="w-8 h-8 sm:w-10 sm:h-10" />
