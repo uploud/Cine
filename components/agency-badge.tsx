@@ -23,9 +23,9 @@ export function AgencyBadge() {
 
         {/* Conteúdo e Texto */}
         <div className="text-center md:text-left flex-1">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">
-            Você está comprando um produto produzido pela <span className="text-[#0095f6]">Wintube</span>
-            <VerifiedBadge className="inline-block w-6 h-6 sm:w-8 sm:h-8 ml-1.5 -mt-1" />
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight flex items-center justify-center md:justify-start">
+            Você está comprando um produto produzido pela <span className="text-[#0095f6] ml-1.5">Wintube</span>
+            <img src="https://i.imgur.com/AKafc3U.gif" alt="Badge" className="inline-block w-6 h-6 sm:w-8 sm:h-8 ml-1.5 rounded-full object-cover" />
           </h3>
           <p className="text-sm sm:text-base text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0">
             <strong className="text-gray-900 font-semibold">Sua segurança e seus direitos estão 100% garantidos.</strong> Somos uma agência real, com rosto e reputação — não um anúncio fantasma.
