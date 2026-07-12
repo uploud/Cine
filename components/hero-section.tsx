@@ -2,7 +2,6 @@
 
 import React from "react"
 import { Play, Star, Shield } from "lucide-react"
-import { CustomVslPlayer } from "./custom-vsl-player"
 
 
 const StarsBackground = () => (
@@ -83,12 +82,20 @@ export function HeroSection() {
 
             <div className="mb-6 md:mb-10 max-w-2xl mx-auto">
               <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-foreground font-bold leading-tight inline-block pb-0.5">
-                Monte seu <span className="underline decoration-2 underline-offset-2">canal de filmes e séries</span> com IA e comece a lucrar em até <span className="text-primary font-bold">12 dias</span>, mesmo sem aparecer.
+                Monte seu <span className="underline decoration-2 underline-offset-2">canal de filmes e séries</span> com SISTEMA e comece a lucrar em até <span className="text-primary font-bold">12 dias</span>, mesmo sem aparecer.
               </p>
             </div>
 
-            {/* VSL (Vídeo de Vendas Customizado) */}
-            <CustomVslPlayer videoId="tq-ZS_d-2z0" />
+            {/* VSL (Vídeo de Vendas) */}
+            <div className="relative max-w-4xl mx-auto w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,163,255,0.2)] mb-8 border border-primary/20 bg-black">
+              <iframe 
+                src="https://www.youtube.com/embed/tq-ZS_d-2z0" 
+                className="w-full h-full border-none"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Apresentação Wintube"
+              />
+            </div>
 
             {/* Botão CTA Principal */}
             <div className="flex justify-center mt-8">
