@@ -23,7 +23,8 @@ export function AiToolsSection() {
     {
       title: "4. Gere a Montagem Automática",
       description: "Após a criação dos cortes, basta clicar no botão \"Criar Montagem Completa\" para que o sistema faça toda a montagem do seu vídeo de forma automática. O estilo da montagem é pensado para que não infriga nenhuma política de copyright do YouTube.",
-      image: "https://i.imgur.com/AaT4QLV.png",
+      image: "",
+      video: "https://i.imgur.com/Ie5Bqw6.mp4",
     },
     {
       title: "5. Adicione a Música de Fundo",
