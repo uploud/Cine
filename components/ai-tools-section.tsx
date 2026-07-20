@@ -11,7 +11,8 @@ export function AiToolsSection() {
     {
       title: "2. Transcreva as Falas das Cenas",
       description: "Ao clicar no botão \"Transcrever Cenas\", o sistema trancreve todas as falas que existem na cena de forma automática para a geração do roteiro com IA.",
-      image: "https://i.imgur.com/uxTyJ0i.png",
+      image: "",
+      video: "https://i.imgur.com/XyuHBwq.mp4",
     },
     {
       title: "3. Corte as Melhores Partes",
@@ -35,7 +36,7 @@ export function AiToolsSection() {
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12">
         <div className="mb-8 sm:mb-12 md:mb-16 text-center">
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-            Tudo Que Você Precisa em <span className="text-[#0ea5e9]">Um<br /> Único Sistema</span>
+            Tudo Que Você Precisa em <span className="text-[#0ea5e9]">Um<br /> Único APP</span>
           </h2>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-semibold text-foreground">
             Um sistema completo para gerar vídeos no automático em poucos passos.
@@ -66,13 +67,24 @@ export function AiToolsSection() {
                   {step.title}
                 </h3>
                 
-                {/* Imagem do passo */}
+                {/* Mídia do passo */}
                 <div className="w-full rounded-xl overflow-hidden border border-[#0ea5e9]/20 flex items-center justify-center mb-6">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="w-full h-auto object-contain"
-                  />
+                  {(step as any).video ? (
+                    <video
+                      src={(step as any).video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-auto object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-full h-auto object-contain"
+                    />
+                  )}
                 </div>
 
                 <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground">
