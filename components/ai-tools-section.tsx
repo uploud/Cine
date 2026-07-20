@@ -41,9 +41,12 @@ export function AiToolsSection() {
             Um sistema completo para gerar vídeos no automático em poucos passos.
           </p>
           <div className="mt-6 md:mt-8 rounded-2xl overflow-hidden border-[3px] border-[#0ea5e9] shadow-2xl max-w-2xl mx-auto">
-            <img
-              src="https://i.imgur.com/LTK9erf.png"
-              alt="Sistema completo para gerar vídeos no automático"
+            <video
+              src="https://i.imgur.com/VG292F5.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-auto object-contain"
             />
           </div>
