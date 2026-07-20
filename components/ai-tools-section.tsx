@@ -17,7 +17,8 @@ export function AiToolsSection() {
     {
       title: "3. Corte as Melhores Partes",
       description: "Após gerar o roteiro com IA, basta colar o roteiro no campo vazio e clicar nos botões \"Cortar Cenas\"e \"Cortar B-rolls\"para o corte automático das melhores partes das cenas.",
-      image: "https://i.imgur.com/papRju9.png",
+      image: "",
+      video: "https://i.imgur.com/9DXzQZH.mp4",
     },
     {
       title: "4. Gere a Montagem Automática",
