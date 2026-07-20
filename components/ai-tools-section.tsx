@@ -29,7 +29,8 @@ export function AiToolsSection() {
     {
       title: "5. Adicione a Música de Fundo",
       description: "Ao finalizar toda a montagem do vídeo, basta subir a montagem final no aplicativo e colar o link da música de fundo do seu vídeo, que o sistema irá baixar a trilha direto do YouTube e irá sonorizar o seu vídeo.",
-      image: "https://i.imgur.com/A18YWy3.png",
+      image: "",
+      video: "https://i.imgur.com/Reg1Gjl.mp4",
     }
   ]
 
