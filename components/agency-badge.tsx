@@ -28,7 +28,7 @@ export function AgencyBadge() {
             <img src="https://i.imgur.com/AKafc3U.gif" alt="Badge" className="inline-block w-6 h-6 sm:w-8 sm:h-8 ml-1.5 rounded-full object-cover" />
           </h3>
           <p className="text-sm sm:text-base text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0">
-            <strong className="text-gray-900 font-semibold">Sua segurança e seus direitos estão 100% garantidos.</strong> Somos uma agência real, com rosto e reputação — não um anúncio fantasma.
+            <strong className="text-gray-900 font-semibold">Sua segurança e seus direitos estão 100% garantidos.</strong> Somos uma EMPRESA real, com rosto e reputação não um anúncio fantasma.
           </p>
           <a
             href="https://www.instagram.com/wintube.oficial/"
