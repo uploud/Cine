@@ -60,19 +60,20 @@ export function HeroSection() {
     <section className="relative flex items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-background min-h-[80vh]">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
 
-      <div className="relative z-10 max-w-6xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 max-w-7xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 text-center lg:text-left">
+          
           {/* Conteúdo de Texto */}
-          <div className="text-center w-full">
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start relative">
+            {/* Glow neon fraco atrás do título */}
+            <div className="absolute top-1/2 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[80%] lg:w-[120%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+
             {/* Logo Wintube */}
-            <div className="flex justify-center mb-6 md:mb-10">
-              <img src="https://i.imgur.com/tqVJPWa.png" alt="Wintube" className="h-16 sm:h-20 md:h-24 lg:h-28 object-contain" />
+            <div className="flex justify-center lg:justify-start mb-6 md:mb-10 w-full">
+              <img src="https://i.imgur.com/tqVJPWa.png" alt="Wintube" className="h-16 sm:h-20 md:h-24 lg:h-20 object-contain" />
             </div>
 
-            {/* Glow neon fraco atrás do título */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
-
-            <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-foreground drop-shadow-md leading-[1.05] font-black tracking-tight max-w-[1000px] mx-auto relative">
+            <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] mb-4 md:mb-6 text-foreground drop-shadow-md leading-[1.1] font-black tracking-tight w-full">
               Lucre com <span className="underline decoration-4 underline-offset-4">YouTube</span><br />
               Postando Vídeos de <span className="text-primary whitespace-nowrap">Filmes, Séries e</span><br className="hidden sm:block" />
               <span className="text-primary">Animes</span> Sem Aparecer, Sem Criar<br className="hidden sm:block" />
@@ -80,15 +81,35 @@ export function HeroSection() {
               Direitos Autorais!
             </h1>
 
-            <div className="mb-6 md:mb-10 max-w-2xl mx-auto">
-              <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-foreground font-bold leading-tight inline-block pb-0.5">
-                Monte seu <span className="underline decoration-2 underline-offset-2">canal de filmes e séries</span> com <span className="text-primary font-bold">1 APP</span> e comece a lucrar em até <span className="text-primary font-bold">12 dias</span>, mesmo sem aparecer.
-
+            <div className="mb-8 md:mb-10 w-full max-w-lg mx-auto lg:mx-0">
+              <p className="text-[13px] sm:text-sm md:text-base lg:text-lg text-foreground/90 font-bold leading-relaxed pb-0.5">
+                Monte seu <span className="underline decoration-2 underline-offset-2 text-foreground">canal de filmes e séries</span> com <span className="text-primary font-black">1 APP</span> e comece a lucrar em até <span className="text-primary font-black">12 dias</span>, mesmo sem aparecer.
               </p>
             </div>
 
-            {/* VSL (Vídeo de Vendas) */}
-            <div className="relative max-w-4xl mx-auto w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,163,255,0.2)] mb-8 border border-primary/20 bg-black">
+            {/* Botão CTA Principal */}
+            <div className="flex justify-center lg:justify-start w-full">
+              <a
+                href="#offer-section"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('offer-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="group relative flex items-center justify-center gap-3 bg-primary text-white font-black text-sm sm:text-base md:text-lg px-8 py-5 sm:px-10 sm:py-6 rounded-xl shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_40px_rgba(0,163,255,0.5)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter w-full sm:w-auto"
+              >
+                <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
+                <span>Quero Lucrar agora</span>
+                <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+                  <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out skew-x-[-20deg]" />
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          {/* VSL (Vídeo de Vendas) */}
+          <div className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/10 blur-[100px] rounded-full pointer-events-none -z-10" />
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,163,255,0.2)] border border-primary/20 bg-black">
               <iframe 
                 src="https://www.youtube.com/embed/tq-ZS_d-2z0" 
                 className="w-full h-full border-none"
@@ -97,26 +118,7 @@ export function HeroSection() {
                 title="Apresentação Wintube"
               />
             </div>
-
-            {/* Botão CTA Principal */}
-            <div className="flex justify-center mt-8">
-              <a
-                href="#offer-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('offer-section')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="group relative flex items-center justify-center gap-3 bg-primary text-white font-black text-sm sm:text-base md:text-xl lg:text-2xl px-8 py-5 sm:px-10 sm:py-6 md:px-12 md:py-7 rounded-xl shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_40px_rgba(0,163,255,0.5)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter"
-              >
-                <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 fill-current" />
-                <span>Quero Lucrar agora</span>
-                <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
-                  <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out skew-x-[-20deg]" />
-                </div>
-              </a>
-            </div>
           </div>
-
 
         </div>
       </div>
