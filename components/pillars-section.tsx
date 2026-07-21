@@ -412,17 +412,25 @@ export function PillarsSection() {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex justify-center">
-                      <div
-                        className={`
-                          w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-all duration-300
-                          ${isDone
-                            ? "bg-[#00A3FF] text-foreground"
-                            : "bg-white/5 border border-border"
-                          }
-                        `}
-                      >
-                        {isDone && <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
+                    <div className="flex flex-col items-center w-full mt-auto">
+                      {isLastCard && (
+                        <div className={`inline-flex items-center gap-1.5 bg-[#00A3FF]/10 border border-[#00A3FF]/30 rounded-full px-3 py-1 mb-3 transition-opacity duration-500 ${isComplete ? 'opacity-100' : 'opacity-0'}`}>
+                          <Check className="w-3 h-3 text-[#00A3FF]" />
+                          <span className="text-[#00A3FF] font-bold text-[10px] sm:text-xs">Pronto para publicar e monetizar!</span>
+                        </div>
+                      )}
+                      <div className="flex justify-center">
+                        <div
+                          className={`
+                            w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-all duration-300
+                            ${isDone
+                              ? "bg-[#00A3FF] text-foreground"
+                              : "bg-white/5 border border-border"
+                            }
+                          `}
+                        >
+                          {isDone && <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -431,16 +439,6 @@ export function PillarsSection() {
             })}
           </div>
         </div>
-
-        {/* Complete Message */}
-        {isComplete && (
-          <div className="text-center mt-6 sm:mt-8 md:mt-12 animate-fade-in mb-8">
-            <div className="inline-flex items-center gap-2 bg-[#00A3FF]/10 border border-[#00A3FF]/30 rounded-full px-4 sm:px-6 py-2 sm:py-3">
-              <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#00A3FF]" />
-              <span className="text-[#00A3FF] font-bold text-xs sm:text-sm md:text-base">Pronto para publicar e monetizar!</span>
-            </div>
-          </div>
-        )}
 
 
       </div>
