@@ -47,7 +47,7 @@ export function AiToolsSection() {
           </p>
           <div className="mt-6 md:mt-8 rounded-2xl overflow-hidden border-[3px] border-[#0ea5e9] shadow-2xl max-w-2xl mx-auto">
             <video
-              src="https://i.imgur.com/VG292F5.mp4"
+              src="https://i.imgur.com/XXM4Cwi.mp4"
               autoPlay
               loop
               muted
