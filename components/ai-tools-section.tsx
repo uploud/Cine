@@ -6,7 +6,8 @@ export function AiToolsSection() {
     {
       title: "1. Faça o Download das Cenas",
       description: "Basta copiar o link das cenas dos seus filmes, séries ou animes do YouTube e colar no aplicativo que ele irá baixar automaticamente.",
-      image: "https://i.imgur.com/XAqO21B.png",
+      image: "",
+      video: "https://i.imgur.com/jjJQ9CL.mp4",
     },
     {
       title: "2. Transcreva as Falas das Cenas",
