@@ -68,7 +68,7 @@ export function OfferSection() {
               <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
                 <span className="text-primary mt-0.5">📱</span>
                 <div>
-                  <span className="font-bold text-primary">App Wintube</span>
+                  <span className="font-bold text-primary">App WinTube</span>
                   <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p>
                 </div>
               </li>
@@ -76,14 +76,35 @@ export function OfferSection() {
                 <span className="text-primary mt-0.5">🛡️</span>
                 <div>
                   <span className="font-bold text-foreground">Guia Anti-Direitos Autorais</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Ensina como ajustar vídeos pra evitar bloqueios e manter monetização ativa.</p>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Ensina como criar conteúdos mais originais, reduzir problemas comuns de copyright e manter boas práticas para monetização.</p>
                 </div>
               </li>
               <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
                 <span className="text-primary mt-0.5">🎓</span>
                 <div>
-                  <span className="font-bold text-foreground">Acesso ao Treinamento Wintube Academy</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Passo a passo pra montar seu canal e começar a lucrar.</p>
+                  <span className="font-bold text-foreground">Acesso ao Treinamento WinTube Academy</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Passo a passo para montar seu canal e começar a crescer.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">♾️</span>
+                <div>
+                  <span className="font-bold text-foreground">Vídeos Ilimitados</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Crie quantos vídeos quiser, sem limite de uso e sem compra de créditos.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">💳</span>
+                <div>
+                  <span className="font-bold text-foreground">Sem Mensalidade</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Pagamento único para acessar o aplicativo e seus recursos, sem cobranças mensais.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">💬</span>
+                <div>
+                  <span className="font-bold text-foreground">Suporte Especializado</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Conte com uma equipe pronta para ajudar sempre que precisar.</p>
                 </div>
               </li>
             </ul>
