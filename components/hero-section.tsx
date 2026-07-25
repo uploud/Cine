@@ -83,7 +83,8 @@ export function HeroSection() {
 
             <div className="mb-8 md:mb-10 w-full max-w-lg mx-auto lg:mx-0">
               <p className="text-[13px] sm:text-sm md:text-base lg:text-lg text-foreground/90 font-bold leading-relaxed pb-0.5">
-                Monte seu <span className="underline decoration-2 underline-offset-2 text-foreground">canal de filmes e séries</span> com <span className="text-primary font-black">1 APP</span> e comece a lucrar em até <span className="text-primary font-black">12 dias</span>, mesmo sem aparecer.
+                Pare de pagar mensalidades para criar vídeos.<br className="hidden sm:block" />
+                Com o WinTube você cria quantos vídeos quiser, sem créditos, sem mensalidade e sem precisar aparecer.
               </p>
             </div>
 
