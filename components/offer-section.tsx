@@ -33,7 +33,6 @@ export function OfferSection() {
           <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
             <video
               src="https://i.imgur.com/au0aAsj.mp4"
-              autoPlay
               controls
               loop
               playsInline
