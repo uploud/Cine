@@ -83,8 +83,8 @@ export function HeroSection() {
 
             <div className="mb-8 md:mb-10 w-full max-w-lg mx-auto lg:mx-0">
               <p className="text-[13px] sm:text-sm md:text-base lg:text-lg text-foreground/90 font-bold leading-relaxed pb-0.5">
-                Pare de pagar mensalidades para criar vídeos.<br className="hidden sm:block" />
-                Com o WinTube você cria quantos vídeos quiser, sem créditos, sem mensalidade e sem precisar aparecer.
+                O único <span className="text-primary font-black">1 APLICATIVO</span> que permite criar vídeos ilimitados para seu canal.<br className="hidden sm:block" />
+                Sem créditos. Sem mensalidade. Sem precisar aparecer. Tudo em um único lugar
               </p>
             </div>
 
