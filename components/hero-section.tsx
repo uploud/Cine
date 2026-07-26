@@ -92,13 +92,14 @@ export function HeroSection() {
           {/* VSL (Vídeo de Vendas) */}
           <div className="w-full relative max-w-4xl mx-auto">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/10 blur-[100px] rounded-full pointer-events-none -z-10" />
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,163,255,0.2)] border border-primary/20 bg-black">
-              <iframe 
-                src="https://www.youtube.com/embed/tq-ZS_d-2z0" 
-                className="w-full h-full border-none"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Apresentação Wintube"
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,163,255,0.2)] border border-primary/20 bg-black flex items-center justify-center">
+              <video 
+                src="https://i.imgur.com/XXM4Cwi.mp4" 
+                className="w-full h-full object-contain"
+                controls
+                autoPlay
+                muted
+                playsInline
               />
             </div>
           </div>
