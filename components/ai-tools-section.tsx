@@ -53,16 +53,12 @@ export function AiToolsSection() {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-6 md:gap-10 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {steps.map((step, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 120} duration={600}>
-              <div className="bg-background border-[3px] border-[#0ea5e9] rounded-3xl p-6 sm:p-8 md:p-10 text-center shadow-xl">
-                <h3 className="font-[family-name:var(--font-display)] text-[#0ea5e9] text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6">
-                  {step.title}
-                </h3>
-                
+              <div className="bg-background border-[2px] border-[#0ea5e9]/50 rounded-2xl p-4 sm:p-6 text-left shadow-lg h-full flex flex-col">
                 {/* Mídia do passo */}
-                <div className="w-full rounded-xl overflow-hidden border border-[#0ea5e9]/20 flex items-center justify-center mb-6">
+                <div className="w-full rounded-xl overflow-hidden border border-[#0ea5e9]/20 flex items-center justify-center mb-5 bg-muted/30 aspect-video">
                   {(step as any).video ? (
                     <video
                       src={(step as any).video}
@@ -70,18 +66,22 @@ export function AiToolsSection() {
                       loop
                       muted
                       playsInline
-                      className="w-full h-auto object-contain"
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <img
                       src={step.image}
                       alt={step.title}
-                      className="w-full h-auto object-contain"
+                      className="w-full h-full object-cover"
                     />
                   )}
                 </div>
 
-                <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground">
+                <h3 className="font-[family-name:var(--font-display)] text-[#0ea5e9] text-xl sm:text-2xl font-bold mb-3">
+                  {step.title}
+                </h3>
+                
+                <p className="text-sm sm:text-base text-foreground/80 flex-grow">
                   {step.description}
                 </p>
               </div>
