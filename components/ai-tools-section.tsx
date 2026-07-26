@@ -38,12 +38,16 @@ export function AiToolsSection() {
   return (
     <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-muted overflow-hidden">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12">
-        <div className="mb-8 sm:mb-12 md:mb-16 text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-            Tudo Que Você Precisa em <span className="text-[#0ea5e9]">Um<br /> Único APP</span>
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <p className="text-xs sm:text-sm md:text-base text-primary font-semibold uppercase tracking-widest mb-2">
+            Como usar o Wintube
+          </p>
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold px-2 leading-tight mb-3 sm:mb-4 tracking-tight">
+            Veja Como é Fácil Usar<br />
+            <span className="text-primary">O Nosso Gerador de Vídeos</span>
           </h2>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-semibold text-foreground">
-            Um sistema completo para gerar vídeos no automático em poucos passos.
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg mt-3 sm:mt-4 max-w-2xl mx-auto font-medium">
+            O Aplicativo Funciona para Computador.
           </p>
         </div>
 
