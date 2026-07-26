@@ -61,15 +61,15 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
 
       <div className="relative z-10 max-w-7xl mx-auto py-10 sm:py-14 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 text-center lg:text-left">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto gap-8 sm:gap-10">
           
           {/* Conteúdo de Texto */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start relative">
+          <div className="w-full flex flex-col items-center relative">
             {/* Glow neon fraco atrás do título */}
-            <div className="absolute top-1/2 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 -translate-y-1/2 w-[80%] lg:w-[120%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
             {/* Logo Wintube */}
-            <div className="flex justify-center lg:justify-start mb-6 md:mb-10 w-full">
+            <div className="flex justify-center mb-6 md:mb-10 w-full">
               <img src="https://i.imgur.com/tqVJPWa.png" alt="Wintube" className="h-16 sm:h-20 md:h-24 lg:h-20 object-contain" />
             </div>
 
@@ -81,34 +81,16 @@ export function HeroSection() {
               Direitos Autorais!
             </h1>
 
-            <div className="mb-8 md:mb-10 w-full max-w-lg mx-auto lg:mx-0">
+            <div className="mb-4 md:mb-6 w-full max-w-3xl mx-auto">
               <p className="text-[13px] sm:text-sm md:text-base lg:text-lg text-foreground/90 font-bold leading-relaxed pb-0.5">
                 O único <span className="text-primary font-black">1 APLICATIVO</span> que permite criar vídeos ilimitados para seu canal.<br className="hidden sm:block" />
                 Sem créditos. Sem mensalidade. Sem precisar aparecer. Tudo em um único lugar
               </p>
             </div>
-
-            {/* Botão CTA Principal */}
-            <div className="flex justify-center lg:justify-start w-full">
-              <a
-                href="#offer-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('offer-section')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="group relative flex items-center justify-center gap-3 bg-primary text-white font-black text-sm sm:text-base md:text-lg px-8 py-5 sm:px-10 sm:py-6 rounded-xl shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_40px_rgba(0,163,255,0.5)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter w-full sm:w-auto"
-              >
-                <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                <span>Quero Lucrar agora</span>
-                <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
-                  <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out skew-x-[-20deg]" />
-                </div>
-              </a>
-            </div>
           </div>
           
           {/* VSL (Vídeo de Vendas) */}
-          <div className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
+          <div className="w-full relative max-w-4xl mx-auto">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/10 blur-[100px] rounded-full pointer-events-none -z-10" />
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,163,255,0.2)] border border-primary/20 bg-black">
               <iframe 
@@ -119,6 +101,24 @@ export function HeroSection() {
                 title="Apresentação Wintube"
               />
             </div>
+          </div>
+
+          {/* Botão CTA Principal */}
+          <div className="flex justify-center w-full mt-2 md:mt-4">
+            <a
+              href="#offer-section"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('offer-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group relative flex items-center justify-center gap-3 bg-primary text-white font-black text-sm sm:text-base md:text-lg px-8 py-5 sm:px-12 sm:py-7 rounded-xl shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_40px_rgba(0,163,255,0.5)] transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-tighter w-full sm:w-auto"
+            >
+              <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
+              <span>Quero Lucrar agora</span>
+              <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out skew-x-[-20deg]" />
+              </div>
+            </a>
           </div>
 
         </div>
