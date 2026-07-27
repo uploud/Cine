@@ -2,24 +2,22 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function VideoShowcaseSection() {
   return (
-    <section className="py-24 bg-card border-b border-border overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-12 md:py-16 px-4 bg-background overflow-hidden border-t border-border/50">
+      <div className="max-w-6xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
-          <div className="text-center mb-16">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              Resultados Comprovados
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black leading-tight uppercase tracking-tighter">
+              SEUS VÍDEOS IRÃO FICAR <span className="text-primary">DESSE MESMO FORMATO</span>, <br />
+              APENAS COM 1 APP E UM CLICK: <span className="text-primary">ASSIM</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Vídeos gerados 100% pelo WinTube que já estão rodando e monetizando em diversos canais.
-            </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 justify-center items-center md:items-stretch mb-8">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center items-center md:items-stretch">
           {/* Vídeo 1: Filme/Série */}
-          <ScrollReveal animation="fade-up" delay={100}>
-            <div className="w-full">
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl border border-border bg-black transition-transform hover:-translate-y-1 duration-300">
+          <div className="w-full md:w-1/3 max-w-[450px]">
+            <ScrollReveal animation="fade-up" delay={200}>
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black">
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src="https://www.youtube.com/embed/lcJ8BVEo15U"
@@ -29,13 +27,13 @@ export function VideoShowcaseSection() {
                   allowFullScreen
                 />
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
 
           {/* Vídeo 2: Desenho/Animação */}
-          <ScrollReveal animation="fade-up" delay={200}>
-            <div className="w-full">
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl border border-border bg-black transition-transform hover:-translate-y-1 duration-300">
+          <div className="w-full md:w-1/3 max-w-[450px]">
+            <ScrollReveal animation="fade-up" delay={400}>
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black">
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src="https://www.youtube.com/embed/MAZ0mWdoUYI"
@@ -45,13 +43,13 @@ export function VideoShowcaseSection() {
                   allowFullScreen
                 />
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
 
           {/* Vídeo 3: Anime */}
-          <ScrollReveal animation="fade-up" delay={300}>
-            <div className="w-full">
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl border border-border bg-black transition-transform hover:-translate-y-1 duration-300">
+          <div className="w-full md:w-1/3 max-w-[450px]">
+            <ScrollReveal animation="fade-up" delay={600}>
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 bg-black">
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src="https://www.youtube.com/embed/ANnHwcWenR8"
@@ -61,8 +59,8 @@ export function VideoShowcaseSection() {
                   allowFullScreen
                 />
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>

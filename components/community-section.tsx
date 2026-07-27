@@ -18,7 +18,7 @@ export function CommunitySection() {
     if (!scrollContainer) return
 
     let scrollAmount = 0
-    const scrollSpeed = 1
+    const scrollSpeed = 1 // pixels per frame
 
     const autoScroll = () => {
       if (!scrollContainer) return
@@ -26,6 +26,7 @@ export function CommunitySection() {
       scrollAmount += scrollSpeed
       scrollContainer.scrollLeft = scrollAmount
 
+      // Reset when reaching the end
       if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
         scrollAmount = 0
       }
@@ -39,30 +40,27 @@ export function CommunitySection() {
   }, [])
 
   return (
-    <section className="py-24 bg-card border-b border-border overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-            Resultados da Comunidade
+    <section className="py-10 sm:py-12 md:py-16 px-3 sm:px-4 bg-background overflow-hidden">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-6 sm:mb-8 md:mb-10">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-display)] font-bold mb-3 sm:mb-4 max-w-3xl mx-auto px-2">
+            Veja os Resultados de Quem Decidiu Agir
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Conheça criadores que já estão colhendo frutos usando nossa ferramenta.
-          </p>
         </div>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div
             ref={scrollRef}
-            className="flex overflow-x-hidden gap-6 pb-4"
+            className="flex overflow-x-hidden gap-3 sm:gap-4 pb-4"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {[...feedbacks, ...feedbacks].map((feedback, index) => (
-              <div key={index} className="flex-shrink-0 w-[70%] sm:w-[50%] md:w-[30%]">
+              <div key={index} className="flex-shrink-0 w-[70%] sm:w-[60%] md:w-[40%]">
                 <Image
                   src={feedback || "/placeholder.svg"}
                   alt={`Feedback ${index + 1}`}
                   width={400}
                   height={600}
-                  className="w-full h-auto object-contain rounded-2xl border border-border shadow-lg"
+                  className="w-full h-auto object-contain rounded-lg shadow-md"
                 />
               </div>
             ))}

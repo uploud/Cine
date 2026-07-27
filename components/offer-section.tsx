@@ -1,8 +1,11 @@
 "use client"
 
 import type React from "react"
-import { Check, Plus, Lock, ShieldCheck, Shield } from "lucide-react"
+import { Shield, ShoppingBag, Lock } from "lucide-react"
+import Image from "next/image"
 import { buildCheckoutURL } from "@/lib/url-params"
+
+
 
 export function OfferSection() {
   const checkoutUrl = "https://pay.kiwify.com.br/yTa2MmY"
@@ -14,19 +17,20 @@ export function OfferSection() {
   }
 
   return (
-    <section id="offer-section" className="py-24 bg-background border-b border-border overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
+    <section id="offer-section" className="py-8 sm:py-10 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-background overflow-hidden">
+      <div className="max-w-sm sm:max-w-md lg:max-w-3xl mx-auto">
+        
         {/* Título do Vídeo */}
-        <div className="text-center mb-10">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight">
+        <div className="text-center mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight uppercase text-foreground">
             Depoimento de <span className="text-primary">Direitos Autorais</span> com o Sistema da Wintube
           </h2>
         </div>
 
         {/* Vídeo */}
-        <div className="relative max-w-3xl mx-auto mb-16">
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-xl bg-black">
+        <div className="relative group mb-8 sm:mb-12">
+          <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+          <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
             <video
               src="https://i.imgur.com/au0aAsj.mp4"
               controls
@@ -34,114 +38,146 @@ export function OfferSection() {
               playsInline
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
 
-        {/* Card de Pricing */}
-        <div className="bg-card rounded-3xl p-8 md:p-12 border border-primary/30 relative shadow-[0_0_50px_rgba(0,163,255,0.05)]">
-          
-          <div className="text-center mb-10">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold mb-2 tracking-tight">
-              Acesso ao App Completo
-            </h2>
-            <p className="text-muted-foreground">
+        <div className="bg-card text-foreground rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 border-2 border-primary/20 relative w-full shadow-[0_0_5px_rgba(0,163,255,0.3),0_0_15px_rgba(0,163,255,0.2)]">
+
+          {/* Seção: Acesso ao APP */}
+          <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
+            <p className="font-[family-name:var(--font-display)] font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl mb-2 md:mb-4 text-primary leading-tight">
+              ACESSO AO APP COMPLETO
+            </p>
+            <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-muted-foreground mb-3 md:mb-6 px-2">
               Acesso ao APP enviado por e-mail imediatamente após a compra.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-            <div>
-              <h4 className="text-sm font-semibold mb-6 text-muted-foreground uppercase tracking-wider">O que você recebe</h4>
-              <ul className="space-y-4 text-foreground/90">
-                <li className="flex items-start gap-3">
-                  <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
-                  <div>
-                    <span className="font-semibold">App WinTube</span>
-                    <p className="text-muted-foreground text-sm mt-0.5">Gera roteiros, cortes inteligentes e edição automática com IA.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Guia Anti-Direitos Autorais</span>
-                    <p className="text-muted-foreground text-sm mt-0.5">Boas práticas para monetização segura.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
-                  <div>
-                    <span className="font-semibold">WinTube Academy</span>
-                    <p className="text-muted-foreground text-sm mt-0.5">Passo a passo para montar seu canal e crescer.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
-                  <span className="font-semibold">Vídeos Ilimitados</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
-                  <span className="font-semibold">Sem Mensalidade</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
-                  <span className="font-semibold">Suporte Especializado</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold mb-6 text-muted-foreground uppercase tracking-wider">Bônus Inclusos</h4>
-              <ul className="space-y-4 text-foreground/90 bg-background/40 p-6 rounded-2xl border border-border">
-                <li className="flex items-start gap-3">
-                  <Plus className="text-primary w-4 h-4 mt-1 shrink-0" />
-                  Guia de Monetização em 7 Dias
-                </li>
-                <li className="flex items-start gap-3">
-                  <Plus className="text-primary w-4 h-4 mt-1 shrink-0" />
-                  Modelos prontos de thumbs e capas
-                </li>
-                <li className="flex items-start gap-3">
-                  <Plus className="text-primary w-4 h-4 mt-1 shrink-0" />
-                  Mini curso de Edição com IA
-                </li>
-                <li className="flex items-start gap-3">
-                  <Plus className="text-primary w-4 h-4 mt-1 shrink-0" />
-                  Acesso ao grupo fechado de alunos
-                </li>
-              </ul>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Wintube Logo"
+              className="mx-auto mb-3 md:mb-6 w-32 sm:w-40 md:w-48 lg:w-52 h-auto object-contain"
+            />
           </div>
 
-          {/* Preço */}
-          <div className="border-t border-border pt-8 flex flex-col items-center mb-8">
-            <p className="text-muted-foreground line-through mb-1 text-lg">De R$ 197,00</p>
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <span className="text-5xl md:text-6xl font-extrabold tracking-tight text-foreground">R$ 49,97</span>
+          {/* Seção: Você vai receber */}
+          <div className="mb-4 sm:mb-5 md:mb-8 lg:mb-10">
+            <h4 className="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 underline underline-offset-4">
+              VOCÊ VAI RECEBER:
+            </h4>
+            <ul className="flex flex-col gap-3 sm:gap-4 text-xs sm:text-sm md:text-base">
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">📱</span>
+                <div>
+                  <span className="font-bold text-primary">App WinTube</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">🛡️</span>
+                <div>
+                  <span className="font-bold text-foreground">Guia Anti-Direitos Autorais</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Ensina como criar conteúdos mais originais, reduzir problemas comuns de copyright e manter boas práticas para monetização.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">🎓</span>
+                <div>
+                  <span className="font-bold text-foreground">Acesso ao Treinamento WinTube Academy</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Passo a passo para montar seu canal e começar a crescer.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">♾️</span>
+                <div>
+                  <span className="font-bold text-foreground">Vídeos Ilimitados</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Crie quantos vídeos quiser, sem limite de uso e sem compra de créditos.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">💳</span>
+                <div>
+                  <span className="font-bold text-foreground">Sem Mensalidade</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Pagamento único para acessar o aplicativo e seus recursos, sem cobranças mensais.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
+                <span className="text-primary mt-0.5">💬</span>
+                <div>
+                  <span className="font-bold text-foreground">Suporte Especializado</span>
+                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Conte com uma equipe pronta para ajudar sempre que precisar.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Seção: Bônus Exclusivos */}
+          <div className="mb-4 sm:mb-5 md:mb-8 lg:mb-10 bg-muted rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-primary/20">
+            <h4 className="font-[family-name:var(--font-display)] text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4 text-center">
+              🎁 <span className="text-primary">Bônus Exclusivos</span>
+            </h4>
+            <ul className="flex flex-col gap-2 text-xs sm:text-sm md:text-base">
+              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border">
+                <span className="text-primary">✦</span>
+                Guia de Monetização em 7 Dias
+              </li>
+              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border">
+                <span className="text-primary">✦</span>
+                Modelos prontos de thumbs e capas
+              </li>
+              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border">
+                <span className="text-primary">✦</span>
+                Mini curso de Edição com IA
+              </li>
+              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2">
+                <span className="text-primary">✦</span>
+                Acesso ao grupo fechado de alunos
+              </li>
+            </ul>
+          </div>
+
+          {/* Seção: Preço */}
+          <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
+            <p className="text-xs sm:text-sm md:text-base text-primary font-bold uppercase tracking-wider mb-2">💰 Investimento Único</p>
+            <div className="text-xs sm:text-sm text-muted-foreground line-through tracking-wider mb-1">De R$ 197,00</div>
+            <div className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-primary leading-none mb-1 sm:mb-2">
+              R$49,97
             </div>
-            <p className="text-primary font-medium">ou 12x de R$ 5,01</p>
+            <div className="text-xs sm:text-sm md:text-base text-muted-foreground">ou 12x de R$ 5,01</div>
+          </div>
+
+          {/* Selos de confiança */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 text-center text-[10px] sm:text-xs md:text-sm lg:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-8 lg:mb-10">
+            <div className="flex flex-col items-center gap-1 sm:gap-2">
+              <Shield className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-primary" />
+              <span>Checkout Seguro</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 sm:gap-2">
+              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-primary" />
+              <span>Satisfação Garantida</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 sm:gap-2">
+              <Lock className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-primary" />
+              <span>Privacidade Protegida</span>
+            </div>
           </div>
 
           {/* CTA */}
-          <a
-            href={buildCheckoutURL(checkoutUrl)}
-            onClick={redirectToCheckout}
-            className="block w-full py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-bold text-lg md:text-xl text-center transition-all duration-300 shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_30px_rgba(0,163,255,0.5)] hover:-translate-y-1 mb-8"
-          >
-            GARANTA SUA VAGA AGORA!
-          </a>
-
-          {/* Selos de confiança */}
-          <div className="flex flex-wrap justify-center items-center gap-6 text-muted-foreground text-sm">
-            <div className="flex items-center gap-2"><Lock className="w-4 h-4" /> Checkout Seguro</div>
-            <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Satisfação Garantida</div>
-            <div className="flex items-center gap-2"><Shield className="w-4 h-4" /> Privacidade Protegida</div>
+          <div className="mt-4 sm:mt-5 md:mt-8">
+            <a
+              href={buildCheckoutURL(checkoutUrl)}
+              onClick={redirectToCheckout}
+              className="block w-full py-3 sm:py-4 md:py-6 lg:py-8 text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-white rounded-md text-center hover:bg-primary transition-colors bg-primary"
+            >
+              GARANTA SUA VAGA AGORA!
+            </a>
           </div>
 
           {/* Bandeiras de pagamento */}
-          <div className="mt-8 flex justify-center">
+          <div className="mt-4 sm:mt-5 md:mt-8 flex justify-center">
             <img
               src="/images/pagamento_v2.png"
               alt="Formas de Pagamento"
-              className="w-full max-w-[400px] h-auto object-contain opacity-60"
+              className="w-full max-w-[500px] h-auto object-contain opacity-80"
             />
           </div>
         </div>
