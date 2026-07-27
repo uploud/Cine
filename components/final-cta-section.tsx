@@ -36,7 +36,7 @@ export function FinalCtaSection() {
           </a>
           <div className="flex flex-col items-center mt-12 sm:mt-16 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 md:p-10 max-w-3xl mx-auto shadow-xl">
             <Image 
-              src="https://i.imgur.com/tqVJPWa.png" 
+              src="/garantia-7-dias.png" 
               alt="Garantia de 7 dias" 
               width={400} 
               height={200} 
