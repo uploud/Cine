@@ -56,33 +56,37 @@ export function FaqSection() {
     <section id="faq" className="py-8 sm:py-10 md:py-12 px-3 sm:px-4 bg-background overflow-hidden">
       <div className="max-w-3xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
-          <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-display)] font-bold mb-2 sm:mb-3 md:mb-4">
-              <span className="text-primary">Duvidas</span> Frequentes
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-display)] font-extrabold mb-2 sm:mb-3 md:mb-4 text-slate-900 tracking-tight">
+              Perguntas <span className="text-primary">Frequentes</span>
             </h2>
           </div>
         </ScrollReveal>
         <div className="flex flex-col gap-2 sm:gap-3">
           {faqs.map((faq, index) => (
             <ScrollReveal key={index} animation="fade-up" delay={index * 80} duration={500}>
-              <details className="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group">
-                <summary className="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2">
+              <details className="bg-white border-b border-slate-200 p-4 sm:p-6 group cursor-pointer transition-colors hover:bg-slate-50">
+                <summary className="font-semibold text-base sm:text-lg cursor-pointer text-slate-900 list-none flex items-center justify-between gap-4 outline-none">
                   <span className="flex-1">{faq.question}</span>
-                  <span className="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">&#9660;</span>
+                  <span className="shrink-0 group-open:rotate-180 transition-transform text-slate-400">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
                 </summary>
-                <p className="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">{faq.answer}</p>
+                <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed pr-8">{faq.answer}</p>
               </details>
             </ScrollReveal>
           ))}
         </div>
 
-        <div className="text-center mt-6 sm:mt-8 md:mt-12">
+        <div className="text-center mt-10 sm:mt-12 md:mt-16">
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary text-center leading-tight"
+            className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-semibold text-white rounded-full bg-primary hover:bg-blue-600 shadow-md transition-all hover:-translate-y-0.5"
           >
-            COMECAR AGORA E MUDAR MINHA VIDA
+            Começar Agora
           </a>
         </div>
       </div>

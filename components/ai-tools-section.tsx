@@ -52,17 +52,17 @@ export function AiToolsSection() {
         </div>
 
         <div className="mt-16 md:mt-24 mb-10 text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-            Veja o <span className="text-[#0ea5e9]">Passo a Passo</span> Abaixo! ⬇️
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-slate-900">
+            Veja o <span className="text-primary">Passo a Passo</span> Abaixo
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {steps.map((step, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 120} duration={600}>
-              <div className="bg-background border-[2px] border-[#0ea5e9]/50 rounded-2xl p-4 sm:p-6 text-left shadow-lg h-full flex flex-col">
+              <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 text-left shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
                 {/* Mídia do passo */}
-                <div className="w-full rounded-xl overflow-hidden border border-[#0ea5e9]/20 flex items-center justify-center mb-5 bg-muted/30 aspect-video">
+                <div className="w-full rounded-xl overflow-hidden border border-slate-100 flex items-center justify-center mb-5 bg-slate-50 aspect-video">
                   {(step as any).video ? (
                     <video
                       src={(step as any).video}
@@ -81,7 +81,7 @@ export function AiToolsSection() {
                   )}
                 </div>
 
-                <h3 className="font-[family-name:var(--font-display)] text-[#0ea5e9] text-xl sm:text-2xl font-bold mb-3">
+                <h3 className="font-[family-name:var(--font-display)] text-slate-900 text-xl sm:text-2xl font-bold mb-3">
                   {step.title}
                 </h3>
                 

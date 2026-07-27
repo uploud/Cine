@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { Shield, ShoppingBag, Lock } from "lucide-react"
+import { Shield, ShoppingBag, Lock, Smartphone, GraduationCap, Infinity, CreditCard, MessageCircle, Sparkles, Check } from "lucide-react"
 import Image from "next/image"
 import { buildCheckoutURL } from "@/lib/url-params"
 
@@ -42,7 +42,7 @@ export function OfferSection() {
           </div>
         </div>
 
-        <div className="bg-card text-foreground rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 border-2 border-primary/20 relative w-full shadow-[0_0_5px_rgba(0,163,255,0.3),0_0_15px_rgba(0,163,255,0.2)]">
+        <div className="bg-white rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 relative w-full shadow-xl">
 
           {/* Seção: Acesso ao APP */}
           <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
@@ -64,72 +64,72 @@ export function OfferSection() {
             <h4 className="font-[family-name:var(--font-display)] text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 underline underline-offset-4">
               VOCÊ VAI RECEBER:
             </h4>
-            <ul className="flex flex-col gap-3 sm:gap-4 text-xs sm:text-sm md:text-base">
-              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
-                <span className="text-primary mt-0.5">📱</span>
+            <ul className="flex flex-col gap-4 text-sm sm:text-base">
+              <li className="flex items-start gap-3 py-3 border-b border-slate-100">
+                <Smartphone className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <span className="font-bold text-primary">App WinTube</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p>
+                  <span className="font-bold text-slate-900">App WinTube</span>
+                  <p className="text-slate-500 text-xs sm:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p>
                 </div>
               </li>
-              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
-                <span className="text-primary mt-0.5">🛡️</span>
+              <li className="flex items-start gap-3 py-3 border-b border-slate-100">
+                <Shield className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <span className="font-bold text-foreground">Guia Anti-Direitos Autorais</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Ensina como criar conteúdos mais originais, reduzir problemas comuns de copyright e manter boas práticas para monetização.</p>
+                  <span className="font-bold text-slate-900">Guia Anti-Direitos Autorais</span>
+                  <p className="text-slate-500 text-xs sm:text-sm mt-1">Ensina como criar conteúdos mais originais, reduzir problemas comuns de copyright e manter boas práticas para monetização.</p>
                 </div>
               </li>
-              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
-                <span className="text-primary mt-0.5">🎓</span>
+              <li className="flex items-start gap-3 py-3 border-b border-slate-100">
+                <GraduationCap className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <span className="font-bold text-foreground">Acesso ao Treinamento WinTube Academy</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Passo a passo para montar seu canal e começar a crescer.</p>
+                  <span className="font-bold text-slate-900">Acesso ao Treinamento WinTube Academy</span>
+                  <p className="text-slate-500 text-xs sm:text-sm mt-1">Passo a passo para montar seu canal e começar a crescer.</p>
                 </div>
               </li>
-              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
-                <span className="text-primary mt-0.5">♾️</span>
+              <li className="flex items-start gap-3 py-3 border-b border-slate-100">
+                <Infinity className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <span className="font-bold text-foreground">Vídeos Ilimitados</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Crie quantos vídeos quiser, sem limite de uso e sem compra de créditos.</p>
+                  <span className="font-bold text-slate-900">Vídeos Ilimitados</span>
+                  <p className="text-slate-500 text-xs sm:text-sm mt-1">Crie quantos vídeos quiser, sem limite de uso e sem compra de créditos.</p>
                 </div>
               </li>
-              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
-                <span className="text-primary mt-0.5">💳</span>
+              <li className="flex items-start gap-3 py-3 border-b border-slate-100">
+                <CreditCard className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <span className="font-bold text-foreground">Sem Mensalidade</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Pagamento único para acessar o aplicativo e seus recursos, sem cobranças mensais.</p>
+                  <span className="font-bold text-slate-900">Sem Mensalidade</span>
+                  <p className="text-slate-500 text-xs sm:text-sm mt-1">Pagamento único para acessar o aplicativo e seus recursos, sem cobranças mensais.</p>
                 </div>
               </li>
-              <li className="flex items-start gap-2 sm:gap-3 py-2 sm:py-3 border-b border-border">
-                <span className="text-primary mt-0.5">💬</span>
+              <li className="flex items-start gap-3 py-3 border-b border-slate-100">
+                <MessageCircle className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <span className="font-bold text-foreground">Suporte Especializado</span>
-                  <p className="text-muted-foreground text-[10px] sm:text-xs md:text-sm mt-1">Conte com uma equipe pronta para ajudar sempre que precisar.</p>
+                  <span className="font-bold text-slate-900">Suporte Especializado</span>
+                  <p className="text-slate-500 text-xs sm:text-sm mt-1">Conte com uma equipe pronta para ajudar sempre que precisar.</p>
                 </div>
               </li>
             </ul>
           </div>
 
           {/* Seção: Bônus Exclusivos */}
-          <div className="mb-4 sm:mb-5 md:mb-8 lg:mb-10 bg-muted rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-primary/20">
-            <h4 className="font-[family-name:var(--font-display)] text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-3 sm:mb-4 text-center">
-              🎁 <span className="text-primary">Bônus Exclusivos</span>
+          <div className="mb-4 sm:mb-5 md:mb-8 lg:mb-10 bg-slate-50 rounded-lg p-4 md:p-6 border border-slate-200">
+            <h4 className="font-[family-name:var(--font-display)] text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-4 text-center flex items-center justify-center gap-2">
+              <Sparkles className="w-5 h-5 text-primary" /> Bônus Exclusivos
             </h4>
-            <ul className="flex flex-col gap-2 text-xs sm:text-sm md:text-base">
-              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border">
-                <span className="text-primary">✦</span>
+            <ul className="flex flex-col gap-2 text-sm md:text-base text-slate-700">
+              <li className="flex items-center gap-3 py-2 border-b border-slate-100">
+                <Check className="w-5 h-5 text-primary flex-shrink-0" />
                 Guia de Monetização em 7 Dias
               </li>
-              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border">
-                <span className="text-primary">✦</span>
+              <li className="flex items-center gap-3 py-2 border-b border-slate-100">
+                <Check className="w-5 h-5 text-primary flex-shrink-0" />
                 Modelos prontos de thumbs e capas
               </li>
-              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2 border-b border-border">
-                <span className="text-primary">✦</span>
+              <li className="flex items-center gap-3 py-2 border-b border-slate-100">
+                <Check className="w-5 h-5 text-primary flex-shrink-0" />
                 Mini curso de Edição com IA
               </li>
-              <li className="flex items-center gap-2 sm:gap-3 py-1.5 sm:py-2">
-                <span className="text-primary">✦</span>
+              <li className="flex items-center gap-3 py-2">
+                <Check className="w-5 h-5 text-primary flex-shrink-0" />
                 Acesso ao grupo fechado de alunos
               </li>
             </ul>
@@ -139,8 +139,8 @@ export function OfferSection() {
           <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
             <p className="text-xs sm:text-sm md:text-base text-primary font-bold uppercase tracking-wider mb-2">💰 Investimento Único</p>
             <div className="text-xs sm:text-sm text-muted-foreground line-through tracking-wider mb-1">De R$ 197,00</div>
-            <div className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-primary leading-none mb-1 sm:mb-2">
-              R$49,97
+            <div className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-slate-900 tracking-tight mb-2">
+              R$ 49,97
             </div>
             <div className="text-xs sm:text-sm md:text-base text-muted-foreground">ou 12x de R$ 5,01</div>
           </div>
@@ -162,13 +162,13 @@ export function OfferSection() {
           </div>
 
           {/* CTA */}
-          <div className="mt-4 sm:mt-5 md:mt-8">
+          <div className="mt-6 md:mt-8">
             <a
               href={buildCheckoutURL(checkoutUrl)}
               onClick={redirectToCheckout}
-              className="block w-full py-3 sm:py-4 md:py-6 lg:py-8 text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-white rounded-md text-center hover:bg-primary transition-colors bg-primary"
+              className="block w-full py-4 md:py-5 text-lg md:text-xl font-semibold text-white rounded-xl text-center bg-primary hover:bg-blue-600 shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5"
             >
-              GARANTA SUA VAGA AGORA!
+              GARANTA SUA VAGA AGORA
             </a>
           </div>
 

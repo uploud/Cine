@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="py-8 md:py-10 px-4 md:px-12 border-t border-primary/20 flex flex-col md:flex-row items-center justify-between gap-5">
+    <footer className="py-8 md:py-10 px-4 md:px-12 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-5 bg-slate-50">
       <div className="flex items-center">
         <Image 
           src="/logo.png" 
@@ -12,7 +12,7 @@ export function Footer() {
           className="h-8 md:h-10 w-auto object-contain"
         />
       </div>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-slate-500">
         &copy; 2025 Wintube — Todos os direitos reservados
       </p>
     </footer>

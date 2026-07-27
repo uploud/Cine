@@ -36,8 +36,8 @@ export function BonusSection() {
       <div className="max-w-5xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-6 sm:mb-8 md:mb-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-display)] font-black mb-3 leading-tight uppercase tracking-tighter">
-              A <span className="text-primary underline underline-offset-4 decoration-2">WinTube</span> Serve Para Você?
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-display)] font-extrabold mb-3 leading-tight tracking-tight text-slate-900">
+              O Wintube <span className="text-primary">Serve Para Você?</span>
             </h2>
           </div>
         </ScrollReveal>
@@ -45,19 +45,19 @@ export function BonusSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
           {/* Card: Para Quem É */}
           <ScrollReveal animation="fade-up" delay={200}>
-            <div className="bg-[#f0fdf4] border border-green-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-green-300">
-              <div className="text-center mb-4 sm:mb-6">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-green-700 uppercase tracking-tight">
-                  PARA QUEM É?
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow h-full">
+              <div className="mb-6 sm:mb-8 border-b border-slate-100 pb-4">
+                <h3 className="text-xl sm:text-2xl font-[family-name:var(--font-display)] font-bold text-slate-900 tracking-tight">
+                  Para Quem É?
                 </h3>
               </div>
-              <ul className="space-y-3 sm:space-y-4">
+              <ul className="space-y-4">
                 {isFor.map((point, index) => (
                   <li key={index} className="flex gap-3 items-start group">
                     <div className="flex-shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform" />
+                      <CheckCircle2 className="w-5 h-5 text-green-500" />
                     </div>
-                    <p className="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">
+                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                       {point}
                     </p>
                   </li>
@@ -68,19 +68,19 @@ export function BonusSection() {
 
           {/* Card: Para Quem Não É */}
           <ScrollReveal animation="fade-up" delay={400}>
-            <div className="bg-[#fef2f2] border border-red-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-red-300">
-              <div className="text-center mb-4 sm:mb-6">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-red-700 uppercase tracking-tight">
-                  PARA QUEM <span className="underline decoration-red-400">NÃO É?</span>
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow h-full">
+              <div className="mb-6 sm:mb-8 border-b border-slate-200 pb-4">
+                <h3 className="text-xl sm:text-2xl font-[family-name:var(--font-display)] font-bold text-slate-900 tracking-tight">
+                  Para Quem Não É?
                 </h3>
               </div>
-              <ul className="space-y-3 sm:space-y-4">
+              <ul className="space-y-4">
                 {isNotFor.map((point, index) => (
                   <li key={index} className="flex gap-3 items-start group">
                     <div className="flex-shrink-0 mt-0.5">
-                      <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform" />
+                      <XCircle className="w-5 h-5 text-slate-400" />
                     </div>
-                    <p className="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                       {point}
                     </p>
                   </li>
