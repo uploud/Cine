@@ -15,7 +15,7 @@ export function FinalCtaSection() {
 
   return (
     <section className="py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(0,163,255,),transparent_70%),radial-gradient(ellipse_40%_30%_at_20%_20%,rgba(30,255,0,0.05),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(0,163,255,0.05),transparent_70%),radial-gradient(ellipse_40%_30%_at_20%_20%,rgba(30,255,0,0.05),transparent)]" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4 sm:mb-6 px-2">
