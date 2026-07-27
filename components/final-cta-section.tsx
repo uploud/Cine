@@ -34,20 +34,20 @@ export function FinalCtaSection() {
             <span>Quero Começar Agora</span>
             <Play className="w-5 h-5 fill-current opacity-90" />
           </a>
-          <div className="flex flex-col items-center mt-12 sm:mt-16 bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 md:p-10 max-w-3xl mx-auto shadow-sm">
+          <div className="flex flex-col items-center mt-12 sm:mt-16 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 md:p-10 max-w-3xl mx-auto shadow-xl">
             <Image 
-              src="/garantia-7-dias.png" 
+              src="https://i.imgur.com/tqVJPWa.png" 
               alt="Garantia de 7 dias" 
               width={400} 
               height={200} 
               className="h-20 sm:h-28 md:h-32 w-auto object-contain mb-6 transition-transform hover:scale-105 duration-500"
             />
-            <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-3">
+            <div className="text-slate-300 text-sm sm:text-base leading-relaxed space-y-3">
               <p>
-                Não se preocupe, você tem <span className="font-semibold text-slate-900">7 dias de garantia incondicional</span> para testar à vontade e ver se realmente gosta.
+                Não se preocupe, você tem <span className="font-semibold text-white">7 dias de garantia incondicional</span> para testar à vontade e ver se realmente gosta.
               </p>
               <p>
-                Se por qualquer motivo você não ficar 100% satisfeito, nós <span className="font-semibold text-slate-900">devolvemos o seu dinheiro</span>. Basta solicitar o reembolso de forma rápida pelo nosso suporte.
+                Se por qualquer motivo você não ficar 100% satisfeito, nós <span className="font-semibold text-white">devolvemos o seu dinheiro</span>. Basta solicitar o reembolso de forma rápida pelo nosso suporte.
               </p>
             </div>
           </div>
