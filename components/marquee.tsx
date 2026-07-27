@@ -1,3 +1,5 @@
+import { Sparkles } from "lucide-react"
+
 export function Marquee() {
   const items = [
     "Escolha seu filme ou série e a IA gera o seu vídeo completo.",
@@ -6,16 +8,17 @@ export function Marquee() {
   ]
 
   return (
-    <div className="bg-primary/10 py-2.5 overflow-hidden whitespace-nowrap">
+    <div className="bg-slate-50 border-y border-slate-200 py-3 overflow-hidden whitespace-nowrap">
       <div className="flex animate-scroll">
         {[...Array(4)].map((_, i) => (
           <div key={i} className="flex">
             {items.map((item, j) => (
               <span
                 key={`${i}-${j}`}
-                className="font-mono text-xs font-bold tracking-widest text-black px-8"
+                className="flex items-center gap-4 font-medium text-sm sm:text-base tracking-wide text-slate-600 px-8"
               >
-                {item} <span className="text-black/40 mx-3">&#10022;</span>
+                {item}
+                <Sparkles className="w-4 h-4 text-primary/40" />
               </span>
             ))}
           </div>

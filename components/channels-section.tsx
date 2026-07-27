@@ -30,13 +30,13 @@ const channels = [
 
 export function ChannelsSection() {
   return (
-    <section id="exemplos" className="py-10 sm:py-12 md:py-16 lg:py-24 bg-background overflow-hidden">
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-12 mb-6 sm:mb-8 md:mb-12">
+    <section id="exemplos" className="py-12 sm:py-16 md:py-20 lg:py-28 bg-white overflow-hidden border-t border-slate-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 mb-8 sm:mb-12 md:mb-16">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-primary border border-primary/20 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-primary uppercase">Exemplos</span>
+          <div className="inline-flex items-center justify-center bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-6">
+            <span className="font-semibold text-xs tracking-wider text-primary uppercase">Exemplos Reais</span>
           </div>
-          <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold px-2 leading-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight px-2">
             Gere Vídeos Únicos e Inéditos<br />
             <span className="text-primary">de Forma Simples e Automática</span>
           </h2>
@@ -57,14 +57,14 @@ export function ChannelsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]">
+                <div className="relative aspect-video bg-slate-50 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
                   <Image
                     src={channel.src || "/placeholder.svg"}
                     alt={`Canal ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </a>
             </div>
@@ -80,14 +80,14 @@ export function ChannelsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-muted rounded-lg sm:rounded-xl overflow-hidden border border-border group-hover:border-primary/20 transition-all group-hover:scale-[1.02]">
+                <div className="relative aspect-video bg-slate-50 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
                   <Image
                     src={channel.src || "/placeholder.svg"}
                     alt={`Canal ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </a>
             </div>

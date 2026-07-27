@@ -14,7 +14,7 @@ export function StorySection() {
   }
 
   return (
-    <section className="py-12 px-4 bg-card">
+    <section className="py-16 sm:py-24 md:py-32 px-4 bg-slate-50 border-y border-slate-100">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-6">
@@ -26,11 +26,11 @@ export function StorySection() {
               className="rounded-full object-cover shadow-md h-36 w-36"
             />
           </div>
-          <h2 className="text-4xl font-[family-name:var(--font-display)] font-bold mb-4">
-             História do <span className="text-primary">TÚLIO HENRIQUE</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-display)] font-extrabold mb-6 text-slate-900 tracking-tight">
+             História do <span className="text-primary">Túlio Henrique</span>
           </h2>
         </div>
-        <div className="flex flex-col gap-4 text-muted-foreground text-lg leading-relaxed">
+        <div className="flex flex-col gap-6 text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">
           <p>
             Prazer, eu sou o Túlio Henrique. Há mais de 3 anos, conquistei minha independência financeira criando canais
             de filmes e séries no YouTube e encontrando a forma certa de fugir dos bloqueios de direitos autorais.
@@ -44,18 +44,18 @@ export function StorySection() {
             Já ultrapassei a marca de 20 milhões de views monetizadas e hoje ensino passo a passo como qualquer pessoa
             pode trilhar esse mesmo caminho e viver do YouTube.
           </p>
-          <p className="font-bold text-primary">
+          <p className="font-semibold text-slate-900">
             Mas tudo começou com o mesmo método que eu ensino dentro do Cine Builder.
           </p>
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center mt-12">
           <a
             href="#offer-section"
             onClick={scrollToOffer}
-            className="inline-flex items-center px-10 py-5 text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary"
+            className="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-semibold text-white rounded-full bg-primary hover:bg-blue-600 shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5"
           >
-            NÃO QUERO PERDER ESSA OPORTUNIDADE
+            Quero Começar Agora
           </a>
         </div>
       </div>
