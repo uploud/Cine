@@ -57,40 +57,58 @@ export function AiToolsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {steps.map((step, i) => (
-            <ScrollReveal key={i} animation="fade-up" delay={i * 120} duration={600}>
-              <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 text-left shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                {/* Mídia do passo */}
-                <div className="w-full rounded-xl overflow-hidden border border-slate-100 flex items-center justify-center mb-5 bg-slate-50 aspect-video">
-                  {(step as any).video ? (
-                    <video
-                      src={(step as any).video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
+        <div className="flex flex-col gap-20 sm:gap-24 md:gap-32 max-w-6xl mx-auto px-4 mt-8">
+          {steps.map((step, i) => {
+            const isReverse = i % 2 !== 0;
+            const stepNumber = String(i + 1).padStart(2, "0");
+            
+            return (
+              <ScrollReveal key={i} animation="fade-up" duration={700}>
+                <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${isReverse ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  {/* Lado da Mídia (Vídeo) */}
+                  <div className="w-full md:w-1/2">
+                    <div className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] bg-slate-50 aspect-video transition-transform duration-500 hover:scale-[1.02]">
+                      {(step as any).video ? (
+                        <video
+                          src={(step as any).video}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <img
+                          src={step.image}
+                          alt={step.title}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
+                  </div>
 
-                <h3 className="font-[family-name:var(--font-display)] text-slate-900 text-xl sm:text-2xl font-bold mb-3">
-                  {step.title}
-                </h3>
-                
-                <p className="text-sm sm:text-base text-foreground/80 flex-grow">
-                  {step.description}
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
+                  {/* Lado do Texto */}
+                  <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="font-[family-name:var(--font-display)] text-5xl md:text-7xl font-black text-primary/20">
+                        {stepNumber}
+                      </span>
+                    </div>
+                    
+                    <h3 className="font-[family-name:var(--font-display)] text-slate-900 text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 sm:mb-6 leading-tight tracking-tight">
+                      {step.title.replace(/^\d+\.\s*/, '')}
+                    </h3>
+                    
+                    <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed font-medium max-w-xl">
+                      {step.description}
+                    </p>
+                  </div>
+                  
+                </div>
+              </ScrollReveal>
+            )
+          })}
         </div>
 
 

@@ -1,7 +1,8 @@
 "use client"
 
 import type React from "react"
-import { Play, ShieldCheck } from "lucide-react"
+import { Play } from "lucide-react"
+import Image from "next/image"
 
 export function FinalCtaSection() {
   const scrollToOffer = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -34,10 +35,13 @@ export function FinalCtaSection() {
             <Play className="w-5 h-5 fill-current opacity-90" />
           </a>
           <div className="flex flex-col items-center mt-12 sm:mt-16 bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 md:p-10 max-w-3xl mx-auto shadow-sm">
-            <ShieldCheck className="w-12 h-12 sm:w-16 sm:h-16 text-primary mb-4" />
-            <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-4">
-              Garantia Incondicional de 7 Dias
-            </h3>
+            <Image 
+              src="/garantia-7-dias.png" 
+              alt="Garantia de 7 dias" 
+              width={400} 
+              height={200} 
+              className="h-20 sm:h-28 md:h-32 w-auto object-contain mb-6 transition-transform hover:scale-105 duration-500"
+            />
             <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-3">
               <p>
                 Não se preocupe, você tem <span className="font-semibold text-slate-900">7 dias de garantia incondicional</span> para testar à vontade e ver se realmente gosta.
