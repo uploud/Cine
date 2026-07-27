@@ -15,7 +15,7 @@ export function HeroSection() {
           <img src="https://i.imgur.com/tqVJPWa.png" alt="Wintube" className="h-16 md:h-20 object-contain drop-shadow-lg" />
         </div>
 
-        <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 max-w-5xl mx-auto leading-tight text-white drop-shadow-md">
+        <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 max-w-5xl mx-auto leading-tight text-foreground drop-shadow-md">
           Lucre com YouTube Postando Vídeos de Filmes, Séries e Animes Sem Aparecer, Sem Criar Roteiros e Sem Bloqueios por Direitos Autorais!
         </h1>
         
@@ -30,7 +30,7 @@ export function HeroSection() {
               e.preventDefault();
               document.getElementById('offer-section')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2"
+            className="group px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_30px_rgba(0,163,255,0.5)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2"
           >
             Quero Lucrar agora
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

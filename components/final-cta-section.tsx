@@ -23,7 +23,7 @@ export function FinalCtaSection() {
             src="/garantia-7-dias.png"
             alt="7 Dias de Garantia Incondicional"
             fill
-            className="object-contain drop-shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+            className="object-contain drop-shadow-[0_0_20px_rgba(0,163,255,0.3)]"
           />
         </div>
         <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold mb-6 tracking-tight">
@@ -42,7 +42,7 @@ export function FinalCtaSection() {
         <a
           href="#offer-section"
           onClick={scrollToOffer}
-          className="group inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:-translate-y-1"
+          className="group inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_30px_rgba(0,163,255,0.5)] hover:-translate-y-1"
         >
           Quero começar agora
           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

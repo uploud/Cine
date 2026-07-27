@@ -38,7 +38,7 @@ export function OfferSection() {
         </div>
 
         {/* Card de Pricing */}
-        <div className="bg-card rounded-3xl p-8 md:p-12 border border-primary/30 relative shadow-[0_0_50px_rgba(139,92,246,0.05)]">
+        <div className="bg-card rounded-3xl p-8 md:p-12 border border-primary/30 relative shadow-[0_0_50px_rgba(0,163,255,0.05)]">
           
           <div className="text-center mb-10">
             <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold mb-2 tracking-tight">
@@ -115,7 +115,7 @@ export function OfferSection() {
           <div className="border-t border-border pt-8 flex flex-col items-center mb-8">
             <p className="text-muted-foreground line-through mb-1 text-lg">De R$ 197,00</p>
             <div className="flex items-center justify-center gap-3 mb-2">
-              <span className="text-5xl md:text-6xl font-extrabold tracking-tight text-white">R$ 49,97</span>
+              <span className="text-5xl md:text-6xl font-extrabold tracking-tight text-foreground">R$ 49,97</span>
             </div>
             <p className="text-primary font-medium">ou 12x de R$ 5,01</p>
           </div>
@@ -124,7 +124,7 @@ export function OfferSection() {
           <a
             href={buildCheckoutURL(checkoutUrl)}
             onClick={redirectToCheckout}
-            className="block w-full py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-bold text-lg md:text-xl text-center transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:-translate-y-1 mb-8"
+            className="block w-full py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-bold text-lg md:text-xl text-center transition-all duration-300 shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_30px_rgba(0,163,255,0.5)] hover:-translate-y-1 mb-8"
           >
             GARANTA SUA VAGA AGORA!
           </a>
