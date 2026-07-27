@@ -1,7 +1,8 @@
 "use client"
 
 import type React from "react"
-import { ShieldCheck, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export function FinalCtaSection() {
   const scrollToOffer = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -17,8 +18,13 @@ export function FinalCtaSection() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Garantia */}
-        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/20 shadow-[0_0_30px_rgba(139,92,246,0.15)]">
-          <ShieldCheck className="w-10 h-10 text-primary drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]" />
+        <div className="mx-auto mb-8 relative w-48 h-48 md:w-56 md:h-56">
+          <Image
+            src="/garantia-7-dias.png"
+            alt="7 Dias de Garantia Incondicional"
+            fill
+            className="object-contain drop-shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+          />
         </div>
         <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold mb-6 tracking-tight">
           7 Dias de Garantia Incondicional

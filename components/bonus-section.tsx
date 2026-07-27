@@ -28,15 +28,15 @@ export function BonusSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card: Para Quem É */}
           <ScrollReveal animation="fade-up" delay={100}>
-            <div className="bg-card/50 p-8 rounded-2xl border border-primary/20 shadow-[0_0_30px_rgba(139,92,246,0.05)] hover:border-primary/40 transition-colors h-full">
+            <div className="bg-card/50 p-8 rounded-2xl border border-border hover:border-green-500/30 transition-colors h-full">
               <h3 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3">
-                <CheckCircle2 className="text-primary w-6 h-6 shrink-0" />
+                <CheckCircle2 className="text-green-500 w-6 h-6 shrink-0" />
                 Para quem é o WinTube?
               </h3>
               <ul className="space-y-4 text-foreground/80">
                 {isFor.map((point, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
+                    <Check className="text-green-500 w-5 h-5 mt-0.5 shrink-0" />
                     <span className="text-sm md:text-base">{point}</span>
                   </li>
                 ))}
