@@ -1,89 +1,86 @@
 "use client"
 
-import type React from "react"
-import { ScrollReveal } from "@/components/scroll-reveal"
+import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
-    question: "Preciso saber editar videos para usar o Wintube?",
+    question: "Preciso saber editar vídeos para usar o WinTube?",
     answer:
-      "Nao! O Wintube foi criado justamente para quem nao sabe editar. A IA faz toda a edicao automaticamente — voce so faz o upload do video bruto e recebe o resultado final pronto.",
+      "Não! O WinTube foi criado justamente para quem não sabe editar. A IA faz toda a edição automaticamente — você só faz o upload do vídeo bruto e recebe o resultado final pronto.",
   },
   {
-    question: "Funciona para qualquer tipo de video e plataforma?",
+    question: "Funciona para qualquer tipo de vídeo e plataforma?",
     answer:
-      "Sim! Funciona para YouTube, TikTok, Instagram Reels e qualquer plataforma de video. Ideal para criadores de conteudo de todos os tipos — vlogs, tutoriais, reviews, entretenimento e muito mais. Nossa IA e treinada para identificar o melhor conteudo independente do tema ou formato.",
+      "Sim! Funciona para YouTube, TikTok, Instagram Reels e qualquer plataforma de vídeo. Nossa IA é treinada para identificar o melhor conteúdo independente do formato.",
   },
   {
-    question: "Funciona para canais Dark tambem?",
+    question: "Funciona para canais Dark também?",
     answer:
-      "Com certeza! O Wintube e perfeito para canais Dark (canais sem mostrar o rosto). A IA gera roteiros, faz cortes, monta o video e aplica protecao anti-direitos autorais — tudo automaticamente. E a forma mais eficiente de escalar canais Dark no YouTube, TikTok e Instagram.",
+      "Com certeza! O WinTube é perfeito para canais Dark (canais sem mostrar o rosto). A IA gera roteiros, faz cortes, monta o vídeo e aplica proteção anti-direitos autorais — tudo automaticamente.",
   },
   {
-    question: "E so para YouTubers?",
+    question: "É só para YouTubers?",
     answer:
-      "De jeito nenhum! O Wintube e para qualquer criador de conteudo — YouTubers, TikTokers, Instagrammers, Reels, Shorts e qualquer pessoa que queira produzir videos profissionais com IA. Se voce cria conteudo em video, essa ferramenta e para voce.",
+      "De jeito nenhum! O WinTube é para qualquer criador de conteúdo — YouTubers, TikTokers, Instagrammers, Reels, Shorts e qualquer pessoa que queira produzir vídeos profissionais com IA.",
   },
   {
     question: "Vou ter problemas de direitos autorais no YouTube?",
     answer:
-      "O Wintube inclui um sistema anti-direitos autorais que processa seus videos para minimizar o risco de strikes. Ensinamos toda a metodologia para publicar com seguranca em qualquer plataforma.",
+      "O WinTube inclui um sistema anti-direitos autorais que processa seus vídeos para minimizar o risco de strikes. Ensinamos toda a metodologia para publicar com segurança.",
   },
   {
     question: "Em quanto tempo verei resultado?",
     answer:
-      "Com nossa metodologia, e possivel ter o canal configurado e publicando conteudo em ate 12 dias. Os resultados financeiros dependem da consistencia, mas ja temos membros monetizados em menos de 60 dias.",
+      "Com nossa metodologia, é possível ter o canal configurado e publicando conteúdo em até 12 dias. Os resultados financeiros dependem da consistência, mas já temos membros monetizados em menos de 60 dias.",
   },
   {
     question: "Tenho garantia de reembolso?",
     answer:
-      "Sim! Voce tem 7 dias de garantia incondicional. Se por qualquer motivo nao ficar satisfeito, devolvemos 100% do seu dinheiro sem perguntas.",
+      "Sim! Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito, devolvemos 100% do seu dinheiro sem perguntas.",
   },
 ]
 
-
-
 export function FaqSection() {
-  const scrollToOffer = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    const offerSection = document.getElementById("offer-section")
-    if (offerSection) {
-      offerSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+  const [selected, setSelected] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-8 sm:py-10 md:py-12 px-3 sm:px-4 bg-background overflow-hidden">
-      <div className="max-w-3xl mx-auto">
-        <ScrollReveal animation="fade-up" duration={700}>
-          <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-display)] font-bold mb-2 sm:mb-3 md:mb-4">
-              <span className="text-primary">Duvidas</span> Frequentes
-            </h2>
-          </div>
-        </ScrollReveal>
-        <div className="flex flex-col gap-2 sm:gap-3">
-          {faqs.map((faq, index) => (
-            <ScrollReveal key={index} animation="fade-up" delay={index * 80} duration={500}>
-              <details className="bg-card/50 border border-border rounded-lg p-3 sm:p-4 group">
-                <summary className="font-bold text-sm sm:text-base md:text-lg cursor-pointer text-foreground list-none flex items-center justify-between gap-2">
-                  <span className="flex-1">{faq.question}</span>
-                  <span className="shrink-0 group-open:rotate-180 transition-transform text-[#22c55e]">&#9660;</span>
-                </summary>
-                <p className="mt-2 text-muted-foreground text-xs sm:text-sm md:text-base">{faq.answer}</p>
-              </details>
-            </ScrollReveal>
-          ))}
+    <section id="faq" className="py-24 bg-background border-b border-border overflow-hidden">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold tracking-tight">
+            Perguntas Frequentes
+          </h2>
         </div>
-
-        <div className="text-center mt-6 sm:mt-8 md:mt-12">
-          <a
-            href="#offer-section"
-            onClick={scrollToOffer}
-            className="inline-flex items-center px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-primary-foreground rounded-md hover:opacity-90 transition-opacity animate-blue-pulse bg-primary text-center leading-tight"
-          >
-            COMECAR AGORA E MUDAR MINHA VIDA
-          </a>
+        
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-card/50 border border-border rounded-xl overflow-hidden transition-all hover:border-primary/20"
+            >
+              <button
+                onClick={() => setSelected(selected !== index ? index : null)}
+                className="w-full text-left px-6 py-5 font-medium text-base md:text-lg flex justify-between items-center focus:outline-none cursor-pointer"
+              >
+                <span className="flex-1 pr-4">{faq.question}</span>
+                <ChevronDown
+                  className={`w-5 h-5 text-muted-foreground transition-transform duration-300 shrink-0 ${
+                    selected === index ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  selected === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="px-6 pb-5 text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,18 +1,9 @@
 "use client"
 
-import type React from "react"
-import { CheckCircle2, XCircle, ArrowRight } from "lucide-react"
+import { Check, X, CheckCircle2, XCircle } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function BonusSection() {
-  const scrollToOffer = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    const offerSection = document.getElementById("offer-section")
-    if (offerSection) {
-      offerSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   const isFor = [
     "Criadores que querem crescer no YouTube sem aparecer na câmera.",
     "Pessoas cansadas de perder horas editando vídeos manualmente.",
@@ -32,34 +23,21 @@ export function BonusSection() {
   ]
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 px-4 bg-background overflow-hidden">
-      <div className="max-w-5xl mx-auto">
-        <ScrollReveal animation="fade-up" duration={700}>
-          <div className="text-center mb-6 sm:mb-8 md:mb-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-display)] font-black mb-3 leading-tight uppercase tracking-tighter">
-              A <span className="text-primary underline underline-offset-4 decoration-2">WinTube</span> Serve Para Você?
-            </h2>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+    <section className="py-24 bg-background border-b border-border overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card: Para Quem É */}
-          <ScrollReveal animation="fade-up" delay={200}>
-            <div className="bg-[#f0fdf4] border border-green-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-green-300">
-              <div className="text-center mb-4 sm:mb-6">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-green-700 uppercase tracking-tight">
-                  PARA QUEM É?
-                </h3>
-              </div>
-              <ul className="space-y-3 sm:space-y-4">
+          <ScrollReveal animation="fade-up" delay={100}>
+            <div className="bg-card/50 p-8 rounded-2xl border border-primary/20 shadow-[0_0_30px_rgba(139,92,246,0.05)] hover:border-primary/40 transition-colors h-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3">
+                <CheckCircle2 className="text-primary w-6 h-6 shrink-0" />
+                Para quem é o WinTube?
+              </h3>
+              <ul className="space-y-4 text-foreground/80">
                 {isFor.map((point, index) => (
-                  <li key={index} className="flex gap-3 items-start group">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <p className="text-xs sm:text-sm md:text-base text-green-900 leading-tight font-medium">
-                      {point}
-                    </p>
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="text-primary w-5 h-5 mt-0.5 shrink-0" />
+                    <span className="text-sm md:text-base">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -67,30 +45,23 @@ export function BonusSection() {
           </ScrollReveal>
 
           {/* Card: Para Quem Não É */}
-          <ScrollReveal animation="fade-up" delay={400}>
-            <div className="bg-[#fef2f2] border border-red-200 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg h-full transition-all hover:shadow-xl hover:border-red-300">
-              <div className="text-center mb-4 sm:mb-6">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-display)] font-black text-red-700 uppercase tracking-tight">
-                  PARA QUEM <span className="underline decoration-red-400">NÃO É?</span>
-                </h3>
-              </div>
-              <ul className="space-y-3 sm:space-y-4">
+          <ScrollReveal animation="fade-up" delay={200}>
+            <div className="bg-card/50 p-8 rounded-2xl border border-border hover:border-muted-foreground/30 transition-colors h-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3">
+                <XCircle className="text-muted-foreground w-6 h-6 shrink-0" />
+                Para quem NÃO é?
+              </h3>
+              <ul className="space-y-4 text-muted-foreground">
                 {isNotFor.map((point, index) => (
-                  <li key={index} className="flex gap-3 items-start group">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <p className="text-xs sm:text-sm md:text-base text-red-900 leading-tight font-medium">
-                      {point}
-                    </p>
+                  <li key={index} className="flex items-start gap-3">
+                    <X className="text-muted-foreground/60 w-5 h-5 mt-0.5 shrink-0" />
+                    <span className="text-sm md:text-base">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </ScrollReveal>
         </div>
-
-
       </div>
     </section>
   )
