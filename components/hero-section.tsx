@@ -40,13 +40,13 @@ export function HeroSection() {
           {/* VSL (Vídeo de Vendas) */}
           <div className="w-full relative max-w-4xl mx-auto mt-4">
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 flex items-center justify-center">
-              <video 
-                src="https://i.imgur.com/XXM4Cwi.mp4" 
-                className="w-full h-full object-contain"
-                controls
-                autoPlay
-                muted
-                playsInline
+              <iframe 
+                src="https://www.youtube.com/embed/9AwxGvZYYF4?autoplay=1" 
+                className="w-full h-full"
+                title="Wintube VSL"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
               />
             </div>
           </div>
