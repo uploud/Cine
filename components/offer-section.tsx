@@ -168,7 +168,7 @@ export function OfferSection() {
               onClick={redirectToCheckout}
               className="block w-full py-4 md:py-5 text-lg md:text-xl font-semibold text-white rounded-xl text-center bg-primary hover:bg-blue-600 shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5"
             >
-              GARANTA SUA VAGA AGORA
+              COMEÇAR AGORA
             </a>
           </div>
 
