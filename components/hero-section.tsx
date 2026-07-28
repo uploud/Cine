@@ -62,7 +62,7 @@ export function HeroSection() {
               className="group relative flex items-center justify-center gap-3 bg-primary hover:bg-blue-600 text-white font-semibold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-full shadow-lg shadow-primary/25 transition-all transform hover:-translate-y-0.5 active:scale-95 w-full sm:w-auto"
             >
               <span>QUERO GERAR MEUS VÍDEOS AGORA</span>
-              <Play className="w-5 h-5 fill-current opacity-90" />
+              <Play className="w-5 h-5 fill-current opacity-90 hidden sm:block" />
             </a>
           </div>
 
