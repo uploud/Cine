@@ -68,7 +68,7 @@ export function OfferSection() {
               <li className="flex items-start gap-3 py-3 border-b border-slate-100">
                 <Smartphone className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <span className="font-bold text-slate-900">App WinTube</span>
+                  <span className="font-bold text-primary">App WinTube</span>
                   <p className="text-slate-500 text-xs sm:text-sm mt-1">Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.</p>
                 </div>
               </li>
@@ -137,9 +137,9 @@ export function OfferSection() {
 
           {/* Seção: Preço */}
           <div className="text-center mb-4 sm:mb-5 md:mb-8 lg:mb-10">
-            <p className="text-xs sm:text-sm md:text-base text-primary font-bold uppercase tracking-wider mb-2">💰 Investimento Único</p>
+            <p className="text-xs sm:text-sm md:text-base text-green-500 font-bold uppercase tracking-wider mb-2">💰 Investimento Único</p>
             <div className="text-xs sm:text-sm text-muted-foreground line-through tracking-wider mb-1">De R$ 197,00</div>
-            <div className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-slate-900 tracking-tight mb-2">
+            <div className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-primary tracking-tight mb-2">
               R$ 57,97
             </div>
             <div className="text-xs sm:text-sm md:text-base text-muted-foreground">ou 12x de R$ 5,82</div>
