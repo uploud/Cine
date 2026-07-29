@@ -106,7 +106,7 @@ export function AiToolsSection() {
                     {i === steps.length - 1 && (
                       <div className="mt-8">
                         <a
-                          href="https://larissainfo.mycartpanda.com/checkout/210179551:1"
+                          href="https://pay.kiwify.com.br/yTa2MmY"
                           className="inline-flex items-center justify-center gap-2 bg-sky-400 hover:bg-sky-500 text-white font-bold text-sm sm:text-base md:text-lg px-6 py-4 md:px-8 md:py-4 rounded-full shadow-lg shadow-sky-400/25 transition-all transform hover:-translate-y-0.5"
                         >
                           <span className="text-center">QUERO ACESSAR O GERADOR DE VÍDEOS</span>
