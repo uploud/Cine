@@ -45,8 +45,8 @@ export function OpportunitySection() {
                 "https://i.imgur.com/2fbCpab.jpeg",
                 "https://i.imgur.com/VIrrPmt.jpeg"
               ].map((src, idx) => (
-                <div key={idx} className="relative aspect-[9/16] rounded-xl overflow-hidden border border-slate-200 shadow-md hover:-translate-y-1 transition-transform">
-                  <img src={src} alt={`Exemplo de lucro ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+                <div key={idx} className="rounded-xl overflow-hidden border border-slate-200 shadow-md hover:-translate-y-1 transition-transform flex items-center justify-center bg-slate-100">
+                  <img src={src} alt={`Exemplo de lucro ${idx + 1}`} className="w-full h-auto object-contain" />
                 </div>
               ))}
             </div>
