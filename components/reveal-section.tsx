@@ -188,9 +188,7 @@ export function RevealSection() {
                 O guia te dá o método. O app remove o único motivo pelo qual a maioria não executa.
               </p>
               <a
-                href={CHECKOUT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#offer-section"
                 id="reveal-cta"
                 className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98]"
               >

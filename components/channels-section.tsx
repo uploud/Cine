@@ -35,11 +35,10 @@ export function ChannelsSection() {
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center">
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-              Exemplos Reais
+              Onde postar
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              Perfis Reais, Publicando com{" "}
-              <span className="text-primary">Consistência</span>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+              Onde postar e <span className="text-primary">lucrar</span>
             </h2>
           </div>
         </ScrollReveal>

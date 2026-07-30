@@ -11,30 +11,16 @@ export function FinalCtaSection() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <ScrollReveal animation="fade-up" duration={700}>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4 sm:mb-6">
-            Chega de Editar Vídeo por Vídeo{" "}
-            <span className="text-primary">no Braço</span>
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4 sm:mb-6 uppercase">
+            Garantia <span className="text-primary">Incondicional</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
             Deixe a IA fazer o trabalho pesado enquanto você foca em crescer seus perfis.
           </p>
         </ScrollReveal>
 
-        <ScrollReveal animation="fade-up" delay={200} duration={600}>
-          <a
-            href={CHECKOUT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            id="final-cta"
-            className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-12 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98] animate-cta-pulse"
-          >
-            <span>QUERO COMEÇAR AGORA</span>
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
-        </ScrollReveal>
-
         {/* Garantia */}
-        <ScrollReveal animation="fade-up" delay={400} duration={600}>
+        <ScrollReveal animation="fade-up" delay={200} duration={600}>
           <div className="mt-12 sm:mt-16 bg-slate-900 border border-slate-800 rounded-lg p-6 sm:p-8 md:p-10 max-w-2xl mx-auto">
             <Image
               src="/garantia-7-dias.png"
