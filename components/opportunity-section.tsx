@@ -35,6 +35,23 @@ export function OpportunitySection() {
             </p>
           </ScrollReveal>
 
+          {/* User Provided Images Grid */}
+          <ScrollReveal animation="fade-up" delay={350} duration={600}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 my-8">
+              {[
+                "https://i.imgur.com/o8VxgQM.jpeg",
+                "https://i.imgur.com/aMXOex5.jpeg",
+                "https://i.imgur.com/mwf1Od3.jpeg",
+                "https://i.imgur.com/2fbCpab.jpeg",
+                "https://i.imgur.com/VIrrPmt.jpeg"
+              ].map((src, idx) => (
+                <div key={idx} className="relative aspect-[9/16] rounded-xl overflow-hidden border border-slate-200 shadow-md hover:-translate-y-1 transition-transform">
+                  <img src={src} alt={`Exemplo de lucro ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal animation="fade-up" delay={400} duration={600}>
             <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 p-4 rounded-lg mt-6">
               <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" />
