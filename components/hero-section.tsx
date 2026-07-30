@@ -12,7 +12,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -z-10 h-[400px] w-[600px] rounded-full bg-primary/8 blur-[120px]" />
 
-      <div className="relative z-10 max-w-5xl mx-auto py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center gap-6 sm:gap-8">
 
           {/* Logo */}

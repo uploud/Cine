@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function OpportunitySection() {
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-slate-50">
+    <section className="py-8 sm:py-12 px-4 sm:px-6 bg-slate-50">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
@@ -19,7 +19,7 @@ export function OpportunitySection() {
         <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-6 text-slate-700 text-base sm:text-lg leading-relaxed">
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
             <p>
-              Os vídeos faceless tomaram conta de todas as plataformas e facilitaram o jogo do dinheiro online.
+              Os vídeos tomaram conta de todas as plataformas e facilitaram o jogo do dinheiro online.
             </p>
           </ScrollReveal>
           

@@ -41,7 +41,7 @@ const platforms = [
 
 export function ChannelsSection() {
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white overflow-hidden">
+    <section className="py-8 sm:py-12 px-4 sm:px-6 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-12 sm:mb-16">

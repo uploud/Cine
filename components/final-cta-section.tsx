@@ -6,7 +6,7 @@ const CHECKOUT_URL = "https://pay.kiwify.com.br/yTa2MmY"
 
 export function FinalCtaSection() {
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-slate-50 relative overflow-hidden">
+    <section className="py-8 sm:py-12 px-4 sm:px-6 bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(14,165,233,0.06),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">

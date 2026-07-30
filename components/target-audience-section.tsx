@@ -19,7 +19,7 @@ const isNotFor = [
 
 export function TargetAudienceSection() {
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white">
+    <section className="py-8 sm:py-12 px-4 sm:px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
@@ -36,9 +36,14 @@ export function TargetAudienceSection() {
           {/* Para quem É */}
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
             <div className="bg-white border border-slate-200 rounded-lg p-6 sm:p-8 h-full">
-              <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-6 pb-4 border-b border-slate-100 uppercase">
-                PARA QUEM É?
-              </h3>
+              <div className="mb-6 pb-6 border-b border-slate-100">
+                <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-500/20">
+                  <CheckCircle2 className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase tracking-tight">
+                  PARA QUEM É?
+                </h3>
+              </div>
               <ul className="space-y-4">
                 {isFor.map((point, i) => (
                   <li key={i} className="flex gap-3 items-start">
@@ -55,9 +60,14 @@ export function TargetAudienceSection() {
           {/* Para quem NÃO é */}
           <ScrollReveal animation="fade-up" delay={250} duration={600}>
             <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 sm:p-8 h-full">
-              <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-6 pb-4 border-b border-slate-200 uppercase">
-                PARA QUEM NÃO É?
-              </h3>
+              <div className="mb-6 pb-6 border-b border-slate-200">
+                <div className="w-16 h-16 bg-slate-200 rounded-xl flex items-center justify-center mb-4">
+                  <XCircle className="w-10 h-10 text-slate-500" />
+                </div>
+                <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase tracking-tight">
+                  PARA QUEM NÃO É?
+                </h3>
+              </div>
               <ul className="space-y-4">
                 {isNotFor.map((point, i) => (
                   <li key={i} className="flex gap-3 items-start">

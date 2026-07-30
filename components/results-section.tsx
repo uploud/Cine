@@ -22,7 +22,7 @@ export function ResultsSection() {
 
   return (
     <>
-      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-slate-50">
+      <section className="py-8 sm:py-12 px-4 sm:px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal animation="fade-up" duration={700}>
             <div className="text-center mb-10 sm:mb-14">

@@ -16,7 +16,7 @@ const features = [
 
 export function OfferSection() {
   return (
-    <section id="offer-section" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-slate-50">
+    <section id="offer-section" className="py-8 sm:py-12 px-4 sm:px-6 bg-slate-50">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10">
           <ScrollReveal animation="fade-up" duration={700}>

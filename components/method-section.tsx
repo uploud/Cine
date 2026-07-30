@@ -42,7 +42,7 @@ const stages = [
 
 export function MethodSection() {
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white">
+    <section className="py-8 sm:py-12 px-4 sm:px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-12 sm:mb-16">
@@ -55,38 +55,23 @@ export function MethodSection() {
           </div>
         </ScrollReveal>
 
-        {/* Timeline vertical */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px bg-slate-200" aria-hidden="true" />
-
-          <div className="space-y-6 sm:space-y-8">
-            {stages.map((stage, i) => (
-              <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
-                <div className="relative flex gap-4 sm:gap-6 items-start pl-0">
-                  {/* Number circle */}
-                  <div className="relative z-10 flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
-                    <stage.icon className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400" strokeWidth={1.5} />
-                  </div>
-
-                  {/* Content */}
-                  <div className="pt-1 sm:pt-2 flex-1">
-                    <div className="flex items-baseline gap-3 mb-1">
-                      <span className="font-[family-name:var(--font-display)] text-sm font-bold text-slate-300 tracking-wider">
-                        {stage.number}
-                      </span>
-                      <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold text-slate-900 uppercase">
-                        {stage.title}
-                      </h3>
-                    </div>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
-                      {stage.description}
-                    </p>
-                  </div>
+        {/* Grid layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          {stages.map((stage, i) => (
+            <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-primary/30 transition-all h-full flex flex-col">
+                <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center font-[family-name:var(--font-display)] text-xl font-bold mb-4 shadow-md shadow-primary/20">
+                  {stage.number}
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-slate-900 uppercase mb-2">
+                  {stage.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed font-medium mt-auto">
+                  {stage.description}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

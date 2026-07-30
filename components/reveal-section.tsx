@@ -78,7 +78,7 @@ export function RevealSection() {
       <div className="h-1 bg-primary" aria-hidden="true" />
 
       {/* Header */}
-      <div className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-sky-50 to-white">
+      <div className="py-8 sm:py-12 px-4 sm:px-6 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal animation="fade-up" duration={700}>
             <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-4">
@@ -145,7 +145,7 @@ export function RevealSection() {
         </div>
       </div>
 
-      <div className="py-16 px-4 sm:px-6 bg-slate-50 mt-16 sm:mt-20">
+      <div className="py-8 px-4 sm:px-6 bg-slate-50 mt-8 sm:mt-12">
         <div className="max-w-5xl mx-auto">
           {/* Closing + CTA */}
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
