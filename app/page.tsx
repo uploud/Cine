@@ -1,69 +1,82 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { HeroSection } from "@/components/hero-section"
 import { Marquee } from "@/components/marquee"
-import { AiToolsSection } from "@/components/ai-tools-section"
-
-import { BonusSection } from "@/components/bonus-section"
-import { OfferSection } from "@/components/offer-section"
-import { FinalCtaSection } from "@/components/final-cta-section"
-import { ChannelsSection } from "@/components/channels-section"
-import { FaqSection } from "@/components/faq-section"
-import { Footer } from "@/components/footer"
-import { CommunitySection } from "@/components/community-section"
-import { AgencyBadge } from "@/components/agency-badge"
-
+import { OpportunitySection } from "@/components/opportunity-section"
+import { ProblemSection } from "@/components/problem-section"
+import { MethodSection } from "@/components/method-section"
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
+import { ChannelsSection } from "@/components/channels-section"
+import { RevealSection } from "@/components/reveal-section"
+import { TargetAudienceSection } from "@/components/target-audience-section"
+import { OfferSection } from "@/components/offer-section"
+import { AgencyBadge } from "@/components/agency-badge"
+import { ResultsSection } from "@/components/results-section"
+import { FaqSection } from "@/components/faq-section"
+import { FinalCtaSection } from "@/components/final-cta-section"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <main>
-        {/* Hero não precisa de animação de entrada — já está visível */}
+        {/* 1. Hero */}
         <HeroSection />
 
-        <ScrollReveal animation="fade-in" delay={0} duration={500}>
-          <Marquee />
+        {/* 2. Marquee */}
+        <Marquee />
+
+        {/* 3. A Oportunidade */}
+        <ScrollReveal animation="fade-up" duration={700}>
+          <OpportunitySection />
         </ScrollReveal>
 
-
-        <ScrollReveal animation="fade-up" delay={0} duration={700}>
-          <AiToolsSection />
+        {/* 4. O Problema */}
+        <ScrollReveal animation="fade-in" duration={700}>
+          <ProblemSection />
         </ScrollReveal>
 
-        <ScrollReveal animation="fade-up" delay={0} duration={700}>
+        {/* 5. O Método */}
+        <ScrollReveal animation="fade-up" duration={700}>
+          <MethodSection />
+        </ScrollReveal>
+
+        {/* 6. O Resultado — Vídeos exemplo */}
+        <ScrollReveal animation="fade-up" duration={700}>
           <VideoShowcaseSection />
         </ScrollReveal>
 
-        <ScrollReveal animation="zoom-in" delay={0} duration={700}>
+        {/* 7. Exemplos Reais — Canais */}
+        <ScrollReveal animation="fade-in" duration={700}>
           <ChannelsSection />
         </ScrollReveal>
 
-        <ScrollReveal animation="fade-up" delay={0} duration={700}>
-          <BonusSection />
+        {/* 8. A Sacada — Revelação do App */}
+        <RevealSection />
+
+        {/* 9. Para Quem É / Não É */}
+        <ScrollReveal animation="fade-up" duration={700}>
+          <TargetAudienceSection />
         </ScrollReveal>
 
-        <ScrollReveal animation="slide-up" delay={0} duration={800} threshold={0.05}>
-          <div id="offer-section">
-            <OfferSection />
-          </div>
-        </ScrollReveal>
+        {/* 10. Oferta */}
+        <OfferSection />
 
-        <ScrollReveal animation="fade-up" delay={0} duration={700}>
+        {/* 11. Autoridade */}
+        <ScrollReveal animation="fade-up" duration={700}>
           <AgencyBadge />
         </ScrollReveal>
 
-        <ScrollReveal animation="fade-up" delay={0} duration={700}>
-          <CommunitySection />
-        </ScrollReveal>
+        {/* 12. Resultados / Feedbacks */}
+        <ResultsSection />
 
-        <ScrollReveal animation="fade-up" delay={0} duration={700}>
-          <FaqSection />
-        </ScrollReveal>
+        {/* 13. FAQ */}
+        <FaqSection />
 
-        <ScrollReveal animation="zoom-in" delay={0} duration={700}>
-          <FinalCtaSection />
-        </ScrollReveal>
+        {/* 14. Fechamento */}
+        <FinalCtaSection />
       </main>
+
+      {/* 15. Footer */}
       <Footer />
     </div>
   )

@@ -21,9 +21,23 @@ export function ScrollReveal({
   threshold = 0.12,
 }: ScrollRevealProps) {
   const [isVisible, setIsVisible] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    setPrefersReducedMotion(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
+  }, [])
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -39,7 +53,7 @@ export function ScrollReveal({
 
     if (ref.current) observer.observe(ref.current)
     return () => { if (ref.current) observer.unobserve(ref.current) }
-  }, [threshold])
+  }, [threshold, prefersReducedMotion])
 
   const hidden: Record<string, string> = {
     "fade-up": "opacity-0 translate-y-12",
@@ -60,8 +74,8 @@ export function ScrollReveal({
         transition-all ease-out will-change-transform
       `}
       style={{
-        transitionDuration: `${duration}ms`,
-        transitionDelay: `${delay}ms`,
+        transitionDuration: prefersReducedMotion ? "0ms" : `${duration}ms`,
+        transitionDelay: prefersReducedMotion ? "0ms" : `${delay}ms`,
       }}
     >
       {children}

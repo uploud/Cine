@@ -1,20 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Space_Grotesk, Outfit } from "next/font/google"
+import { Space_Grotesk, Outfit } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" })
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
-import { Dancing_Script } from "next/font/google"
-const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-cursive" })
 
 export const metadata: Metadata = {
-  title: "Wintube - Crie Canais Lucrativos no YouTube",
+  title: "WinTube — Crie uma Renda Extra com Canais no Piloto Automático",
   description:
-    "O primeiro aplicativo de I.A. que transforma qualquer pessoa em dono de canais lucrativos no YouTube postando vídeos de filmes e séries",
-  generator: "v0.app",
+    "Aprenda o método que pessoas comuns estão usando pra construir canais de vídeo que produzem conteúdo sozinhos — sem aparecer, sem equipe e sem passar horas editando.",
   icons: {
     icon: "/logo.png",
   },
@@ -43,7 +39,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${outfit.variable} ${dancingScript.variable} font-outfit antialiased`}>
+      <body className={`${spaceGrotesk.variable} ${outfit.variable} font-sans antialiased`}>
         <noscript>
           <img
             height="1"

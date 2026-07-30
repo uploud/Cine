@@ -1,5 +1,5 @@
-
 import Image from "next/image"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const channels = [
   {
@@ -30,17 +30,19 @@ const channels = [
 
 export function ChannelsSection() {
   return (
-    <section id="exemplos" className="py-12 sm:py-16 md:py-20 lg:py-28 bg-white overflow-hidden border-t border-slate-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 mb-8 sm:mb-12 md:mb-16">
-        <div className="text-center">
-          <div className="inline-flex items-center justify-center bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-6">
-            <span className="font-semibold text-xs tracking-wider text-primary uppercase">Exemplos Reais</span>
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto mb-10 sm:mb-14">
+        <ScrollReveal animation="fade-up" duration={700}>
+          <div className="text-center">
+            <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
+              Exemplos Reais
+            </p>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
+              Canais Reais, Publicando com{" "}
+              <span className="text-primary">Consistência</span>
+            </h2>
           </div>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight px-2">
-            Gere Vídeos Únicos e Inéditos<br />
-            <span className="text-primary">de Forma Simples e Automática</span>
-          </h2>
-        </div>
+        </ScrollReveal>
       </div>
 
       {/* Infinite scrolling carousel */}
@@ -50,44 +52,42 @@ export function ChannelsSection() {
           {channels.map((channel, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"
+              className="flex-shrink-0 w-[240px] sm:w-[300px] md:w-[360px] lg:w-[400px] mx-2 sm:mx-3 group"
             >
               <a
                 href={channel.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-slate-50 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                <div className="relative aspect-video bg-slate-50 rounded-lg overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
                   <Image
                     src={channel.src || "/placeholder.svg"}
-                    alt={`Canal ${index + 1}`}
+                    alt={`Canal de exemplo ${index + 1}`}
                     fill
-                    className="object-cover transition-all duration-500"
+                    className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </a>
             </div>
           ))}
-          {/* Duplicate set for loop */}
+          {/* Duplicate set for seamless loop */}
           {channels.map((channel, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 group"
+              className="flex-shrink-0 w-[240px] sm:w-[300px] md:w-[360px] lg:w-[400px] mx-2 sm:mx-3 group"
             >
               <a
                 href={channel.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="relative aspect-video bg-slate-50 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                <div className="relative aspect-video bg-slate-50 rounded-lg overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
                   <Image
                     src={channel.src || "/placeholder.svg"}
-                    alt={`Canal ${index + 1}`}
+                    alt={`Canal de exemplo ${index + 1}`}
                     fill
-                    className="object-cover transition-all duration-500"
+                    className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </a>
             </div>
@@ -95,10 +95,9 @@ export function ChannelsSection() {
         </div>
 
         {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       </div>
-
     </section>
   )
 }
