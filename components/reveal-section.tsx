@@ -24,21 +24,21 @@ const steps = [
     icon: Scissors,
     number: "03",
     title: "Corte as Melhores Partes",
-    description: 'Cola o roteiro, clica em "Cortar Cenas" e "Cortar B-rolls" - a IA corta sozinha. A etapa mais demorada vira minutos.',
+    description: "A IA identifica e corta as melhores partes sozinha.",
     video: "https://i.imgur.com/9DXzQZH.mp4",
   },
   {
     icon: Film,
     number: "04",
     title: "Montagem Automática",
-    description: 'Um clique em "Criar Montagem Completa" e o sistema monta o vídeo inteiro.',
+    description: "Um clique e o sistema monta o vídeo inteiro.",
     video: "https://i.imgur.com/Ie5Bqw6.mp4",
   },
   {
     icon: Music,
     number: "05",
     title: "Trilha Sonora",
-    description: "Cola o link da música, o app baixa e sonoriza. Pronto pra publicar.",
+    description: "O app baixa e sonoriza. Vídeo pronto pra publicar.",
     video: "https://i.imgur.com/Reg1Gjl.mp4",
   },
 ]
@@ -82,23 +82,13 @@ export function RevealSection() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal animation="fade-up" duration={700}>
             <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-4">
-              A Sacada
+              GERADOR DE VÍDEOS
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-slate-900 leading-tight tracking-tight mb-6">
-              E se os 5 estágios fossem{" "}
-              <span className="text-primary">automáticos?</span>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-slate-900 leading-tight tracking-tight mb-6 uppercase">
+              veja como funciona o <span className="text-primary">nosso sistema</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-4">
-              Você já viu o método e já viu o resultado. Agora a parte que ninguém mais te entrega.
-              Junto com o guia vem o <strong className="text-slate-900">WinTube</strong> - o app que a
-              gente desenvolveu, e que executa exatamente os 5 estágios do método, um por um, com IA.
-            </p>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Não é uma ferramenta genérica de edição.{" "}
-              <strong className="text-slate-900">É o método inteiro transformado em botão.</strong>
-            </p>
-            <p className="text-sm text-slate-400 mt-4 font-medium">
-              O aplicativo funciona para computador (Windows e Mac).
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-4 font-medium">
+              Com o WinTube você consegue criar vários vídeos todos os dias, de forma automática, prontos pra postar em qualquer plataforma.
             </p>
           </ScrollReveal>
         </div>
@@ -155,44 +145,17 @@ export function RevealSection() {
         </div>
       </div>
 
-      {/* Scale sub-block */}
-      <div className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-slate-50 mt-16 sm:mt-20">
+      <div className="py-16 px-4 sm:px-6 bg-slate-50 mt-16 sm:mt-20">
         <div className="max-w-5xl mx-auto">
-          <ScrollReveal animation="fade-up" duration={700}>
-            <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10 sm:mb-14 tracking-tight">
-              Por que isso muda a escala do{" "}
-              <span className="text-primary">seu perfil</span>
-            </h3>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {scalePoints.map((point, i) => (
-              <ScrollReveal key={i} animation="fade-up" delay={i * 80} duration={500}>
-                <div className="bg-white border border-slate-200 rounded-lg p-5 sm:p-6 hover:border-primary/30 transition-colors h-full">
-                  <point.icon className="w-6 h-6 text-primary mb-3" strokeWidth={1.5} />
-                  <h4 className="font-[family-name:var(--font-display)] text-base sm:text-lg font-bold text-slate-900 mb-1">
-                    {point.title}
-                  </h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
           {/* Closing + CTA */}
-          <ScrollReveal animation="fade-up" delay={400} duration={600}>
-            <div className="mt-12 sm:mt-16 text-center">
-              <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto mb-8 font-medium">
-                O guia te dá o método. O app remove o único motivo pelo qual a maioria não executa.
-              </p>
+          <ScrollReveal animation="fade-up" delay={100} duration={600}>
+            <div className="text-center">
               <a
                 href="#offer-section"
                 id="reveal-cta"
                 className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <span>QUERO ACESSAR O MÉTODO + O APP</span>
+                <span>QUERO ACESSAR O GERADOR DE VÍDEOS</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
             </div>

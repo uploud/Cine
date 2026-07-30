@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { X } from "lucide-react"
+import { X, ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const feedbacks = [
@@ -27,16 +27,18 @@ export function ResultsSection() {
           <ScrollReveal animation="fade-up" duration={700}>
             <div className="text-center mb-10 sm:mb-14">
               <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-                Resultados
+                PROVA REAL
               </p>
-              <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-                Veja os Resultados de Quem{" "}
-                <span className="text-primary">Decidiu Agir</span>
+              <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+                quem usa já está <span className="text-primary">lucrando</span>
               </h2>
+              <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
+                Esses são resultados reais de quem já vive da monetização das plataformas.
+              </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-12">
             {feedbacks.map((src, i) => (
               <ScrollReveal key={i} animation="fade-up" delay={i * 60} duration={500}>
                 <button
@@ -55,6 +57,18 @@ export function ResultsSection() {
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal animation="fade-up" delay={100} duration={600}>
+            <div className="text-center">
+              <a
+                href="#offer-section"
+                className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98] w-full sm:w-auto"
+              >
+                <span>QUERO TER ESSES RESULTADOS</span>
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

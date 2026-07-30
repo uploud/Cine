@@ -5,38 +5,38 @@ const stages = [
   {
     icon: Download,
     number: "01",
-    title: "adquira a wintube",
-    description: "Tenha acesso imediato ao gerador de vídeos e as nossas aulas.",
+    title: "Adquira o WinTube",
+    description: "Tenha acesso imediato ao app gerador de vídeos e à WinTube Academy.",
   },
   {
     icon: User,
     number: "02",
-    title: "crie seu perfil",
-    description: "Esteja no Instagram, Facebook, YouTube ou TikTok e inicie um perfil dedicado a vídeos de filmes, séries e animes.",
+    title: "Comece a postar",
+    description: "Esteja no Instagram, Facebook, YouTube ou TikTok e comece a publicar seus vídeos.",
   },
   {
     icon: Monitor,
     number: "03",
-    title: "USE O NOSSO SISTEMA",
-    description: "Baixe o gerador no seu computador e crie videos no automático.",
+    title: "Use o nosso sistema",
+    description: "Baixe o app no seu computador e crie vídeos completos no automático: baixar, transcrever, cortar, montar e sonorizar.",
   },
   {
     icon: Eye,
     number: "04",
-    title: "ganhe visualizações",
-    description: "Conquiste engajamento e faça seu perfil crescer de forma rápida.",
+    title: "Ganhe visualizações",
+    description: "Poste com consistência e conquiste engajamento pra crescer nas plataformas.",
   },
   {
     icon: DollarSign,
     number: "05",
-    title: "monetize seu perfil",
-    description: "Transforme suas visualizações em dinheiro.",
+    title: "Monetize seus vídeos",
+    description: "Transforme suas visualizações em dinheiro pela própria plataforma.",
   },
   {
     icon: ShoppingCart,
     number: "06",
-    title: "venda produtos",
-    description: "Aproveite o perfil aquecido para divulgar e vender produtos como afiliado.",
+    title: "Venda produtos",
+    description: "Aproveite o alcance dos seus vídeos pra divulgar e vender produtos como afiliado.",
   },
 ]
 
@@ -49,9 +49,8 @@ export function MethodSection() {
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
               FÓRMULA DO SUCESSO
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              siga os passos para começar a{" "}
-              <span className="text-primary">faturar</span>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+              siga os passos para começar a <span className="text-primary">faturar</span>
             </h2>
           </div>
         </ScrollReveal>
@@ -76,11 +75,11 @@ export function MethodSection() {
                       <span className="font-[family-name:var(--font-display)] text-sm font-bold text-slate-300 tracking-wider">
                         {stage.number}
                       </span>
-                      <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold text-slate-900">
+                      <h3 className="font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold text-slate-900 uppercase">
                         {stage.title}
                       </h3>
                     </div>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
                       {stage.description}
                     </p>
                   </div>
@@ -89,16 +88,6 @@ export function MethodSection() {
             ))}
           </div>
         </div>
-
-        {/* Closing */}
-        <ScrollReveal animation="fade-up" delay={600} duration={600}>
-          <div className="mt-12 sm:mt-16 border-t border-slate-200 pt-8 text-center">
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Esse é o processo. Funciona. O problema é que, feito à mão,{" "}
-              <strong className="text-slate-900">cada vídeo custa um dia inteiro do seu tempo.</strong>
-            </p>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   )

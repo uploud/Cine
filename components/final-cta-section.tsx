@@ -11,36 +11,27 @@ export function FinalCtaSection() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <ScrollReveal animation="fade-up" duration={700}>
+          <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
+            GARANTIA INCONDICIONAL
+          </p>
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4 sm:mb-6 uppercase">
-            Garantia <span className="text-primary">Incondicional</span>
+            você pode testar por até <span className="text-primary">7 dias</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-            Deixe a IA fazer o trabalho pesado enquanto você foca em crescer seus perfis.
+          <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-medium">
+            Não se preocupe, você tem 7 dias de garantia incondicional pra pedir seu dinheiro de volta, caso não fique satisfeito com o método WinTube.
           </p>
         </ScrollReveal>
 
         {/* Garantia */}
         <ScrollReveal animation="fade-up" delay={200} duration={600}>
-          <div className="mt-12 sm:mt-16 bg-slate-900 border border-slate-800 rounded-lg p-6 sm:p-8 md:p-10 max-w-2xl mx-auto">
+          <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 sm:p-8 md:p-10 max-w-2xl mx-auto">
             <Image
               src="/garantia-7-dias.png"
               alt="Garantia incondicional de 7 dias"
               width={400}
               height={200}
-              className="h-20 sm:h-28 md:h-32 w-auto object-contain mb-6 mx-auto"
+              className="h-20 sm:h-28 md:h-32 w-auto object-contain mx-auto"
             />
-            <div className="text-slate-300 text-sm sm:text-base leading-relaxed space-y-3">
-              <p>
-                Você tem{" "}
-                <strong className="text-white">7 dias de garantia incondicional</strong>{" "}
-                para testar à vontade.
-              </p>
-              <p>
-                Se por qualquer motivo não ficar satisfeito,{" "}
-                <strong className="text-white">devolvemos 100% do seu dinheiro</strong>.
-                Sem perguntas.
-              </p>
-            </div>
           </div>
         </ScrollReveal>
       </div>

@@ -13,12 +13,14 @@ export function VideoShowcaseSection() {
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-              O Resultado
+              VÍDEOS GERADOS
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              É Exatamente Esse Formato Que Você Vai{" "}
-              <span className="text-primary">Produzir</span>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+              gere vídeos de todos os <span className="text-primary">nichos</span>
             </h2>
+            <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
+              Você pode gerar vídeos de diversos temas e formatos, adaptando o mesmo sistema pro nicho que quiser explorar.
+            </p>
           </div>
         </ScrollReveal>
 

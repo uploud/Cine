@@ -26,14 +26,13 @@ export function HeroSection() {
 
           {/* H1 */}
           <h1 className="font-[family-name:var(--font-display)] text-[1.8rem] sm:text-3xl md:text-4xl lg:text-[3rem] text-slate-900 leading-[1.1] font-extrabold tracking-tight max-w-4xl">
-            Lucre Postando Vídeos de Filmes, Séries e Animes{" "}
-            <span className="text-primary">Sem Aparecer, Sem Criar Roteiros</span>{" "}
-            e Sem Bloqueios por Direitos Autorais!
+            Lucre Postando Vídeos de Filmes, Series e Animes Sem Aparecer, em Todas as Plataformas!{" "}
+            <span className="text-primary">com um sistema que faz tudo no automático</span>
           </h1>
 
           {/* Sub */}
           <p className="text-base sm:text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl">
-            O único aplicativo que permite criar vídeos ilimitados para seu canal. Sem créditos. Sem mensalidade. Sem precisar aparecer. Tudo em um único lugar.
+            Crie vídeos completos em poucos cliques e monetize em todas as redes sociais. Um único sistema, sem mensalidade e sem pagar mais nada.
           </p>
 
           {/* Platforms line */}
@@ -46,6 +45,11 @@ export function HeroSection() {
 
           {/* VSL Player - lazy loaded */}
           <div className="w-full relative max-w-4xl mx-auto mt-2">
+            <div className="mb-3">
+              <span className="inline-flex items-center justify-center bg-red-100 text-red-600 text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide">
+                Por favor, verifique se o som está ligado!
+              </span>
+            </div>
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900">
               <iframe
                 src="https://www.youtube.com/embed/9NyiHkeaNog"
@@ -65,7 +69,7 @@ export function HeroSection() {
             id="hero-cta"
             className="group relative inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98] animate-cta-pulse w-full sm:w-auto"
           >
-            <span>QUERO COMEÇAR AGORA</span>
+            <span>QUERO LUCRAR COM MEUS VÍDEOS</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

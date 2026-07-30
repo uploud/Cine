@@ -7,7 +7,7 @@ const features = [
   "ACESSO VITALÍCIO",
   "App 100% atualizado",
   "Funciona em computador (Windows e Mac)",
-  "WinTube Academy — área de treinamento exclusiva",
+  "WinTube Academy: área de treinamento exclusiva",
   "Guia de Monetização em 7 Dias",
   "Guia de Boas Práticas de Conteúdo",
   "Grupo fechado de alunos",
@@ -56,7 +56,7 @@ export function OfferSection() {
                 <div className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl font-extrabold text-primary tracking-tight mb-2">
                   R$ 57,97
                 </div>
-                <p className="text-sm text-slate-500 font-medium">ou 12x de R$ 5,82 — pagamento único, uso ilimitado</p>
+                <p className="text-sm text-slate-500 font-medium">ou 12x de R$ 5,82. Pagamento único, uso ilimitado.</p>
               </div>
 
               {/* Trust Badges */}

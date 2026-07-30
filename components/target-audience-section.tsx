@@ -2,19 +2,19 @@ import { CheckCircle2, XCircle } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const isFor = [
-  "Quer renda extra sem aparecer",
-  "Está cansado de editar vídeo por vídeo",
-  "Quer postar todo dia sem equipe",
-  "Quer estar em todas as plataformas",
-  "Pretende escalar mais de um perfil",
-  "Quer usar IA pra produzir mais rápido que a concorrência",
+  "Para quem busca uma renda extra usando a internet.",
+  "Quem quer vender produtos como afiliado sem aparecer nos vídeos.",
+  "Pessoas com zero experiência com tecnologia ou programas complicados.",
+  "Para quem quer que o computador faça o trabalho chato e repetitivo por você.",
+  "Quem quer pagar só uma vez, instalar no PC e ter acesso pra sempre.",
 ]
 
 const isNotFor = [
-  "Prefere editar manualmente",
-  "Acha que ganha dinheiro sem postar com consistência",
-  "Quer resultado sem aplicar o método",
-  "Prefere fazer tudo no braço em vez de automatizar",
+  "Quem usa só o celular. O programa exige computador (Windows ou Mac) pra rodar.",
+  "Para quem acha que vai ganhar dinheiro sem ter o trabalho de postar os vídeos.",
+  "Pessoas que querem aparecer nas câmeras e virar influenciador.",
+  "Quem prefere passar a tarde toda editando vídeo manualmente.",
+  "Para quem prefere ferramentas que cobram mensalidade.",
 ]
 
 export function TargetAudienceSection() {
@@ -23,9 +23,11 @@ export function TargetAudienceSection() {
       <div className="max-w-5xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              Para Quem <span className="text-primary">É</span> e Para Quem{" "}
-              <span className="text-slate-400">Não É</span>
+            <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
+              CLASSIFICADOR
+            </p>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+              para quem serve o <span className="text-primary">WinTube?</span>
             </h2>
           </div>
         </ScrollReveal>
@@ -34,14 +36,14 @@ export function TargetAudienceSection() {
           {/* Para quem É */}
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
             <div className="bg-white border border-slate-200 rounded-lg p-6 sm:p-8 h-full">
-              <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-6 pb-4 border-b border-slate-100">
-                É pra você se...
+              <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-6 pb-4 border-b border-slate-100 uppercase">
+                PARA QUEM É?
               </h3>
               <ul className="space-y-4">
                 {isFor.map((point, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                    <span className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
                       {point}
                     </span>
                   </li>
@@ -53,14 +55,14 @@ export function TargetAudienceSection() {
           {/* Para quem NÃO é */}
           <ScrollReveal animation="fade-up" delay={250} duration={600}>
             <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 sm:p-8 h-full">
-              <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-6 pb-4 border-b border-slate-200">
-                Não é pra você se...
+              <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-6 pb-4 border-b border-slate-200 uppercase">
+                PARA QUEM NÃO É?
               </h3>
               <ul className="space-y-4">
                 {isNotFor.map((point, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <XCircle className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm sm:text-base text-slate-500 leading-relaxed">
+                    <span className="text-sm sm:text-base text-slate-500 leading-relaxed font-medium">
                       {point}
                     </span>
                   </li>
