@@ -16,10 +16,10 @@ export function BonusSection() {
   const isFor = [
     "Criadores que querem crescer no YouTube sem aparecer na câmera.",
     "Pessoas cansadas de perder horas editando vídeos manualmente.",
-    "Quem quer transformar filmes, séries e animes em canais lucrativos usando IA.",
+    "Quem quer transformar filmes, séries e animes em perfis lucrativos usando IA.",
     "Criadores que querem postar vídeos todos os dias no piloto automático.",
-    "Quem quer monetizar canais dark sem depender de editor, roteirista ou equipe.",
-    "Pessoas que querem escalar canais com vídeos únicos e mais seguros contra bloqueios.",
+    "Quem quer monetizar perfis dark sem depender de editor, roteirista ou equipe.",
+    "Pessoas que querem escalar perfis com vídeos únicos e mais seguros contra bloqueios.",
   ]
 
   const isNotFor = [

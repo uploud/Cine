@@ -9,7 +9,7 @@ const methodItems = [
   {
     icon: GraduationCap,
     title: "WinTube Academy",
-    description: "Treinamento passo a passo pra montar e crescer seus canais.",
+    description: "Treinamento passo a passo pra montar e crescer seus perfis.",
   },
   {
     icon: BookOpen,

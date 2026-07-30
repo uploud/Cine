@@ -14,7 +14,7 @@ const faqs = [
     answer: "YouTube, Instagram (Reels), TikTok, Facebook e qualquer plataforma de vídeo.",
   },
   {
-    question: "Funciona para canais faceless (dark)?",
+    question: "Funciona para perfis de edit de filmes, séries e animes?",
     answer: "É exatamente pra isso que foi feito. Roteiro, cortes, montagem e trilha rodam sem você aparecer.",
   },
   {
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Em quanto tempo vejo resultado?",
-    answer: "Dá pra ter o canal configurado e publicando em poucos dias. Resultado financeiro depende de consistência, nicho e execução — não prometemos valor nenhum.",
+    answer: "Dá pra ter o perfil configurado e publicando em poucos dias. Resultado financeiro depende de consistência, nicho e execução — não prometemos valor nenhum.",
   },
   {
     question: "Tem mensalidade ou créditos?",

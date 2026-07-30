@@ -15,7 +15,7 @@ const cards = [
   {
     icon: TrendingUp,
     title: "Escala sem contratar ninguém",
-    description: "Um canal, dois, cinco — o esforço não multiplica igual.",
+    description: "Um perfil, dois, cinco — o esforço não multiplica igual.",
   },
   {
     icon: Layers,
@@ -34,11 +34,11 @@ export function OpportunitySection() {
               A Oportunidade
             </p>
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              Por que canais faceless viraram{" "}
+              Por que perfis de edit de filmes, séries e animes viraram{" "}
               <span className="text-primary">fonte de renda</span>
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
-              Canais sem rosto explodiram porque resolvem o problema que impede a maioria de começar:
+              Perfis de edit de filmes, séries e animes explodiram porque resolvem o problema que impede a maioria de começar:
               a necessidade de aparecer.
             </p>
           </div>

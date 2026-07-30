@@ -1,8 +1,8 @@
 export function Marquee() {
   const items = [
-    "Canais no piloto automático",
+    "Perfis no piloto automático",
     "WINTUBE",
-    "MONETIZE SEU CANAL",
+    "MONETIZE SEU PERFIL",
   ]
 
   return (

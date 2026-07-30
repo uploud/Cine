@@ -6,7 +6,7 @@ const isFor = [
   "Está cansado de editar vídeo por vídeo",
   "Quer postar todo dia sem equipe",
   "Quer estar em todas as plataformas",
-  "Pretende escalar mais de um canal",
+  "Pretende escalar mais de um perfil",
   "Quer usar IA pra produzir mais rápido que a concorrência",
 ]
 

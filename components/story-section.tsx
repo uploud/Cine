@@ -32,11 +32,11 @@ export function StorySection() {
         </div>
         <div className="flex flex-col gap-6 text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">
           <p>
-            Prazer, eu sou o Túlio Henrique. Há mais de 3 anos, conquistei minha independência financeira criando canais
+            Prazer, eu sou o Túlio Henrique. Há mais de 3 anos, conquistei minha independência financeira criando perfis
             de filmes e séries no YouTube e encontrando a forma certa de fugir dos bloqueios de direitos autorais.
           </p>
           <p>
-            Sou fundador do Cine Builder, método exclusivo que já ajudou centenas de pessoas a criarem canais
+            Sou fundador do Cine Builder, método exclusivo que já ajudou centenas de pessoas a criarem perfis
             lucrativos, e também o criador de 2 aplicativos inovadores: um que assiste o filme e gera o roteiro pronto,
             e outro que faz os cortes e marcações no automático.
           </p>

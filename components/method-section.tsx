@@ -1,36 +1,30 @@
-import { Download, FileText, Scissors, Film, Music } from "lucide-react"
+import { User, Upload, Eye, DollarSign } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const stages = [
   {
-    icon: Download,
+    icon: User,
     number: "01",
-    title: "Seleção do material",
-    description: "Escolher a base do vídeo e organizar as cenas.",
+    title: "Criar perfil",
+    description: "Crie seu perfil do zero nas principais plataformas de forma estratégica.",
   },
   {
-    icon: FileText,
+    icon: Upload,
     number: "02",
-    title: "Transcrição",
-    description: "Falas viram texto — matéria-prima do roteiro.",
+    title: "Postar os vídeos",
+    description: "Suba os conteúdos criados pela IA mantendo consistência e qualidade.",
   },
   {
-    icon: Scissors,
+    icon: Eye,
     number: "03",
-    title: "Roteiro + Cortes",
-    description: "Montar o roteiro e cortar as melhores partes. A etapa que consome mais tempo.",
+    title: "Ganhar visualizações",
+    description: "Alcance milhões de pessoas com o formato que mais engaja na internet.",
   },
   {
-    icon: Film,
+    icon: DollarSign,
     number: "04",
-    title: "Montagem",
-    description: "Cortes principais + B-rolls numa sequência que segura o espectador até o fim.",
-  },
-  {
-    icon: Music,
-    number: "05",
-    title: "Sonorização",
-    description: "Trilha, mixagem e exportação final.",
+    title: "Monetizar",
+    description: "Transforme suas visualizações em receita no automático.",
   },
 ]
 
@@ -44,8 +38,8 @@ export function MethodSection() {
               O Método
             </p>
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              Como um vídeo faceless é{" "}
-              <span className="text-primary">construído</span>
+              Como o método funciona na{" "}
+              <span className="text-primary">prática</span>
             </h2>
           </div>
         </ScrollReveal>

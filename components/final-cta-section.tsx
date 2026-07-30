@@ -16,7 +16,7 @@ export function FinalCtaSection() {
             <span className="text-primary">no Braço</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-            Deixe a IA fazer o trabalho pesado enquanto você foca em crescer seus canais.
+            Deixe a IA fazer o trabalho pesado enquanto você foca em crescer seus perfis.
           </p>
         </ScrollReveal>
 

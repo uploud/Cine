@@ -25,21 +25,25 @@ export function HeroSection() {
           </div>
 
           {/* H1 */}
-          <h1 className="font-[family-name:var(--font-display)] text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] text-slate-900 leading-[1.1] font-extrabold tracking-tight max-w-4xl">
-            Crie uma Renda Extra com Canais no{" "}
-            <span className="text-primary">Piloto Automático</span>
+          <h1 className="font-[family-name:var(--font-display)] text-[1.8rem] sm:text-3xl md:text-4xl lg:text-[3rem] text-slate-900 leading-[1.1] font-extrabold tracking-tight max-w-4xl">
+            Lucre Postando Vídeos de Filmes, Séries e Animes{" "}
+            <span className="text-primary">Sem Aparecer, Sem Criar Roteiros</span>{" "}
+            e Sem Bloqueios por Direitos Autorais!
           </h1>
 
           {/* Sub */}
           <p className="text-base sm:text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl">
-            Aprenda o método que pessoas comuns estão usando pra construir canais de vídeo que produzem
+            Aprenda o método que pessoas comuns estão usando pra construir perfis de vídeo que produzem
             conteúdo sozinhos — sem aparecer, sem equipe e sem passar horas editando.
           </p>
 
           {/* Platforms line */}
-          <p className="text-sm text-slate-400 font-medium tracking-wide uppercase">
-            Funciona para YouTube, Instagram, TikTok e Facebook.
-          </p>
+          <div className="flex flex-col items-center gap-3">
+            <p className="text-sm text-slate-400 font-medium tracking-wide uppercase">
+              Funciona em todas as plataformas
+            </p>
+            <img src="https://i.imgur.com/RPITZfs.png" alt="Plataformas" className="h-6 sm:h-8 object-contain" />
+          </div>>
 
           {/* VSL Player — lazy loaded */}
           <div className="w-full relative max-w-4xl mx-auto mt-2">

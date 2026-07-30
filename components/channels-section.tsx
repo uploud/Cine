@@ -38,7 +38,7 @@ export function ChannelsSection() {
               Exemplos Reais
             </p>
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              Canais Reais, Publicando com{" "}
+              Perfis Reais, Publicando com{" "}
               <span className="text-primary">Consistência</span>
             </h2>
           </div>
@@ -62,7 +62,7 @@ export function ChannelsSection() {
                 <div className="relative aspect-video bg-slate-50 rounded-lg overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
                   <Image
                     src={channel.src || "/placeholder.svg"}
-                    alt={`Canal de exemplo ${index + 1}`}
+                    alt={`Perfil de exemplo ${index + 1}`}
                     fill
                     className="object-cover"
                   />
@@ -84,7 +84,7 @@ export function ChannelsSection() {
                 <div className="relative aspect-video bg-slate-50 rounded-lg overflow-hidden border border-slate-200 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
                   <Image
                     src={channel.src || "/placeholder.svg"}
-                    alt={`Canal de exemplo ${index + 1}`}
+                    alt={`Perfil de exemplo ${index + 1}`}
                     fill
                     className="object-cover"
                   />

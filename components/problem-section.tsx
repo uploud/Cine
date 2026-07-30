@@ -46,7 +46,7 @@ export function ProblemSection() {
           <ScrollReveal animation="fade-up" delay={400} duration={600}>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed text-center max-w-3xl mx-auto">
               Posta 3 vídeos na primeira semana, 1 na segunda, nenhum na terceira.
-              E canal que não posta <strong className="text-white">não cresce</strong>.
+              E perfil que não posta <strong className="text-white">não cresce</strong>.
             </p>
           </ScrollReveal>
 

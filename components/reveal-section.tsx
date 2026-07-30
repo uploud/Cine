@@ -61,8 +61,8 @@ const scalePoints = [
   },
   {
     icon: Monitor,
-    title: "Múltiplos canais",
-    description: "Com minutos por vídeo, dá pra tocar 2, 3, 5 canais em paralelo.",
+    title: "Múltiplos perfis",
+    description: "Com minutos por vídeo, dá pra tocar 2, 3, 5 perfis em paralelo.",
   },
   {
     icon: Users,
@@ -161,7 +161,7 @@ export function RevealSection() {
           <ScrollReveal animation="fade-up" duration={700}>
             <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10 sm:mb-14 tracking-tight">
               Por que isso muda a escala do{" "}
-              <span className="text-primary">seu canal</span>
+              <span className="text-primary">seu perfil</span>
             </h3>
           </ScrollReveal>
 
