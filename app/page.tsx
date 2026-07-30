@@ -40,11 +40,6 @@ export default function Home() {
           <MethodSection />
         </ScrollReveal>
 
-        {/* 6. O Resultado — Vídeos exemplo */}
-        <ScrollReveal animation="fade-up" duration={700}>
-          <VideoShowcaseSection />
-        </ScrollReveal>
-
         {/* 7. Exemplos Reais — Canais */}
         <ScrollReveal animation="fade-in" duration={700}>
           <ChannelsSection />
@@ -52,6 +47,11 @@ export default function Home() {
 
         {/* 8. A Sacada — Revelação do App */}
         <RevealSection />
+
+        {/* 6. O Resultado — Vídeos exemplo */}
+        <ScrollReveal animation="fade-up" duration={700}>
+          <VideoShowcaseSection />
+        </ScrollReveal>
 
         {/* 9. Para Quem É / Não É */}
         <ScrollReveal animation="fade-up" duration={700}>

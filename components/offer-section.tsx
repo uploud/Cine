@@ -170,7 +170,7 @@ export function OfferSection() {
               <div className="mt-6 flex justify-center">
                 <img
                   src="/images/pagamento_v2.png"
-                  alt="Formas de Pagamento — Cartão, Boleto, Pix"
+                  alt="Formas de Pagamento - Cartão, Boleto, Pix"
                   className="w-full max-w-[400px] h-auto object-contain opacity-70"
                 />
               </div>

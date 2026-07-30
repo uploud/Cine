@@ -28,7 +28,7 @@ export function ProblemSection() {
 
           <ScrollReveal animation="fade-up" delay={200} duration={600}>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed text-center max-w-3xl mx-auto">
-              Pra fazer <strong className="text-white">um único vídeo</strong> bem feito — separar material,
+              Pra fazer <strong className="text-white">um único vídeo</strong> bem feito - separar material,
               transcrever falas, escrever roteiro, cortar as melhores partes, montar na timeline,
               sincronizar áudio, achar trilha, exportar...
             </p>

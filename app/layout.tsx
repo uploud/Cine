@@ -8,9 +8,9 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-displ
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
 
 export const metadata: Metadata = {
-  title: "WinTube — Crie uma Renda Extra com Canais no Piloto Automático",
+  title: "WinTube - Crie uma Renda Extra com Canais no Piloto Automático",
   description:
-    "Aprenda o método que pessoas comuns estão usando pra construir canais de vídeo que produzem conteúdo sozinhos — sem aparecer, sem equipe e sem passar horas editando.",
+    "Aprenda o método que pessoas comuns estão usando pra construir canais de vídeo que produzem conteúdo sozinhos - sem aparecer, sem equipe e sem passar horas editando.",
   icons: {
     icon: "/logo.png",
   },

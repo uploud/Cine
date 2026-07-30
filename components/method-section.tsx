@@ -1,30 +1,42 @@
-import { User, Upload, Eye, DollarSign } from "lucide-react"
+import { Download, User, Monitor, Eye, DollarSign, ShoppingCart } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const stages = [
   {
-    icon: User,
+    icon: Download,
     number: "01",
-    title: "Criar perfil",
-    description: "Crie seu perfil do zero nas principais plataformas de forma estratégica.",
+    title: "adquira a wintube",
+    description: "Tenha acesso imediato ao gerador de vídeos e as nossas aulas.",
   },
   {
-    icon: Upload,
+    icon: User,
     number: "02",
-    title: "Postar os vídeos",
-    description: "Suba os conteúdos criados pela IA mantendo consistência e qualidade.",
+    title: "crie seu perfil",
+    description: "Esteja no Instagram, Facebook, YouTube ou TikTok e inicie um perfil dedicado a vídeos de filmes, séries e animes.",
+  },
+  {
+    icon: Monitor,
+    number: "03",
+    title: "USE O NOSSO SISTEMA",
+    description: "Baixe o gerador no seu computador e crie videos no automático.",
   },
   {
     icon: Eye,
-    number: "03",
-    title: "Ganhar visualizações",
-    description: "Alcance milhões de pessoas com o formato que mais engaja na internet.",
+    number: "04",
+    title: "ganhe visualizações",
+    description: "Conquiste engajamento e faça seu perfil crescer de forma rápida.",
   },
   {
     icon: DollarSign,
-    number: "04",
-    title: "Monetizar",
-    description: "Transforme suas visualizações em receita no automático.",
+    number: "05",
+    title: "monetize seu perfil",
+    description: "Transforme suas visualizações em dinheiro.",
+  },
+  {
+    icon: ShoppingCart,
+    number: "06",
+    title: "venda produtos",
+    description: "Aproveite o perfil aquecido para divulgar e vender produtos como afiliado.",
   },
 ]
 
@@ -35,11 +47,11 @@ export function MethodSection() {
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-              O Método
+              FÓRMULA DO SUCESSO
             </p>
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              Como o método funciona na{" "}
-              <span className="text-primary">prática</span>
+              siga os passos para começar a{" "}
+              <span className="text-primary">faturar</span>
             </h2>
           </div>
         </ScrollReveal>

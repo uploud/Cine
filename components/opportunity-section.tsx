@@ -15,7 +15,7 @@ const cards = [
   {
     icon: TrendingUp,
     title: "Escala sem contratar ninguém",
-    description: "Um perfil, dois, cinco — o esforço não multiplica igual.",
+    description: "Um perfil, dois, cinco - o esforço não multiplica igual.",
   },
   {
     icon: Layers,
@@ -60,15 +60,7 @@ export function OpportunitySection() {
           ))}
         </div>
 
-        {/* Disclaimer — nota de rodapé estilizada */}
-        <ScrollReveal animation="fade-in" duration={500}>
-          <div className="border-l-2 border-slate-300 pl-4 sm:pl-6 py-2 max-w-3xl mx-auto">
-            <p className="text-sm text-slate-400 leading-relaxed">
-              Sem enrolação: não existe garantia de faturamento. Resultado depende de consistência,
-              nicho e execução. A gente entrega o método e a ferramenta — postar é com você.
-            </p>
-          </div>
-        </ScrollReveal>
+
       </div>
     </section>
   )

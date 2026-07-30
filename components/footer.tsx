@@ -12,10 +12,10 @@ export function Footer() {
           className="h-8 md:h-10 w-auto object-contain"
         />
         <p className="text-xs text-slate-500 font-medium">
-          &copy; 2026 Wintube — Todos os direitos reservados
+          &copy; 2026 Wintube - Todos os direitos reservados
         </p>
         <p className="text-[11px] text-slate-400 italic max-w-xs">
-          "Tudo posso naquele que me fortalece." — Filipenses 4:13
+          "Tudo posso naquele que me fortalece." - Filipenses 4:13
         </p>
       </div>
     </footer>

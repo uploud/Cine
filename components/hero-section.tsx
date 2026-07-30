@@ -26,15 +26,13 @@ export function HeroSection() {
 
           {/* H1 */}
           <h1 className="font-[family-name:var(--font-display)] text-[1.8rem] sm:text-3xl md:text-4xl lg:text-[3rem] text-slate-900 leading-[1.1] font-extrabold tracking-tight max-w-4xl">
-            Lucre Postando Vídeos de Filmes, Séries e Animes{" "}
-            <span className="text-primary">Sem Aparecer, Sem Criar Roteiros</span>{" "}
-            e Sem Bloqueios por Direitos Autorais!
+            Crie centenas de perfil em 1 clique e monetize em{" "}
+            <span className="text-primary">todas as redes sociais</span>.
           </h1>
 
           {/* Sub */}
           <p className="text-base sm:text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl">
-            Aprenda o método que pessoas comuns estão usando pra construir perfis de vídeo que produzem
-            conteúdo sozinhos — sem aparecer, sem equipe e sem passar horas editando.
+            Um único sistema, sem mensalidades e sem pagar mais nada.
           </p>
 
           {/* Platforms line */}
@@ -45,13 +43,13 @@ export function HeroSection() {
             <img src="https://i.imgur.com/RPITZfs.png" alt="Plataformas" className="h-6 sm:h-8 object-contain" />
           </div>
 
-          {/* VSL Player — lazy loaded */}
+          {/* VSL Player - lazy loaded */}
           <div className="w-full relative max-w-4xl mx-auto mt-2">
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900">
               <iframe
                 src="https://www.youtube.com/embed/9NyiHkeaNog"
                 className="w-full h-full"
-                title="WinTube — Apresentação"
+                title="WinTube - Apresentação"
                 frameBorder="0"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

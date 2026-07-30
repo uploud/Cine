@@ -28,7 +28,7 @@ export function AgencyBadge() {
                 <span className="text-primary">Wintube</span>
               </h3>
               <p className="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
-                Somos uma empresa real, com rosto e reputação — não um anúncio fantasma.
+                Somos uma empresa real, com rosto e reputação - não um anúncio fantasma.
               </p>
               <a
                 href="https://www.instagram.com/wintube.oficial/"

@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Em quanto tempo vejo resultado?",
-    answer: "Dá pra ter o perfil configurado e publicando em poucos dias. Resultado financeiro depende de consistência, nicho e execução — não prometemos valor nenhum.",
+    answer: "Dá pra ter o perfil configurado e publicando em poucos dias. Resultado financeiro depende de consistência, nicho e execução - não prometemos valor nenhum.",
   },
   {
     question: "Tem mensalidade ou créditos?",

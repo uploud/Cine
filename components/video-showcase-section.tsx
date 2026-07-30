@@ -2,9 +2,9 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function VideoShowcaseSection() {
   const videos = [
-    { id: "lcJ8BVEo15U", title: "Exemplo — Filme" },
-    { id: "MAZ0mWdoUYI", title: "Exemplo — Animação" },
-    { id: "ANnHwcWenR8", title: "Exemplo — Anime" },
+    { id: "lcJ8BVEo15U", title: "Exemplo - Filme" },
+    { id: "MAZ0mWdoUYI", title: "Exemplo - Animação" },
+    { id: "ANnHwcWenR8", title: "Exemplo - Anime" },
   ]
 
   return (

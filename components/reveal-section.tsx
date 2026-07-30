@@ -24,7 +24,7 @@ const steps = [
     icon: Scissors,
     number: "03",
     title: "Corte as Melhores Partes",
-    description: 'Cola o roteiro, clica em "Cortar Cenas" e "Cortar B-rolls" — a IA corta sozinha. A etapa mais demorada vira minutos.',
+    description: 'Cola o roteiro, clica em "Cortar Cenas" e "Cortar B-rolls" - a IA corta sozinha. A etapa mais demorada vira minutos.',
     video: "https://i.imgur.com/9DXzQZH.mp4",
   },
   {
@@ -74,7 +74,7 @@ const scalePoints = [
 export function RevealSection() {
   return (
     <section className="relative overflow-hidden">
-      {/* Visual break — top accent border */}
+      {/* Visual break - top accent border */}
       <div className="h-1 bg-primary" aria-hidden="true" />
 
       {/* Header */}
@@ -90,7 +90,7 @@ export function RevealSection() {
             </h2>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-4">
               Você já viu o método e já viu o resultado. Agora a parte que ninguém mais te entrega.
-              Junto com o guia vem o <strong className="text-slate-900">WinTube</strong> — o app que a
+              Junto com o guia vem o <strong className="text-slate-900">WinTube</strong> - o app que a
               gente desenvolveu, e que executa exatamente os 5 estágios do método, um por um, com IA.
             </p>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
@@ -104,7 +104,7 @@ export function RevealSection() {
         </div>
       </div>
 
-      {/* 5 Step demos — alternating layout */}
+      {/* 5 Step demos - alternating layout */}
       <div className="px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col gap-16 sm:gap-20 md:gap-28">
@@ -131,7 +131,7 @@ export function RevealSection() {
                     {/* Text side */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-4">
-                        {/* Icon — lit up with primary color (mirrors section 5's gray icons) */}
+                        {/* Icon - lit up with primary color (mirrors section 5's gray icons) */}
                         <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
                           <step.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
                         </div>
