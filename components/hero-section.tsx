@@ -43,7 +43,7 @@ export function HeroSection() {
               Funciona em todas as plataformas
             </p>
             <img src="https://i.imgur.com/RPITZfs.png" alt="Plataformas" className="h-6 sm:h-8 object-contain" />
-          </div>>
+          </div>
 
           {/* VSL Player — lazy loaded */}
           <div className="w-full relative max-w-4xl mx-auto mt-2">
