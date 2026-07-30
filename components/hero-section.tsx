@@ -26,13 +26,14 @@ export function HeroSection() {
 
           {/* H1 */}
           <h1 className="font-[family-name:var(--font-display)] text-[1.8rem] sm:text-3xl md:text-4xl lg:text-[3rem] text-slate-900 leading-[1.1] font-extrabold tracking-tight max-w-4xl">
-            Crie centenas de perfil em 1 clique e monetize em{" "}
-            <span className="text-primary">todas as redes sociais</span>.
+            Lucre Postando Vídeos de Filmes, Séries e Animes{" "}
+            <span className="text-primary">Sem Aparecer, Sem Criar Roteiros</span>{" "}
+            e Sem Bloqueios por Direitos Autorais!
           </h1>
 
           {/* Sub */}
           <p className="text-base sm:text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl">
-            Um único sistema, sem mensalidades e sem pagar mais nada.
+            O único aplicativo que permite criar vídeos ilimitados para seu canal. Sem créditos. Sem mensalidade. Sem precisar aparecer. Tudo em um único lugar.
           </p>
 
           {/* Platforms line */}
