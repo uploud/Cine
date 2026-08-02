@@ -56,7 +56,7 @@ export function OfferSection() {
                 <div className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl font-extrabold text-primary tracking-tight mb-2">
                   R$ 49,97
                 </div>
-                <p className="text-sm text-slate-500 font-medium">ou 12x de R$ 5,02. Pagamento único, uso ilimitado.</p>
+                <p className="text-base sm:text-lg text-slate-500 font-bold">Pagamento único, uso ilimitado.</p>
               </div>
 
               {/* Trust Badges */}

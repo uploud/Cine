@@ -20,7 +20,7 @@ export function AuthoritySection() {
 
         <div className="space-y-3 md:space-y-6 lg:space-y-8 px-2">
           <p className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-relaxed text-center">
-            📊 Nosso sistema foi desenvolvido para quem quer escalar perfis no YouTube sem aparecer. Com inteligencia artificial, roteiros automaticos e cortes inteligentes, voce consegue criar conteudo de qualidade em minutos.
+            📊 Nosso sistema foi desenvolvido para quem quer escalar Canais Darks no YouTube sem aparecer. Com inteligencia artificial, roteiros automaticos e cortes inteligentes, voce consegue criar conteudo de qualidade em minutos.
           </p>
           <Image
             src="https://i.imgur.com/ZlO9oFg.jpeg"
@@ -30,7 +30,7 @@ export function AuthoritySection() {
             className="rounded-lg md:rounded-xl shadow-xl w-full mb-12 md:mb-16 lg:mb-24"
           />
           <p className="text-lg sm:text-xl md:text-2xl text-primary font-black leading-relaxed text-center">
-            ✨ O Wintube foi criado para simplificar todo o processo. ⚡ Voce nao precisa aparecer em frente as cameras, nao precisa implorar por inscritos, e consegue escalar seu perfil de filmes e series de forma rapida, facil e segura.
+            ✨ O Wintube foi criado para simplificar todo o processo. ⚡ Voce nao precisa aparecer em frente as cameras, nao precisa implorar por inscritos, e consegue escalar seus Canais Darks de filmes e series de forma rapida, facil e segura.
           </p>
           <div className="flex flex-col gap-3 md:gap-6 lg:gap-8"></div>
           <p className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mt-4 md:mt-8 lg:mt-10 leading-relaxed text-center">

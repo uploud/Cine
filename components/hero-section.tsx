@@ -24,9 +24,8 @@ export function HeroSection() {
             />
           </div>
 
-          {/* H1 */}
           <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] text-slate-900 leading-[1.1] font-black tracking-tight max-w-4xl uppercase">
-            Lucre Postando Vídeos de Filmes, Series e Animes Sem Aparecer, em Todas as Plataformas!{" "}
+            Lucre Postando Vídeos de <span className="text-sky-500">Filmes, Series e Animes</span> Sem Aparecer, em Todas as Plataformas!{" "}
             <span className="text-primary">com um sistema que faz tudo no automático</span>
           </h1>
 
