@@ -25,13 +25,13 @@ export function HeroSection() {
           </div>
 
           {/* H1 */}
-          <h1 className="font-[family-name:var(--font-display)] text-[1.8rem] sm:text-3xl md:text-4xl lg:text-[3rem] text-slate-900 leading-[1.1] font-extrabold tracking-tight max-w-4xl">
+          <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] text-slate-900 leading-[1.1] font-black tracking-tight max-w-4xl uppercase">
             Lucre Postando Vídeos de Filmes, Series e Animes Sem Aparecer, em Todas as Plataformas!{" "}
             <span className="text-primary">com um sistema que faz tudo no automático</span>
           </h1>
 
           {/* Sub */}
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 font-bold leading-relaxed max-w-3xl">
             Crie vídeos completos em poucos cliques e monetize em todas as redes sociais. Um único sistema, sem mensalidade e sem pagar mais nada.
           </p>
 

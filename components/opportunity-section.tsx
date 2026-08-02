@@ -10,13 +10,13 @@ export function OpportunitySection() {
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
               GRANDE OPORTUNIDADE
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 leading-[1.1] tracking-tight uppercase">
               A forma mais fácil de lucrar na <span className="text-primary">internet</span>
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-6 text-slate-700 text-base sm:text-lg leading-relaxed">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-6 text-slate-800 text-lg sm:text-xl md:text-2xl font-bold leading-relaxed">
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
             <p>
               Os vídeos tomaram conta de todas as plataformas e facilitaram o jogo do dinheiro online.

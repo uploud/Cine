@@ -84,10 +84,10 @@ export function RevealSection() {
             <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-4">
               GERADOR DE VÍDEOS
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-slate-900 leading-tight tracking-tight mb-6 uppercase">
+            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 leading-[1.1] tracking-tight mb-6 uppercase">
               veja como funciona o <span className="text-primary">nosso sistema</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-4 font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto mb-4 font-bold">
               Com o WinTube você consegue criar vários vídeos todos os dias, de forma automática, prontos pra postar em qualquer plataforma.
             </p>
           </ScrollReveal>
@@ -130,10 +130,10 @@ export function RevealSection() {
                         </span>
                       </div>
 
-                      <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">
+                      <h3 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-black text-slate-900 mb-3 tracking-tight uppercase">
                         {step.title}
                       </h3>
-                      <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                      <p className="text-lg sm:text-xl text-slate-700 leading-relaxed font-semibold">
                         {step.description}
                       </p>
                     </div>

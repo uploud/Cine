@@ -48,10 +48,10 @@ export function ChannelsSection() {
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
               monetize em todas as plataformas
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 leading-[1.1] tracking-tight uppercase">
               Onde postar e <span className="text-primary">lucrar</span>
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-slate-700 text-lg sm:text-xl md:text-2xl mt-4 max-w-3xl mx-auto leading-relaxed font-bold">
               Crie vídeos no formato que mais entrega alcance pra postar onde você quiser: YouTube, Instagram, TikTok e Facebook.
             </p>
           </div>

@@ -26,7 +26,7 @@ export function TargetAudienceSection() {
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
               CLASSIFICADOR
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 leading-[1.1] tracking-tight uppercase">
               para quem serve o <span className="text-primary">WinTube?</span>
             </h2>
           </div>
@@ -40,7 +40,7 @@ export function TargetAudienceSection() {
                 <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-500/20">
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase tracking-tight">
+                <h3 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-black text-slate-900 uppercase tracking-tight">
                   PARA QUEM É?
                 </h3>
               </div>
@@ -48,7 +48,7 @@ export function TargetAudienceSection() {
                 {isFor.map((point, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
+                    <span className="text-base sm:text-lg md:text-xl text-slate-800 leading-relaxed font-bold">
                       {point}
                     </span>
                   </li>
@@ -64,7 +64,7 @@ export function TargetAudienceSection() {
                 <div className="w-16 h-16 bg-slate-200 rounded-xl flex items-center justify-center mb-4">
                   <XCircle className="w-10 h-10 text-slate-500" />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-slate-900 uppercase tracking-tight">
+                <h3 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-black text-slate-900 uppercase tracking-tight">
                   PARA QUEM NÃO É?
                 </h3>
               </div>
@@ -72,7 +72,7 @@ export function TargetAudienceSection() {
                 {isNotFor.map((point, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <XCircle className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm sm:text-base text-slate-500 leading-relaxed font-medium">
+                    <span className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed font-bold">
                       {point}
                     </span>
                   </li>
