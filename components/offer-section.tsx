@@ -54,9 +54,9 @@ export function OfferSection() {
               <div className="text-center mb-8 py-6 border-t border-b border-slate-200">
                 <p className="text-sm text-slate-400 line-through mb-1">Por apenas De R$ 197,00</p>
                 <div className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl font-extrabold text-primary tracking-tight mb-2">
-                  R$ 57,97
+                  R$ 49,97
                 </div>
-                <p className="text-sm text-slate-500 font-medium">ou 12x de R$ 5,82. Pagamento único, uso ilimitado.</p>
+                <p className="text-sm text-slate-500 font-medium">ou 12x de R$ 5,02. Pagamento único, uso ilimitado.</p>
               </div>
 
               {/* Trust Badges */}
