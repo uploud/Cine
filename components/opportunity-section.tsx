@@ -52,14 +52,7 @@ export function OpportunitySection() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal animation="fade-up" delay={400} duration={600}>
-            <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 p-4 rounded-lg mt-6">
-              <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm sm:text-base text-amber-900 font-medium">
-                Sem enrolação: não existe garantia de faturamento. Resultado depende de consistência, nicho e execução.
-              </p>
-            </div>
-          </ScrollReveal>
+
 
           <ScrollReveal animation="fade-up" delay={500} duration={600}>
             <div className="pt-8 text-center">

@@ -9,6 +9,7 @@ import { ResultsSection } from "@/components/results-section"
 import { TargetAudienceSection } from "@/components/target-audience-section"
 import { OfferSection } from "@/components/offer-section"
 import { FinalCtaSection } from "@/components/final-cta-section"
+import { AgencyBadge } from "@/components/agency-badge"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -52,7 +53,10 @@ export default function Home() {
         {/* 9. GARANTA SEU ACESSO */}
         <OfferSection />
 
-        {/* 10. GARANTIA INCONDICIONAL */}
+        {/* 10. SELO DA AGÊNCIA (INSTAGRAM) */}
+        <AgencyBadge />
+
+        {/* 11. GARANTIA INCONDICIONAL */}
         <FinalCtaSection />
       </main>
 

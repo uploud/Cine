@@ -23,23 +23,23 @@ export function AgencyBadge() {
 
             {/* Content */}
             <div className="text-center md:text-left flex-1">
-              <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-slate-900 mb-3 leading-tight">
+              <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 Você está comprando um produto produzido pela{" "}
                 <span className="text-primary">Wintube</span>
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
                 Somos uma empresa real, com rosto e reputação - não um anúncio fantasma.
               </p>
               <a
                 href="https://www.instagram.com/wintube.oficial/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-white text-sm transition-all hover:opacity-90 active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white text-base sm:text-lg transition-all hover:opacity-90 active:scale-[0.98]"
                 style={{
                   background: "linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)"
                 }}
               >
-                <Instagram className="w-4 h-4" />
+                <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
                 @wintube.oficial
               </a>
             </div>
