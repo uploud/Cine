@@ -31,15 +31,14 @@ export function OpportunitySection() {
 
           {/* User Provided Images Grid */}
           <ScrollReveal animation="fade-up" delay={300} duration={600}>
-            <div className="flex flex-col items-center gap-10 my-12">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 my-12 w-full">
               {[
                 "https://i.imgur.com/SMmwvnj.png",
                 "https://i.imgur.com/KUdAM7i.png",
                 "https://i.imgur.com/YMnFfjT.png",
-                "https://i.imgur.com/5JCExO3.png",
                 "https://i.imgur.com/s2kAnfj.png"
               ].map((src, idx) => (
-                <div key={idx} className="rounded-2xl overflow-hidden border border-slate-200 shadow-xl flex items-center justify-center bg-slate-100 w-full max-w-2xl">
+                <div key={idx} className="rounded-2xl overflow-hidden border border-slate-200 shadow-xl flex items-center justify-center bg-slate-100 w-full">
                   <img src={src} alt={`Exemplo de lucro ${idx + 1}`} className="w-full h-auto object-contain" />
                 </div>
               ))}
