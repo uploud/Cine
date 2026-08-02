@@ -1,8 +1,8 @@
 export function Marquee() {
   const items = [
-    "Perfis no piloto automático",
+    "Canais Darks no piloto automático",
     "WINTUBE",
-    "MONETIZE SEU PERFIL",
+    "MONETIZE SEUS CANAIS DARKS",
   ]
 
   return (

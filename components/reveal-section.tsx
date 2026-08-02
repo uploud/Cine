@@ -61,8 +61,8 @@ const scalePoints = [
   },
   {
     icon: Monitor,
-    title: "Múltiplos perfis",
-    description: "Com minutos por vídeo, dá pra tocar 2, 3, 5 perfis em paralelo.",
+    title: "Múltiplos Canais Darks",
+    description: "Com minutos por vídeo, dá pra tocar 2, 3, 5 Canais Darks em paralelo.",
   },
   {
     icon: Users,
