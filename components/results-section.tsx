@@ -10,7 +10,6 @@ const feedbacks = [
   "/images/results/result2.jpg",
   "/images/results/result3.jpg",
   "/images/results/result4.png",
-  "/images/feedbacks/fb1.png",
   "/images/feedbacks/fb2.jpg",
   "/images/feedbacks/fb3.jpg",
   "/images/feedbacks/fb4.jpg",
