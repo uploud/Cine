@@ -11,6 +11,7 @@ import { OfferSection } from "@/components/offer-section"
 import { FinalCtaSection } from "@/components/final-cta-section"
 import { AgencyBadge } from "@/components/agency-badge"
 import { Footer } from "@/components/footer"
+import { PillarsSection } from "@/components/pillars-section"
 
 export default function Home() {
   return (
@@ -36,6 +37,11 @@ export default function Home() {
 
         {/* 5. GERADOR DE VÍDEOS */}
         <RevealSection />
+
+        {/* COMO FUNCIONA (PILLARS) */}
+        <ScrollReveal animation="fade-up" duration={700}>
+          <PillarsSection />
+        </ScrollReveal>
 
         {/* 6. VÍDEOS GERADOS */}
         <ScrollReveal animation="fade-up" duration={700}>
