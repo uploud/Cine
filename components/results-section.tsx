@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
-import { X, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const feedbacks = [
@@ -17,93 +16,70 @@ const feedbacks = [
 ]
 
 export function ResultsSection() {
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
-
   return (
-    <>
-      <section className="py-8 sm:py-12 px-4 sm:px-6 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal animation="fade-up" duration={700}>
-            <div className="text-center mb-10 sm:mb-14">
-              <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-                PROVA REAL
-              </p>
-              <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
-                quem usa já está <span className="text-primary">lucrando</span>
-              </h2>
-              <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
-                Esses são resultados reais de quem já vive da monetização das plataformas.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="flex overflow-x-auto gap-4 pb-6 mb-12 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {feedbacks.map((src, i) => (
-              <ScrollReveal 
-                key={i} 
-                animation="fade-up" 
-                delay={i * 60} 
-                duration={500}
-                className="min-w-[65vw] sm:min-w-[40vw] md:min-w-[30vw] lg:min-w-[22%] shrink-0 snap-center"
-              >
-                <button
-                  onClick={() => setLightboxSrc(src)}
-                  className="block w-full rounded-lg overflow-hidden border border-slate-200 hover:border-primary/30 hover:shadow-md transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                  aria-label={`Ver feedback ${i + 1} em tamanho maior`}
-                >
-                  <Image
-                    src={src}
-                    alt={`Feedback de aluno ${i + 1}`}
-                    width={400}
-                    height={500}
-                    className="w-full h-auto object-cover pointer-events-none"
-                  />
-                </button>
-              </ScrollReveal>
-            ))}
+    <section className="py-8 sm:py-12 bg-slate-50 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <ScrollReveal animation="fade-up" duration={700}>
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
+              PROVA REAL
+            </p>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
+              quem usa já está <span className="text-primary">lucrando</span>
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
+              Esses são resultados reais de quem já vive da monetização das plataformas.
+            </p>
           </div>
+        </ScrollReveal>
+      </div>
 
-          <ScrollReveal animation="fade-up" delay={100} duration={600}>
-            <div className="text-center">
-              <a
-                href="#offer-section"
-                className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98] w-full sm:w-auto"
-              >
-                <span>QUERO TER ESSES RESULTADOS</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </a>
+      {/* Marquee Container */}
+      <div className="relative w-full overflow-hidden pb-6 mb-12">
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {[...feedbacks, ...feedbacks].map((src, i) => (
+            <div 
+              key={i} 
+              className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0 mx-2 sm:mx-3"
+            >
+              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white pointer-events-none">
+                <Image
+                  src={src}
+                  alt={`Feedback de aluno ${i + 1}`}
+                  width={400}
+                  height={500}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </div>
-          </ScrollReveal>
+          ))}
         </div>
-      </section>
+        
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 40s linear infinite;
+          }
+        `}} />
+      </div>
 
-      {/* Lightbox */}
-      {lightboxSrc && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 sm:p-8"
-          onClick={() => setLightboxSrc(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Visualização de feedback em tamanho grande"
-        >
-          <button
-            onClick={() => setLightboxSrc(null)}
-            className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
-            aria-label="Fechar visualização"
-          >
-            <X className="w-8 h-8" />
-          </button>
-          <div className="relative max-w-2xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={lightboxSrc}
-              alt="Feedback em tamanho grande"
-              width={800}
-              height={1000}
-              className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
-            />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <ScrollReveal animation="fade-up" delay={100} duration={600}>
+          <div className="text-center">
+            <a
+              href="#offer-section"
+              className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98] w-full sm:w-auto"
+            >
+              <span>QUERO TER ESSES RESULTADOS</span>
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
-        </div>
-      )}
-    </>
+        </ScrollReveal>
+      </div>
+    </section>
   )
 }
