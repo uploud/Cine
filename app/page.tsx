@@ -50,9 +50,6 @@ export default function Home() {
           <VideoShowcaseSection />
         </ScrollReveal>
 
-        {/* 7. PROVA REAL */}
-        <ResultsSection />
-
         {/* 8. CLASSIFICADOR */}
         <ScrollReveal animation="fade-up" duration={700}>
           <TargetAudienceSection />
@@ -64,8 +61,8 @@ export default function Home() {
         {/* 10. SELO DA AGÊNCIA (INSTAGRAM) */}
         <AgencyBadge />
 
-        {/* COMUNIDADE / FEEDBACKS */}
-        <CommunitySection />
+        {/* 7. PROVA REAL (FEEDBACKS) */}
+        <ResultsSection />
 
         {/* 11. GARANTIA INCONDICIONAL */}
         <FinalCtaSection />

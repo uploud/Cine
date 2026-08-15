@@ -169,9 +169,15 @@ export function PillarsSection() {
             Veja Como é Fácil Usar<br />
             <span className="text-primary">O Nosso Gerador de Vídeos</span>
           </h2>
-          <p className="text-muted-foreground text-xs sm:text-sm md:text-base mt-3 sm:mt-4 max-w-2xl mx-auto">
-            O Aplicativo Funciona para Celular e Computador.
-          </p>
+          <div className="mt-6 sm:mt-8 inline-flex items-center justify-center bg-[#00A3FF]/10 border-2 border-[#00A3FF] rounded-2xl px-6 sm:px-10 py-3 sm:py-4 shadow-[0_0_30px_rgba(0,163,255,0.2)]">
+            <span className="relative flex h-3 w-3 mr-3 sm:mr-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00A3FF] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#00A3FF]"></span>
+            </span>
+            <p className="text-[#00A3FF] text-base sm:text-xl md:text-2xl font-black uppercase tracking-wider">
+              O Aplicativo Funciona para Computador.
+            </p>
+          </div>
         </div>
 
         {/* Steps Container */}
