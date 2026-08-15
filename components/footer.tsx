@@ -23,12 +23,12 @@ export function Footer() {
             </p>
           </div>
           <style dangerouslySetInnerHTML={{
-            __html: \`
+            __html: `
             @keyframes blink {
               0%, 100% { opacity: 1; }
               50% { opacity: 0; }
             }
-          \`}} />
+          `}} />
         </div>
         <p className="text-xs text-slate-500 font-medium mt-2">
           &copy; 2026 Wintube - Todos os direitos reservados
