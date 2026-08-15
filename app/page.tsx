@@ -12,14 +12,12 @@ import { FinalCtaSection } from "@/components/final-cta-section"
 import { AgencyBadge } from "@/components/agency-badge"
 import { Footer } from "@/components/footer"
 import { PillarsSection } from "@/components/pillars-section"
-import { WintubeBoot } from "@/components/wintube-boot"
 
 import { CommunitySection } from "@/components/community-section"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <WintubeBoot />
       <main>
         {/* 1. HERO */}
         <HeroSection />
