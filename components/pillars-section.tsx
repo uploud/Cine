@@ -194,7 +194,7 @@ export function PillarsSection() {
                   className={`
                     relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
                     ${isActive
-                      ? "bg-gradient-to-b from-background to-muted border-2 border-[#00A3FF]/50 shadow-lg shadow-[#00A3FF]/10 scale-[1.02] sm:scale-105 z-10"
+                      ? "bg-gradient-to-b from-background to-muted border-2 border-[#00A3FF]/50 shadow-lg shadow-[#00A3FF]/10 z-10"
                       : isDone
                         ? "bg-muted border border-[#00A3FF]/30"
                         : "bg-background border border-border"

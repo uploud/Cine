@@ -20,6 +20,11 @@ export default function Home() {
         {/* 1. HERO */}
         <HeroSection />
 
+        {/* COMO FUNCIONA (PILLARS) - MOVIDO PARA ABAIXO DA VSL */}
+        <ScrollReveal animation="fade-up" duration={700}>
+          <PillarsSection />
+        </ScrollReveal>
+
         {/* 2. ONDE POSTAR E LUCRAR */}
         <ScrollReveal animation="fade-in" duration={700}>
           <ChannelsSection />
@@ -37,11 +42,6 @@ export default function Home() {
 
         {/* 5. GERADOR DE VÍDEOS */}
         <RevealSection />
-
-        {/* COMO FUNCIONA (PILLARS) */}
-        <ScrollReveal animation="fade-up" duration={700}>
-          <PillarsSection />
-        </ScrollReveal>
 
         {/* 6. VÍDEOS GERADOS */}
         <ScrollReveal animation="fade-up" duration={700}>
