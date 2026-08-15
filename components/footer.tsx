@@ -16,19 +16,11 @@ export function Footer() {
 `}
           </pre>
           <div className="flex flex-col items-center gap-1 text-[8px] sm:text-[10px] text-slate-500 tracking-[0.2em] uppercase font-mono">
-            <p>v2.0.0 · INTELIGÊNCIA ARTIFICIAL · 2026</p>
-            <p className="flex items-center gap-2">
-              <span className="text-primary">$</span> wintube --boot
-              <span className="inline-block w-1.5 h-3 bg-slate-400 animate-[blink_1s_step-end_infinite]" />
+            <p>v2.0.0 · APLICATIVO GERADOR DE VÍDEOS · 2026</p>
+            <p className="flex items-center gap-2 text-primary font-bold">
+              wintube
             </p>
           </div>
-          <style dangerouslySetInnerHTML={{
-            __html: `
-            @keyframes blink {
-              0%, 100% { opacity: 1; }
-              50% { opacity: 0; }
-            }
-          `}} />
         </div>
         <p className="text-xs text-slate-500 font-medium mt-2">
           &copy; 2026 Wintube - Todos os direitos reservados
