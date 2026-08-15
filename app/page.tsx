@@ -13,6 +13,8 @@ import { AgencyBadge } from "@/components/agency-badge"
 import { Footer } from "@/components/footer"
 import { PillarsSection } from "@/components/pillars-section"
 
+import { CommunitySection } from "@/components/community-section"
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -61,6 +63,9 @@ export default function Home() {
 
         {/* 10. SELO DA AGÊNCIA (INSTAGRAM) */}
         <AgencyBadge />
+
+        {/* COMUNIDADE / FEEDBACKS */}
+        <CommunitySection />
 
         {/* 11. GARANTIA INCONDICIONAL */}
         <FinalCtaSection />

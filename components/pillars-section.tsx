@@ -192,7 +192,7 @@ export function PillarsSection() {
                 <div
                   key={step.id}
                   className={`
-                    relative h-full rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[200px] sm:min-h-0 transition-all duration-500
+                    relative h-full flex flex-col rounded-2xl p-6 sm:p-4 md:p-5 lg:p-6 min-h-[340px] sm:min-h-[320px] transition-all duration-500
                     ${isActive
                       ? "bg-gradient-to-b from-background to-muted border-2 border-[#00A3FF]/50 shadow-lg shadow-[#00A3FF]/10 z-10"
                       : isDone
