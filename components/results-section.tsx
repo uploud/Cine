@@ -37,9 +37,15 @@ export function ResultsSection() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-12">
+          <div className="flex overflow-x-auto gap-4 pb-6 mb-12 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {feedbacks.map((src, i) => (
-              <ScrollReveal key={i} animation="fade-up" delay={i * 60} duration={500}>
+              <ScrollReveal 
+                key={i} 
+                animation="fade-up" 
+                delay={i * 60} 
+                duration={500}
+                className="min-w-[65vw] sm:min-w-[40vw] md:min-w-[30vw] lg:min-w-[22%] shrink-0 snap-center"
+              >
                 <button
                   onClick={() => setLightboxSrc(src)}
                   className="block w-full rounded-lg overflow-hidden border border-slate-200 hover:border-primary/30 hover:shadow-md transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
@@ -50,7 +56,7 @@ export function ResultsSection() {
                     alt={`Feedback de aluno ${i + 1}`}
                     width={400}
                     height={500}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover pointer-events-none"
                   />
                 </button>
               </ScrollReveal>
