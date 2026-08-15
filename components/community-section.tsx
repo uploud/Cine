@@ -18,25 +18,39 @@ export function CommunitySection() {
     if (!scrollContainer) return
 
     let scrollAmount = 0
-    const scrollSpeed = 1 // pixels per frame
+    const scrollSpeed = 1
+    let animationId: number
+    let isVisible = false
 
     const autoScroll = () => {
-      if (!scrollContainer) return
+      if (!scrollContainer || !isVisible) return
 
       scrollAmount += scrollSpeed
       scrollContainer.scrollLeft = scrollAmount
 
-      // Reset when reaching the end
       if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
         scrollAmount = 0
       }
 
-      requestAnimationFrame(autoScroll)
+      animationId = requestAnimationFrame(autoScroll)
     }
 
-    const animationId = requestAnimationFrame(autoScroll)
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        isVisible = true
+        animationId = requestAnimationFrame(autoScroll)
+      } else {
+        isVisible = false
+        if (animationId) cancelAnimationFrame(animationId)
+      }
+    }, { threshold: 0.1 })
 
-    return () => cancelAnimationFrame(animationId)
+    observer.observe(scrollContainer)
+
+    return () => {
+      observer.disconnect()
+      if (animationId) cancelAnimationFrame(animationId)
+    }
   }, [])
 
   return (

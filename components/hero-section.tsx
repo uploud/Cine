@@ -21,6 +21,8 @@ export function HeroSection() {
               src="https://i.imgur.com/tqVJPWa.png"
               alt="WinTube"
               className="h-14 sm:h-16 md:h-20 object-contain"
+              // @ts-ignore - React 18 suporta fetchpriority
+              fetchpriority="high"
             />
           </div>
 
@@ -39,10 +41,16 @@ export function HeroSection() {
             <p className="text-sm text-slate-400 font-medium tracking-wide uppercase">
               Funciona em todas as plataformas
             </p>
-            <img src="https://i.imgur.com/RPITZfs.png" alt="Plataformas" className="h-6 sm:h-8 object-contain" />
+            <img 
+              src="https://i.imgur.com/RPITZfs.png" 
+              alt="Plataformas" 
+              className="h-6 sm:h-8 object-contain" 
+              // @ts-ignore
+              fetchpriority="high"
+            />
           </div>
 
-          {/* VSL Player - lazy loaded */}
+          {/* VSL Player */}
           <div className="w-full relative max-w-4xl mx-auto mt-2">
             <div className="mb-3">
               <span className="inline-flex items-center justify-center bg-red-100 text-red-600 text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide">
@@ -55,7 +63,6 @@ export function HeroSection() {
                 className="w-full h-full"
                 title="WinTube - Apresentação"
                 frameBorder="0"
-                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
