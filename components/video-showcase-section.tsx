@@ -16,10 +16,10 @@ export function VideoShowcaseSection() {
               VÍDEOS GERADOS
             </p>
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
-              gere vídeos de todos os <span className="text-primary">nichos</span>
+              gere vídeos pra todos os <span className="text-primary">nichos</span>
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
-              Você pode gerar vídeos de diversos temas e formatos, adaptando o mesmo sistema pro nicho que quiser explorar.
+            <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
+              Você pode gerar vídeos de diversos temas e formatos, adaptando o mesmo sistema pro nicho que já toca ou pro próximo que quiser abrir.
             </p>
           </div>
         </ScrollReveal>

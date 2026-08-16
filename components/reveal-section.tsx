@@ -9,7 +9,7 @@ const steps = [
     icon: Download,
     number: "01",
     title: "Baixe as Cenas",
-    description: "Cola o link e o app baixa o material automaticamente.",
+    description: "Cola o link do material que quer usar e o app baixa automaticamente.",
     video: "https://i.imgur.com/jjJQ9CL.mp4",
   },
   {
@@ -23,21 +23,21 @@ const steps = [
     icon: Scissors,
     number: "03",
     title: "Corte as Melhores Partes",
-    description: "A IA identifica e corta as melhores partes sozinha.",
+    description: "A IA identifica e corta as melhores partes sozinha. A etapa que mais rouba tempo vira minutos.",
     video: "https://i.imgur.com/9DXzQZH.mp4",
   },
   {
     icon: Film,
     number: "04",
     title: "Montagem Automática",
-    description: "Um clique e o sistema monta o vídeo inteiro.",
+    description: "Um clique e o sistema monta o vídeo inteiro: cortes, ritmo, sequência.",
     video: "https://i.imgur.com/Ie5Bqw6.mp4",
   },
   {
     icon: Music,
     number: "05",
     title: "Trilha Sonora",
-    description: "O app baixa e sonoriza. Vídeo pronto pra publicar.",
+    description: "Cola o link da música, o app baixa e sonoriza. Vídeo pronto pra publicar.",
     video: "https://i.imgur.com/Reg1Gjl.mp4",
   },
 ]
@@ -115,13 +115,13 @@ export function RevealSection() {
             <div className="max-w-5xl mx-auto text-center">
               <ScrollReveal animation="fade-up" duration={700}>
                 <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-2 sm:mb-4">
-                  GERADOR DE VÍDEOS
+                  COMO FUNCIONA
                 </p>
                 <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4 uppercase">
-                  Veja como funciona o <span className="text-primary">nosso sistema</span>
+                  seus vídeos prontos <span className="text-primary">em 5 passos</span>
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-bold">
-                  Com o WinTube você consegue criar vários vídeos todos os dias, de forma automática, prontos pra postar em qualquer plataforma.
+                  Veja como é fácil gerar seus vídeos com a nossa ferramenta! Com o WinTube você consegue criar vários vídeos todos os dias, prontos pra postar em qualquer plataforma, sem tocar em editor nenhum.
                 </p>
               </ScrollReveal>
             </div>

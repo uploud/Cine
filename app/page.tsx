@@ -1,17 +1,16 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { HeroSection } from "@/components/hero-section"
 import { ChannelsSection } from "@/components/channels-section"
-import { OpportunitySection } from "@/components/opportunity-section"
 import { RevealSection } from "@/components/reveal-section"
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
+import { FeaturesSection } from "@/components/features-section"
+import { PortabilitySection } from "@/components/portability-section"
+import { OriginalsSection } from "@/components/originals-section"
 import { ResultsSection } from "@/components/results-section"
-import { TargetAudienceSection } from "@/components/target-audience-section"
+import { ComparisonSection } from "@/components/comparison-section"
 import { OfferSection } from "@/components/offer-section"
 import { FinalCtaSection } from "@/components/final-cta-section"
-import { AgencyBadge } from "@/components/agency-badge"
 import { Footer } from "@/components/footer"
-
-import { CommunitySection } from "@/components/community-section"
 
 export default function Home() {
   return (
@@ -20,43 +19,42 @@ export default function Home() {
         {/* 1. HERO */}
         <HeroSection />
 
-        {/* 2. ONDE POSTAR E LUCRAR */}
+        {/* 2. ONDE POSTAR */}
         <ScrollReveal animation="fade-in" duration={700}>
           <ChannelsSection />
         </ScrollReveal>
 
-        {/* 3. GRANDE OPORTUNIDADE */}
-        <ScrollReveal animation="fade-up" duration={700}>
-          <OpportunitySection />
-        </ScrollReveal>
-
-        {/* 5. GERADOR DE VÍDEOS */}
+        {/* 3. COMO FUNCIONA */}
         <RevealSection />
 
-        {/* 6. VÍDEOS GERADOS */}
+        {/* 4. VÍDEOS GERADOS */}
         <ScrollReveal animation="fade-up" duration={700}>
           <VideoShowcaseSection />
         </ScrollReveal>
 
-        {/* 8. CLASSIFICADOR */}
-        <ScrollReveal animation="fade-up" duration={700}>
-          <TargetAudienceSection />
-        </ScrollReveal>
+        {/* 5. FUNCIONALIDADES */}
+        <FeaturesSection />
 
-        {/* 9. GARANTA SEU ACESSO */}
-        <OfferSection />
+        {/* 6. PORTABILIDADE */}
+        <PortabilitySection />
 
-        {/* 10. SELO DA AGÊNCIA (INSTAGRAM) */}
-        <AgencyBadge />
+        {/* 7. VÍDEOS ORIGINAIS */}
+        <OriginalsSection />
 
-        {/* 7. PROVA REAL (FEEDBACKS) */}
+        {/* 8. PROVA REAL */}
         <ResultsSection />
 
-        {/* 11. GARANTIA INCONDICIONAL */}
+        {/* 9. COMPARATIVO */}
+        <ComparisonSection />
+
+        {/* 10. GARANTA SEU ACESSO */}
+        <OfferSection />
+
+        {/* 11. GARANTIA */}
         <FinalCtaSection />
       </main>
 
-      {/* 11. FOOTER */}
+      {/* 12. FOOTER */}
       <Footer />
     </div>
   )

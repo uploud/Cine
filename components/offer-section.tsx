@@ -4,14 +4,10 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 const CHECKOUT_URL = "https://pay.kiwify.com.br/yTa2MmY"
 
 const features = [
-  "ACESSO VITALÍCIO",
-  "App 100% atualizado",
-  "Funciona em computador (Windows e Mac)",
-  "WinTube Academy: área de treinamento exclusiva",
-  "Guia de Monetização em 7 Dias",
-  "Guia de Boas Práticas de Conteúdo",
-  "Grupo fechado de alunos",
-  "Suporte especializado",
+  "Sistema 100% atualizado",
+  "Funciona apenas em computador (Windows e macOS)",
+  "Área de membros exclusiva (WinTube Academy)",
+  "Suporte no WhatsApp",
 ]
 
 export function OfferSection() {
@@ -23,10 +19,10 @@ export function OfferSection() {
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
               GARANTA SEU <span className="text-primary">ACESSO</span>
             </h2>
-            <p className="text-lg sm:text-xl text-slate-600 mt-4 max-w-2xl mx-auto font-medium">
-              pague uma vez e acesse pra sempre!
+            <p className="text-lg sm:text-xl text-slate-600 mt-4 max-w-2xl mx-auto font-bold uppercase">
+              pague uma vez, use pra sempre!
               <br />
-              <span className="text-sm font-normal">Sem mensalidade, sem taxa e sem valor adicional.</span>
+              <span className="text-sm font-medium normal-case text-slate-500 mt-2 block">Sem mensalidade, sem taxa e sem valor adicional.</span>
             </p>
           </ScrollReveal>
         </div>
@@ -52,11 +48,12 @@ export function OfferSection() {
 
               {/* Pricing */}
               <div className="text-center mb-8 py-6 border-t border-b border-slate-200">
-                <p className="text-sm text-slate-400 line-through mb-1">Por apenas De R$ 197,00</p>
+                <p className="text-sm text-slate-400 font-bold uppercase tracking-widest mb-2">ACESSO VITALÍCIO</p>
+                <p className="text-sm text-slate-500 mb-1">Por apenas</p>
                 <div className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl font-extrabold text-primary tracking-tight mb-2">
                   R$ 49,97
                 </div>
-                <p className="text-base sm:text-lg text-slate-500 font-bold">Pagamento único, uso ilimitado.</p>
+                <p className="text-base sm:text-lg text-slate-600 font-bold">Pague uma vez (uso ilimitado)</p>
               </div>
 
               {/* Trust Badges */}

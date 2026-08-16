@@ -12,13 +12,13 @@ export function FinalCtaSection() {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <ScrollReveal animation="fade-up" duration={700}>
           <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-            GARANTIA INCONDICIONAL
+            GARANTIA
           </p>
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4 sm:mb-6 uppercase">
-            você pode testar por até <span className="text-primary">7 dias</span>
+            <span className="text-primary">7 dias</span> de garantia incondicional
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-medium">
-            Não se preocupe, você tem 7 dias de garantia incondicional pra pedir seu dinheiro de volta, caso não fique satisfeito com o método WinTube.
+          <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-bold">
+            Não gostou? Devolvemos 100% do seu dinheiro, sem perguntas, direto pelo suporte.
           </p>
         </ScrollReveal>
 

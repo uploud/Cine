@@ -26,14 +26,17 @@ export function HeroSection() {
             />
           </div>
 
-          <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] text-slate-900 leading-[1.1] font-black tracking-tight max-w-4xl uppercase">
-            Lucre Postando Vídeos de <span className="text-sky-500">Filmes, Series e Animes</span> Sem Aparecer, em Todas as Plataformas!{" "}
-            <span className="text-primary">com um sistema que faz tudo no automático</span>
+          <h1 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] text-slate-900 leading-[1.05] font-black tracking-tight max-w-5xl uppercase">
+            Crie Dezenas de Vídeos <span className="text-primary">em Minutos</span>
+            <br className="hidden md:block" />
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] text-slate-700 mt-2 block">
+              tudo no automático, sem limites
+            </span>
           </h1>
 
           {/* Sub */}
           <p className="text-lg sm:text-xl md:text-2xl text-slate-600 font-bold leading-relaxed max-w-3xl">
-            Crie vídeos completos em poucos cliques e monetize em todas as redes sociais. Um único sistema, sem mensalidade e sem pagar mais nada.
+            Uma única ferramenta, sem mensalidade e 100% ilimitada.
           </p>
 
           {/* Platforms line */}
@@ -75,7 +78,7 @@ export function HeroSection() {
             id="hero-cta"
             className="group relative inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98] animate-cta-pulse w-full sm:w-auto"
           >
-            <span>QUERO LUCRAR COM MEUS VÍDEOS</span>
+            <span>QUERO GERAR MEUS VÍDEOS AGORA</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

@@ -67,19 +67,7 @@ export function ResultsSection() {
         `}} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <ScrollReveal animation="fade-up" delay={100} duration={600}>
-          <div className="text-center">
-            <a
-              href="#offer-section"
-              className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98] w-full sm:w-auto"
-            >
-              <span>QUERO TER ESSES RESULTADOS</span>
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
-        </ScrollReveal>
-      </div>
+
     </section>
   )
 }

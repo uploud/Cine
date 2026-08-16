@@ -46,14 +46,11 @@ export function ChannelsSection() {
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-              monetize em todas as plataformas
+              ONDE POSTAR
             </p>
             <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 leading-[1.1] tracking-tight uppercase">
-              Onde postar e <span className="text-primary">lucrar</span>
+              feito pra todas as <span className="text-primary">plataformas</span>
             </h2>
-            <p className="text-slate-700 text-lg sm:text-xl md:text-2xl mt-4 max-w-3xl mx-auto leading-relaxed font-bold">
-              Crie vídeos no formato que mais entrega alcance pra postar onde você quiser: YouTube, Instagram, TikTok e Facebook.
-            </p>
           </div>
         </ScrollReveal>
 
