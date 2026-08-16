@@ -10,7 +10,6 @@ import { OfferSection } from "@/components/offer-section"
 import { FinalCtaSection } from "@/components/final-cta-section"
 import { AgencyBadge } from "@/components/agency-badge"
 import { Footer } from "@/components/footer"
-import { PillarsSection } from "@/components/pillars-section"
 
 import { CommunitySection } from "@/components/community-section"
 
@@ -20,11 +19,6 @@ export default function Home() {
       <main>
         {/* 1. HERO */}
         <HeroSection />
-
-        {/* COMO FUNCIONA (PILLARS) - MOVIDO PARA ABAIXO DA VSL */}
-        <ScrollReveal animation="fade-up" duration={700}>
-          <PillarsSection />
-        </ScrollReveal>
 
         {/* 2. ONDE POSTAR E LUCRAR */}
         <ScrollReveal animation="fade-in" duration={700}>
