@@ -27,9 +27,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-outfit), "Outfit", "Geist", "Geist Fallback";
-  --font-display: "Space Grotesk", "Geist", "Geist Fallback";
-  --font-outfit: var(--font-outfit);
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-display: var(--font-jetbrains), "JetBrains Mono", monospace;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));

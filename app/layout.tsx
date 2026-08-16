@@ -1,11 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Space_Grotesk, Outfit } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" })
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["800"], variable: "--font-jetbrains" })
 
 export const metadata: Metadata = {
   title: "Wintube - Gerador de Videos Virais",
@@ -39,7 +39,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${spaceGrotesk.variable} ${outfit.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         <noscript>
           <img
             height="1"
