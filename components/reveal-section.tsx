@@ -105,7 +105,7 @@ export function RevealSection() {
       <div className="px-4 sm:px-6 max-w-7xl mx-auto relative">
         <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-start relative">
           {/* Mobile view needs the sticky video on top */}
-          <div className="w-full md:w-1/2 sticky top-20 md:top-[15vh] z-20 md:order-last flex flex-col items-center">
+          <div className="w-full md:w-1/2 sticky top-24 md:top-1/2 md:-translate-y-1/2 z-20 md:order-last flex flex-col items-center">
             <div className="relative w-full aspect-[16/10] sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden border-4 sm:border-8 border-[#2a2a2a] bg-[#1a1a1a] shadow-2xl">
               {/* Mac window controls */}
               <div className="absolute top-0 left-0 w-full h-5 sm:h-6 bg-[#2a2a2a] flex items-center px-2 sm:px-3 gap-1.5 z-20">
@@ -153,7 +153,7 @@ export function RevealSection() {
           </div>
 
           {/* Scrolling Text Items */}
-          <div className="w-full md:w-1/2 flex flex-col gap-6 sm:gap-8 md:py-[15vh] pb-[10vh]">
+          <div className="w-full md:w-1/2 flex flex-col gap-6 sm:gap-8 pt-[10vh] pb-[20vh] md:pt-[45vh] md:pb-[45vh]">
             {steps.map((step, i) => {
               const isActive = activeIndex === i
               return (
