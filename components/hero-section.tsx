@@ -55,30 +55,7 @@ export function HeroSection() {
     return () => clearTimeout(timeout)
   }, [phase])
 
-  // Progress bar logic (Timeline)
-  const [progress, setProgress] = useState(0)
-  useEffect(() => {
-    let frame: number
-    let startTime: number
 
-    const updateProgress = () => {
-      if (!startTime) startTime = performance.now()
-      const elapsed = performance.now() - startTime
-      const p = Math.min((elapsed / TOTAL_CYCLE) * 100, 100)
-      setProgress(p)
-      if (p < 100) {
-        frame = requestAnimationFrame(updateProgress)
-      }
-    }
-
-    if (phase === "enter") {
-      setProgress(0) // start fresh
-      startTime = performance.now()
-      frame = requestAnimationFrame(updateProgress)
-    }
-
-    return () => cancelAnimationFrame(frame)
-  }, [phase])
 
   return (
     <section className="relative flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 overflow-hidden bg-[#05060A] text-white min-h-[90vh] pt-20 pb-24">
@@ -118,7 +95,7 @@ export function HeroSection() {
                 {WORDS[index]}
               </span>
             </span>
-            <span className="inline-block ml-1 w-1 sm:w-1.5 h-[36px] sm:h-[48px] md:h-[60px] bg-[#6A2EF0] animate-pulse align-middle" />
+
           </h1>
 
           {/* Subhead 1 */}
@@ -138,7 +115,7 @@ export function HeroSection() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full mt-10">
             <a
-              href={CHECKOUT_URL}
+              href="#offer-section"
               className="flex items-center justify-center bg-[linear-gradient(to_right,#4C8DF7,#6A2EF0)] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-[#4C8DF7]/20 transition-all hover:-translate-y-0.5 hover:shadow-[#6A2EF0]/40 active:scale-[0.98] w-full sm:w-auto"
             >
               Quero o WinTube
@@ -184,16 +161,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Timeline at the bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/5 overflow-hidden">
-        <div
-          className="h-full bg-[linear-gradient(to_right,#4C8DF7,#6A2EF0)] relative"
-          style={{ width: `${progress}%` }}
-        >
-          {/* Subtle glow on the leading edge */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full blur-[4px] opacity-80" />
-        </div>
-      </div>
+
 
       {/* Hidden element for measuring width */}
       <span
