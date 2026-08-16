@@ -1,9 +1,8 @@
 "use client"
 
-import { Download, FileText, Scissors, Film, Music, Zap, BarChart3, Monitor, Users, Globe, ArrowRight } from "lucide-react"
+import { Download, FileText, Scissors, Film, Music, ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
-
-const CHECKOUT_URL = "https://pay.kiwify.com.br/yTa2MmY"
+import { useState, useRef, useEffect } from "react"
 
 const steps = [
   {
@@ -43,109 +42,172 @@ const steps = [
   },
 ]
 
-const scalePoints = [
-  {
-    icon: BarChart3,
-    title: "Volume",
-    description: "Em vez de 1 vídeo por semana, você posta todos os dias.",
-  },
-  {
-    icon: Zap,
-    title: "Consistência",
-    description: "É a constância que faz o algoritmo te recomendar.",
-  },
-  {
-    icon: Globe,
-    title: "Um vídeo, todas as plataformas",
-    description: "O mesmo material alimenta YouTube, Reels, TikTok e Facebook.",
-  },
-  {
-    icon: Monitor,
-    title: "Múltiplos Canais Darks",
-    description: "Com minutos por vídeo, dá pra tocar 2, 3, 5 Canais Darks em paralelo.",
-  },
-  {
-    icon: Users,
-    title: "Sem equipe",
-    description: "Nenhum editor, roteirista ou motion designer na folha.",
-  },
-]
-
 export function RevealSection() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isMobile = window.innerWidth < 768
+      // Trigger point: Middle of the screen for desktop, slightly lower for mobile due to sticky device
+      const actualTriggerY = isMobile ? window.innerHeight * 0.7 : window.innerHeight * 0.5
+
+      let closestIndex = activeIndex
+      let minDistance = Infinity
+
+      itemRefs.current.forEach((ref, index) => {
+        if (!ref) return
+        const rect = ref.getBoundingClientRect()
+        // Calculate the center of the text item
+        const center = rect.top + rect.height / 2
+        const distance = Math.abs(center - actualTriggerY)
+
+        if (distance < minDistance) {
+          minDistance = distance
+          closestIndex = index
+        }
+      })
+
+      if (closestIndex !== activeIndex) {
+        setActiveIndex(closestIndex)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    // Run once to initialize
+    handleScroll()
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [activeIndex])
+
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-slate-950 text-white pb-24">
       {/* Visual break - top accent border */}
       <div className="h-1 bg-primary" aria-hidden="true" />
 
       {/* Header */}
-      <div className="py-8 sm:py-12 px-4 sm:px-6 bg-gradient-to-b from-sky-50 to-white">
+      <div className="pt-16 pb-8 sm:pt-24 sm:pb-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal animation="fade-up" duration={700}>
             <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-4">
               GERADOR DE VÍDEOS
             </p>
-            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 leading-[1.1] tracking-tight mb-6 uppercase">
-              veja como funciona o <span className="text-primary">nosso sistema</span>
+            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6 uppercase">
+              Veja como funciona o <span className="text-primary">nosso sistema</span>
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto mb-4 font-bold">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-4 font-bold">
               Com o WinTube você consegue criar vários vídeos todos os dias, de forma automática, prontos pra postar em qualquer plataforma.
             </p>
           </ScrollReveal>
         </div>
       </div>
 
-      {/* 5 Step demos - alternating layout */}
-      <div className="px-4 sm:px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col gap-16 sm:gap-20 md:gap-28">
+      <div className="px-4 sm:px-6 max-w-7xl mx-auto relative">
+        <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-start relative">
+          {/* Mobile view needs the sticky video on top */}
+          <div className="w-full md:w-1/2 sticky top-20 md:top-32 z-20 md:order-last">
+            <div className="relative w-full aspect-[16/10] sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden border-4 sm:border-8 border-[#2a2a2a] bg-[#1a1a1a] shadow-2xl">
+              {/* Mac window controls */}
+              <div className="absolute top-0 left-0 w-full h-5 sm:h-6 bg-[#2a2a2a] flex items-center px-2 sm:px-3 gap-1.5 z-20">
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff5f56]" />
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ffbd2e]" />
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#27c93f]" />
+                <div className="ml-auto text-[10px] text-slate-400 font-mono hidden sm:block">
+                  wintube.app
+                </div>
+              </div>
+              {/* Videos */}
+              <div className="absolute top-5 sm:top-6 left-0 w-full h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-slate-900">
+                {steps.map((step, i) => (
+                  <video
+                    key={i}
+                    src={step.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                      activeIndex === i ? "opacity-100 z-10" : "opacity-0 z-0"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Laptop base (desktop only for realism) */}
+            <div className="hidden md:block relative w-[110%] -left-[5%] h-3 sm:h-4 bg-[#3a3a3a] rounded-b-xl sm:rounded-b-2xl shadow-2xl">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 sm:h-2 bg-[#2a2a2a] rounded-b-md" />
+            </div>
+          </div>
+
+          {/* Scrolling Text Items */}
+          <div className="w-full md:w-1/2 flex flex-col gap-12 sm:gap-24 md:py-[20vh] pb-[10vh]">
             {steps.map((step, i) => {
-              const isReverse = i % 2 !== 0
-
+              const isActive = activeIndex === i
               return (
-                <ScrollReveal key={i} animation="fade-up" duration={700}>
-                  <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${isReverse ? "md:flex-row-reverse" : ""}`}>
-                    {/* Video side */}
-                    <div className="w-full md:w-1/2">
-                      <div className="relative aspect-video rounded-lg overflow-hidden border border-slate-200 shadow-lg bg-slate-50">
-                        <video
-                          src={step.video}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-full object-cover"
-                        />
+                <div
+                  key={i}
+                  ref={(el) => {
+                    itemRefs.current[i] = el
+                  }}
+                  className={`transition-all duration-500 rounded-2xl p-6 sm:p-8 border-2 ${
+                    isActive
+                      ? "bg-slate-900/80 border-primary/50 shadow-[0_0_30px_-10px] shadow-primary/30 scale-[1.02] sm:scale-105"
+                      : "border-transparent opacity-40 hover:opacity-70 scale-100 cursor-pointer"
+                  }`}
+                  onClick={() => {
+                    // Smooth scroll to the element so it becomes active
+                    if (itemRefs.current[i]) {
+                      const rect = itemRefs.current[i]?.getBoundingClientRect()
+                      if (rect) {
+                        const isMobile = window.innerWidth < 768
+                        const offset = isMobile ? window.innerHeight * 0.7 : window.innerHeight * 0.5
+                        window.scrollBy({
+                          top: rect.top - offset + (rect.height / 2),
+                          behavior: "smooth",
+                        })
+                      }
+                    }
+                  }}
+                >
+                  <div className="flex flex-col gap-4">
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-colors ${
+                          isActive
+                            ? "bg-primary/20 text-primary border-primary/30"
+                            : "bg-slate-800 text-slate-400 border-slate-700"
+                        }`}
+                      >
+                        <step.icon className="w-6 h-6" />
                       </div>
+                      <span className="font-[family-name:var(--font-display)] text-lg font-bold text-primary tracking-wider">
+                        PASSO {step.number}
+                      </span>
                     </div>
-
-                    {/* Text side */}
-                    <div className="w-full md:w-1/2 flex flex-col justify-center">
-                      <div className="flex items-center gap-3 mb-4">
-                        {/* Icon - lit up with primary color (mirrors section 5's gray icons) */}
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                          <step.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
-                        </div>
-                        <span className="font-[family-name:var(--font-display)] text-sm font-bold text-primary tracking-wider">
-                          {step.number}
-                        </span>
-                      </div>
-
-                      <h3 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-black text-slate-900 mb-3 tracking-tight uppercase">
-                        {step.title}
-                      </h3>
-                      <p className="text-lg sm:text-xl text-slate-700 leading-relaxed font-semibold">
-                        {step.description}
-                      </p>
-                    </div>
+                    <h3
+                      className={`font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-black mb-1 tracking-tight uppercase transition-colors ${
+                        isActive ? "text-white" : "text-slate-400"
+                      }`}
+                    >
+                      {step.title}
+                    </h3>
+                    <p
+                      className={`text-base sm:text-lg leading-relaxed font-semibold transition-colors ${
+                        isActive ? "text-slate-300" : "text-slate-500"
+                      }`}
+                    >
+                      {step.description}
+                    </p>
                   </div>
-                </ScrollReveal>
+                </div>
               )
             })}
           </div>
         </div>
       </div>
 
-      <div className="py-8 px-4 sm:px-6 bg-slate-50 mt-8 sm:mt-12">
+      <div className="py-12 px-4 sm:px-6 relative z-10 mt-12 sm:mt-24">
         <div className="max-w-5xl mx-auto">
           {/* Closing + CTA */}
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
@@ -153,7 +215,7 @@ export function RevealSection() {
               <a
                 href="#offer-section"
                 id="reveal-cta"
-                className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-600 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-500 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98]"
               >
                 <span>QUERO ACESSAR O GERADOR DE VÍDEOS</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
