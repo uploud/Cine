@@ -5,17 +5,17 @@ const steps = [
   {
     title: "Faça o download",
     description: "Baixe o arquivo de instalação do WinTube.",
-    icon: Download,
+    image: "https://i.imgur.com/yyTxhj3.png",
   },
   {
     title: "Instale o programa",
     description: "Siga o passo a passo simples pra instalar corretamente.",
-    icon: MonitorPlay,
+    image: "https://i.imgur.com/qGE3Glc.png",
   },
   {
     title: "Abra o WinTube",
     description: "Depois é só abrir o app no seu computador e começar a usar.",
-    icon: Play,
+    image: "https://i.imgur.com/IG7hcU6.png",
   },
 ]
 
@@ -45,11 +45,11 @@ export function PortabilitySection() {
             <ScrollReveal key={i} animation="fade-up" delay={i * 150} duration={600}>
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center relative overflow-hidden group hover:border-primary/50 transition-colors">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center mb-5 text-primary group-hover:scale-110 transition-transform shadow-lg shadow-primary/5">
-                  <step.icon className="w-6 h-6" />
+                <div className="h-24 sm:h-28 mb-6 group-hover:scale-105 transition-transform flex items-center justify-center">
+                  <img src={step.image} alt={step.title} className="max-w-full max-h-full object-contain" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 font-[family-name:var(--font-display)] tracking-tight">
-                  <span className="text-primary/60 mr-2">{i + 1}.</span> {step.title}
+                  {step.title}
                 </h3>
                 <p className="text-slate-400 font-medium leading-relaxed">
                   {step.description}
