@@ -12,7 +12,6 @@ const WORDS = [
   "documentário",
   "canal dark",
   "cortes",
-  "lore",
 ]
 const PAUSE = 2200
 const TRANSITION_DUR = 400
@@ -77,7 +76,7 @@ export function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] font-black tracking-tight text-white mt-8 mx-auto">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[1.1] font-black tracking-tight text-white mt-8 mx-auto">
             Você pede um vídeo de <br className="hidden sm:block" />
             <span
               className="inline-flex items-end transition-all duration-300 ease-out"
@@ -165,7 +164,7 @@ export function HeroSection() {
       {/* Hidden element for measuring width */}
       <span
         ref={measureRef}
-        className="absolute opacity-0 pointer-events-none whitespace-nowrap font-display text-4xl sm:text-5xl md:text-6xl font-black"
+        className="absolute opacity-0 pointer-events-none whitespace-nowrap font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-black"
         style={{ left: "-9999px", top: "-9999px" }}
         aria-hidden="true"
       >
