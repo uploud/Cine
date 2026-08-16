@@ -103,7 +103,7 @@ export function RevealSection() {
       </div>
 
       <div className="px-4 sm:px-6 max-w-7xl mx-auto relative">
-        <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-start relative">
+        <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-stretch relative">
           {/* Mobile view needs the sticky video on top */}
           <div className="w-full md:w-1/2 md:order-last">
             <div className="sticky top-20 md:top-0 md:h-screen flex flex-col items-center justify-center z-20 pb-8 md:pb-0">
