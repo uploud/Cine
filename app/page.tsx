@@ -2,7 +2,6 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 import { HeroSection } from "@/components/hero-section"
 import { ChannelsSection } from "@/components/channels-section"
 import { OpportunitySection } from "@/components/opportunity-section"
-import { MethodSection } from "@/components/method-section"
 import { RevealSection } from "@/components/reveal-section"
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
 import { ResultsSection } from "@/components/results-section"
@@ -35,11 +34,6 @@ export default function Home() {
         {/* 3. GRANDE OPORTUNIDADE */}
         <ScrollReveal animation="fade-up" duration={700}>
           <OpportunitySection />
-        </ScrollReveal>
-
-        {/* 4. FÓRMULA DO SUCESSO */}
-        <ScrollReveal animation="fade-up" duration={700}>
-          <MethodSection />
         </ScrollReveal>
 
         {/* 5. GERADOR DE VÍDEOS */}
