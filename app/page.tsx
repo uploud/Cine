@@ -9,6 +9,7 @@ import { OriginalsSection } from "@/components/originals-section"
 import { ResultsSection } from "@/components/results-section"
 import { ComparisonSection } from "@/components/comparison-section"
 import { OfferSection } from "@/components/offer-section"
+import { AgencyBadge } from "@/components/agency-badge"
 import { FinalCtaSection } from "@/components/final-cta-section"
 import { Footer } from "@/components/footer"
 
@@ -49,6 +50,9 @@ export default function Home() {
 
         {/* 10. GARANTA SEU ACESSO */}
         <OfferSection />
+
+        {/* 10.5 SELO DA AGÊNCIA (INSTAGRAM) */}
+        <AgencyBadge />
 
         {/* 11. GARANTIA */}
         <FinalCtaSection />
