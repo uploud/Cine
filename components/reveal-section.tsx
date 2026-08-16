@@ -44,183 +44,195 @@ const steps = [
 
 export function RevealSection() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const isManualOverride = useRef(false)
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
+      if (!sectionRef.current || isManualOverride.current) return
+      
       const isMobile = window.innerWidth < 768
-      // Trigger point: Middle of the screen for desktop, slightly lower for mobile due to sticky device
-      const actualTriggerY = isMobile ? window.innerHeight * 0.7 : window.innerHeight * 0.5
+      if (isMobile) {
+         // On mobile, we let the natural scroll or tap handle it, don't force scroll-spy
+         return
+      }
 
-      let closestIndex = activeIndex
-      let minDistance = Infinity
+      const rect = sectionRef.current.getBoundingClientRect()
+      const scrollableDistance = rect.height - window.innerHeight
+      const scrolled = -rect.top
 
-      itemRefs.current.forEach((ref, index) => {
-        if (!ref) return
-        const rect = ref.getBoundingClientRect()
-        // Calculate the center of the text item
-        const center = rect.top + rect.height / 2
-        const distance = Math.abs(center - actualTriggerY)
-
-        if (distance < minDistance) {
-          minDistance = distance
-          closestIndex = index
+      if (scrolled >= 0 && scrolled <= scrollableDistance) {
+        let progress = scrolled / scrollableDistance
+        progress = Math.max(0, Math.min(1, progress))
+        const index = Math.min(steps.length - 1, Math.floor(progress * steps.length))
+        if (index !== activeIndex) {
+          setActiveIndex(index)
         }
-      })
-
-      if (closestIndex !== activeIndex) {
-        setActiveIndex(closestIndex)
+      } else if (scrolled < 0) {
+        setActiveIndex(0)
+      } else {
+        setActiveIndex(steps.length - 1)
       }
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
-    // Run once to initialize
     handleScroll()
-
     return () => window.removeEventListener("scroll", handleScroll)
   }, [activeIndex])
 
+  const handleStepClick = (index: number) => {
+    setActiveIndex(index)
+    isManualOverride.current = true
+    
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current)
+    scrollTimeout.current = setTimeout(() => {
+      isManualOverride.current = false
+    }, 1000)
+
+    if (sectionRef.current && window.innerWidth >= 768) {
+      const scrollableDistance = sectionRef.current.offsetHeight - window.innerHeight
+      const targetScroll = (index / (steps.length - 0.5)) * scrollableDistance
+      const sectionTop = sectionRef.current.offsetTop
+      window.scrollTo({
+        top: sectionTop + targetScroll,
+        behavior: "smooth"
+      })
+    }
+  }
+
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-white pb-24">
-      {/* Visual break - top accent border */}
-      <div className="h-1 bg-primary" aria-hidden="true" />
+    <div className="bg-slate-950">
+      <section ref={sectionRef} className="relative text-white md:h-[300vh]">
+        {/* Visual break - top accent border */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-primary z-30" aria-hidden="true" />
 
-      {/* Header */}
-      <div className="pt-16 pb-8 sm:pt-24 sm:pb-12 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal animation="fade-up" duration={700}>
-            <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-4">
-              GERADOR DE VÍDEOS
-            </p>
-            <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6 uppercase">
-              Veja como funciona o <span className="text-primary">nosso sistema</span>
-            </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-4 font-bold">
-              Com o WinTube você consegue criar vários vídeos todos os dias, de forma automática, prontos pra postar em qualquer plataforma.
-            </p>
-          </ScrollReveal>
-        </div>
-      </div>
+        {/* The sticky container */}
+        <div className="md:sticky md:top-0 md:h-screen w-full flex flex-col justify-center overflow-hidden py-16 md:py-0">
+          
+          {/* Header */}
+          <div className="px-4 sm:px-6 mb-8 md:mb-12">
+            <div className="max-w-5xl mx-auto text-center">
+              <ScrollReveal animation="fade-up" duration={700}>
+                <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-2 sm:mb-4">
+                  GERADOR DE VÍDEOS
+                </p>
+                <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4 uppercase">
+                  Veja como funciona o <span className="text-primary">nosso sistema</span>
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-bold">
+                  Com o WinTube você consegue criar vários vídeos todos os dias, de forma automática, prontos pra postar em qualquer plataforma.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
 
-      <div className="px-4 sm:px-6 max-w-7xl mx-auto relative">
-        <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-stretch relative">
-          {/* Mobile view needs the sticky video on top */}
-          <div className="w-full md:w-1/2 md:order-last">
-            <div className="sticky top-20 md:top-0 md:h-screen flex flex-col items-center justify-center z-20 pb-8 md:pb-0">
-              <div className="relative w-full aspect-[16/10] sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden border-4 sm:border-8 border-[#2a2a2a] bg-[#1a1a1a] shadow-2xl">
-                {/* Mac window controls */}
-                <div className="absolute top-0 left-0 w-full h-5 sm:h-6 bg-[#2a2a2a] flex items-center px-2 sm:px-3 gap-1.5 z-20">
-                  <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff5f56]" />
-                  <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ffbd2e]" />
-                  <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#27c93f]" />
-                  <div className="ml-auto text-[10px] text-slate-400 font-mono hidden sm:block">
-                    wintube.app
+          {/* Content */}
+          <div className="px-4 sm:px-6 max-w-7xl mx-auto w-full">
+            <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+              
+              {/* Scrolling Text Items (Clustered) */}
+              <div className="w-full md:w-1/2 flex flex-col gap-3 sm:gap-4">
+                {steps.map((step, i) => {
+                  const isActive = activeIndex === i
+                  return (
+                    <div
+                      key={i}
+                      className={`transition-all duration-300 rounded-2xl p-4 sm:p-5 border cursor-pointer ${
+                        isActive
+                          ? "bg-slate-900/80 border-primary/40 shadow-[0_0_15px] shadow-primary/20 scale-[1.02]"
+                          : "border-transparent opacity-50 hover:opacity-100 scale-100"
+                      }`}
+                      onClick={() => handleStepClick(i)}
+                    >
+                      <div className="flex gap-4">
+                        <div
+                          className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center border transition-colors ${
+                            isActive
+                              ? "bg-primary/20 text-primary border-primary/30"
+                              : "bg-slate-800 text-slate-400 border-slate-700"
+                          }`}
+                        >
+                          <step.icon className="w-5 h-5" />
+                        </div>
+                        <div className="flex flex-col gap-1 pt-0.5">
+                          <h3
+                            className={`font-[family-name:var(--font-display)] text-base sm:text-lg font-bold tracking-tight transition-colors ${
+                              isActive ? "text-white" : "text-slate-300"
+                            }`}
+                          >
+                            {step.title}
+                          </h3>
+                          <p
+                            className={`text-sm leading-relaxed transition-colors ${
+                              isActive ? "text-slate-300" : "text-slate-500"
+                            }`}
+                          >
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Laptop */}
+              <div className="w-full md:w-1/2 flex flex-col items-center">
+                <div className="relative w-full aspect-[16/10] sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden border-4 sm:border-8 border-[#2a2a2a] bg-[#1a1a1a] shadow-2xl">
+                  {/* Mac window controls */}
+                  <div className="absolute top-0 left-0 w-full h-5 sm:h-6 bg-[#2a2a2a] flex items-center px-2 sm:px-3 gap-1.5 z-20">
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff5f56]" />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#27c93f]" />
+                    <div className="ml-auto text-[10px] text-slate-400 font-mono hidden sm:block">
+                      wintube.app
+                    </div>
+                  </div>
+                  {/* Videos */}
+                  <div className="absolute top-5 sm:top-6 left-0 w-full h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-slate-900">
+                    {steps.map((step, i) => (
+                      <video
+                        key={i}
+                        src={step.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+                          activeIndex === i ? "opacity-100 z-10" : "opacity-0 z-0"
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
-                {/* Videos */}
-                <div className="absolute top-5 sm:top-6 left-0 w-full h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-slate-900">
-                  {steps.map((step, i) => (
-                    <video
+
+                {/* Laptop base (desktop only for realism) */}
+                <div className="hidden md:block relative w-[110%] -left-[5%] h-3 sm:h-4 bg-[#3a3a3a] rounded-b-xl sm:rounded-b-2xl shadow-2xl">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 sm:h-2 bg-[#2a2a2a] rounded-b-md" />
+                </div>
+                
+                {/* Pagination Dots */}
+                <div className="flex justify-center gap-2 mt-6 sm:mt-8">
+                  {steps.map((_, i) => (
+                    <div
                       key={i}
-                      src={step.video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-                        activeIndex === i ? "opacity-100 z-10" : "opacity-0 z-0"
+                      className={`h-2 rounded-full transition-all duration-500 ${
+                        activeIndex === i ? "w-8 bg-primary" : "w-2 bg-slate-800"
                       }`}
                     />
                   ))}
                 </div>
               </div>
 
-              {/* Laptop base (desktop only for realism) */}
-              <div className="hidden md:block relative w-[110%] -left-[5%] h-3 sm:h-4 bg-[#3a3a3a] rounded-b-xl sm:rounded-b-2xl shadow-2xl">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 sm:h-2 bg-[#2a2a2a] rounded-b-md" />
-              </div>
-              
-              {/* Pagination Dots */}
-              <div className="flex justify-center gap-2 mt-6 sm:mt-8">
-                {steps.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`h-2 rounded-full transition-all duration-500 ${
-                      activeIndex === i ? "w-8 bg-primary" : "w-2 bg-slate-800"
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
           </div>
-
-          {/* Scrolling Text Items */}
-          <div className="w-full md:w-1/2 flex flex-col gap-6 sm:gap-8 pt-[5vh] pb-[10vh] md:py-[50vh]">
-            {steps.map((step, i) => {
-              const isActive = activeIndex === i
-              return (
-                <div
-                  key={i}
-                  ref={(el) => {
-                    itemRefs.current[i] = el
-                  }}
-                  className={`transition-all duration-500 rounded-2xl p-5 sm:p-6 border ${
-                    isActive
-                      ? "bg-slate-900/80 border-primary/40 shadow-[0_0_15px] shadow-primary/20 scale-[1.02]"
-                      : "border-transparent opacity-50 hover:opacity-100 scale-100 cursor-pointer"
-                  }`}
-                  onClick={() => {
-                    // Smooth scroll to the element so it becomes active
-                    if (itemRefs.current[i]) {
-                      const rect = itemRefs.current[i]?.getBoundingClientRect()
-                      if (rect) {
-                        const isMobile = window.innerWidth < 768
-                        const offset = isMobile ? window.innerHeight * 0.7 : window.innerHeight * 0.5
-                        window.scrollBy({
-                          top: rect.top - offset + (rect.height / 2),
-                          behavior: "smooth",
-                        })
-                      }
-                    }
-                  }}
-                >
-                  <div className="flex gap-4 sm:gap-5">
-                    <div
-                      className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center border transition-colors ${
-                        isActive
-                          ? "bg-primary/20 text-primary border-primary/30"
-                          : "bg-slate-800 text-slate-400 border-slate-700"
-                      }`}
-                    >
-                      <step.icon className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </div>
-                    <div className="flex flex-col gap-1.5 pt-0.5">
-                      <h3
-                        className={`font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold tracking-tight transition-colors ${
-                          isActive ? "text-white" : "text-slate-300"
-                        }`}
-                      >
-                        {step.title}
-                      </h3>
-                      <p
-                        className={`text-sm sm:text-base leading-relaxed transition-colors ${
-                          isActive ? "text-slate-300" : "text-slate-500"
-                        }`}
-                      >
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="py-12 px-4 sm:px-6 relative z-10 mt-12 sm:mt-24">
+      {/* Closing CTA Static Section */}
+      <div className="py-12 px-4 sm:px-6 relative z-10 bg-slate-950 pb-24">
         <div className="max-w-5xl mx-auto">
-          {/* Closing + CTA */}
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
             <div className="text-center">
               <a
@@ -235,6 +247,6 @@ export function RevealSection() {
           </ScrollReveal>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
