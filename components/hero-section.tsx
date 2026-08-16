@@ -66,9 +66,9 @@ export function HeroSection() {
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -z-10 h-[400px] w-[600px] rounded-full bg-[#4C8DF7]/15 blur-[120px]" />
       <div className="absolute right-0 bottom-0 -z-10 h-[400px] w-[600px] rounded-full bg-[#6A2EF0]/15 blur-[120px]" />
 
-      <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
-        {/* Left Column: Copy */}
-        <div className="flex flex-col items-start text-left w-full lg:w-1/2 pt-8">
+      <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center gap-12 lg:gap-16">
+        {/* Top: Copy */}
+        <div className="flex flex-col items-center text-center w-full pt-8">
           {/* Badge */}
           <div className="flex items-center gap-4 text-[11px] font-bold tracking-[0.2em] text-slate-500 uppercase">
             <span>WINTUBE</span>
@@ -77,7 +77,7 @@ export function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] font-black tracking-tight text-white mt-8">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] font-black tracking-tight text-white mt-8 mx-auto">
             Você pede um vídeo de <br className="hidden sm:block" />
             <span
               className="inline-flex items-end transition-all duration-300 ease-out"
@@ -95,11 +95,10 @@ export function HeroSection() {
                 {WORDS[index]}
               </span>
             </span>
-
           </h1>
 
           {/* Subhead 1 */}
-          <h2 className="text-xl sm:text-2xl md:text-[1.75rem] text-white font-bold leading-[1.4] max-w-lg mt-8 font-display tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-[1.75rem] text-white font-bold leading-[1.4] max-w-2xl mt-8 font-display tracking-tight mx-auto">
             Crie <span className="relative inline-block">
               <span className="relative z-10 px-1">dezenas de vídeos</span>
               <span className="absolute bottom-1.5 left-0 w-full h-3 bg-[#6A2EF0]/40 -z-10 rounded-sm"></span>
@@ -107,13 +106,13 @@ export function HeroSection() {
           </h2>
 
           {/* Subhead 2 */}
-          <p className="text-base sm:text-lg text-slate-400 mt-5 max-w-lg leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-400 mt-5 max-w-2xl mx-auto leading-relaxed">
             Uma única ferramenta, sem mensalidade e 100% ilimitada. 
             Baixa, corta, legenda e monta enquanto você faz outra coisa.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mt-10">
             <a
               href="#offer-section"
               className="flex items-center justify-center bg-[linear-gradient(to_right,#4C8DF7,#6A2EF0)] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-[#4C8DF7]/20 transition-all hover:-translate-y-0.5 hover:shadow-[#6A2EF0]/40 active:scale-[0.98] w-full sm:w-auto"
@@ -129,7 +128,7 @@ export function HeroSection() {
           </div>
 
           {/* Under Buttons Info */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 text-xs sm:text-sm text-slate-500 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-6 text-xs sm:text-sm text-slate-500 font-medium">
             <span>acesso vitalício</span>
             <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-700" />
             <div className="flex items-center gap-2">
@@ -139,9 +138,9 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right Column / Bottom: VSL Player */}
-        <div id="vsl-player" className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
-          <div className="mb-4 flex justify-center lg:justify-start">
+        {/* Bottom: VSL Player */}
+        <div id="vsl-player" className="w-full max-w-4xl relative mt-8 lg:mt-4">
+          <div className="mb-4 flex justify-center">
             <span className="inline-flex items-center justify-center bg-red-500/10 border border-red-500/20 text-red-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-[0_0_15px_rgba(239,68,68,0.1)]">
               Por favor, verifique se o som está ligado!
             </span>

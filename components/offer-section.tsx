@@ -136,11 +136,11 @@ export function OfferSection() {
           <div className="text-slate-400 line-through text-[13px] font-bold mb-1">
             De R$ 197,00
           </div>
-          <div className="flex justify-center items-start text-[#00A3FF] font-black tracking-tighter leading-none h-[80px]">
+          <div className="flex justify-center items-start text-[#00A3FF] font-black tracking-tighter leading-none mb-2">
             <span className="text-4xl md:text-5xl mt-2 mr-1">R$</span>
             <span className="text-[5rem] md:text-[6.5rem]">57,97</span>
           </div>
-          <div className="text-slate-500 text-sm font-bold mt-3">
+          <div className="text-slate-500 text-sm font-bold mt-4 md:mt-6">
             ou 12x de R$ 5,82
           </div>
         </div>
