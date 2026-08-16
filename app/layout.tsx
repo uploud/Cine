@@ -8,7 +8,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-displ
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
 
 export const metadata: Metadata = {
-  title: "Gerador de Videos Virais",
+  title: "Wintube - Gerador de Videos Virais",
   description:
     "Aprenda o método que pessoas comuns estão usando pra construir canais de vídeo que produzem conteúdo sozinhos - sem aparecer, sem equipe e sem passar horas editando.",
   icons: {
