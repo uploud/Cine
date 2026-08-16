@@ -1,13 +1,13 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from "react"
-import { ArrowRight, Play, Users } from "lucide-react"
+import { Play } from "lucide-react"
 
 const WORDS = [
+  "podcast",
   "anime",
   "série",
   "filme",
-  "podcast",
   "futebol",
   "documentário",
   "canal dark",
@@ -81,24 +81,27 @@ export function HeroSection() {
   }, [phase])
 
   return (
-    <section className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 overflow-hidden bg-[#05060A] text-white min-h-[90vh]">
+    <section className="relative flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 overflow-hidden bg-[#05060A] text-white min-h-[90vh] pt-20 pb-24">
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+
       {/* Glow Effects */}
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -z-10 h-[400px] w-[600px] rounded-full bg-[#4C8DF7]/15 blur-[120px]" />
-      <div className="absolute left-1/2 bottom-0 -translate-x-1/2 -z-10 h-[300px] w-[800px] rounded-full bg-[#6A2EF0]/15 blur-[120px]" />
+      <div className="absolute right-0 bottom-0 -z-10 h-[400px] w-[600px] rounded-full bg-[#6A2EF0]/15 blur-[120px]" />
 
-      <div className="relative z-10 max-w-5xl mx-auto py-16 sm:py-24 px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col items-center text-center gap-8 sm:gap-10">
-          {/* Logo / Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-            <div className="w-2 h-2 rounded-full bg-[#4C8DF7] animate-pulse" />
-            <span className="text-xs font-semibold tracking-wider uppercase text-slate-300">
-              WinTube IA 2.0
-            </span>
+      <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+        {/* Left Column: Copy */}
+        <div className="flex flex-col items-start text-left w-full lg:w-1/2 pt-8">
+          {/* Badge */}
+          <div className="flex items-center gap-4 text-[11px] font-bold tracking-[0.2em] text-slate-500 uppercase">
+            <span>WINTUBE</span>
+            <div className="w-10 h-[1px] bg-slate-700"></div>
+            <span>EDIÇÃO NO AUTOMÁTICO</span>
           </div>
 
-          {/* Large Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] font-black tracking-tight max-w-5xl">
-            Crie seu próximo vídeo de <br className="hidden md:block" />
+          {/* Headline */}
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.1] font-black tracking-tight text-white mt-8">
+            Você pede um vídeo de <br className="hidden sm:block" />
             <span
               className="inline-flex items-end transition-all duration-300 ease-out"
               style={{ width: wordWidth === "auto" ? "auto" : `${wordWidth}px` }}
@@ -115,65 +118,87 @@ export function HeroSection() {
                 {WORDS[index]}
               </span>
             </span>
-            <span className="inline-block ml-1 w-1 sm:w-2 h-[40px] sm:h-[50px] md:h-[60px] lg:h-[70px] bg-[#6A2EF0] animate-pulse align-middle" />
-            <br />
-            100% no automático.
+            <span className="inline-block ml-1 w-1 sm:w-1.5 h-[36px] sm:h-[48px] md:h-[60px] bg-[#6A2EF0] animate-pulse align-middle" />
           </h1>
 
-          {/* Subhead */}
-          <p className="text-lg sm:text-xl text-slate-400 font-medium leading-relaxed max-w-2xl">
-            A única inteligência artificial que cria roteiro, narração e edição completa em minutos.
-            Sem mensalidades. Sem limites.
+          {/* Subhead 1 */}
+          <h2 className="text-xl sm:text-2xl md:text-[1.75rem] text-white font-bold leading-[1.4] max-w-lg mt-8 font-display tracking-tight">
+            Crie <span className="relative inline-block">
+              <span className="relative z-10 px-1">dezenas de vídeos</span>
+              <span className="absolute bottom-1.5 left-0 w-full h-3 bg-[#6A2EF0]/40 -z-10 rounded-sm"></span>
+            </span> em minutos, tudo no automático, sem limites.
+          </h2>
+
+          {/* Subhead 2 */}
+          <p className="text-base sm:text-lg text-slate-400 mt-5 max-w-lg leading-relaxed">
+            Uma única ferramenta, sem mensalidade e 100% ilimitada. 
+            Baixa, corta, legenda e monta enquanto você faz outra coisa.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mt-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full mt-10">
             <a
               href={CHECKOUT_URL}
-              className="group relative inline-flex items-center justify-center gap-3 bg-[linear-gradient(to_right,#4C8DF7,#6A2EF0)] text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-[#4C8DF7]/25 transition-all hover:-translate-y-0.5 hover:shadow-[#6A2EF0]/40 active:scale-[0.98] w-full sm:w-auto"
+              className="flex items-center justify-center bg-[linear-gradient(to_right,#4C8DF7,#6A2EF0)] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-[#4C8DF7]/20 transition-all hover:-translate-y-0.5 hover:shadow-[#6A2EF0]/40 active:scale-[0.98] w-full sm:w-auto"
             >
-              <span>COMEÇAR AGORA</span>
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              Quero o WinTube
             </a>
             <a
               href="#vsl-player"
-              className="group inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white font-semibold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg border border-white/10 transition-all hover:-translate-y-0.5 active:scale-[0.98] w-full sm:w-auto"
+              className="flex items-center justify-center gap-2 bg-transparent border border-white/10 text-white font-semibold text-base px-8 py-4 rounded-xl transition-colors hover:bg-white/5 active:scale-[0.98] w-full sm:w-auto"
             >
-              <Play className="w-5 h-5" />
-              <span>Ver Demonstração</span>
+              Ver funcionando
             </a>
           </div>
 
-          {/* Social Proof */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mt-4 text-sm text-slate-400 font-medium">
+          {/* Under Buttons Info */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 text-xs sm:text-sm text-slate-500 font-medium">
+            <span>acesso vitalício</span>
+            <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-700" />
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-[#6A2EF0]" />
-              <span>
-                Mais de <strong className="text-white">12.450</strong> criadores ativos
-              </span>
+              <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse" />
+              <span><strong className="text-white">195</strong> criadores usando</span>
             </div>
+          </div>
+        </div>
+
+        {/* Right Column / Bottom: VSL Player */}
+        <div id="vsl-player" className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
+          <div className="mb-4 flex justify-center lg:justify-start">
+            <span className="inline-flex items-center justify-center bg-red-500/10 border border-red-500/20 text-red-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+              Por favor, verifique se o som está ligado!
+            </span>
+          </div>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 ring-1 ring-white/5 group">
+            {/* Play Button Overlay (Optional, for aesthetics if iframe doesn't autoplay immediately) */}
+            <div className="absolute inset-0 bg-black/20 pointer-events-none z-10 transition-opacity group-hover:opacity-0" />
+            <iframe
+              src="https://www.youtube.com/embed/9NyiHkeaNog?autoplay=1&mute=1"
+              className="w-full h-full relative z-0"
+              title="WinTube - Apresentação"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>
 
       {/* Timeline at the bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-1.5 bg-white/5 overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/5 overflow-hidden">
         <div
           className="h-full bg-[linear-gradient(to_right,#4C8DF7,#6A2EF0)] relative"
           style={{ width: `${progress}%` }}
         >
           {/* Subtle glow on the leading edge */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full blur-[4px] opacity-50" />
-        </div>
-        <div className="absolute bottom-3 right-4 text-[10px] uppercase tracking-widest text-slate-500 font-bold hidden sm:block">
-          {progress < 95 ? "Renderizando..." : "Pronto"}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full blur-[4px] opacity-80" />
         </div>
       </div>
 
       {/* Hidden element for measuring width */}
       <span
         ref={measureRef}
-        className="absolute opacity-0 pointer-events-none whitespace-nowrap font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black"
+        className="absolute opacity-0 pointer-events-none whitespace-nowrap font-display text-4xl sm:text-5xl md:text-6xl font-black"
         style={{ left: "-9999px", top: "-9999px" }}
         aria-hidden="true"
       >
