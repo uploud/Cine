@@ -105,7 +105,7 @@ export function RevealSection() {
       <div className="px-4 sm:px-6 max-w-7xl mx-auto relative">
         <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-start relative">
           {/* Mobile view needs the sticky video on top */}
-          <div className="w-full md:w-1/2 sticky top-20 md:top-32 z-20 md:order-last">
+          <div className="w-full md:w-1/2 sticky top-20 md:top-[15vh] z-20 md:order-last flex flex-col items-center">
             <div className="relative w-full aspect-[16/10] sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden border-4 sm:border-8 border-[#2a2a2a] bg-[#1a1a1a] shadow-2xl">
               {/* Mac window controls */}
               <div className="absolute top-0 left-0 w-full h-5 sm:h-6 bg-[#2a2a2a] flex items-center px-2 sm:px-3 gap-1.5 z-20">
@@ -138,10 +138,22 @@ export function RevealSection() {
             <div className="hidden md:block relative w-[110%] -left-[5%] h-3 sm:h-4 bg-[#3a3a3a] rounded-b-xl sm:rounded-b-2xl shadow-2xl">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 sm:h-2 bg-[#2a2a2a] rounded-b-md" />
             </div>
+            
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-6 sm:mt-8">
+              {steps.map((_, i) => (
+                <div
+                  key={i}
+                  className={`h-2 rounded-full transition-all duration-500 ${
+                    activeIndex === i ? "w-8 bg-primary" : "w-2 bg-slate-800"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Scrolling Text Items */}
-          <div className="w-full md:w-1/2 flex flex-col gap-12 sm:gap-24 md:py-[20vh] pb-[10vh]">
+          <div className="w-full md:w-1/2 flex flex-col gap-6 sm:gap-8 md:py-[15vh] pb-[10vh]">
             {steps.map((step, i) => {
               const isActive = activeIndex === i
               return (
@@ -150,10 +162,10 @@ export function RevealSection() {
                   ref={(el) => {
                     itemRefs.current[i] = el
                   }}
-                  className={`transition-all duration-500 rounded-2xl p-6 sm:p-8 border-2 ${
+                  className={`transition-all duration-500 rounded-2xl p-5 sm:p-6 border ${
                     isActive
-                      ? "bg-slate-900/80 border-primary/50 shadow-[0_0_30px_-10px] shadow-primary/30 scale-[1.02] sm:scale-105"
-                      : "border-transparent opacity-40 hover:opacity-70 scale-100 cursor-pointer"
+                      ? "bg-slate-900/80 border-primary/40 shadow-[0_0_15px] shadow-primary/20 scale-[1.02]"
+                      : "border-transparent opacity-50 hover:opacity-100 scale-100 cursor-pointer"
                   }`}
                   onClick={() => {
                     // Smooth scroll to the element so it becomes active
@@ -170,35 +182,32 @@ export function RevealSection() {
                     }
                   }}
                 >
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-4">
-                      <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-colors ${
-                          isActive
-                            ? "bg-primary/20 text-primary border-primary/30"
-                            : "bg-slate-800 text-slate-400 border-slate-700"
+                  <div className="flex gap-4 sm:gap-5">
+                    <div
+                      className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center border transition-colors ${
+                        isActive
+                          ? "bg-primary/20 text-primary border-primary/30"
+                          : "bg-slate-800 text-slate-400 border-slate-700"
+                      }`}
+                    >
+                      <step.icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
+                    <div className="flex flex-col gap-1.5 pt-0.5">
+                      <h3
+                        className={`font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold tracking-tight transition-colors ${
+                          isActive ? "text-white" : "text-slate-300"
                         }`}
                       >
-                        <step.icon className="w-6 h-6" />
-                      </div>
-                      <span className="font-[family-name:var(--font-display)] text-lg font-bold text-primary tracking-wider">
-                        PASSO {step.number}
-                      </span>
+                        {step.title}
+                      </h3>
+                      <p
+                        className={`text-sm sm:text-base leading-relaxed transition-colors ${
+                          isActive ? "text-slate-300" : "text-slate-500"
+                        }`}
+                      >
+                        {step.description}
+                      </p>
                     </div>
-                    <h3
-                      className={`font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-black mb-1 tracking-tight uppercase transition-colors ${
-                        isActive ? "text-white" : "text-slate-400"
-                      }`}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      className={`text-base sm:text-lg leading-relaxed font-semibold transition-colors ${
-                        isActive ? "text-slate-300" : "text-slate-500"
-                      }`}
-                    >
-                      {step.description}
-                    </p>
                   </div>
                 </div>
               )
