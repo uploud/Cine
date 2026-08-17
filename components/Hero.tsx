@@ -74,6 +74,14 @@ export function Hero() {
     e?.preventDefault()
     if (isProcessing) return
     
+    if (!url.trim()) {
+      const oferta = document.getElementById("offer-section")
+      if (oferta) {
+        oferta.scrollIntoView({ behavior: "smooth" })
+      }
+      return
+    }
+
     if (!URL_REGEX.test(url.trim())) {
       setErrorShake(true)
       setStatusMessage("cola um link de vídeo pra ver rodando")
@@ -159,9 +167,9 @@ export function Hero() {
           </div>
 
           {/* H1 */}
-          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] flex flex-wrap items-baseline gap-x-2"
+          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] flex flex-wrap items-baseline justify-center text-center uppercase gap-x-2 w-full"
               style={{ fontSize: "clamp(28px, 5.2vw, 60px)" }}>
-            <span>Transforme um link do</span>
+            <span>TRANSFORME UM LINK DO</span>
             <span 
               className="inline-flex overflow-hidden transition-all duration-400 ease-[cubic-bezier(.2,.8,.2,1)]"
               style={{ width: wordWidth > 0 ? `${wordWidth}px` : "auto" }}
@@ -175,10 +183,10 @@ export function Hero() {
                   filter: phase === "exit" ? "blur(7px)" : phase === "enter" ? "blur(7px)" : "blur(0)",
                 }}
               >
-                {WORDS[wordIndex]}
+                {WORDS[wordIndex].toUpperCase()}
               </span>
             </span>
-            <span>em vídeos prontos pra monetizar</span>
+            <span>EM VÍDEOS PRONTOS PRA MONETIZAR</span>
           </h1>
 
           {/* Sub */}
@@ -278,11 +286,11 @@ export function Hero() {
           {/* Hidden measuring span */}
           <span
             ref={measureRef}
-            className="absolute opacity-0 pointer-events-none font-mono font-[800] tracking-[-.02em] whitespace-nowrap"
+            className="absolute opacity-0 pointer-events-none font-mono font-[800] tracking-[-.02em] whitespace-nowrap uppercase"
             style={{ fontSize: "clamp(28px, 5.2vw, 60px)", visibility: "hidden" }}
             aria-hidden="true"
           >
-            {WORDS[wordIndex]}
+            {WORDS[wordIndex].toUpperCase()}
           </span>
         </div>
       </section>
