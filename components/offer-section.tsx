@@ -17,22 +17,23 @@ const CHECKOUT_URL = "https://pay.kiwify.com.br/yTa2MmY"
 
 export function OfferSection() {
   return (
-    <section id="offer-section" className="bg-white py-16 sm:py-20 px-4 sm:px-6 flex justify-center">
+    <section id="offer-section" className="bg-white py-16 sm:py-20 px-4 sm:px-6 flex flex-col items-center">
+      
+      {/* Video VSL */}
+      <div className="w-full max-w-[800px] rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-slate-200 mb-12 bg-black">
+        <video
+          className="w-full h-auto aspect-video object-cover"
+          src="https://i.imgur.com/ocfmi4m.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+        />
+      </div>
+
       <div className="w-full max-w-[600px] bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.05)] border border-slate-100 p-6 sm:p-10 md:p-12">
         
-        {/* Video VSL */}
-        <div className="w-full rounded-xl overflow-hidden shadow-md border border-slate-100 mb-8 bg-slate-100">
-          <video
-            className="w-full h-auto aspect-video object-cover"
-            src="https://i.imgur.com/ocfmi4m.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-          />
-        </div>
-
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-[1.75rem] md:text-4xl font-black text-[#00A3FF] uppercase tracking-tight leading-tight">
