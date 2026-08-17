@@ -127,6 +127,12 @@ export function Hero() {
   return (
     <>
       <section className="relative w-full bg-wt-bg overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 py-20">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 pointer-events-none bg-cover bg-center bg-no-repeat opacity-[0.15]"
+          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        />
+        
         {/* Background Layers */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `
