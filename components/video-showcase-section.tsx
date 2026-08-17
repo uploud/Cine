@@ -1,11 +1,10 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function VideoShowcaseSection() {
-  const showcaseImages = [
-    "/images/results/result1.jpg",
-    "/images/results/result2.jpg",
-    "/images/results/result3.jpg",
-    "/images/results/result4.png",
+  const videos = [
+    { id: "lcJ8BVEo15U", title: "Exemplo - Filme" },
+    { id: "MAZ0mWdoUYI", title: "Exemplo - Animação" },
+    { id: "ANnHwcWenR8", title: "Exemplo - Anime" },
   ]
 
   return (
@@ -25,36 +24,24 @@ export function VideoShowcaseSection() {
           </div>
         </ScrollReveal>
 
-        {/* Marquee Container */}
-        <div className="relative w-full overflow-hidden pb-6 mt-12">
-          <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
-            {[...showcaseImages, ...showcaseImages].map((src, i) => (
-              <div 
-                key={i} 
-                className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0 mx-2 sm:mx-3"
-              >
-                <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white pointer-events-none">
-                  <img
-                    src={src}
-                    alt={`Exemplo de resultado ${i + 1}`}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {videos.map((video, i) => (
+            <ScrollReveal key={i} animation="fade-up" delay={i * 150} duration={600}>
+              <div className="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative aspect-video bg-slate-100">
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    frameBorder="0"
                     loading="lazy"
-                    className="w-full h-auto object-contain"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   />
                 </div>
               </div>
-            ))}
-          </div>
-          
-          <style dangerouslySetInnerHTML={{
-            __html: `
-            @keyframes marquee {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-            .animate-marquee {
-              animation: marquee 30s linear infinite;
-            }
-          `}} />
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>
