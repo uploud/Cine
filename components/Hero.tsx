@@ -171,7 +171,7 @@ export function Hero() {
 
           {/* Sub */}
           <p className="font-sans text-wt-muted max-w-[52ch] mt-6 mx-auto" style={{ fontSize: "clamp(14px, 1.5vw, 17px)" }}>
-            Cole o link. O WinTube baixa, transcreve, corta os melhores momentos e legenda sozinho — <strong className="text-[#C9D0E4] font-semibold">dezenas de vídeos em minutos</strong>, sem mensalidade e sem limite de uso.
+            COLE O LINK DE <strong className="text-wt-blue font-semibold">FILMES, ANIMES, SERIES, PODCASTS.</strong> O WinTube baixa, transcreve, corta os melhores momentos e legenda sozinho. Posta dezenas de vídeos em minutos, sem mensalidade e sem limite de uso.
           </p>
 
           {/* Input Pill */}
