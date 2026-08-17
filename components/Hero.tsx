@@ -3,14 +3,9 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Loader2 } from "lucide-react"
 
-const WORDS = ["YouTube", "Twitch", "podcast", "Instagram", "TikTok", "live"]
 const URL_REGEX = /^(https?:\/\/|www\.)\S+\.\S+/i
 
 export function Hero() {
-  const [wordIndex, setWordIndex] = useState(0)
-  const [wordWidth, setWordWidth] = useState(0)
-  const [phase, setPhase] = useState<"idle" | "exit" | "enter">("idle")
-  
   const [url, setUrl] = useState("")
   const [isProcessing, setIsProcessing] = useState(false)
   const [errorShake, setErrorShake] = useState(false)
@@ -19,56 +14,18 @@ export function Hero() {
   // 0: idle, 1: baixando, 2: transcrevendo, 3: cortando, 4: legendando, 5: done
   const [step, setStep] = useState(0)
   const [statusMessage, setStatusMessage] = useState("")
+  const [demoStep, setDemoStep] = useState(1)
   
-  const measureRef = useRef<HTMLSpanElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-  const timersRef = useRef<NodeJS.Timeout[]>([])
 
-  // Animation cycle
+  // Infinite demo animation for the chips
   useEffect(() => {
-    // Respect reduced motion
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    if (prefersReducedMotion) {
-      if (measureRef.current) setWordWidth(measureRef.current.offsetWidth)
-      return
-    }
-
-    const setSafeTimeout = (cb: () => void, ms: number) => {
-      const id = setTimeout(cb, ms)
-      timersRef.current.push(id)
-      return id
-    }
-
-    if (phase === "idle") {
-      setSafeTimeout(() => setPhase("exit"), 2200)
-    } else if (phase === "exit") {
-      setSafeTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % WORDS.length)
-        setPhase("enter")
-      }, 380)
-    } else if (phase === "enter") {
-      setSafeTimeout(() => setPhase("idle"), 420)
-    }
-
-    return () => {
-      timersRef.current.forEach(clearTimeout)
-      timersRef.current = []
-    }
-  }, [phase])
-
-  // Measure word width on change or resize
-  useEffect(() => {
-    const measure = () => {
-      if (measureRef.current) {
-        setWordWidth(measureRef.current.offsetWidth)
-      }
-    }
-    measure()
-    
-    document.fonts.ready.then(measure)
-    window.addEventListener("resize", measure)
-    return () => window.removeEventListener("resize", measure)
-  }, [wordIndex])
+    if (isProcessing) return
+    const interval = setInterval(() => {
+      setDemoStep(prev => (prev % 4) + 1)
+    }, 800)
+    return () => clearInterval(interval)
+  }, [isProcessing])
 
   const handleSubmit = (e?: React.FormEvent) => {
     e?.preventDefault()
@@ -135,9 +92,12 @@ export function Hero() {
     runStep()
   }
 
+  // Active step for chips (uses demo if not processing)
+  const currentChipStep = isProcessing ? step : demoStep
+
   return (
     <>
-      <section className="relative w-full bg-wt-bg overflow-hidden" style={{ padding: "clamp(64px,10vh,120px) clamp(20px,6vw,88px)" }}>
+      <section className="relative w-full bg-wt-bg overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 py-20">
         {/* Background Layers */}
         {/* Radians */}
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -153,51 +113,34 @@ export function Hero() {
             linear-gradient(to bottom, rgba(255,255,255,0.028) 1px, transparent 1px)
           `,
           backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(700px 460px at 20% 50%, #000 10%, transparent 78%)",
-          WebkitMaskImage: "radial-gradient(700px 460px at 20% 50%, #000 10%, transparent 78%)"
+          maskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)",
+          WebkitMaskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)"
         }} />
 
-        <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-start text-left">
+        <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-center text-center">
           
           {/* Eyebrow */}
-          <div className="flex items-center gap-3 text-wt-muted uppercase tracking-[.14em] font-mono text-[12px] mb-6">
+          <div className="flex items-center justify-center gap-3 text-wt-muted uppercase tracking-[.14em] font-mono text-[12px] mb-6">
             <span>WINTUBE</span>
             <div className="w-[26px] h-[1px] bg-wt-line" />
             <span className="text-white">EDIÇÃO NO AUTOMÁTICO</span>
           </div>
 
           {/* H1 */}
-          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] flex flex-wrap items-baseline justify-center text-center uppercase gap-x-2 w-full"
+          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] uppercase max-w-5xl"
               style={{ fontSize: "clamp(28px, 5.2vw, 60px)" }}>
-            <span>TRANSFORME UM LINK DO</span>
-            <span 
-              className="inline-flex overflow-hidden transition-all duration-400 ease-[cubic-bezier(.2,.8,.2,1)]"
-              style={{ width: wordWidth > 0 ? `${wordWidth}px` : "auto" }}
-            >
-              <span 
-                className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] pb-1"
-                style={{
-                  transition: "opacity 380ms, transform 380ms, filter 380ms",
-                  opacity: phase === "exit" ? 0 : phase === "enter" ? 0 : 1,
-                  transform: phase === "exit" ? "translateY(-0.18em)" : phase === "enter" ? "translateY(0.18em)" : "translateY(0)",
-                  filter: phase === "exit" ? "blur(7px)" : phase === "enter" ? "blur(7px)" : "blur(0)",
-                }}
-              >
-                {WORDS[wordIndex].toUpperCase()}
-              </span>
-            </span>
-            <span>EM VÍDEOS PRONTOS PRA MONETIZAR</span>
+            TRANSFORME UM <span className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]">LINK DE VÍDEO</span> EM VÍDEOS PRONTOS PRA MONETIZAR
           </h1>
 
           {/* Sub */}
-          <p className="font-sans text-wt-muted max-w-[52ch] mt-6" style={{ fontSize: "clamp(14px, 1.5vw, 17px)" }}>
+          <p className="font-sans text-wt-muted max-w-[52ch] mt-6 mx-auto" style={{ fontSize: "clamp(14px, 1.5vw, 17px)" }}>
             Cole o link. O WinTube baixa, transcreve, corta os melhores momentos e legenda sozinho — <strong className="text-[#C9D0E4] font-semibold">dezenas de vídeos em minutos</strong>, sem mensalidade e sem limite de uso.
           </p>
 
           {/* Input Pill */}
           <form 
             onSubmit={handleSubmit}
-            className={`w-full max-w-[640px] mt-10 sm:mt-12 group ${errorShake ? "animate-shake-error" : ""}`}
+            className={`w-full max-w-[640px] mt-10 sm:mt-12 mx-auto group ${errorShake ? "animate-shake-error" : ""}`}
           >
             <div className="flex flex-col sm:flex-row bg-[#0B0E18] border border-[#1F2537] rounded-[14px] p-2 sm:pl-[18px] sm:pr-2 sm:py-2 focus-within:border-[#375089] focus-within:shadow-[0_0_0_4px_rgba(76,141,247,0.12)] transition-all">
               <input 
@@ -208,7 +151,7 @@ export function Hero() {
                 disabled={isProcessing}
                 placeholder="Cole aqui o link do video..."
                 aria-label="Link do vídeo"
-                className="flex-1 bg-transparent border-none outline-none font-mono text-[14px] text-wt-ink placeholder-[#4E566E] disabled:opacity-50 p-3 sm:p-0 mb-2 sm:mb-0"
+                className="flex-1 bg-transparent border-none outline-none font-mono text-[14px] text-wt-ink placeholder-[#4E566E] disabled:opacity-50 p-3 sm:p-0 mb-2 sm:mb-0 text-center sm:text-left"
               />
               <button 
                 type="submit"
@@ -221,16 +164,19 @@ export function Hero() {
           </form>
 
           {/* Chips */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex flex-wrap justify-center gap-2 mt-4">
             {["baixando", "transcrevendo", "cortando", "legendando"].map((chipName, idx) => {
-              const chipStep = idx + 1
+              const chipIndex = idx + 1
               let chipState = "apagado"
-              if (step === chipStep) chipState = "ativo"
-              else if (step > chipStep) chipState = "feito"
+              
+              if (currentChipStep === chipIndex) {
+                chipState = "ativo"
+              } else if (isProcessing && currentChipStep > chipIndex) {
+                chipState = "feito"
+              }
               
               const isAtivo = chipState === "ativo"
               const isFeito = chipState === "feito"
-              const isApagado = chipState === "apagado"
 
               return (
                 <div 
@@ -251,20 +197,20 @@ export function Hero() {
 
           {/* Status Line */}
           <div 
-            className="mt-4 min-h-[20px] font-mono text-[12px] flex items-center gap-2" 
+            className="mt-4 min-h-[20px] font-mono text-[12px] flex justify-center items-center gap-2" 
             role="status" 
             aria-live="polite"
           >
             {errorShake && (
               <span className="text-[#F2B65A]">{statusMessage}</span>
             )}
-            {step > 0 && step < 5 && !errorShake && (
+            {isProcessing && step > 0 && step < 5 && !errorShake && (
               <>
                 <Loader2 className="w-3 h-3 text-wt-blue animate-spin" />
                 <span className="text-wt-ink">{statusMessage}</span>
               </>
             )}
-            {step === 5 && (
+            {isProcessing && step === 5 && (
               <>
                 <div className="w-[8px] h-[8px] rounded-full bg-[#33D17A] shadow-[0_0_8px_rgba(51,209,122,0.8)]" />
                 <span className="text-wt-ink">{statusMessage}</span>
@@ -273,7 +219,7 @@ export function Hero() {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-wt-muted mt-8">
+          <div className="flex flex-wrap justify-center items-center gap-x-2 gap-y-1 font-mono text-[12px] text-wt-muted mt-8">
             <span className="text-[#E8ECF8]">pagamento único</span>
             <span className="text-[#2A3145]">·</span>
             <span className="text-[#E8ECF8]">acesso vitalício</span>
@@ -283,18 +229,8 @@ export function Hero() {
             <span className="text-white">195 criadores usando</span>
           </div>
 
-          {/* Hidden measuring span */}
-          <span
-            ref={measureRef}
-            className="absolute opacity-0 pointer-events-none font-mono font-[800] tracking-[-.02em] whitespace-nowrap uppercase"
-            style={{ fontSize: "clamp(28px, 5.2vw, 60px)", visibility: "hidden" }}
-            aria-hidden="true"
-          >
-            {WORDS[wordIndex].toUpperCase()}
-          </span>
         </div>
       </section>
-
     </>
   )
 }
