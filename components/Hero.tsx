@@ -126,7 +126,7 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative w-full bg-wt-bg overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 py-20">
+      <section className="relative w-full bg-wt-bg overflow-hidden" style={{ padding: "clamp(64px,10vh,120px) clamp(20px,6vw,88px)" }}>
         {/* Background Layers */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `
@@ -140,25 +140,18 @@ export function Hero() {
             linear-gradient(to bottom, rgba(255,255,255,0.028) 1px, transparent 1px)
           `,
           backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)",
-          WebkitMaskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)"
+          maskImage: "radial-gradient(700px 460px at 20% 50%, #000 10%, transparent 78%)",
+          WebkitMaskImage: "radial-gradient(700px 460px at 20% 50%, #000 10%, transparent 78%)"
         }} />
 
-        <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-center text-center">
+        <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-start text-left">
           
-          {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 text-wt-muted uppercase tracking-[.14em] font-mono text-[12px] mb-6">
-            <span>WINTUBE</span>
-            <div className="w-[26px] h-[1px] bg-wt-line" />
-            <span className="text-white">EDIÇÃO NO AUTOMÁTICO</span>
-          </div>
-
           {/* H1 */}
-          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] uppercase max-w-5xl flex flex-wrap justify-center items-baseline gap-x-3"
+          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] flex flex-wrap items-baseline gap-x-2"
               style={{ fontSize: "clamp(28px, 5.2vw, 60px)" }}>
-            <span>TRANSFORME UM LINK DO</span>
+            <span>Transforme um link do</span>
             <span 
-              className="inline-flex justify-center overflow-hidden"
+              className="inline-flex overflow-hidden transition-all duration-400 ease-[cubic-bezier(.2,.8,.2,1)]"
               style={{ width: "9ch" }}
             >
               <span 
@@ -170,21 +163,21 @@ export function Hero() {
                   filter: phase === "exit" ? "blur(7px)" : phase === "enter" ? "blur(7px)" : "blur(0)",
                 }}
               >
-                {WORDS[wordIndex].toUpperCase()}
+                {WORDS[wordIndex]}
               </span>
             </span>
-            <span>EM VÍDEOS PRONTOS PRA MONETIZAR</span>
+            <span>em vídeos prontos pra monetizar</span>
           </h1>
 
           {/* Sub */}
-          <p className="font-sans text-wt-muted max-w-[52ch] mt-6 mx-auto" style={{ fontSize: "clamp(14px, 1.5vw, 17px)" }}>
+          <p className="font-sans text-wt-muted max-w-[52ch] mt-6" style={{ fontSize: "clamp(14px, 1.5vw, 17px)" }}>
             Cole o link. O WinTube baixa, transcreve, corta os melhores momentos e legenda sozinho — <strong className="text-[#C9D0E4] font-semibold">dezenas de vídeos em minutos</strong>, sem mensalidade e sem limite de uso.
           </p>
 
           {/* Input Pill */}
           <form 
             onSubmit={handleSubmit}
-            className={`w-full max-w-[640px] mt-10 sm:mt-12 mx-auto group ${errorShake ? "animate-shake-error" : ""}`}
+            className={`w-full max-w-[640px] mt-10 sm:mt-12 group ${errorShake ? "animate-shake-error" : ""}`}
           >
             <div className="flex flex-col sm:flex-row bg-[#0B0E18] border border-[#1F2537] rounded-[14px] p-2 sm:pl-[18px] sm:pr-2 sm:py-2 focus-within:border-[#375089] focus-within:shadow-[0_0_0_4px_rgba(76,141,247,0.12)] transition-all">
               <input 
@@ -195,7 +188,7 @@ export function Hero() {
                 disabled={isProcessing}
                 placeholder="Cole aqui o link do video..."
                 aria-label="Link do vídeo"
-                className="flex-1 bg-transparent border-none outline-none font-mono text-[14px] text-wt-ink placeholder-[#4E566E] disabled:opacity-50 p-3 sm:p-0 mb-2 sm:mb-0 text-center sm:text-left"
+                className="flex-1 bg-transparent border-none outline-none font-mono text-[14px] text-wt-ink placeholder-[#4E566E] disabled:opacity-50 p-3 sm:p-0 mb-2 sm:mb-0"
               />
               <button 
                 type="submit"
@@ -208,7 +201,7 @@ export function Hero() {
           </form>
 
           {/* Chips */}
-          <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <div className="flex flex-wrap gap-2 mt-4">
             {["baixando", "transcrevendo", "cortando", "legendando"].map((chipName, idx) => {
               const chipIndex = idx + 1
               let chipState = "apagado"
@@ -241,7 +234,7 @@ export function Hero() {
 
           {/* Status Line */}
           <div 
-            className="mt-4 min-h-[20px] font-mono text-[12px] flex justify-center items-center gap-2" 
+            className="mt-4 min-h-[20px] font-mono text-[12px] flex items-center gap-2" 
             role="status" 
             aria-live="polite"
           >
@@ -263,7 +256,7 @@ export function Hero() {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center items-center gap-x-2 gap-y-1 font-mono text-[12px] text-wt-muted mt-8">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-wt-muted mt-8">
             <span className="text-[#E8ECF8]">pagamento único</span>
             <span className="text-[#2A3145]">·</span>
             <span className="text-[#E8ECF8]">acesso vitalício</span>
