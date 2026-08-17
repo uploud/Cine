@@ -3,20 +3,52 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Loader2 } from "lucide-react"
 
+const WORDS = ["YouTube", "Twitch", "podcast", "Instagram", "TikTok", "live"]
 const URL_REGEX = /^(https?:\/\/|www\.)\S+\.\S+/i
 
 export function Hero() {
+  const [wordIndex, setWordIndex] = useState(0)
+  const [phase, setPhase] = useState<"idle" | "exit" | "enter">("idle")
+  
   const [url, setUrl] = useState("")
   const [isProcessing, setIsProcessing] = useState(false)
   const [errorShake, setErrorShake] = useState(false)
   
   // Pipeline states
-  // 0: idle, 1: baixando, 2: transcrevendo, 3: cortando, 4: legendando, 5: done
   const [step, setStep] = useState(0)
   const [statusMessage, setStatusMessage] = useState("")
   const [demoStep, setDemoStep] = useState(1)
   
   const inputRef = useRef<HTMLInputElement>(null)
+  const timersRef = useRef<NodeJS.Timeout[]>([])
+
+  // Word Animation cycle
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (prefersReducedMotion) return
+
+    const setSafeTimeout = (cb: () => void, ms: number) => {
+      const id = setTimeout(cb, ms)
+      timersRef.current.push(id)
+      return id
+    }
+
+    if (phase === "idle") {
+      setSafeTimeout(() => setPhase("exit"), 2200)
+    } else if (phase === "exit") {
+      setSafeTimeout(() => {
+        setWordIndex((prev) => (prev + 1) % WORDS.length)
+        setPhase("enter")
+      }, 380)
+    } else if (phase === "enter") {
+      setSafeTimeout(() => setPhase("idle"), 420)
+    }
+
+    return () => {
+      timersRef.current.forEach(clearTimeout)
+      timersRef.current = []
+    }
+  }, [phase])
 
   // Infinite demo animation for the chips
   useEffect(() => {
@@ -47,7 +79,6 @@ export function Hero() {
       return
     }
     
-    // Start pipeline
     setIsProcessing(true)
     setStep(1)
     
@@ -72,7 +103,6 @@ export function Hero() {
           setStatusMessage(steps[currentStep - 1])
           runStep()
         } else {
-          // Done
           setStep(5)
           setStatusMessage("12 vídeos gerados a partir desse link — em 3 min e 40s")
           setTimeout(() => {
@@ -92,21 +122,18 @@ export function Hero() {
     runStep()
   }
 
-  // Active step for chips (uses demo if not processing)
   const currentChipStep = isProcessing ? step : demoStep
 
   return (
     <>
       <section className="relative w-full bg-wt-bg overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 py-20">
         {/* Background Layers */}
-        {/* Radians */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `
             radial-gradient(900px 520px at 12% 88%, rgba(76,141,247,0.20), transparent 60%),
             radial-gradient(760px 480px at 78% 8%, rgba(106,46,240,0.20), transparent 60%)
           `
         }} />
-        {/* Grid */}
         <div className="absolute inset-0 pointer-events-none" style={{
           backgroundImage: `
             linear-gradient(to right, rgba(255,255,255,0.028) 1px, transparent 1px),
@@ -127,9 +154,26 @@ export function Hero() {
           </div>
 
           {/* H1 */}
-          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] uppercase max-w-5xl"
+          <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] uppercase max-w-5xl flex flex-wrap justify-center items-baseline gap-x-3"
               style={{ fontSize: "clamp(28px, 5.2vw, 60px)" }}>
-            TRANSFORME UM <span className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]">LINK DE VÍDEO</span> EM VÍDEOS PRONTOS PRA MONETIZAR
+            <span>TRANSFORME UM LINK DO</span>
+            <span 
+              className="inline-flex justify-center overflow-hidden"
+              style={{ width: "9ch" }}
+            >
+              <span 
+                className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] pb-1"
+                style={{
+                  transition: "opacity 380ms, transform 380ms, filter 380ms",
+                  opacity: phase === "exit" ? 0 : phase === "enter" ? 0 : 1,
+                  transform: phase === "exit" ? "translateY(-0.18em)" : phase === "enter" ? "translateY(0.18em)" : "translateY(0)",
+                  filter: phase === "exit" ? "blur(7px)" : phase === "enter" ? "blur(7px)" : "blur(0)",
+                }}
+              >
+                {WORDS[wordIndex].toUpperCase()}
+              </span>
+            </span>
+            <span>EM VÍDEOS PRONTOS PRA MONETIZAR</span>
           </h1>
 
           {/* Sub */}
