@@ -27,8 +27,14 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), "Inter", sans-serif;
-  --font-display: var(--font-jetbrains), "JetBrains Mono", monospace;
+  --font-sans: var(--font-sans), "Inter", sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", monospace;
+  --color-wt-bg: #05060A;
+  --color-wt-ink: #F2F5FF;
+  --color-wt-muted: #7A829B;
+  --color-wt-line: #1B2030;
+  --color-wt-blue: #4C8DF7;
+  --color-wt-violet: #6A2EF0;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
@@ -130,4 +136,15 @@
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* ─── Shake Error ─── */
+@keyframes shake-error {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake-error {
+  animation: shake-error 380ms cubic-bezier(.36,.07,.19,.97) both;
 }

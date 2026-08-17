@@ -119,7 +119,7 @@ export function HeroSection() {
               Quero o WinTube
             </a>
             <a
-              href="#vsl-player"
+              href="#como-funciona"
               className="flex items-center justify-center gap-2 bg-transparent border border-white/10 text-white font-semibold text-base px-8 py-4 rounded-xl transition-colors hover:bg-white/5 active:scale-[0.98] w-full sm:w-auto"
             >
               Ver funcionando

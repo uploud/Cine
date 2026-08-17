@@ -103,7 +103,7 @@ export function RevealSection() {
 
   return (
     <div className="bg-slate-950">
-      <section ref={sectionRef} className="relative text-white md:h-[300vh]">
+      <section id="como-funciona" ref={sectionRef} className="relative text-white md:h-[300vh]">
         {/* Visual break - top accent border */}
         <div className="absolute top-0 left-0 w-full h-1 bg-primary z-30" aria-hidden="true" />
 

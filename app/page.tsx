@@ -1,5 +1,5 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { HeroSection } from "@/components/hero-section"
+import { Hero } from "@/components/Hero"
 import { ChannelsSection } from "@/components/channels-section"
 import { RevealSection } from "@/components/reveal-section"
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
@@ -18,7 +18,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <main>
         {/* 1. HERO */}
-        <HeroSection />
+        <Hero />
 
         {/* 2. ONDE POSTAR */}
         <ScrollReveal animation="fade-in" duration={700}>
