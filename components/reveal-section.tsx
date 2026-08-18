@@ -107,11 +107,8 @@ export function RevealSection() {
           <div className="px-4 sm:px-6 mb-8 md:mb-12">
             <div className="max-w-5xl mx-auto text-center">
               <ScrollReveal animation="fade-up" duration={700}>
-                <p className="text-xs sm:text-sm text-wt-blue font-bold uppercase tracking-[0.2em] mb-2 sm:mb-4">
-                  OS 4 PILARES DO SISTEMA WINTUBE
-                </p>
                 <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4 uppercase">
-                  O pipeline <span className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]">faz tudo</span>
+                  OS 4 PILARES DO <span className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]">SISTEMA WINTUBE</span>
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-bold">
                   Você não precisa mais perder noites cortando e legendando — o pipeline faz tudo enquanto você foca em crescer.

@@ -68,13 +68,11 @@ export function BonusSection() {
                       key={i} 
                       className="w-[280px] sm:w-[320px] md:w-[350px] shrink-0 mx-3"
                     >
-                      <div className="rounded-xl overflow-hidden border border-slate-600 shadow-md bg-slate-800 p-2 pointer-events-none">
-                        <img
-                          src={src}
-                          alt={`Bônus ${i + 1}`}
-                          className="w-full h-auto object-contain rounded-lg"
-                        />
-                      </div>
+                      <img
+                        src={src}
+                        alt={`Bônus ${i + 1}`}
+                        className="w-full h-auto object-contain rounded-xl pointer-events-none"
+                      />
                     </div>
                   ))}
                 </div>

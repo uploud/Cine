@@ -55,7 +55,7 @@ export function FeaturesSection() {
             {/* PRINTS/SCREENSHOTS DO APP WINTUBE */}
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100 aspect-video relative">
                <img 
-                src="https://i.imgur.com/K3pW17A.png" 
+                src="https://i.imgur.com/n0soFwK.png" 
                 alt="App Interface" 
                 className="w-full h-full object-cover"
                />
