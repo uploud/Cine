@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import Image from "next/image"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function StorySection() {
@@ -18,13 +17,11 @@ export function StorySection() {
       <div className="max-w-3xl mx-auto">
         <ScrollReveal animation="fade-up" duration={600}>
           <div className="text-center mb-10">
-            <div className="flex justify-center mb-6">
-              <Image
-                src="https://i.imgur.com/JTPf8xN.jpeg"
-                alt="Depoimento"
-                width={144}
-                height={144}
-                className="rounded-full object-cover shadow-md h-36 w-36"
+            <div className="flex justify-center mb-8">
+              <img
+                src="https://i.imgur.com/tqVJPWa.png"
+                alt="WinTube"
+                className="h-16 md:h-20 object-contain"
               />
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-display)] font-extrabold mb-6 text-slate-900 tracking-tight uppercase">

@@ -97,12 +97,11 @@ export function OfferSection() {
             Por apenas
           </div>
           <div className="flex justify-center items-start text-[#4C8DF7] font-black tracking-tighter leading-none mb-2">
-            <span className="text-2xl mt-1.5 mr-1 text-slate-700">12x</span>
             <span className="text-4xl md:text-5xl mt-1 mr-1 text-slate-700">R$</span>
-            <span className="text-[4rem] md:text-[5rem]">9,70</span>
+            <span className="text-[4rem] md:text-[5rem]">57,97</span>
           </div>
           <div className="text-slate-500 text-sm font-bold mt-2">
-            ou R$ 97,00 à vista
+            ou 6x de R$ 10,61 no cartão
           </div>
         </div>
 
