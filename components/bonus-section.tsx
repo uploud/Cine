@@ -38,9 +38,9 @@ export function BonusSection() {
           <ScrollReveal animation="fade-up" delay={200}>
             {/* SCREENSHOTS DA SUA ÁREA DE MEMBROS / TREINAMENTO */}
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800 aspect-video relative flex items-center justify-center">
-              <img 
+              <img
                 src="https://i.imgur.com/Ahp3JZO.gif"
-                alt="Wintube Academy" 
+                alt="Wintube Academy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
@@ -59,13 +59,13 @@ export function BonusSection() {
                   <span className="text-3xl mr-2">🎁</span> + 4 BÔNUS EXCLUSIVOS COMPRANDO SOMENTE HOJE:
                 </h3>
               </div>
-              
+
               {/* Marquee Container para os Bônus */}
               <div className="relative w-full overflow-hidden pb-4 mb-10">
                 <div className="flex w-max animate-marquee-fast hover:[animation-play-state:paused]">
                   {[...bonusImages, ...bonusImages].map((src, i) => (
-                    <div 
-                      key={i} 
+                    <div
+                      key={i}
                       className="w-[280px] sm:w-[320px] md:w-[350px] shrink-0 mx-3"
                     >
                       <img
@@ -76,7 +76,7 @@ export function BonusSection() {
                     </div>
                   ))}
                 </div>
-                
+
                 <style dangerouslySetInnerHTML={{
                   __html: `
                   @keyframes marquee-fast {

@@ -54,9 +54,12 @@ export function FeaturesSection() {
           <ScrollReveal animation="fade-up" delay={200} duration={600}>
             {/* PRINTS/SCREENSHOTS DO APP WINTUBE */}
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100 aspect-video relative">
-               <img 
-                src="https://i.imgur.com/n0soFwK.png" 
-                alt="App Interface" 
+               <video 
+                src="https://i.imgur.com/n0soFwK.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
                />
             </div>

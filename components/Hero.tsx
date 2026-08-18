@@ -37,7 +37,7 @@ export function Hero() {
         {/* H1 Headline */}
         <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] max-w-5xl mx-auto uppercase"
             style={{ fontSize: "clamp(28px, 5.2vw, 56px)" }}>
-          LUCRE COM <span className="text-red-500">YOUTUBE</span> POSTANDO VÍDEOS DE <span className="text-[#4C8DF7]">FILMES, SÉRIES E ANIMES</span> SEM APARECER, SEM CRIAR ROTEIROS E SEM BLOQUEIOS POR DIREITOS AUTORAIS!
+          LUCRE COM <span className="text-red-500">YOUTUBE</span> POSTANDO VÍDEOS DE <span className="text-green-500">FILMES, SÉRIES E ANIMES</span> SEM APARECER, SEM CRIAR ROTEIROS E SEM BLOQUEIOS POR DIREITOS AUTORAIS!
         </h1>
 
         {/* Subtitle */}
