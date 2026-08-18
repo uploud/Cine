@@ -1,16 +1,18 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Hero } from "@/components/Hero"
-import { ChannelsSection } from "@/components/channels-section"
+import { Marquee } from "@/components/marquee"
 import { RevealSection } from "@/components/reveal-section"
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
 import { FeaturesSection } from "@/components/features-section"
-import { PortabilitySection } from "@/components/portability-section"
-import { OriginalsSection } from "@/components/originals-section"
-import { ResultsSection } from "@/components/results-section"
+import { ProblemSection } from "@/components/problem-section"
+import { StorySection } from "@/components/story-section"
 import { ComparisonSection } from "@/components/comparison-section"
+import { BonusSection } from "@/components/bonus-section"
+import { TargetAudienceSection } from "@/components/target-audience-section"
+import { ResultsSection } from "@/components/results-section"
 import { OfferSection } from "@/components/offer-section"
-import { AgencyBadge } from "@/components/agency-badge"
-import { FinalCtaSection } from "@/components/final-cta-section"
+import { CommunitySection } from "@/components/community-section"
+import { FaqSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -20,45 +22,49 @@ export default function Home() {
         {/* 1. HERO */}
         <Hero />
 
-        {/* 2. ONDE POSTAR */}
-        <ScrollReveal animation="fade-in" duration={700}>
-          <ChannelsSection />
-        </ScrollReveal>
+        {/* 2. MARQUEE */}
+        <Marquee />
 
-        {/* 3. COMO FUNCIONA */}
+        {/* 3. OS 4 PILARES */}
         <RevealSection />
 
-        {/* 4. VÍDEOS GERADOS */}
+        {/* 4. SEUS VÍDEOS VÃO FICAR NESSE FORMATO */}
         <ScrollReveal animation="fade-up" duration={700}>
           <VideoShowcaseSection />
         </ScrollReveal>
 
-        {/* 5. FUNCIONALIDADES */}
+        {/* 5. FERRAMENTAS EXCLUSIVAS */}
         <FeaturesSection />
 
-        {/* 6. PORTABILIDADE */}
-        <PortabilitySection />
+        {/* 6. O RESULTADO? */}
+        <ProblemSection />
 
-        {/* 7. VÍDEOS ORIGINAIS */}
-        <OriginalsSection />
+        {/* 7. HISTÓRIA / FUNDADOR */}
+        <StorySection />
 
-        {/* 8. PROVA REAL */}
-        <ResultsSection />
-
-        {/* 9. COMPARATIVO */}
+        {/* 8. ACESSO VITALÍCIO / COMPARATIVO */}
         <ComparisonSection />
 
-        {/* 10. GARANTA SEU ACESSO */}
+        {/* 9. ÁREA DE MEMBROS / BÔNUS */}
+        <BonusSection />
+
+        {/* 10. PARA QUEM É O WINTUBE ACADEMY? */}
+        <TargetAudienceSection />
+
+        {/* 11. RESULTADOS DE QUEM AGIU */}
+        <ResultsSection />
+
+        {/* 12. OFERTA */}
         <OfferSection />
 
-        {/* 10.5 SELO DA AGÊNCIA (INSTAGRAM) */}
-        <AgencyBadge />
+        {/* 13. COMUNIDADE */}
+        <CommunitySection />
 
-        {/* 11. GARANTIA */}
-        <FinalCtaSection />
+        {/* 14. DÚVIDAS FREQUENTES */}
+        <FaqSection />
       </main>
 
-      {/* 12. FOOTER */}
+      {/* 15. FOOTER */}
       <Footer />
     </div>
   )

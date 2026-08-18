@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const feedbacks = [
@@ -17,19 +16,13 @@ const feedbacks = [
 
 export function ResultsSection() {
   return (
-    <section className="py-8 sm:py-12 bg-slate-50 overflow-hidden">
+    <section className="py-16 sm:py-24 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
-            <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-              PROVA REAL
-            </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight uppercase">
-              quem usa já está <span className="text-primary">lucrando</span>
+            <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight uppercase">
+              VEJA OS RESULTADOS DE QUEM DECIDIU <span className="text-wt-blue">AGIR</span>
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
-              Esses são resultados reais de quem já vive da monetização das plataformas.
-            </p>
           </div>
         </ScrollReveal>
       </div>
@@ -42,13 +35,13 @@ export function ResultsSection() {
               key={i} 
               className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0 mx-2 sm:mx-3"
             >
-              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white pointer-events-none">
+              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-md bg-slate-50 pointer-events-none p-2">
                 <Image
                   src={src}
                   alt={`Feedback de aluno ${i + 1}`}
                   width={400}
                   height={500}
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain rounded-lg"
                 />
               </div>
             </div>
@@ -66,7 +59,6 @@ export function ResultsSection() {
           }
         `}} />
       </div>
-
 
     </section>
   )

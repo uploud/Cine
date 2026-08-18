@@ -1,6 +1,6 @@
 "use client"
 
-import { Download, FileText, Scissors, Film, Music, ArrowRight } from "lucide-react"
+import { Download, FileText, Scissors, ShieldCheck, ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { useState, useRef, useEffect } from "react"
 
@@ -8,37 +8,30 @@ const steps = [
   {
     icon: Download,
     number: "01",
-    title: "Baixe as Cenas",
-    description: "Cola o link do material que quer usar e o app baixa automaticamente.",
+    title: "Download + Transcrição Automática",
+    description: "Cola o link do YouTube, Filmes, Séries, Animes, podcast ou live e o APP WinTube baixa e transcreve o conteúdo inteiro sozinho. Você não precisa assistir nada pra achar o trecho bom.",
     video: "https://i.imgur.com/jjJQ9CL.mp4",
   },
   {
     icon: FileText,
     number: "02",
-    title: "Transcreva as Falas",
-    description: "Um clique e todas as falas viram texto, prontas pro roteiro com IA.",
+    title: "Roteiro e Cortes com IA",
+    description: "A IA lê a transcrição, separa os melhores momentos e monta a sequência de corte pronta em minutos.",
     video: "https://i.imgur.com/XyuHBwq.mp4",
   },
   {
     icon: Scissors,
     number: "03",
-    title: "Corte as Melhores Partes",
-    description: "A IA identifica e corta as melhores partes sozinha. A etapa que mais rouba tempo vira minutos.",
+    title: "Montagem Vertical + Legenda Automática",
+    description: "Reenquadramento vertical (com opção de seguir rosto), legenda palavra por palavra sincronizada, exporta em 4K. Você só dá os toques finais e posta.",
     video: "https://i.imgur.com/9DXzQZH.mp4",
   },
   {
-    icon: Film,
+    icon: ShieldCheck,
     number: "04",
-    title: "Montagem Automática",
-    description: "Um clique e o sistema monta o vídeo inteiro: cortes, ritmo, sequência.",
+    title: "Guia Anti-Direitos Autorais",
+    description: "Mostra como ajustar o vídeo e proteger seu canal. Sem bloqueios, sem perder monetização.",
     video: "https://i.imgur.com/Ie5Bqw6.mp4",
-  },
-  {
-    icon: Music,
-    number: "05",
-    title: "Trilha Sonora",
-    description: "Cola o link da música, o app baixa e sonoriza. Vídeo pronto pra publicar.",
-    video: "https://i.imgur.com/Reg1Gjl.mp4",
   },
 ]
 
@@ -105,7 +98,7 @@ export function RevealSection() {
     <div className="bg-slate-950">
       <section id="como-funciona" ref={sectionRef} className="relative text-white md:h-[300vh]">
         {/* Visual break - top accent border */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-primary z-30" aria-hidden="true" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] z-30" aria-hidden="true" />
 
         {/* The sticky container */}
         <div className="md:sticky md:top-0 md:h-screen w-full flex flex-col justify-center overflow-hidden py-16 md:py-0">
@@ -114,14 +107,14 @@ export function RevealSection() {
           <div className="px-4 sm:px-6 mb-8 md:mb-12">
             <div className="max-w-5xl mx-auto text-center">
               <ScrollReveal animation="fade-up" duration={700}>
-                <p className="text-xs sm:text-sm text-primary font-bold uppercase tracking-[0.2em] mb-2 sm:mb-4">
-                  COMO FUNCIONA
+                <p className="text-xs sm:text-sm text-wt-blue font-bold uppercase tracking-[0.2em] mb-2 sm:mb-4">
+                  OS 4 PILARES DO SISTEMA WINTUBE
                 </p>
-                <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4 uppercase">
-                  seus vídeos prontos <span className="text-primary">em 5 passos</span>
+                <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4 uppercase">
+                  O pipeline <span className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]">faz tudo</span>
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-bold">
-                  Veja como é fácil gerar seus vídeos com a nossa ferramenta! Com o WinTube você consegue criar vários vídeos todos os dias, prontos pra postar em qualquer plataforma, sem tocar em editor nenhum.
+                  Você não precisa mais perder noites cortando e legendando — o pipeline faz tudo enquanto você foca em crescer.
                 </p>
               </ScrollReveal>
             </div>
@@ -140,7 +133,7 @@ export function RevealSection() {
                       key={i}
                       className={`transition-all duration-300 rounded-2xl p-4 sm:p-5 border cursor-pointer ${
                         isActive
-                          ? "bg-slate-900/80 border-primary/40 shadow-[0_0_15px] shadow-primary/20 scale-[1.02]"
+                          ? "bg-slate-900/80 border-[#4C8DF7]/40 shadow-[0_0_15px] shadow-[#4C8DF7]/20 scale-[1.02]"
                           : "border-transparent opacity-50 hover:opacity-100 scale-100"
                       }`}
                       onClick={() => handleStepClick(i)}
@@ -149,7 +142,7 @@ export function RevealSection() {
                         <div
                           className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center border transition-colors ${
                             isActive
-                              ? "bg-primary/20 text-primary border-primary/30"
+                              ? "bg-[#4C8DF7]/20 text-[#4C8DF7] border-[#4C8DF7]/30"
                               : "bg-slate-800 text-slate-400 border-slate-700"
                           }`}
                         >
@@ -157,14 +150,14 @@ export function RevealSection() {
                         </div>
                         <div className="flex flex-col gap-1 pt-0.5">
                           <h3
-                            className={`font-[family-name:var(--font-display)] text-base sm:text-lg font-bold tracking-tight transition-colors ${
+                            className={`font-mono text-base sm:text-lg font-bold tracking-tight transition-colors uppercase ${
                               isActive ? "text-white" : "text-slate-300"
                             }`}
                           >
                             {step.title}
                           </h3>
                           <p
-                            className={`text-sm leading-relaxed transition-colors ${
+                            className={`text-sm leading-relaxed transition-colors font-sans ${
                               isActive ? "text-slate-300" : "text-slate-500"
                             }`}
                           >
@@ -218,7 +211,7 @@ export function RevealSection() {
                     <div
                       key={i}
                       className={`h-2 rounded-full transition-all duration-500 ${
-                        activeIndex === i ? "w-8 bg-primary" : "w-2 bg-slate-800"
+                        activeIndex === i ? "w-8 bg-[#4C8DF7]" : "w-2 bg-slate-800"
                       }`}
                     />
                   ))}
@@ -236,9 +229,9 @@ export function RevealSection() {
           <ScrollReveal animation="fade-up" delay={100} duration={600}>
             <div className="text-center">
               <a
-                href="#offer-section"
+                href="#oferta"
                 id="reveal-cta"
-                className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-sky-500 text-white font-bold text-base sm:text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-lg shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-3 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-mono font-[700] text-[18px] px-8 py-4 sm:px-10 sm:py-5 rounded-xl shadow-lg hover:opacity-90 hover:-translate-y-0.5 active:scale-[0.98] transition-all"
               >
                 <span>QUERO ACESSAR O GERADOR DE VÍDEOS</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

@@ -1,6 +1,13 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
+import { CheckCircle2, ArrowRight } from "lucide-react"
 
 export function ProblemSection() {
+  const results = [
+    "Vídeos que dão views e geram receita todos os dias.",
+    "Canais que crescem no automático enquanto você foca em outra coisa.",
+    "Você descobre o atalho que a maioria ainda faz na mão.",
+  ]
+
   return (
     <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-slate-900 text-white relative overflow-hidden">
       {/* Subtle texture */}
@@ -9,54 +16,34 @@ export function ProblemSection() {
       <div className="max-w-4xl mx-auto relative z-10">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
-            <p className="text-xs sm:text-sm text-primary font-semibold uppercase tracking-widest mb-3">
-              O Problema
-            </p>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
-              Por que a maioria tenta{" "}
-              <span className="text-primary">e desiste</span>
+            <h2 className="font-mono text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight uppercase text-wt-blue">
+              O RESULTADO?
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="space-y-8 sm:space-y-10">
-          <ScrollReveal animation="fade-up" delay={100} duration={600}>
-            <p className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary text-center">
-              O tempo de produção.
-            </p>
-          </ScrollReveal>
+        <div className="space-y-6 sm:space-y-8 max-w-3xl mx-auto mb-12">
+          {results.map((result, index) => (
+            <ScrollReveal key={index} animation="fade-up" delay={index * 150} duration={600}>
+              <div className="flex items-start gap-4 p-6 bg-slate-800/50 border border-slate-700/50 rounded-2xl hover:bg-slate-800 transition-colors">
+                <CheckCircle2 className="w-8 h-8 text-green-500 shrink-0 mt-1" />
+                <p className="font-sans text-xl sm:text-2xl font-bold text-slate-200">
+                  {result}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
 
-          <ScrollReveal animation="fade-up" delay={200} duration={600}>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed text-center max-w-3xl mx-auto">
-              Pra fazer <strong className="text-white">um único vídeo</strong> bem feito - separar material,
-              transcrever falas, escrever roteiro, cortar as melhores partes, montar na timeline,
-              sincronizar áudio, achar trilha, exportar...
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal animation="zoom-in" delay={300} duration={600}>
-            <div className="text-center py-6 sm:py-8">
-              <span className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl font-black text-white">
-                4 a 6 horas
-              </span>
-              <p className="text-sm sm:text-base text-slate-400 mt-2 font-medium">por vídeo</p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal animation="fade-up" delay={400} duration={600}>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed text-center max-w-3xl mx-auto">
-              Posta 3 vídeos na primeira semana, 1 na segunda, nenhum na terceira.
-              E Canais Darks que não postam <strong className="text-white">não crescem</strong>.
-            </p>
-          </ScrollReveal>
-
+        <div className="text-center mt-12 sm:mt-16">
           <ScrollReveal animation="fade-up" delay={500} duration={600}>
-            <div className="border-t border-slate-700 pt-8 mt-8">
-              <p className="font-[family-name:var(--font-display)] text-xl sm:text-2xl md:text-3xl font-bold text-center text-white max-w-2xl mx-auto leading-tight">
-                O gargalo nunca foi a ideia.{" "}
-                <span className="text-primary">Sempre foi a produção.</span>
-              </p>
-            </div>
+            <a
+              href="#oferta"
+              className="group inline-flex items-center justify-center gap-3 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-mono font-[700] text-[18px] sm:text-[22px] px-8 py-5 sm:px-12 sm:py-6 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-1 active:scale-[0.98] transition-all"
+            >
+              <span>QUERO COMEÇAR AGORA!</span>
+              <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+            </a>
           </ScrollReveal>
         </div>
       </div>

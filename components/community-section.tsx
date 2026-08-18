@@ -54,13 +54,17 @@ export function CommunitySection() {
   }, [])
 
   return (
-    <section className="py-10 sm:py-12 md:py-16 px-3 sm:px-4 bg-background overflow-hidden">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-900 overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-6 sm:mb-8 md:mb-10">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-display)] font-bold mb-3 sm:mb-4 max-w-3xl mx-auto px-2">
-            Veja os Resultados de Quem Decidiu Agir
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-mono font-black mb-4 tracking-tight uppercase text-white">
+            GRUPO / COMUNIDADE <span className="text-wt-blue">WINTUBE</span>
           </h2>
+          <p className="text-slate-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+            Faça parte da nossa comunidade exclusiva e troque experiências com outros criadores que também estão crescendo e monetizando seus canais dark.
+          </p>
         </div>
+        
         <div className="max-w-4xl mx-auto">
           <div
             ref={scrollRef}

@@ -17,7 +17,7 @@ const CHECKOUT_URL = "https://pay.kiwify.com.br/yTa2MmY"
 
 export function OfferSection() {
   return (
-    <section id="offer-section" className="bg-white py-16 sm:py-20 px-4 sm:px-6 flex flex-col items-center">
+    <section id="oferta" className="bg-white py-16 sm:py-20 px-4 sm:px-6 flex flex-col items-center">
       
       {/* Video VSL */}
       <div className="w-full max-w-[800px] rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-slate-200 mb-12 bg-black">
@@ -32,15 +32,17 @@ export function OfferSection() {
         />
       </div>
 
-      <div className="w-full max-w-[600px] bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.05)] border border-slate-100 p-6 sm:p-10 md:p-12">
-        
+      <div className="w-full max-w-[600px] bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.05)] border border-slate-100 p-6 sm:p-10 md:p-12 relative overflow-hidden">
+        {/* Top accent */}
+        <div className="absolute top-0 left-0 w-full h-1.5 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]" />
+
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-[1.75rem] md:text-4xl font-black text-[#00A3FF] uppercase tracking-tight leading-tight">
-            ACESSO AO APP COMPLETO
+          <h2 className="text-[1.75rem] md:text-4xl font-black text-slate-900 uppercase tracking-tight leading-tight">
+            Acesso Vitalício ao <br/> <span className="text-[#4C8DF7]">APP Completo</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium">
-            Acesso ao APP enviado por e-mail imediatamente após a compra.
+            Acesso imediato e vitalício, com todas as atualizações inclusas.
           </p>
         </div>
 
@@ -54,134 +56,91 @@ export function OfferSection() {
         </div>
 
         {/* List Header */}
-        <h3 className="font-black text-lg md:text-xl text-slate-900 uppercase underline decoration-2 underline-offset-4 mb-8">
+        <h3 className="font-black text-lg md:text-xl text-slate-900 uppercase mb-6 text-center">
           VOCÊ VAI RECEBER:
         </h3>
 
         {/* Features List */}
-        <ul className="space-y-8">
-          <li className="flex items-start gap-4">
-            <Smartphone className="w-6 h-6 text-[#00A3FF] flex-shrink-0 mt-0.5" strokeWidth={2} />
-            <div>
-              <h4 className="font-bold text-[#00A3FF]">App WinTube</h4>
-              <p className="text-sm text-slate-500 mt-1 font-medium leading-relaxed">
-                Gera roteiros, cortes inteligentes e edição automática com IA. Tudo em um só app.
-              </p>
-            </div>
+        <ul className="space-y-4 mb-10 text-slate-700 font-medium">
+          <li className="flex items-center gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+            <span>Acesso completo pra baixar e transcrever.</span>
           </li>
-          
-          <li className="flex items-start gap-4">
-            <LifeBuoy className="w-6 h-6 text-[#00A3FF] flex-shrink-0 mt-0.5" strokeWidth={2} />
-            <div>
-              <h4 className="font-bold text-slate-900">Guia Anti-Direitos Autorais</h4>
-              <p className="text-sm text-slate-500 mt-1 font-medium leading-relaxed">
-                Ensina como criar conteúdos mais originais, reduzir problemas comuns de copyright e manter boas práticas para monetização.
-              </p>
-            </div>
+          <li className="flex items-center gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+            <span>Editor IA de corte e legenda.</span>
           </li>
-
-          <li className="flex items-start gap-4">
-            <GraduationCap className="w-6 h-6 text-[#00A3FF] flex-shrink-0 mt-0.5" strokeWidth={2} />
-            <div>
-              <h4 className="font-bold text-slate-900">Acesso ao Treinamento WinTube Academy</h4>
-              <p className="text-sm text-slate-500 mt-1 font-medium leading-relaxed">
-                Passo a passo para montar seu canal e começar a crescer.
-              </p>
-            </div>
+          <li className="flex items-center gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+            <span>Ferramentas de roteiro.</span>
           </li>
-
-          <li className="flex items-start gap-4">
-            <InfinityIcon className="w-6 h-6 text-[#00A3FF] flex-shrink-0 mt-0.5" strokeWidth={2} />
-            <div>
-              <h4 className="font-bold text-slate-900">Vídeos Ilimitados</h4>
-              <p className="text-sm text-slate-500 mt-1 font-medium leading-relaxed">
-                Crie quantos vídeos quiser, sem limite de uso e sem compra de créditos.
-              </p>
-            </div>
+          <li className="flex items-center gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+            <span>Treinamento Passo a Passo WinTube Academy.</span>
           </li>
-
-          <li className="flex items-start gap-4">
-            <CreditCard className="w-6 h-6 text-[#00A3FF] flex-shrink-0 mt-0.5" strokeWidth={2} />
-            <div>
-              <h4 className="font-bold text-slate-900">Sem Mensalidade</h4>
-              <p className="text-sm text-slate-500 mt-1 font-medium leading-relaxed">
-                Pagamento único para acessar o aplicativo e seus recursos, sem cobranças mensais.
-              </p>
-            </div>
+          <li className="flex items-center gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+            <span>Guia Anti-Direitos Autorais.</span>
           </li>
-
-          <li className="flex items-start gap-4">
-            <MessageCircle className="w-6 h-6 text-[#00A3FF] flex-shrink-0 mt-0.5" strokeWidth={2} />
-            <div>
-              <h4 className="font-bold text-slate-900">Suporte Especializado</h4>
-              <p className="text-sm text-slate-500 mt-1 font-medium leading-relaxed">
-                Conte com uma equipe pronta para ajudar sempre que precisar.
-              </p>
-            </div>
+          <li className="flex items-center gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+            <span>+ Todos os 4 bônus exclusivos.</span>
           </li>
         </ul>
 
-        {/* Bonus Box */}
-        <div className="bg-slate-50 rounded-xl p-6 sm:p-8 mt-10 border border-slate-100">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Sparkles className="w-5 h-5 text-slate-800" />
-            <h4 className="font-bold text-slate-900 text-lg">Bônus Exclusivos</h4>
-          </div>
-          <ul className="space-y-4">
-            {[
-              "Guia de Monetização em 7 Dias", 
-              "Modelos prontos de thumbs e capas", 
-              "Mini curso de Edição com IA", 
-              "Acesso ao grupo fechado de alunos"
-            ].map((bonus, i) => (
-              <li key={i} className="flex items-center gap-3 text-sm text-slate-600 font-bold">
-                <Check className="w-4 h-4 text-[#00A3FF] flex-shrink-0" strokeWidth={3} />
-                {bonus}
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Price Section */}
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-1.5 text-emerald-500 font-black text-[13px] tracking-wide mb-2 uppercase">
-            <span className="text-base">🔥</span> INVESTIMENTO ÚNICO
+        <div className="text-center bg-slate-50 rounded-2xl p-6 border border-slate-200 mt-8 mb-8">
+          <div className="text-slate-500 line-through text-sm font-bold mb-1">
+            Preço normal: R$ 197,00
           </div>
-          <div className="text-slate-400 line-through text-[13px] font-bold mb-1">
-            De R$ 197,00
+          <div className="text-slate-600 font-bold mb-1">
+            Por apenas
           </div>
-          <div className="flex justify-center items-start text-[#00A3FF] font-black tracking-tighter leading-none mb-2">
-            <span className="text-4xl md:text-5xl mt-2 mr-1">R$</span>
-            <span className="text-[5rem] md:text-[6.5rem]">57,97</span>
+          <div className="flex justify-center items-start text-[#4C8DF7] font-black tracking-tighter leading-none mb-2">
+            <span className="text-2xl mt-1.5 mr-1 text-slate-700">12x</span>
+            <span className="text-4xl md:text-5xl mt-1 mr-1 text-slate-700">R$</span>
+            <span className="text-[4rem] md:text-[5rem]">9,70</span>
           </div>
-          <div className="text-slate-500 text-sm font-bold mt-4 md:mt-6">
-            ou 12x de R$ 5,82
-          </div>
-        </div>
-
-        {/* Trust Badges */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center mt-10 mb-8">
-          <div className="flex flex-col items-center gap-2">
-            <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-[#00A3FF]" strokeWidth={1.5} />
-            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Checkout Seguro</span>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <ShoppingBag className="w-8 h-8 sm:w-10 sm:h-10 text-[#00A3FF]" strokeWidth={1.5} />
-            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Satisfação Garantida</span>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <Lock className="w-8 h-8 sm:w-10 sm:h-10 text-[#00A3FF]" strokeWidth={1.5} />
-            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Privacidade Protegida</span>
+          <div className="text-slate-500 text-sm font-bold mt-2">
+            ou R$ 97,00 à vista
           </div>
         </div>
 
         {/* CTA Button */}
         <a 
           href={CHECKOUT_URL} 
-          className="block w-full text-center bg-[#00A3FF] text-white font-black text-lg py-5 rounded-lg shadow-[0_8px_20px_rgba(0,163,255,0.25)] hover:bg-[#0092E5] hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+          className="block w-full text-center bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-black text-lg py-5 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
         >
-          COMEÇAR AGORA
+          QUERO GARANTIR MEU ACESSO COM DESCONTO
         </a>
+        
+        {/* Guarantee */}
+        <div className="text-center mt-6 flex flex-col items-center gap-2">
+          <div className="flex gap-1 justify-center">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span className="text-xs sm:text-sm text-slate-500 font-medium">Garantia de 7 dias incluída</span>
+        </div>
+
+        {/* Trust Badges */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center mt-8">
+          <div className="flex flex-col items-center gap-2">
+            <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-green-500" strokeWidth={1.5} />
+            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Checkout Seguro</span>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <ShoppingBag className="w-8 h-8 sm:w-10 sm:h-10 text-[#4C8DF7]" strokeWidth={1.5} />
+            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Satisfação Garantida</span>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <Lock className="w-8 h-8 sm:w-10 sm:h-10 text-slate-700" strokeWidth={1.5} />
+            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Privacidade Protegida</span>
+          </div>
+        </div>
 
       </div>
     </section>

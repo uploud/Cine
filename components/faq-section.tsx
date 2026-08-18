@@ -6,32 +6,28 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 const faqs = [
   {
-    question: "Preciso saber editar vídeos?",
-    answer: "Não. O app foi criado pra quem não sabe editar. A IA faz o trabalho pesado.",
+    question: "Funciona no meu celular?",
+    answer: "O aplicativo roda no computador, mas você pode usar todo o material gerado e gerenciar seu canal pelo celular sem problemas.",
   },
   {
-    question: "Funciona para quais plataformas?",
-    answer: "YouTube, Instagram (Reels), TikTok, Facebook e qualquer plataforma de vídeo.",
+    question: "Preciso de um computador forte?",
+    answer: "Não. A maior parte do processamento (como a inteligência artificial para roteiros) roda em nossos servidores ou são otimizados para não exigir placa de vídeo dedicada pesada no seu uso.",
   },
   {
-    question: "Funciona para Canais Darks de edit de filmes, séries e animes?",
-    answer: "É exatamente pra isso que foi feito. Roteiro, cortes, montagem e trilha rodam sem você aparecer.",
+    question: "Tem risco de direitos autorais (copyright)?",
+    answer: "O risco zero não existe no YouTube, mas o WinTube Academy foca exatamente em estratégias para transformar o conteúdo (Cortes Dinâmicos, Reenquadramento, Legendas e Filtros) para que o YouTube o considere conteúdo original, diminuindo drasticamente os bloqueios.",
   },
   {
-    question: "Preciso de computador potente?",
-    answer: "Roda em Windows e Mac comuns. Não precisa de máquina profissional de edição.",
+    question: "A inteligência artificial é paga por fora?",
+    answer: "Não. O acesso ao sistema inclui todas as integrações sem cobrança extra ou limite surpresa de créditos.",
   },
   {
-    question: "Em quanto tempo vejo resultado?",
-    answer: "Dá pra ter os Canais Darks configurados e publicando em poucos dias. Resultado financeiro depende de consistência, nicho e execução - não prometemos valor nenhum.",
+    question: "Eu preciso assinar mensalmente?",
+    answer: "Não! Acesso vitalício com pagamento único.",
   },
   {
-    question: "Tem mensalidade ou créditos?",
-    answer: "Não. Pagamento único, vídeos ilimitados.",
-  },
-  {
-    question: "Tenho garantia?",
-    answer: "7 dias incondicional. Não gostou, devolvemos 100%.",
+    question: "Vou ter suporte se tiver dúvidas?",
+    answer: "Sim, você tem acesso ao grupo de alunos e ao nosso time de suporte via WhatsApp para tirar qualquer dúvida.",
   },
 ]
 
@@ -47,9 +43,9 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls={contentId}
-        className="w-full flex items-center justify-between gap-4 py-5 sm:py-6 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
+        className="w-full flex items-center justify-between gap-4 py-5 sm:py-6 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4C8DF7] focus-visible:ring-offset-2 rounded-sm"
       >
-        <span className="font-semibold text-base sm:text-lg text-slate-900 group-hover:text-primary transition-colors">
+        <span className="font-semibold text-base sm:text-lg text-slate-900 group-hover:text-[#4C8DF7] transition-colors">
           {question}
         </span>
         <ChevronDown
@@ -76,8 +72,8 @@ export function FaqSection() {
       <div className="max-w-3xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              Perguntas <span className="text-primary">Frequentes</span>
+            <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
+              Dúvidas <span className="text-[#4C8DF7]">Frequentes</span>
             </h2>
           </div>
         </ScrollReveal>
