@@ -28,19 +28,19 @@ export default function Home() {
         {/* 3. OS 4 PILARES */}
         <RevealSection />
 
-        {/* 4. SEUS VÍDEOS VÃO FICAR NESSE FORMATO */}
+        {/* 4. O RESULTADO? */}
+        <ProblemSection />
+
+        {/* 5. HISTÓRIA / FUNDADOR */}
+        <StorySection />
+
+        {/* 6. FERRAMENTAS EXCLUSIVAS */}
+        <FeaturesSection />
+
+        {/* 7. SEUS VÍDEOS VÃO FICAR NESSE FORMATO */}
         <ScrollReveal animation="fade-up" duration={700}>
           <VideoShowcaseSection />
         </ScrollReveal>
-
-        {/* 5. FERRAMENTAS EXCLUSIVAS */}
-        <FeaturesSection />
-
-        {/* 6. O RESULTADO? */}
-        <ProblemSection />
-
-        {/* 7. HISTÓRIA / FUNDADOR */}
-        <StorySection />
 
         {/* 8. ACESSO VITALÍCIO / COMPARATIVO */}
         <ComparisonSection />

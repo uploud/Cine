@@ -38,7 +38,7 @@ export function StorySection() {
           </ScrollReveal>
           <ScrollReveal animation="fade-up" delay={200} duration={600}>
             <p>
-              ✨ Mas a verdade é: se naquela época eu tivesse a estrutura que criei agora, teria feito um estrago ainda maior. ⚡ E o detalhe mais importante: Nunca precisei aparecer em frente às câmeras, nunca implorei por inscritos, e mesmo assim consegui escalar meu canal de filmes e séries no manual. Agora, com o Cine Builder, tudo ficou mais rápido, fácil e seguro.
+              ✨ Mas a verdade é: se naquela época eu tivesse a estrutura que criei agora, teria feito um estrago ainda maior. ⚡ E o detalhe mais importante: Nunca precisei aparecer em frente às câmeras, nunca implorei por inscritos, e mesmo assim consegui escalar meu canal de filmes e séries no manual. Agora, com o WinTube, tudo ficou mais rápido, fácil e seguro.
             </p>
           </ScrollReveal>
           <ScrollReveal animation="fade-up" delay={300} duration={600}>

@@ -1,15 +1,17 @@
 export function Marquee() {
   const items = [
     "WINTUBE",
-    "WINTUBE",
-    "WINTUBE",
-    "WINTUBE",
+    "AUTOMAÇÃO",
+    "CORTES COM IA",
+    "LEGENDA VIRAL",
+    "SEM APARECER",
+    "MONETIZAÇÃO",
   ]
 
   return (
     <div className="bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] border-y border-wt-blue/20 py-4 overflow-hidden whitespace-nowrap">
       <div className="flex animate-marquee">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <div key={i} className="flex">
             {items.map((item, j) => (
               <span

@@ -119,10 +119,58 @@ export function RevealSection() {
 
           {/* Content */}
           <div className="px-4 sm:px-6 max-w-7xl mx-auto w-full">
-            <div className="flex flex-col md:flex-row gap-8 lg:gap-16 items-center">
+            <div className="flex flex-col gap-8 lg:gap-12 items-center">
               
-              {/* Scrolling Text Items (Clustered) */}
-              <div className="w-full md:w-1/2 flex flex-col gap-3 sm:gap-4">
+              {/* Laptop Centered */}
+              <div className="w-full max-w-4xl flex flex-col items-center">
+                <div className="relative w-full aspect-[16/10] sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden border-4 sm:border-8 border-[#2a2a2a] bg-[#1a1a1a] shadow-2xl">
+                  {/* Mac window controls */}
+                  <div className="absolute top-0 left-0 w-full h-5 sm:h-6 bg-[#2a2a2a] flex items-center px-2 sm:px-3 gap-1.5 z-20">
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff5f56]" />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#27c93f]" />
+                    <div className="ml-auto text-[10px] text-slate-400 font-mono hidden sm:block">
+                      wintube.app
+                    </div>
+                  </div>
+                  {/* Videos */}
+                  <div className="absolute top-5 sm:top-6 left-0 w-full h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-slate-900">
+                    {steps.map((step, i) => (
+                      <video
+                        key={i}
+                        src={step.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+                          activeIndex === i ? "opacity-100 z-10" : "opacity-0 z-0"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Laptop base (desktop only for realism) */}
+                <div className="hidden md:block relative w-[110%] -left-[5%] h-3 sm:h-4 bg-[#3a3a3a] rounded-b-xl sm:rounded-b-2xl shadow-2xl">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 sm:h-2 bg-[#2a2a2a] rounded-b-md" />
+                </div>
+                
+                {/* Pagination Dots */}
+                <div className="flex justify-center gap-2 mt-6 sm:mt-8 mb-4 sm:mb-8">
+                  {steps.map((_, i) => (
+                    <div
+                      key={i}
+                      className={`h-2 rounded-full transition-all duration-500 ${
+                        activeIndex === i ? "w-8 bg-[#4C8DF7]" : "w-2 bg-slate-800"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Text Items */}
+              <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 {steps.map((step, i) => {
                   const isActive = activeIndex === i
                   return (
@@ -165,54 +213,6 @@ export function RevealSection() {
                     </div>
                   )
                 })}
-              </div>
-
-              {/* Laptop */}
-              <div className="w-full md:w-1/2 flex flex-col items-center">
-                <div className="relative w-full aspect-[16/10] sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden border-4 sm:border-8 border-[#2a2a2a] bg-[#1a1a1a] shadow-2xl">
-                  {/* Mac window controls */}
-                  <div className="absolute top-0 left-0 w-full h-5 sm:h-6 bg-[#2a2a2a] flex items-center px-2 sm:px-3 gap-1.5 z-20">
-                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff5f56]" />
-                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ffbd2e]" />
-                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#27c93f]" />
-                    <div className="ml-auto text-[10px] text-slate-400 font-mono hidden sm:block">
-                      wintube.app
-                    </div>
-                  </div>
-                  {/* Videos */}
-                  <div className="absolute top-5 sm:top-6 left-0 w-full h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-slate-900">
-                    {steps.map((step, i) => (
-                      <video
-                        key={i}
-                        src={step.video}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
-                          activeIndex === i ? "opacity-100 z-10" : "opacity-0 z-0"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Laptop base (desktop only for realism) */}
-                <div className="hidden md:block relative w-[110%] -left-[5%] h-3 sm:h-4 bg-[#3a3a3a] rounded-b-xl sm:rounded-b-2xl shadow-2xl">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 sm:h-2 bg-[#2a2a2a] rounded-b-md" />
-                </div>
-                
-                {/* Pagination Dots */}
-                <div className="flex justify-center gap-2 mt-6 sm:mt-8">
-                  {steps.map((_, i) => (
-                    <div
-                      key={i}
-                      className={`h-2 rounded-full transition-all duration-500 ${
-                        activeIndex === i ? "w-8 bg-[#4C8DF7]" : "w-2 bg-slate-800"
-                      }`}
-                    />
-                  ))}
-                </div>
               </div>
 
             </div>
