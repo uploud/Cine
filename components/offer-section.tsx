@@ -61,32 +61,66 @@ export function OfferSection() {
         </h3>
 
         {/* Features List */}
-        <ul className="space-y-4 mb-10 text-slate-700 font-medium">
-          <li className="flex items-center gap-3">
+        <div className="space-y-6 mb-10 text-slate-700 font-medium text-left">
+          
+          <div className="flex items-start gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
+            <div>
+              <span className="font-bold text-slate-900 block">APLICATIVO Wintube</span>
+              <span className="text-sm text-slate-600">Assiste o Vídeo inteiro, escolhe as melhores cenas, Escolher as Melhores falas e gera um roteiro, Gera a marcações do roteiro, e gera cortes inteligentes e REALIZA UM VÍDEO PARA VOCÊ. SÓ ABAIXA E POSTA NO SEU CANAL.</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
             <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span>Acesso completo pra baixar e transcrever.</span>
-          </li>
-          <li className="flex items-center gap-3">
+            <span className="font-bold text-slate-900">Legendas Animadas</span>
+          </div>
+
+          <div className="flex items-center gap-3">
             <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span>Editor IA de corte e legenda.</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span>Ferramentas de roteiro.</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span>Treinamento Passo a Passo WinTube Academy.</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span>Guia Anti-Direitos Autorais.</span>
-          </li>
-          <li className="flex items-center gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span>+ Todos os 4 bônus exclusivos.</span>
-          </li>
-        </ul>
+            <span className="font-bold text-slate-900">Coloca sua Marca no seu vídeo (sua Logo nele)</span>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
+            <div>
+              <span className="font-bold text-slate-900 block">Guia Anti-Direitos Autorais</span>
+              <span className="text-sm text-slate-600">Ensina como ajustar vídeos pra evitar bloqueios e manter monetização ativa.</span>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
+            <div>
+              <span className="font-bold text-slate-900 block">Acesso ao Treinamento Wintube Academy</span>
+              <span className="text-sm text-slate-600">Passo a passo pra montar seu canal e começar a lucrar.</span>
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-slate-100">
+            <div className="font-black text-slate-900 uppercase mb-4 flex items-center gap-2">
+              <span className="text-xl">🎁</span> Bônus Exclusivos
+            </div>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+                <span className="text-sm font-bold text-slate-800">Guia de Monetização em 7 Dias</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+                <span className="text-sm font-bold text-slate-800">Modelos prontos de títulos e capas</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+                <span className="text-sm font-bold text-slate-800">Mini curso de Edição com IA</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
+                <span className="text-sm font-bold text-slate-800">Acesso ao grupo fechado de alunos</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
         {/* Price Section */}
         <div className="text-center bg-slate-50 rounded-2xl p-6 border border-slate-200 mt-8 mb-8">
@@ -108,9 +142,9 @@ export function OfferSection() {
         {/* CTA Button */}
         <a 
           href={CHECKOUT_URL} 
-          className="block w-full text-center bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-black text-lg py-5 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+          className="block w-full text-center bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-black text-lg sm:text-xl py-5 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
         >
-          QUERO GARANTIR MEU ACESSO COM DESCONTO
+          GARANTA SUA VAGA!
         </a>
         
         {/* Guarantee */}
