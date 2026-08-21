@@ -36,6 +36,15 @@ export function StorySection() {
               📊 Escalei meu canal no YouTube, 100% no manual. Passei dias e noites editando, postando, testando formatos, brigando contra bloqueios… e mesmo assim consegui crescer.
             </p>
           </ScrollReveal>
+          <ScrollReveal animation="fade-up" delay={150} duration={600}>
+            <div className="flex justify-center my-4 sm:my-6">
+              <img
+                src="https://i.imgur.com/qbXlQDP.png"
+                alt="Meus Resultados"
+                className="w-auto h-auto max-w-full rounded-xl shadow-md"
+              />
+            </div>
+          </ScrollReveal>
           <ScrollReveal animation="fade-up" delay={200} duration={600}>
             <p>
               ✨ Mas a verdade é: se naquela época eu tivesse a estrutura que criei agora, teria feito um estrago ainda maior. ⚡ E o detalhe mais importante: Nunca precisei aparecer em frente às câmeras, nunca implorei por inscritos, e mesmo assim consegui escalar meu canal de filmes e séries no manual. Agora, com o WinTube, tudo ficou mais rápido, fácil e seguro.
