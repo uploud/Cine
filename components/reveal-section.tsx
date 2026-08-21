@@ -47,7 +47,7 @@ export function RevealSection() {
                   OS 4 PILARES DO <span className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]">SISTEMA WINTUBE</span>
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-bold">
-                  Você não precisa mais perder noites cortando e legendando — o pipeline faz tudo enquanto você foca em crescer.
+                  Você não precisa mais perder noites cortando, Editando e legendandom O Sistema Wintube faz tudo enquanto você foca em crescer.
                 </p>
               </ScrollReveal>
             </div>

@@ -13,6 +13,7 @@ import { ResultsSection } from "@/components/results-section"
 import { OfferSection } from "@/components/offer-section"
 import { CommunitySection } from "@/components/community-section"
 import { FaqSection } from "@/components/faq-section"
+import { AgencyBadge } from "@/components/agency-badge"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -60,7 +61,10 @@ export default function Home() {
         {/* 13. COMUNIDADE */}
         <CommunitySection />
 
-        {/* 14. DÚVIDAS FREQUENTES */}
+        {/* 14. INSTAGRAM */}
+        <AgencyBadge />
+
+        {/* 15. DÚVIDAS FREQUENTES */}
         <FaqSection />
       </main>
 

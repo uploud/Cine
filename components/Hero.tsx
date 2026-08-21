@@ -5,34 +5,33 @@ import { CustomVslPlayer } from "./custom-vsl-player"
 
 export function Hero() {
   return (
-    <section className="relative w-full bg-wt-bg overflow-hidden flex flex-col items-center justify-center px-4 pt-20 pb-16">
-      {/* Background Layers */}
-      <div 
-        className="absolute inset-0 pointer-events-none bg-cover bg-center bg-no-repeat opacity-[0.15]"
-        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
-      />
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: `
-          radial-gradient(900px 520px at 12% 88%, rgba(76,141,247,0.20), transparent 60%),
-          radial-gradient(760px 480px at 78% 8%, rgba(106,46,240,0.20), transparent 60%)
-        `
-      }} />
-      <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: `
-          linear-gradient(to right, rgba(255,255,255,0.028) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255,255,255,0.028) 1px, transparent 1px)
-        `,
-        backgroundSize: "64px 64px",
-        maskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)",
-        WebkitMaskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)"
-      }} />
+    <>
+      <div className="w-full bg-[#E50000] text-white font-black text-center py-2 px-4 text-sm sm:text-base tracking-widest uppercase relative z-50">
+        ⚠️ SEGREDO REVELADO DOS TOP CANAIS DE YOUTUBE 2026 ⚠️
+      </div>
+      <section className="relative w-full bg-wt-bg overflow-hidden flex flex-col items-center justify-center px-4 pt-16 pb-16">
+        {/* Background Layers */}
+        <div 
+          className="absolute inset-0 pointer-events-none bg-cover bg-center bg-no-repeat opacity-[0.15]"
+          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: `
+            radial-gradient(900px 520px at 12% 88%, rgba(76,141,247,0.20), transparent 60%),
+            radial-gradient(760px 480px at 78% 8%, rgba(106,46,240,0.20), transparent 60%)
+          `
+        }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(255,255,255,0.028) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.028) 1px, transparent 1px)
+          `,
+          backgroundSize: "64px 64px",
+          maskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)",
+          WebkitMaskImage: "radial-gradient(700px 460px at 50% 50%, #000 10%, transparent 78%)"
+        }} />
 
-      <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-center text-center">
-        
-        {/* Eyebrow */}
-        <div className="flex items-center gap-4 text-[11px] sm:text-xs font-bold tracking-[0.2em] text-wt-blue uppercase mb-6 bg-wt-blue/10 px-4 py-2 rounded-full border border-wt-blue/20">
-          <span>SEGREDO REVELADO DOS MEUS CANAIS DE YOUTUBE</span>
-        </div>
+        <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-center text-center">
 
         {/* H1 Headline */}
         <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] max-w-5xl mx-auto uppercase"
@@ -60,6 +59,7 @@ export function Hero() {
 
       </div>
     </section>
+    </>
   )
 }
 

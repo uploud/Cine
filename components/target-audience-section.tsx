@@ -27,7 +27,7 @@ const isFor = [
 const isNotFor = [
   "Acha que vai ganhar dinheiro sem aplicar o método.",
   "Quer resultado sem paciência pra aprender.",
-  "Não tem nenhuma fonte de conteúdo própria pra alimentar o pipeline."
+  "Prefere reclamar do algoritmo em vez de usar IA a favor."
 ]
 
 export function TargetAudienceSection() {
