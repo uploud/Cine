@@ -1,4 +1,4 @@
-import { Download, FileText, Scissors, Layers, Music } from "lucide-react"
+import { Download, FileText, Scissors, Layers, Music, Share2 } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const features = [
@@ -31,6 +31,12 @@ const features = [
     title: "Adicione a Música de Fundo",
     description: "Ao finalizar a montagem do vídeo, basta subir a montagem final no aplicativo e colar o link da música de fundo do seu vídeo do YouTube — o sistema irá baixar direto do YouTube e sincronizar ao seu vídeo.",
     icon: Music,
+  },
+  {
+    number: "06",
+    title: "Legendas, Marca D'água e Postagem",
+    description: "Legendas animadas sincronizadas palavra por palavra, marca d'água automática com a sua logo e posta para qualquer plataforma em qualquer formato!",
+    icon: Share2,
   }
 ]
 
