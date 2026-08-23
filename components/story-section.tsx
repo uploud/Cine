@@ -32,9 +32,35 @@ export function StorySection() {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-up" delay={100} duration={600}>
-          <div className="w-full overflow-hidden mt-4">
-            <div className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-8 px-4 sm:px-8 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden">
+          <div className="w-full overflow-hidden mt-4 relative">
+            <style>{`
+              @keyframes scroll-marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+              }
+              .animate-marquee {
+                display: flex;
+                width: max-content;
+                animation: scroll-marquee 40s linear infinite;
+              }
+              .animate-marquee:hover {
+                animation-play-state: paused;
+              }
+            `}</style>
+            
+            {/* Fade gradients on edges */}
+            <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+            
+            <div className="animate-marquee gap-4 sm:gap-6 py-4">
               {[
+                "https://i.imgur.com/RE4bi8d.jpeg",
+                "https://i.imgur.com/qbXlQDP.png",
+                "https://i.imgur.com/sNxtaOA.png",
+                "https://i.imgur.com/0qy8uHK.png",
+                "https://i.imgur.com/6mQzBra.png",
+                "https://i.imgur.com/kyD57Gu.png",
+                // Duplicate for infinite scroll
                 "https://i.imgur.com/RE4bi8d.jpeg",
                 "https://i.imgur.com/qbXlQDP.png",
                 "https://i.imgur.com/sNxtaOA.png",
@@ -46,15 +72,9 @@ export function StorySection() {
                   key={i}
                   src={img}
                   alt={`Exemplo ${i + 1}`}
-                  className="snap-center shrink-0 w-[80vw] sm:w-[320px] md:w-[380px] h-auto object-contain rounded-2xl shadow-xl border border-slate-200 bg-white"
+                  className="shrink-0 w-[280px] sm:w-[320px] md:w-[380px] h-auto object-contain rounded-2xl shadow-xl border border-slate-200 bg-white"
                 />
               ))}
-            </div>
-            
-            <div className="flex justify-center mt-2 gap-2 hidden sm:flex">
-               <span className="text-slate-400 text-sm font-medium animate-pulse">
-                  Deslize para o lado para ver mais ➔
-               </span>
             </div>
           </div>
         </ScrollReveal>
