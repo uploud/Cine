@@ -6,9 +6,6 @@ import { CustomVslPlayer } from "./custom-vsl-player"
 export function Hero() {
   return (
     <>
-      <div className="w-full bg-[#E50000] text-white font-black text-center py-2 px-4 text-sm sm:text-base tracking-widest uppercase relative z-50">
-        ⚠️ SEGREDO REVELADO DOS TOP CANAIS DE YOUTUBE 2026 ⚠️
-      </div>
       <section className="relative w-full bg-wt-bg overflow-hidden flex flex-col items-center justify-center px-4 pt-16 pb-16">
         {/* Background Layers */}
         <div 
@@ -32,6 +29,11 @@ export function Hero() {
         }} />
 
         <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-center text-center">
+
+        {/* Top Badge */}
+        <div className="inline-block bg-red-500/10 border border-red-500/20 text-red-500 font-bold text-xs sm:text-sm tracking-widest uppercase py-1.5 px-4 rounded-full mb-6">
+          ⚠️ SEGREDO REVELADO DOS TOP CANAIS DE YOUTUBE 2026 ⚠️
+        </div>
 
         {/* H1 Headline */}
         <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] max-w-5xl mx-auto uppercase"
