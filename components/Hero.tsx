@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { CustomVslPlayer } from "./custom-vsl-player"
+
 
 export function Hero() {
   return (
@@ -46,10 +46,6 @@ export function Hero() {
           Monte seu canal de filmes e séries com IA e comece a lucrar em até 12 dias, mesmo sem aparecer.
         </p>
 
-        {/* VSL Player */}
-        <div className="w-full max-w-4xl mx-auto mt-10 sm:mt-12 mb-8 relative z-20">
-          <CustomVslPlayer videoId="9NyiHkeaNog" />
-        </div>
 
         {/* CTA */}
         <a 
