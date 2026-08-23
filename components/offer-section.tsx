@@ -66,33 +66,39 @@ export function OfferSection() {
           <div className="flex items-start gap-3">
             <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
             <div>
-              <span className="font-bold text-slate-900 block">APLICATIVO Wintube</span>
-              <span className="text-sm text-slate-600">Assiste o Vídeo inteiro, escolhe as melhores cenas, Escolher as Melhores falas e gera um roteiro, Gera a marcações do roteiro, e gera cortes inteligentes e REALIZA UM VÍDEO PARA VOCÊ. SÓ ABAIXA E POSTA NO SEU CANAL.</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span className="font-bold text-slate-900">Legendas Animadas</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-            <span className="font-bold text-slate-900">Coloca sua Marca no seu vídeo (sua Logo nele)</span>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
-            <div>
-              <span className="font-bold text-slate-900 block">Guia Anti-Direitos Autorais</span>
-              <span className="text-sm text-slate-600">Ensina como ajustar vídeos pra evitar bloqueios e manter monetização ativa.</span>
+              <span className="font-bold text-slate-900 block">Aplicativo WinTube</span>
+              <span className="text-sm text-slate-600">Assiste o vídeo inteiro, escolhe as melhores cenas e falas, gera roteiro, marcações e cortes inteligentes. Só baixa e posta no seu canal.</span>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
             <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
             <div>
-              <span className="font-bold text-slate-900 block">Acesso ao Treinamento Wintube Academy</span>
+              <span className="font-bold text-slate-900 block">Legendas Animadas</span>
+              <span className="text-sm text-slate-600">Palavra por palavra, sincronizadas automaticamente.</span>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
+            <div>
+              <span className="font-bold text-slate-900 block">Marca D'água personalizada</span>
+              <span className="text-sm text-slate-600">Coloca sua logo no vídeo automaticamente.</span>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
+            <div>
+              <span className="font-bold text-slate-900 block">Guia de Postagem Segura</span>
+              <span className="text-sm text-slate-600">Boas práticas pra manter seu canal saudável em qualquer plataforma.</span>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
+            <div>
+              <span className="font-bold text-slate-900 block">Acesso ao Treinamento WinTube Academy</span>
               <span className="text-sm text-slate-600">Passo a passo pra montar seu canal e começar a lucrar.</span>
             </div>
           </div>

@@ -58,11 +58,11 @@ export default function Home() {
         {/* 12. OFERTA */}
         <OfferSection />
 
-        {/* 13. COMUNIDADE */}
-        <CommunitySection />
-
-        {/* 14. INSTAGRAM */}
+        {/* 13. INSTAGRAM */}
         <AgencyBadge />
+
+        {/* 14. COMUNIDADE */}
+        <CommunitySection />
 
         {/* 15. DÚVIDAS FREQUENTES */}
         <FaqSection />

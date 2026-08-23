@@ -2,32 +2,20 @@ import { CheckCircle2, XCircle } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 const isFor = [
-  {
-    title: "Pra quem quer começar do zero em canal em Todas as Plataformas",
-    desc: "Mesmo sem saber editar — a IA faz o trabalho pesado pra você."
-  },
-  {
-    title: "Pra quem quer transformar filmes e séries ANIMES PODCAST LIVES em canais lucrativos",
-    desc: "Aprende a criar vídeos automáticos que rendem visualizações e receita todos os dias, mesmo dormindo."
-  },
-  {
-    title: "Pra quem quer uma renda extra real com IA",
-    desc: "Usa o mesmo sistema que já gerou milhares de views e lucros pra quem começou do zero sem depender de clientes ou freelas."
-  },
-  {
-    title: "Pra quem curte tecnologia e quer aproveitar a onda da IA",
-    desc: "Descobre como usar ferramentas práticas pra criar, editar e postar automaticamente."
-  },
-  {
-    title: "Pra quem tá cansado de só consumir e quer ganhar com isso",
-    desc: "Chega de só assistir. Agora você aprende a lucrar com o conteúdo."
-  }
+  "Criadores que querem crescer no YouTube sem aparecer na câmera.",
+  "Pessoas cansadas de perder horas editando vídeos manualmente.",
+  "Quem quer transformar podcasts, lives e vídeos longos em canais lucrativos usando IA.",
+  "Criadores que querem postar vídeos todos os dias no piloto automático.",
+  "Quem quer monetizar canais dark sem depender de editor, roteirista ou equipe.",
+  "Pessoas que querem escalar canais com vídeos únicos, no seu próprio ritmo."
 ]
 
 const isNotFor = [
-  "Acha que vai ganhar dinheiro sem aplicar o método.",
-  "Quer resultado sem paciência pra aprender.",
-  "Prefere reclamar do algoritmo em vez de usar IA a favor."
+  "Quem prefere continuar editando vídeo por vídeo manualmente.",
+  "Pessoas que acham que vão ganhar dinheiro sem postar conteúdo.",
+  "Quem quer resultados rápidos sem aprender o método.",
+  "Criadores acomodados que continuam usando conteúdo genérico igual todo mundo.",
+  "Pessoas que não querem aproveitar IA para crescer mais rápido no YouTube."
 ]
 
 export function TargetAudienceSection() {
@@ -57,14 +45,13 @@ export function TargetAudienceSection() {
                   É PARA VOCÊ SE...
                 </h3>
               </div>
-              <ul className="space-y-6">
-                {isFor.map((item, i) => (
-                  <li key={i} className="flex gap-4 items-start">
-                    <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="text-lg font-bold text-slate-800 leading-tight mb-1">{item.title}</h4>
-                      <p className="text-slate-600 font-medium leading-relaxed">{item.desc}</p>
-                    </div>
+              <ul className="space-y-4">
+                {isFor.map((point, i) => (
+                  <li key={i} className="flex gap-4 items-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0" />
+                    <span className="text-base sm:text-lg text-slate-800 font-bold leading-tight">
+                      {point}
+                    </span>
                   </li>
                 ))}
               </ul>
