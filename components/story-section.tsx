@@ -19,9 +19,9 @@ export function StorySection() {
           <div className="text-center mb-10">
             <div className="flex justify-center mb-8">
               <img
-                src="https://i.imgur.com/Jc0zSLk.jpeg"
-                alt="Criador do WinTube"
-                className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full shadow-xl border-4 border-white"
+                src="https://i.imgur.com/tqVJPWa.png"
+                alt="WinTube Logo"
+                className="w-48 sm:w-56 h-auto object-contain drop-shadow-lg"
               />
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-display)] font-extrabold mb-6 text-slate-900 tracking-tight uppercase">
