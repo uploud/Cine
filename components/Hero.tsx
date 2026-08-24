@@ -46,19 +46,7 @@ export function Hero() {
           Monte seu canal de filmes e séries com IA e comece a lucrar em até 12 dias, mesmo sem aparecer.
         </p>
 
-        {/* VSL */}
-        <div className="w-full max-w-4xl mt-10 mb-10 aspect-video rounded-2xl overflow-hidden shadow-[0_0_50px_-12px_rgba(76,141,247,0.4)] border border-white/10 bg-black/50 backdrop-blur-sm">
-          <iframe 
-            width="100%" 
-            height="100%" 
-            src="https://www.youtube.com/embed/r14Lin6bGoc?rel=0" 
-            title="Video Sales Letter" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerPolicy="strict-origin-when-cross-origin" 
-            allowFullScreen
-          ></iframe>
-        </div>
+
 
         {/* CTA */}
         <a 
