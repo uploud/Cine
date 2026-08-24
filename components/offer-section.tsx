@@ -1,19 +1,10 @@
 import React from "react"
 import { 
-  Smartphone, 
-  LifeBuoy, 
-  GraduationCap, 
-  Infinity as InfinityIcon, 
-  CreditCard, 
-  MessageCircle, 
-  Sparkles, 
   Check, 
   Shield, 
   ShoppingBag, 
   Lock 
 } from "lucide-react"
-
-const CHECKOUT_URL = "https://pay.kiwify.com.br/yTa2MmY"
 
 export function OfferSection() {
   return (
@@ -32,152 +23,222 @@ export function OfferSection() {
         />
       </div>
 
-      <div className="w-full max-w-[600px] bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.05)] border border-slate-100 p-6 sm:p-10 md:p-12 relative overflow-hidden">
-        {/* Top accent */}
-        <div className="absolute top-0 left-0 w-full h-1.5 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]" />
-
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-[1.75rem] md:text-4xl font-black text-slate-900 uppercase tracking-tight leading-tight">
-            Acesso Vitalício ao <br/> <span className="text-[#4C8DF7]">APP Completo</span>
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium">
-            Acesso imediato e vitalício, com todas as atualizações inclusas.
-          </p>
-        </div>
-
-        {/* Logo */}
-        <div className="flex justify-center mb-12">
-          <img 
-            src="https://i.imgur.com/tqVJPWa.png" 
-            alt="WinTube" 
-            className="h-14 sm:h-16 object-contain"
-          />
-        </div>
-
-        {/* List Header */}
-        <h3 className="font-black text-lg md:text-xl text-slate-900 uppercase mb-6 text-center">
-          VOCÊ VAI RECEBER:
-        </h3>
-
-        {/* Features List */}
-        <div className="space-y-6 mb-10 text-slate-700 font-medium text-left">
+      <div className="w-full max-w-[1100px] flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch mt-4">
+        
+        {/* Offer 1: WinTube Essencial */}
+        <div className="w-full lg:w-1/2 bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.05)] border border-slate-200 p-6 sm:p-8 relative overflow-hidden flex flex-col">
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-300" />
           
-          <div className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
-            <div>
-              <span className="font-bold text-slate-900 block">Aplicativo WinTube</span>
-              <span className="text-sm text-slate-600">Assiste o vídeo inteiro, escolhe as melhores cenas e falas, gera roteiro, marcações e cortes inteligentes. Só baixa e posta no seu canal.</span>
-            </div>
+          <div className="text-center mb-6">
+            <h2 className="text-[1.75rem] font-black text-slate-900 uppercase tracking-tight leading-tight">
+              WinTube
+            </h2>
+            <p className="text-sm text-slate-500 mt-1 font-medium uppercase">
+              O essencial pra começar
+            </p>
           </div>
 
-          <div className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
-            <div>
-              <span className="font-bold text-slate-900 block">Legendas Animadas</span>
-              <span className="text-sm text-slate-600">Palavra por palavra, sincronizadas automaticamente.</span>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
-            <div>
-              <span className="font-bold text-slate-900 block">Marca D'água personalizada</span>
-              <span className="text-sm text-slate-600">Coloca sua logo no vídeo automaticamente.</span>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
-            <div>
-              <span className="font-bold text-slate-900 block">Guia de Postagem Segura</span>
-              <span className="text-sm text-slate-600">Boas práticas pra manter seu canal saudável em qualquer plataforma.</span>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" strokeWidth={3} />
-            <div>
-              <span className="font-bold text-slate-900 block">Acesso ao Treinamento WinTube Academy</span>
-              <span className="text-sm text-slate-600">Passo a passo pra montar seu canal e começar a lucrar.</span>
-            </div>
-          </div>
-
-          <div className="pt-4 border-t border-slate-100">
-            <div className="font-black text-slate-900 uppercase mb-4 flex items-center gap-2">
-              <span className="text-xl">🎁</span> Bônus Exclusivos
-            </div>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-                <span className="text-sm font-bold text-slate-800">Guia de Monetização em 7 Dias</span>
+          <div className="flex-grow">
+            <ul className="space-y-4 text-slate-700 font-medium text-left mb-8">
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-sm">Acesso completo pra baixar e transcrever.</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-                <span className="text-sm font-bold text-slate-800">Modelos prontos de títulos e capas</span>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-sm">Ferramentas de roteiro.</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-                <span className="text-sm font-bold text-slate-800">Mini curso de Edição com IA</span>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-sm">Treinamento passo a passo WinTube Academy.</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-500 flex-shrink-0" strokeWidth={3} />
-                <span className="text-sm font-bold text-slate-800">Acesso ao grupo fechado de alunos</span>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-sm">Guia Anti-Direitos Autorais.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-sm font-bold">+ Todos os 4 bônus exclusivos.</span>
               </li>
             </ul>
           </div>
+
+          {/* Price Section */}
+          <div className="text-center bg-slate-50 rounded-xl p-5 border border-slate-200 mb-6 mt-auto">
+            <div className="text-slate-600 font-bold mb-1">Por apenas</div>
+            <div className="flex justify-center items-start text-slate-900 font-black tracking-tighter leading-none mb-1">
+              <span className="text-2xl mt-1 mr-1 text-slate-700">R$</span>
+              <span className="text-[3rem]">19,90</span>
+            </div>
+            <div className="text-slate-500 text-sm font-bold mt-1">
+              ou 6x no cartão
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <a 
+            href="https://pay.kiwify.com.br/OIejjFM" 
+            className="block w-full text-center bg-slate-900 text-white font-black text-lg py-4 rounded-xl hover:bg-slate-800 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+          >
+            QUERO GARANTIR MEU ACESSO
+          </a>
+
+          {/* Guarantee & Trust Badges */}
+          <div className="mt-6 border-t border-slate-100 pt-6">
+            <div className="text-center mb-4">
+              <span className="text-xs sm:text-sm text-slate-600 font-bold uppercase tracking-wider">Garantia de 7 dias</span>
+            </div>
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="flex flex-col items-center gap-1.5">
+                <Shield className="w-6 h-6 text-green-500" strokeWidth={2} />
+                <span className="text-[10px] text-slate-500 font-medium">Checkout Seguro</span>
+              </div>
+              <div className="flex flex-col items-center gap-1.5">
+                <Check className="w-6 h-6 text-blue-500" strokeWidth={3} />
+                <span className="text-[10px] text-slate-500 font-medium">Satisfação Garantida</span>
+              </div>
+              <div className="flex flex-col items-center gap-1.5">
+                <Lock className="w-6 h-6 text-slate-700" strokeWidth={2} />
+                <span className="text-[10px] text-slate-500 font-medium">Privacidade Protegida</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Price Section */}
-        <div className="text-center bg-slate-50 rounded-2xl p-6 border border-slate-200 mt-8 mb-8">
-          <div className="text-slate-500 line-through text-sm font-bold mb-1">
-            Preço normal: R$ 197,00
+        {/* Offer 2: Combo Completo */}
+        <div className="w-full lg:w-1/2 bg-white rounded-2xl shadow-[0_10px_50px_rgba(76,141,247,0.15)] border-2 border-[#4C8DF7] p-6 sm:p-8 relative overflow-hidden flex flex-col lg:scale-[1.02] z-10">
+          <div className="absolute top-0 left-0 w-full h-2 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]" />
+          
+          <div className="absolute top-0 right-8 bg-[#4C8DF7] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-b-lg">
+            MAIS VENDIDO
           </div>
-          <div className="text-slate-600 font-bold mb-1">
-            Por apenas
-          </div>
-          <div className="flex justify-center items-start text-[#4C8DF7] font-black tracking-tighter leading-none mb-2">
-            <span className="text-4xl md:text-5xl mt-1 mr-1 text-slate-700">R$</span>
-            <span className="text-[4rem] md:text-[5rem]">57,97</span>
-          </div>
-          <div className="text-slate-500 text-sm font-bold mt-2">
-            ou 6x de R$ 10,61 no cartão
-          </div>
-        </div>
 
-        {/* CTA Button */}
-        <a 
-          href={CHECKOUT_URL} 
-          className="block w-full text-center bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-black text-lg sm:text-xl py-5 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
-        >
-          GARANTA SUA VAGA!
-        </a>
-        
-        {/* Guarantee */}
-        <div className="text-center mt-6 flex flex-col items-center gap-2">
-          <div className="flex gap-1 justify-center">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
+          <div className="text-center mb-6 mt-2">
+            <h2 className="text-[2rem] font-black text-slate-900 uppercase tracking-tight leading-tight">
+              Combo Completo
+            </h2>
+            <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
+              3 apps + tudo incluso
+            </p>
           </div>
-          <span className="text-xs sm:text-sm text-slate-500 font-medium">Garantia de 7 dias incluída</span>
-        </div>
 
-        {/* Trust Badges */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center mt-8">
-          <div className="flex flex-col items-center gap-2">
-            <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-green-500" strokeWidth={1.5} />
-            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Checkout Seguro</span>
+          <div className="flex-grow">
+            {/* Apps */}
+            <div className="space-y-4 mb-6">
+              <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
+                  <span className="bg-[#4C8DF7] text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">1</span>
+                  App WinTube
+                </div>
+                <p className="text-xs text-slate-600 mb-1">Criação de vídeos de filmes, séries e animes.</p>
+                <p className="text-xs text-green-600 font-bold flex items-center gap-1">
+                  <Check className="w-3 h-3" /> Tudo no automático, sem limites!
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
+                  <span className="bg-[#4C8DF7] text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">2</span>
+                  App ClipCash
+                </div>
+                <p className="text-xs text-slate-600 mb-1">Crie dezenas de cortes virais em segundos.</p>
+                <p className="text-xs text-green-600 font-bold flex items-center gap-1">
+                  <Check className="w-3 h-3" /> Tudo no automático, sem limites!
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
+                  <span className="bg-[#4C8DF7] text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">3</span>
+                  App StickReel
+                </div>
+                <p className="text-xs text-slate-600 mb-1">Transforme qualquer ideia em um vídeo com bonecos palito sem rosto em minutos.</p>
+                <p className="text-xs text-green-600 font-bold flex items-center gap-1">
+                  <Check className="w-3 h-3" /> Tudo no automático, sem limites!
+                </p>
+              </div>
+            </div>
+
+            <div className="font-black text-sm text-slate-900 uppercase mb-3 text-center">E ainda inclui:</div>
+            
+            <ul className="space-y-2.5 text-slate-700 font-medium text-left mb-6">
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px]">Acesso completo pra baixar e transcrever.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px]">Editor IA de corte e legenda.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px]">Ferramentas de roteiro + Assistente IA.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px]">Treinamento passo a passo WinTube Academy.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px]">Vídeos ilimitados.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px]">Grupo WinTube Networking VIP.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px]">Guia Anti-Direitos Autorais.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
+                <span className="text-[13px] font-bold">+ Todos os 4 bônus exclusivos.</span>
+              </li>
+            </ul>
           </div>
-          <div className="flex flex-col items-center gap-2">
-            <ShoppingBag className="w-8 h-8 sm:w-10 sm:h-10 text-[#4C8DF7]" strokeWidth={1.5} />
-            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Satisfação Garantida</span>
+
+          {/* Price Section */}
+          <div className="text-center bg-[#F4F8FF] rounded-xl p-5 border border-[#4C8DF7]/20 mb-6 mt-auto">
+            <div className="text-slate-500 line-through text-xs font-bold mb-1">
+              Preço normal: R$ 197,00
+            </div>
+            <div className="text-[#4C8DF7] font-bold mb-1">Por apenas</div>
+            <div className="flex justify-center items-start text-slate-900 font-black tracking-tighter leading-none mb-1">
+              <span className="text-2xl mt-1 mr-1 text-slate-700">R$</span>
+              <span className="text-[3.5rem]">57,97</span>
+            </div>
+            <div className="text-slate-600 text-sm font-bold mt-2">
+              ou 6x de R$ 10,61 no cartão
+            </div>
           </div>
-          <div className="flex flex-col items-center gap-2">
-            <Lock className="w-8 h-8 sm:w-10 sm:h-10 text-slate-700" strokeWidth={1.5} />
-            <span className="text-[10px] sm:text-xs text-slate-500 font-medium">Privacidade Protegida</span>
+
+          {/* CTA Button */}
+          <a 
+            href="https://pay.kiwify.com.br/yTa2MmY" 
+            className="block w-full text-center bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-black text-lg py-4 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+          >
+            QUERO GARANTIR COM DESCONTO
+          </a>
+
+          {/* Guarantee & Trust Badges */}
+          <div className="mt-6 border-t border-slate-100 pt-6">
+            <div className="text-center mb-4">
+              <span className="text-xs sm:text-sm text-slate-600 font-bold uppercase tracking-wider">Garantia de 7 dias</span>
+            </div>
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="flex flex-col items-center gap-1.5">
+                <Shield className="w-6 h-6 text-green-500" strokeWidth={2} />
+                <span className="text-[10px] text-slate-500 font-medium">Checkout Seguro</span>
+              </div>
+              <div className="flex flex-col items-center gap-1.5">
+                <Check className="w-6 h-6 text-[#4C8DF7]" strokeWidth={3} />
+                <span className="text-[10px] text-slate-500 font-medium">Satisfação Garantida</span>
+              </div>
+              <div className="flex flex-col items-center gap-1.5">
+                <Lock className="w-6 h-6 text-slate-700" strokeWidth={2} />
+                <span className="text-[10px] text-slate-500 font-medium">Privacidade Protegida</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -185,3 +246,4 @@ export function OfferSection() {
     </section>
   )
 }
+

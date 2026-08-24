@@ -1,9 +1,5 @@
-import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { ScrollReveal } from "@/components/scroll-reveal"
-
-const CHECKOUT_URL = "https://pay.kiwify.com.br/yTa2MmY"
-
 export function FinalCtaSection() {
   return (
     <section className="py-8 sm:py-12 px-4 sm:px-6 bg-slate-50 relative overflow-hidden">
