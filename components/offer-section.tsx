@@ -30,36 +30,78 @@ export function OfferSection() {
           <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-300" />
           
           <div className="text-center mb-6">
-            <h2 className="text-[1.75rem] font-black text-slate-900 uppercase tracking-tight leading-tight">
-              WinTube
-            </h2>
-            <p className="text-sm text-slate-500 mt-1 font-medium uppercase">
+            <img 
+              src="https://i.imgur.com/tqVJPWa.png" 
+              alt="WinTube" 
+              className="h-10 sm:h-12 object-contain mx-auto mb-3"
+            />
+            <p className="text-sm text-slate-500 font-black uppercase tracking-wider">
               O essencial pra começar
             </p>
           </div>
 
           <div className="flex-grow">
-            <ul className="space-y-4 text-slate-700 font-medium text-left mb-8">
+            <ul className="space-y-5 text-slate-700 font-medium text-left mb-8">
+              
+              <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
+                  App WinTube
+                </div>
+                <p className="text-xs text-slate-600 mb-1">Criação de vídeos de filmes, séries e animes.</p>
+                <p className="text-xs text-green-600 font-bold flex items-center gap-1">
+                  <Check className="w-3 h-3" /> Tudo no automático, sem limites!
+                </p>
+              </div>
+
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
-                <span className="text-sm">Acesso completo pra baixar e transcrever.</span>
+                <div>
+                  <span className="font-bold text-slate-900 block text-sm">Legendas Animadas</span>
+                  <span className="text-xs text-slate-600 block mt-0.5">Palavra por palavra, sincronizadas automaticamente.</span>
+                </div>
               </li>
+
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
-                <span className="text-sm">Ferramentas de roteiro.</span>
+                <div>
+                  <span className="font-bold text-slate-900 block text-sm">Guia de Postagem Segura</span>
+                  <span className="text-xs text-slate-600 block mt-0.5">Boas práticas pra manter seu canal saudável em qualquer plataforma.</span>
+                </div>
               </li>
+
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
-                <span className="text-sm">Treinamento passo a passo WinTube Academy.</span>
+                <span className="text-sm mt-0.5">Treinamento passo a passo WinTube Academy.</span>
               </li>
+
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
-                <span className="text-sm">Guia Anti-Direitos Autorais.</span>
+                <span className="text-sm mt-0.5">Guia Anti-Direitos Autorais.</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
-                <span className="text-sm font-bold">+ Todos os 4 bônus exclusivos.</span>
-              </li>
+
+              <div className="pt-4 border-t border-slate-100">
+                <div className="font-black text-slate-900 uppercase mb-3 flex items-center gap-2 text-sm">
+                  <span className="text-lg">🎁</span> Bônus Exclusivos
+                </div>
+                <ul className="space-y-2.5">
+                  <li className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0" strokeWidth={3} />
+                    <span className="text-xs font-bold text-slate-800">Guia de Monetização em 7 Dias</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0" strokeWidth={3} />
+                    <span className="text-xs font-bold text-slate-800">Modelos prontos de títulos e capas</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0" strokeWidth={3} />
+                    <span className="text-xs font-bold text-slate-800">Mini curso de Edição com IA</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0" strokeWidth={3} />
+                    <span className="text-xs font-bold text-slate-800">+ Todos os 4 bônus exclusivos.</span>
+                  </li>
+                </ul>
+              </div>
             </ul>
           </div>
 
@@ -68,9 +110,9 @@ export function OfferSection() {
             <div className="text-slate-600 font-bold mb-1">Por apenas</div>
             <div className="flex justify-center items-start text-slate-900 font-black tracking-tighter leading-none mb-1">
               <span className="text-2xl mt-1 mr-1 text-slate-700">R$</span>
-              <span className="text-[3rem]">19,90</span>
+              <span className="text-[3.5rem] leading-[1]">19,90</span>
             </div>
-            <div className="text-slate-500 text-sm font-bold mt-1">
+            <div className="text-slate-500 text-sm font-bold mt-2">
               ou 6x no cartão
             </div>
           </div>
