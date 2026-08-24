@@ -3,41 +3,15 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 const features = [
   {
-    number: "01",
-    title: "Faça o Download das Cenas",
-    description: "Basta colar o link do seu vídeo, live ou podcast no aplicativo que ele irá baixar automaticamente.",
-    icon: Download,
-  },
-  {
-    number: "02",
-    title: "Transcreva as Falas das Cenas",
-    description: 'Ao clicar no botão "Transcrever Cenas", o sistema transcreve automaticamente todas as falas que existem no vídeo, de forma automática para a geração do roteiro com IA.',
+    title: "Roteiro Automático",
+    description: "A IA assiste o conteúdo inteiro, separa as melhores falas e cria o roteiro de corte pronto em minutos.",
     icon: FileText,
   },
   {
-    number: "03",
-    title: "Corte as Melhores Partes",
-    description: 'Após gerar um roteiro com IA, basta colar o roteiro no campo vazio e clicar nos botões "Cortar Cenas" e "Cortar B-rolls" para o corte automático das melhores partes.',
+    title: "Cortes Inteligentes + Legenda",
+    description: "O editor automático aplica cortes, reenquadramento vertical e legenda sincronizada. Você só finaliza e posta.",
     icon: Scissors,
   },
-  {
-    number: "04",
-    title: "Gere a Montagem Automática",
-    description: 'Após a criação dos cortes, basta clicar no botão "Criar Montagem Completa" para que o sistema faça toda a montagem do seu vídeo de forma automática, seguindo boas práticas de edição pra manter seu canal saudável.',
-    icon: Layers,
-  },
-  {
-    number: "05",
-    title: "Adicione a Música de Fundo",
-    description: "Ao finalizar a montagem do vídeo, basta subir a montagem final no aplicativo e colar o link da música de fundo do seu vídeo do YouTube — o sistema irá baixar direto do YouTube e sincronizar ao seu vídeo.",
-    icon: Music,
-  },
-  {
-    number: "06",
-    title: "Legendas, Marca D'água e Postagem",
-    description: "Legendas animadas sincronizadas palavra por palavra, marca d'água automática com a sua logo e posta para qualquer plataforma em qualquer formato!",
-    icon: Share2,
-  }
 ]
 
 export function FeaturesSection() {
@@ -58,22 +32,17 @@ export function FeaturesSection() {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
           {features.map((feature, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
               <div className="group bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-wt-blue/30 hover:shadow-xl transition-all hover:-translate-y-1 h-full flex flex-col">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-wt-blue/10 text-wt-blue flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-6 h-6" />
-                  </div>
-                  <span className="font-mono text-3xl font-black text-slate-300">
-                    {feature.number}
-                  </span>
+                <div className="w-12 h-12 rounded-xl bg-wt-blue/10 text-wt-blue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 font-mono tracking-tight uppercase leading-tight">
+                <h3 className="text-2xl font-bold text-slate-900 mb-3 font-mono tracking-tight uppercase">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 font-medium leading-relaxed font-sans text-base">
+                <p className="text-slate-600 font-medium leading-relaxed font-sans text-lg">
                   {feature.description}
                 </p>
               </div>

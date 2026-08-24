@@ -7,14 +7,26 @@ const steps = [
   {
     icon: Download,
     number: "01",
-    title: "Escolha um filme ou série de preferência",
-    description: "Você não precisa gravar, nem aparecer. Apenas escolha o seu filme ou série de preferência e o Sistema WinTube faz todo o trabalho pesado.",
+    title: "Download + Transcrição Automática",
+    description: "Cola o link do YouTube, Filmes, Séries, Animes, podcast ou live e o APP WinTube baixa e transcreve o conteúdo inteiro sozinho. Você não precisa assistir nada pra achar o trecho bom.",
+  },
+  {
+    icon: FileText,
+    number: "02",
+    title: "Roteiro e Cortes com IA",
+    description: "A IA lê a transcrição, separa os melhores momentos e monta a sequência de corte pronta em minutos.",
   },
   {
     icon: Scissors,
-    number: "02",
-    title: "Selecione o trecho e o APP faz o download em 4k",
-    description: "Selecione os melhores momentos e o APP faz o download em 4K. Edite e poste no seu canal para escalar seus ganhos rapidamente.",
+    number: "03",
+    title: "Montagem Vertical + Legenda Automática",
+    description: "Reenquadramento vertical (com opção de seguir rosto), legenda palavra por palavra sincronizada, exporta em 4K. Você só dá os toques finais e posta.",
+  },
+  {
+    icon: ShieldCheck,
+    number: "04",
+    title: "Guia Anti-Direitos Autorais",
+    description: "Mostra como ajustar o vídeo e proteger seu canal. Sem bloqueios, sem perder monetização.",
   },
 ]
 
