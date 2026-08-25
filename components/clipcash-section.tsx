@@ -20,7 +20,7 @@ export function ClipcashSection() {
         <ScrollReveal animation="fade-up" delay={200} duration={700}>
           <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-200 mb-8 bg-slate-50 relative flex items-center justify-center min-h-[200px]">
             <img 
-              src="blob:https://imgur.com/cdb448b8-65de-499f-b02c-a582487caa7a" 
+              src="https://i.imgur.com/3Is3DXX.png" 
               alt="App ClipCash" 
               className="w-full h-auto object-cover"
               onError={(e) => {
