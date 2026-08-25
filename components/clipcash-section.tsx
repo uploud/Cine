@@ -10,9 +10,15 @@ export function ClipcashSection() {
       <div className="max-w-5xl mx-auto w-full">
         <ScrollReveal animation="fade-up" duration={700}>
           <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight uppercase mb-4">
-            Seus Cortes Prontos em até <span className="text-wt-blue">3 passos</span>
+            2 FERRAMENTAS <span className="text-wt-blue">EXCLUSIVAS</span>
           </h2>
-          <p className="text-slate-400 text-lg sm:text-xl mt-4 max-w-3xl mx-auto leading-relaxed font-medium mb-12">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-300 mt-2 mb-4 uppercase tracking-wider">
+            Para Criação de Cortes E Clipadas
+          </h3>
+          <p className="text-slate-400 text-lg sm:text-xl mt-4 max-w-3xl mx-auto leading-relaxed font-medium mb-4">
+            A ClipCash analisa, corta e monta seus vídeos, deixando tudo pronto para você apenas postar.
+          </p>
+          <p className="text-slate-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed font-medium mb-12">
             Veja como é fácil gerar seus cortes virais com a nossa ferramenta!
           </p>
         </ScrollReveal>
@@ -58,7 +64,7 @@ export function ClipcashSection() {
                 <video src="https://i.imgur.com/v7zyAH4.mp4" className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop playsInline />
               </div>
               <div className="rounded-xl overflow-hidden shadow-2xl border border-slate-800 aspect-[9/16] bg-slate-900 relative">
-                <video src="https://i.imgur.com/v7zyAH4.mp4" className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop playsInline />
+                <video src="https://i.imgur.com/7L6elN2.mp4" className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop playsInline />
               </div>
             </div>
           </div>
