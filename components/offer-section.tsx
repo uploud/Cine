@@ -1,15 +1,15 @@
 import React from "react"
-import { 
-  Check, 
-  Shield, 
-  ShoppingBag, 
-  Lock 
+import {
+  Check,
+  Shield,
+  ShoppingBag,
+  Lock
 } from "lucide-react"
 
 export function OfferSection() {
   return (
     <section id="oferta" className="bg-white py-16 sm:py-20 px-4 sm:px-6 flex flex-col items-center">
-      
+
       {/* Video VSL */}
       <div className="w-full max-w-[800px] rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-slate-200 mb-12 bg-black">
         <video
@@ -24,16 +24,16 @@ export function OfferSection() {
       </div>
 
       <div className="w-full max-w-[1100px] flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch mt-4">
-        
+
         {/* Offer 1: WinTube Essencial */}
         <div className="w-full lg:w-1/2 bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.05)] border border-slate-200 p-6 sm:p-8 relative overflow-hidden flex flex-col">
           <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-300" />
-          
+
           <div className="text-center mb-6">
-            <img 
-              src="https://i.imgur.com/BFzt6aJ.png" 
-              alt="WinTube" 
-              className="h-24 sm:h-32 object-contain mx-auto mb-4"
+            <img
+              src="https://i.imgur.com/BFzt6aJ.png"
+              alt="WinTube"
+              className="h-16 sm:h-20 object-contain mx-auto mb-3"
             />
             <p className="text-sm text-slate-500 font-black uppercase tracking-wider">
               O essencial pra começar
@@ -42,7 +42,7 @@ export function OfferSection() {
 
           <div className="flex-grow">
             <ul className="space-y-5 text-slate-700 font-medium text-left mb-8">
-              
+
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
                 <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
                   App WinTube
@@ -118,8 +118,8 @@ export function OfferSection() {
           </div>
 
           {/* CTA Button */}
-          <a 
-            href="https://pay.kiwify.com.br/OIejjFM" 
+          <a
+            href="https://pay.kiwify.com.br/OIejjFM"
             className="block w-full text-center bg-slate-900 text-white font-black text-lg py-4 rounded-xl hover:bg-slate-800 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
           >
             QUERO GARANTIR MEU ACESSO
@@ -150,16 +150,16 @@ export function OfferSection() {
         {/* Offer 2: Combo Completo */}
         <div className="w-full lg:w-1/2 bg-white rounded-2xl shadow-[0_10px_50px_rgba(76,141,247,0.15)] border-2 border-[#4C8DF7] p-6 sm:p-8 relative overflow-hidden flex flex-col lg:scale-[1.02] z-10">
           <div className="absolute top-0 left-0 w-full h-2 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]" />
-          
+
           <div className="absolute top-0 right-8 bg-[#4C8DF7] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-b-lg">
             MAIS VENDIDO
           </div>
 
           <div className="text-center mb-6 mt-2">
-            <img 
-              src="https://i.imgur.com/1voWNXD.png" 
-              alt="Combo Completo" 
-              className="h-24 sm:h-32 object-contain mx-auto mb-4"
+            <img
+              src="https://i.imgur.com/1voWNXD.png"
+              alt="Combo Completo"
+              className="h-16 sm:h-20 object-contain mx-auto mb-3"
             />
             <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
               3 apps + tudo incluso
@@ -204,7 +204,7 @@ export function OfferSection() {
             </div>
 
             <div className="font-black text-sm text-slate-900 uppercase mb-3 text-center">E ainda inclui:</div>
-            
+
             <ul className="space-y-2.5 text-slate-700 font-medium text-left mb-6">
               <li className="flex items-start gap-2.5">
                 <Check className="w-4 h-4 text-[#4C8DF7] flex-shrink-0 mt-0.5" strokeWidth={3} />
@@ -257,8 +257,8 @@ export function OfferSection() {
           </div>
 
           {/* CTA Button */}
-          <a 
-            href="https://pay.kiwify.com.br/yTa2MmY" 
+          <a
+            href="https://pay.kiwify.com.br/yTa2MmY"
             className="block w-full text-center bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-black text-lg py-4 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
           >
             QUERO GARANTIR COM DESCONTO

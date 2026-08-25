@@ -6,19 +6,19 @@ import { ArrowRight } from "lucide-react"
 
 export function ClipcashSection() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white overflow-hidden flex flex-col items-center text-center">
-      <div className="max-w-4xl mx-auto w-full">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-black overflow-hidden flex flex-col items-center text-center">
+      <div className="max-w-5xl mx-auto w-full">
         <ScrollReveal animation="fade-up" duration={700}>
-          <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight uppercase mb-4">
+          <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight uppercase mb-4">
             Seus Cortes Prontos em até <span className="text-wt-blue">3 passos</span>
           </h2>
-          <p className="text-slate-600 text-lg sm:text-xl mt-4 max-w-3xl mx-auto leading-relaxed font-medium mb-12">
+          <p className="text-slate-400 text-lg sm:text-xl mt-4 max-w-3xl mx-auto leading-relaxed font-medium mb-12">
             Veja como é fácil gerar seus cortes virais com a nossa ferramenta!
           </p>
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={200} duration={700}>
-          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-200 mb-8 bg-slate-50 relative flex items-center justify-center min-h-[200px]">
+          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-slate-800 mb-8 bg-slate-900 relative flex items-center justify-center min-h-[200px]">
             <img 
               src="https://i.imgur.com/3Is3DXX.png" 
               alt="App ClipCash" 
@@ -31,10 +31,37 @@ export function ClipcashSection() {
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={300} duration={700}>
-          <p className="text-slate-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
+          <p className="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
             Com o nosso gerador de cortes você consegue criar dezenas de cortes todos os dias,
             prontos para postar em qualquer plataforma, em apenas 3 passos.
           </p>
+
+          <div className="mt-8 mb-12 w-full max-w-5xl mx-auto">
+            <h3 className="font-mono text-3xl sm:text-4xl font-black text-white uppercase mb-2">
+              CORTES GERADOS
+            </h3>
+            <h4 className="text-xl sm:text-2xl font-bold text-wt-blue mb-4 uppercase">
+              GERE CORTES PRA TODOS OS NICHOS
+            </h4>
+            <p className="text-slate-400 text-lg mb-10 font-medium max-w-2xl mx-auto">
+              Você pode gerar cortes de podcast, esportes, filmes, animes e muito mais.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-slate-800 aspect-[9/16] bg-slate-900 relative">
+                <video src="https://i.imgur.com/VIoffnD.mp4" className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop playsInline />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-slate-800 aspect-[9/16] bg-slate-900 relative">
+                <video src="https://i.imgur.com/MFlE7Ci.mp4" className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop playsInline />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-slate-800 aspect-[9/16] bg-slate-900 relative">
+                <video src="https://i.imgur.com/v7zyAH4.mp4" className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop playsInline />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-slate-800 aspect-[9/16] bg-slate-900 relative">
+                <video src="https://i.imgur.com/v7zyAH4.mp4" className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop playsInline />
+              </div>
+            </div>
+          </div>
 
           <a
             href="#oferta"
