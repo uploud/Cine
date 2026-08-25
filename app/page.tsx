@@ -10,6 +10,7 @@ import { ComparisonSection } from "@/components/comparison-section"
 import { BonusSection } from "@/components/bonus-section"
 import { TargetAudienceSection } from "@/components/target-audience-section"
 import { ResultsSection } from "@/components/results-section"
+import { ClipcashSection } from "@/components/clipcash-section"
 import { OfferSection } from "@/components/offer-section"
 import { CommunitySection } from "@/components/community-section"
 import { FaqSection } from "@/components/faq-section"
@@ -42,6 +43,9 @@ export default function Home() {
         <ScrollReveal animation="fade-up" duration={700}>
           <VideoShowcaseSection />
         </ScrollReveal>
+
+        {/* APP CLIP CASH */}
+        <ClipcashSection />
 
         {/* 8. ACESSO VITALÍCIO / COMPARATIVO */}
         <ComparisonSection />
