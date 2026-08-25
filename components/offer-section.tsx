@@ -33,7 +33,7 @@ export function OfferSection() {
             <img 
               src="https://i.imgur.com/BFzt6aJ.png" 
               alt="WinTube" 
-              className="h-10 sm:h-12 object-contain mx-auto mb-3"
+              className="h-16 sm:h-20 object-contain mx-auto mb-3"
             />
             <p className="text-sm text-slate-500 font-black uppercase tracking-wider">
               O essencial pra começar
@@ -159,7 +159,7 @@ export function OfferSection() {
             <img 
               src="https://i.imgur.com/1voWNXD.png" 
               alt="Combo Completo" 
-              className="h-10 sm:h-12 object-contain mx-auto mb-3"
+              className="h-16 sm:h-20 object-contain mx-auto mb-3"
             />
             <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
               3 apps + tudo incluso
