@@ -5,7 +5,6 @@ import { RevealSection } from "@/components/reveal-section"
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
 import { FeaturesSection } from "@/components/features-section"
 import { ProblemSection } from "@/components/problem-section"
-import { StorySection } from "@/components/story-section"
 import { ComparisonSection } from "@/components/comparison-section"
 import { BonusSection } from "@/components/bonus-section"
 import { TargetAudienceSection } from "@/components/target-audience-section"
@@ -32,9 +31,6 @@ export default function Home() {
 
         {/* 4. O RESULTADO? */}
         <ProblemSection />
-
-        {/* 5. HISTÓRIA / FUNDADOR */}
-        <StorySection />
 
         {/* 6. FERRAMENTAS EXCLUSIVAS */}
         <FeaturesSection />
