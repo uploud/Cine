@@ -31,7 +31,7 @@ export function OfferSection() {
           
           <div className="text-center mb-6">
             <img 
-              src="https://i.imgur.com/tqVJPWa.png" 
+              src="https://i.imgur.com/BFzt6aJ.png" 
               alt="WinTube" 
               className="h-10 sm:h-12 object-contain mx-auto mb-3"
             />
@@ -156,9 +156,11 @@ export function OfferSection() {
           </div>
 
           <div className="text-center mb-6 mt-2">
-            <h2 className="text-[2rem] font-black text-slate-900 uppercase tracking-tight leading-tight">
-              Combo Completo
-            </h2>
+            <img 
+              src="https://i.imgur.com/1voWNXD.png" 
+              alt="Combo Completo" 
+              className="h-10 sm:h-12 object-contain mx-auto mb-3"
+            />
             <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
               3 apps + tudo incluso
             </p>
