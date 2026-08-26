@@ -25,9 +25,9 @@ export function OfferSection() {
 
           <div className="text-center mb-8 mt-2">
             <img
-              src="https://i.imgur.com/1voWNXD.png"
+              src="https://i.imgur.com/H9WAA77.png"
               alt="Combo Completo"
-              className="h-28 sm:h-36 object-contain mx-auto mb-4"
+              className="max-w-full h-auto mx-auto mb-4"
             />
             <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
               3 apps + tudo incluso
