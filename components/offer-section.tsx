@@ -126,10 +126,10 @@ export function OfferSection() {
             </div>
             <div className="text-green-500 font-black tracking-tighter leading-none mb-3 flex justify-center items-start">
               <span className="text-[2.5rem] mt-3 mr-1">R$</span>
-              <span className="text-[6.5rem] leading-[0.85]">57,97</span>
+              <span className="text-[6.5rem] leading-[0.85]">49,90</span>
             </div>
             <div className="text-slate-500 text-[16px] font-medium mt-4">
-              ou em até 6x de R$ 10,61
+              ou em até 6x de R$ 9,14
             </div>
           </div>
 
