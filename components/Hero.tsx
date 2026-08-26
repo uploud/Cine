@@ -38,12 +38,12 @@ export function Hero() {
         {/* H1 Headline */}
         <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] max-w-5xl mx-auto uppercase"
             style={{ fontSize: "clamp(28px, 5.2vw, 56px)" }}>
-          LUCRE COM <span className="text-red-500">YOUTUBE</span> POSTANDO VÍDEOS DE <span className="text-green-500">FILMES, SÉRIES E ANIMES</span> SEM APARECER, SEM CRIAR ROTEIROS E SEM BLOQUEIOS POR DIREITOS AUTORAIS!
+          LUCRE POSTANDO VÍDEOS DE <span className="text-green-500">FILMES, SÉRIES, ANIMES E BÍBLICO</span> SEM APARECER, SEM CRIAR ROTEIROS E SEM BLOQUEIOS POR DIREITOS AUTORAIS!
         </h1>
 
         {/* Subtitle */}
-        <p className="font-sans text-wt-muted max-w-[64ch] mt-6 mx-auto" style={{ fontSize: "clamp(16px, 2vw, 20px)" }}>
-          Monte seu canal de filmes e séries com IA e comece a lucrar em até 12 dias, mesmo sem aparecer.
+        <p className="font-sans text-wt-muted max-w-[72ch] mt-6 mx-auto" style={{ fontSize: "clamp(16px, 2vw, 20px)" }}>
+          Monte seu canal de filmes, séries, Bíblico, animes, podcast futbool, Games Play e Lives com os 3 APP e comece a lucrar em até 12 dias, mesmo sem aparecer.
         </p>
 
         {/* VSL Video */}
