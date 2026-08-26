@@ -1,11 +1,17 @@
 export function Marquee() {
   const items = [
-    "WINTUBE",
-    "AUTOMAÇÃO",
-    "CORTES COM IA",
-    "LEGENDA VIRAL",
+    "PAGAMENTO ÚNICO",
+    "ACESSO VITALÍCIO",
+    "CANAL NO YOUTUBE",
+    "CANAL NO TIKTOK",
+    "CANAL DE CORTES",
     "SEM APARECER",
-    "MONETIZAÇÃO",
+    "SEM GRAVAR A VOZ",
+    "SEM EDITAR",
+    "VÍDEO LONGO E SHORTS",
+    "MINIATURA PRONTA",
+    "TÍTULO E DESCRIÇÃO PRONTOS",
+    "0 CUSTO POR VÍDEO"
   ]
 
   return (

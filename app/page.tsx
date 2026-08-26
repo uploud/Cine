@@ -1,5 +1,6 @@
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Hero } from "@/components/Hero"
+import { Marquee } from "@/components/marquee"
 import { RevealSection } from "@/components/reveal-section"
 import { VideoShowcaseSection } from "@/components/video-showcase-section"
 import { FeaturesSection } from "@/components/features-section"
@@ -21,6 +22,7 @@ export default function Home() {
       <main>
         {/* 1. HERO */}
         <Hero />
+        <Marquee />
 
         {/* 3. OS 4 PILARES */}
         <RevealSection />

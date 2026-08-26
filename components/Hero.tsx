@@ -43,7 +43,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <p className="font-sans text-wt-muted max-w-[72ch] mt-6 mx-auto" style={{ fontSize: "clamp(16px, 2vw, 20px)" }}>
-          Monte seu canal de filmes, séries, Bíblico, animes, podcast futbool, Games Play e Lives com os 3 APP e comece a lucrar em até 12 dias, mesmo sem aparecer.
+          Tenha Sua SKIL Fábrica De Vídeos Virais, Produzindo Facilmente +100 Vídeos Por Dia Sem Custo
         </p>
 
         {/* VSL Video */}
