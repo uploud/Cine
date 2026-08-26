@@ -49,7 +49,7 @@ export function Hero() {
         {/* VSL Video */}
         <div className="w-full max-w-4xl mx-auto mt-10 mb-10 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(76,141,247,0.3)] border border-white/10 relative" style={{ paddingBottom: "56.25%" }}>
           <iframe 
-            src="https://www.youtube.com/embed/2ugvE1qtVuo" 
+            src="https://www.youtube.com/embed/9NyiHkeaNog" 
             title="Apresentação Cinetube" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowFullScreen
