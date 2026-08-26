@@ -22,7 +22,7 @@ export function OfferSection() {
 
         {/* Offer Card */}
         <div className="w-full max-w-[560px] bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 relative flex flex-col z-10 text-slate-900 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
-          
+
           <div className="text-center mb-8 mt-2">
             <img
               src="https://i.imgur.com/1voWNXD.png"
