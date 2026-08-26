@@ -23,40 +23,73 @@ export function OfferSection() {
         {/* Offer Card */}
         <div className="w-full max-w-[560px] bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 relative flex flex-col z-10 text-slate-900 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
           
-          <h2 className="text-slate-900 text-[22px] font-black mb-8 uppercase tracking-wide">
-            VOCÊ VAI RECEBER:
-          </h2>
+          <div className="text-center mb-8 mt-2">
+            <img
+              src="https://i.imgur.com/1voWNXD.png"
+              alt="Combo Completo"
+              className="h-28 sm:h-36 object-contain mx-auto mb-4"
+            />
+            <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
+              3 apps + tudo incluso
+            </p>
+          </div>
 
-          <div className="space-y-6 mb-10">
-            <div className="flex items-start gap-3.5">
-              <Check className="w-5 h-5 text-green-500 mt-0.5 shrink-0" strokeWidth={3} />
-              <div>
-                <span className="font-bold text-slate-900 block text-base leading-tight">App 1: BuilderScript</span>
-                <span className="text-slate-600 text-[15px] block mt-1 leading-relaxed">A IA assiste o filme, escolhe as melhores falas e cria o roteiro pra você.</span>
+          <div className="space-y-4 mb-6">
+            <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+              <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
+                <span className="bg-[#4C8DF7] text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">1</span>
+                App WinTube
               </div>
+              <p className="text-xs text-slate-600 mb-1">Criação de vídeos de filmes, séries e animes.</p>
+              <p className="text-xs text-green-600 font-bold flex items-center gap-1">
+                <Check className="w-3 h-3" /> Tudo no automático, sem limites!
+              </p>
             </div>
 
-            <div className="flex items-start gap-3.5">
-              <Check className="w-5 h-5 text-green-500 mt-0.5 shrink-0" strokeWidth={3} />
-              <div>
-                <span className="font-bold text-slate-900 block text-base leading-tight">App 2: SmartEdit</span>
-                <span className="text-slate-600 text-[15px] block mt-1 leading-relaxed">Gera cortes e marcações automáticas. Você só faz o toque final.</span>
+            <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+              <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
+                <span className="bg-[#4C8DF7] text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">2</span>
+                App ClipCash
               </div>
+              <p className="text-xs text-slate-600 mb-1">Crie dezenas de cortes virais em segundos.</p>
+              <p className="text-xs text-green-600 font-bold flex items-center gap-1">
+                <Check className="w-3 h-3" /> Tudo no automático, sem limites!
+              </p>
             </div>
 
+            <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+              <div className="font-black text-slate-900 flex items-center gap-2 mb-1">
+                <span className="bg-[#4C8DF7] text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">3</span>
+                App StickReel
+              </div>
+              <p className="text-xs text-slate-600 mb-1">Transforme qualquer ideia em um vídeo com bonecos palito sem rosto em minutos.</p>
+              <p className="text-xs text-green-600 font-bold flex items-center gap-1">
+                <Check className="w-3 h-3" /> Tudo no automático, sem limites!
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-5 mb-8">
             <div className="flex items-start gap-3.5">
               <Check className="w-5 h-5 text-green-500 mt-0.5 shrink-0" strokeWidth={3} />
               <div>
                 <span className="font-bold text-slate-900 block text-base leading-tight">Guia Anti-Direitos Autorais</span>
-                <span className="text-slate-600 text-[15px] block mt-1 leading-relaxed">Ensina como ajustar vídeos pra evitar bloqueios e manter monetização ativa.</span>
+                <span className="text-slate-600 text-[14px] block mt-1 leading-relaxed">Ensina como ajustar vídeos pra evitar bloqueios e manter monetização ativa.</span>
               </div>
             </div>
 
             <div className="flex items-start gap-3.5">
               <Check className="w-5 h-5 text-green-500 mt-0.5 shrink-0" strokeWidth={3} />
               <div>
-                <span className="font-bold text-slate-900 block text-base leading-tight">Acesso ao Treinamento Cine Builder Academy</span>
-                <span className="text-slate-600 text-[15px] block mt-1 leading-relaxed">Passo a passo pra montar seu canal e começar a lucrar.</span>
+                <span className="font-bold text-slate-900 block text-base leading-tight">Acesso ao Treinamento Wintube Academy</span>
+                <span className="text-slate-600 text-[14px] block mt-1 leading-relaxed">Passo a passo pra montar seu canal e começar a lucrar.</span>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3.5">
+              <Check className="w-5 h-5 text-green-500 mt-0.5 shrink-0" strokeWidth={3} />
+              <div>
+                <span className="font-bold text-slate-900 block text-base leading-tight">Grupo WinTube Networking VIP</span>
               </div>
             </div>
           </div>
