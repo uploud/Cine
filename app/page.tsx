@@ -6,7 +6,6 @@ import { VideoShowcaseSection } from "@/components/video-showcase-section"
 import { FeaturesSection } from "@/components/features-section"
 import { ProblemSection } from "@/components/problem-section"
 import { ComparisonSection } from "@/components/comparison-section"
-import { BonusSection } from "@/components/bonus-section"
 import { TargetAudienceSection } from "@/components/target-audience-section"
 import { ResultsSection } from "@/components/results-section"
 import { ClipcashSection } from "@/components/clipcash-section"
@@ -43,9 +42,6 @@ export default function Home() {
 
         {/* 8. ACESSO VITALÍCIO / COMPARATIVO */}
         <ComparisonSection />
-
-        {/* 9. ÁREA DE MEMBROS / BÔNUS */}
-        <BonusSection />
 
         {/* 10. PARA QUEM É O WINTUBE ACADEMY? */}
         <TargetAudienceSection />
