@@ -24,11 +24,11 @@ export function OfferSection() {
         <div className="w-full max-w-[560px] bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 relative flex flex-col z-10 text-slate-900 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
 
           <div className="text-center mb-8">
-            <div className="-mx-8 sm:-mx-10 -mt-8 sm:-mt-10 mb-6 bg-slate-50/50 rounded-t-2xl overflow-hidden pt-6">
+            <div className="mb-6 pt-2">
               <img
                 src="https://i.imgur.com/EYAnXYO.png"
                 alt="Combo Completo"
-                className="w-full h-auto mx-auto object-contain scale-105"
+                className="h-32 sm:h-40 w-auto mx-auto object-contain"
               />
             </div>
             <h3 className="font-mono text-2xl font-black uppercase text-slate-900">Combo Completo</h3>
