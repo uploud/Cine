@@ -31,7 +31,6 @@ export function OfferSection() {
                 className="w-full h-auto mx-auto object-contain scale-105"
               />
             </div>
-            <img src="https://i.imgur.com/39sWHu0.png" alt="WinTube" className="h-10 mx-auto mb-3" />
             <h3 className="font-mono text-2xl font-black uppercase text-slate-900">Combo Completo</h3>
             <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
               3 skills + tudo incluso
@@ -86,8 +85,11 @@ export function OfferSection() {
           >
             COMEÇAR AGORA
           </a>
-          <div className="mt-4 text-center text-sm font-medium text-slate-500 flex items-center justify-center gap-2">
-            <Check className="w-4 h-4 text-green-500" /> Você está comprando de uma empresa real. @wintube.oficial
+          <div className="mt-6 text-center">
+            <img src="https://i.imgur.com/39sWHu0.png" alt="WinTube" className="h-8 mx-auto mb-3 opacity-90" />
+            <div className="text-sm font-medium text-slate-500 flex items-center justify-center gap-2">
+              <Check className="w-4 h-4 text-green-500" /> Você está comprando de uma empresa real. @wintube.oficial
+            </div>
           </div>
 
         </div>
