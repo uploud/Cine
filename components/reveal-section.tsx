@@ -6,27 +6,21 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 const steps = [
   {
     icon: Download,
-    number: "01",
-    title: "Download + Transcrição Automática",
-    description: "Cola o link do YouTube, Filmes, Séries, Animes, podcast ou live e o APP WinTube baixa e transcreve o conteúdo inteiro sozinho. Você não precisa assistir nada pra achar o trecho bom.",
+    number: "1",
+    title: "Digite o tema ou cole o link",
+    description: "Escreva o assunto em português ou cole o link do vídeo, filme, série ou anime.",
   },
   {
     icon: FileText,
-    number: "02",
-    title: "Roteiro e Cortes com IA",
-    description: "A IA lê a transcrição, separa os melhores momentos e monta a sequência de corte pronta em minutos.",
+    number: "2",
+    title: "A IA monta tudo sozinha",
+    description: "Ela escolhe as melhores cenas, gera o roteiro, corta, reenquadra e legenda.",
   },
   {
-    icon: Scissors,
-    number: "03",
-    title: "Montagem Vertical + Legenda Automática",
-    description: "Reenquadramento vertical (com opção de seguir rosto), legenda palavra por palavra sincronizada, exporta em 4K. Você só dá os toques finais e posta.",
-  },
-  {
-    icon: ShieldCheck,
-    number: "04",
-    title: "Guia Anti-Direitos Autorais",
-    description: "Mostra como ajustar o vídeo e proteger seu canal. Sem bloqueios, sem perder monetização.",
+    icon: ArrowRight,
+    number: "3",
+    title: "Baixe e poste",
+    description: "Em minutos o vídeo fica pronto pra você baixar e postar no seu canal.",
   },
 ]
 
@@ -43,11 +37,12 @@ export function RevealSection() {
           <div className="px-4 sm:px-6 mb-12 sm:mb-16">
             <div className="max-w-5xl mx-auto text-center">
               <ScrollReveal animation="fade-up" duration={700}>
+                <span className="text-wt-blue font-bold tracking-widest uppercase text-sm mb-2 block">Simples assim</span>
                 <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4 uppercase">
-                  OS 4 PILARES DO <span className="bg-clip-text text-transparent bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)]">SISTEMA WINTUBE</span>
+                  Seus vídeos prontos em 3 passos
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-bold">
-                  Você não precisa mais perder noites cortando, Editando e legendandom O Sistema Wintube faz tudo enquanto você foca em crescer.
+                <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+                  Veja como é fácil gerar seus vídeos de canal dark com o WinTube.
                 </p>
               </ScrollReveal>
             </div>
@@ -55,7 +50,7 @@ export function RevealSection() {
 
           {/* Content */}
           <div className="px-4 sm:px-6 max-w-7xl mx-auto w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {steps.map((step, i) => (
                 <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
                   <div className="bg-slate-900/50 rounded-2xl p-6 sm:p-8 border border-slate-800 hover:border-[#4C8DF7]/40 transition-colors h-full flex flex-col gap-4 group">

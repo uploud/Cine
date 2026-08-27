@@ -30,6 +30,11 @@ export function Hero() {
 
         <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-center text-center">
 
+        {/* Logo */}
+        <div className="mb-6">
+          <img src="https://i.imgur.com/39sWHu0.png" alt="WinTube" className="h-16 sm:h-20 object-contain mx-auto" />
+        </div>
+
         {/* Top Badge */}
         <div className="inline-block bg-red-500/10 border border-red-500/20 text-red-500 font-bold text-xs sm:text-sm tracking-widest uppercase py-1.5 px-4 rounded-full mb-6">
           ⚠️ SEGREDO REVELADO DOS TOP CANAIS DE YOUTUBE 2026 ⚠️
@@ -37,17 +42,22 @@ export function Hero() {
 
         {/* H1 Headline */}
         <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] max-w-5xl mx-auto uppercase"
-            style={{ fontSize: "clamp(28px, 5.2vw, 56px)" }}>
-          LUCRE POSTANDO VÍDEOS DE <span className="text-green-500">FILMES, SÉRIES, ANIMES E BÍBLICO</span> SEM APARECER, SEM CRIAR ROTEIROS E SEM BLOQUEIOS POR DIREITOS AUTORAIS!
+            style={{ fontSize: "clamp(28px, 4vw, 48px)" }}>
+          Gerador de Vídeos de Canal Dark automático para Criadores de Conteúdo
         </h1>
 
         {/* Subtitle */}
         <p className="font-sans text-wt-muted max-w-[72ch] mt-6 mx-auto" style={{ fontSize: "clamp(16px, 2vw, 20px)" }}>
-          Tenha Sua SKIL Fábrica De Vídeos Virais, Produzindo Facilmente +100 Vídeos Por Dia Sem Custo
+          Para todos os tipos de criador de conteúdo, em todas as plataformas. Cria seus vídeos no automático.
         </p>
 
+        {/* Link / Image under headline */}
+        <div className="mt-8 mb-4">
+          <img src="https://i.imgur.com/Oa7Hoy3.png" alt="Plataformas" className="h-8 sm:h-10 object-contain mx-auto" />
+        </div>
+
         {/* VSL Video */}
-        <div className="w-full max-w-4xl mx-auto mt-10 mb-10 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(76,141,247,0.3)] border border-white/10 relative" style={{ paddingBottom: "56.25%" }}>
+        <div className="w-full max-w-4xl mx-auto mt-6 mb-10 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(76,141,247,0.3)] border border-white/10 relative" style={{ paddingBottom: "56.25%" }}>
           <iframe 
             src="https://www.youtube.com/embed/9NyiHkeaNog" 
             title="Apresentação Cinetube" 
@@ -57,14 +67,12 @@ export function Hero() {
           ></iframe>
         </div>
 
-
-
         {/* CTA */}
         <a 
           href="#oferta"
           className="bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-mono font-[700] text-[18px] sm:text-[22px] rounded-xl px-10 py-5 shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all whitespace-nowrap inline-flex items-center justify-center gap-2"
         >
-          QUERO COMEÇAR AGORA
+          QUERO TER ACESSO &rarr;
         </a>
 
       </div>

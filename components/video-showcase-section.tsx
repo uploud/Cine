@@ -2,9 +2,10 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function VideoShowcaseSection() {
   const videos = [
-    { id: "lcJ8BVEo15U", title: "Antes e Depois - Exemplo 1" },
-    { id: "MAZ0mWdoUYI", title: "Antes e Depois - Exemplo 2" },
-    { id: "ANnHwcWenR8", title: "Antes e Depois - Exemplo 3" },
+    { id: "lcJ8BVEo15U", title: "Exemplo 1" },
+    { id: "MAZ0mWdoUYI", title: "Exemplo 2" },
+    { id: "ANnHwcWenR8", title: "Exemplo 3" },
+    { id: "lcJ8BVEo15U", title: "Exemplo 4" },
   ]
 
   return (
@@ -12,16 +13,17 @@ export function VideoShowcaseSection() {
       <div className="max-w-6xl mx-auto">
         <ScrollReveal animation="fade-up" duration={700}>
           <div className="text-center mb-10 sm:mb-14">
+            <span className="text-wt-blue font-bold tracking-widest uppercase text-sm mb-2 block">Qualidade</span>
             <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight uppercase">
-              SEUS VÍDEOS VÃO FICAR <span className="text-wt-blue">NESSE FORMATO</span>
+              Veja a qualidade dos vídeos
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
-              Veja a diferença entre o vídeo original e o corte automático gerado pela inteligência artificial.
+              Você pode gerar centenas de vídeos como esses, no automático.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           {videos.map((video, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 150} duration={600}>
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">

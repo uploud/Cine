@@ -3,14 +3,22 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 const features = [
   {
-    title: "Roteiro Automático",
-    description: "A IA assiste o conteúdo inteiro, separa as melhores falas e cria o roteiro de corte pronto em minutos.",
+    title: "WinTube",
+    description: "Vídeos de filmes, séries e animes. O vídeo longo do seu canal.",
     icon: FileText,
+    check: "✓ Automático, sem limites"
   },
   {
-    title: "Cortes Inteligentes + Legenda",
-    description: "O editor automático aplica cortes, reenquadramento vertical e legenda sincronizada. Você só finaliza e posta.",
+    title: "ClipCash",
+    description: "Dezenas de cortes virais em segundos, pro Shorts, TikTok e Reels.",
     icon: Scissors,
+    check: "✓ Automático, sem limites"
+  },
+  {
+    title: "StickReel",
+    description: "Vídeos com bonecos palito sem rosto, sobre qualquer ideia, em minutos.",
+    icon: Layers,
+    check: "✓ Automático, sem limites"
   },
 ]
 
@@ -21,18 +29,15 @@ export function FeaturesSection() {
         <div className="text-center mb-12 sm:mb-16">
           <ScrollReveal animation="fade-up" duration={700}>
             <p className="text-xs sm:text-sm text-wt-blue font-semibold uppercase tracking-widest mb-3">
-              FERRAMENTAS EXCLUSIVAS
+              3 skills, uma assinatura
             </p>
             <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight uppercase">
-              Para Criação de <span className="text-wt-blue">Conteúdo</span>
+              São 3 skills trabalhando pra <span className="text-wt-blue">você</span>
             </h2>
-            <p className="text-slate-600 text-lg sm:text-xl md:text-2xl mt-4 max-w-3xl mx-auto leading-relaxed font-bold">
-              O WinTube analisa, corta e monta seus vídeos, deixando tudo pronto para você apenas finalizar e postar.
-            </p>
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {features.map((feature, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
               <div className="group bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-wt-blue/30 hover:shadow-xl transition-all hover:-translate-y-1 h-full flex flex-col">
@@ -42,9 +47,12 @@ export function FeaturesSection() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 font-mono tracking-tight uppercase">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600 font-medium leading-relaxed font-sans text-lg">
+                <p className="text-slate-600 font-medium leading-relaxed font-sans text-lg mb-4 flex-grow">
                   {feature.description}
                 </p>
+                <div className="text-green-600 font-bold text-sm">
+                  {feature.check}
+                </div>
               </div>
             </ScrollReveal>
           ))}
