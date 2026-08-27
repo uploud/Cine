@@ -30,20 +30,15 @@ export function Hero() {
 
         <div className="relative z-10 max-w-[1180px] mx-auto flex flex-col items-center text-center">
 
-        {/* Logo */}
-        <div className="mb-6">
-          <img src="https://i.imgur.com/39sWHu0.png" alt="WinTube" className="h-16 sm:h-20 object-contain mx-auto" />
-        </div>
 
         {/* Top Badge */}
         <div className="inline-block bg-red-500/10 border border-red-500/20 text-red-500 font-bold text-xs sm:text-sm tracking-widest uppercase py-1.5 px-4 rounded-full mb-6">
           ⚠️ SEGREDO REVELADO DOS TOP CANAIS DE YOUTUBE 2026 ⚠️
         </div>
 
-        {/* H1 Headline */}
         <h1 className="font-mono font-[800] text-wt-ink leading-[1.14] tracking-[-.02em] max-w-5xl mx-auto uppercase"
             style={{ fontSize: "clamp(28px, 4vw, 48px)" }}>
-          Gerador de Vídeos de Canal Dark automático para Criadores de Conteúdo
+          Gerador de <span className="text-[#4C8DF7]">Vídeos de Canal Dark</span> automático para Criadores de Conteúdo
         </h1>
 
         {/* Subtitle */}
