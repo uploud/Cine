@@ -26,7 +26,7 @@ export function OfferSection() {
           <div className="text-center mb-8">
             <div className="-mx-8 sm:-mx-10 -mt-8 sm:-mt-10 mb-6 bg-slate-50/50 rounded-t-2xl overflow-hidden pt-6">
               <img
-                src="https://i.imgur.com/H9WAA77.png"
+                src="https://i.imgur.com/EYAnXYO.png"
                 alt="Combo Completo"
                 className="w-full h-auto mx-auto object-contain scale-105"
               />

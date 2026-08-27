@@ -5,19 +5,19 @@ const features = [
   {
     title: "WinTube",
     description: "Vídeos de filmes, séries e animes. O vídeo longo do seu canal.",
-    icon: FileText,
+    imgSrc: "https://i.imgur.com/ROnfolB.png",
     check: "✓ Automático, sem limites"
   },
   {
     title: "ClipCash",
     description: "Dezenas de cortes virais em segundos, pro Shorts, TikTok e Reels.",
-    icon: Scissors,
+    imgSrc: "https://i.imgur.com/p8R31IH.png",
     check: "✓ Automático, sem limites"
   },
   {
     title: "StickReel",
     description: "Vídeos com bonecos palito sem rosto, sobre qualquer ideia, em minutos.",
-    icon: Layers,
+    imgSrc: "https://i.imgur.com/tlQ9Qrq.png",
     check: "✓ Automático, sem limites"
   },
 ]
@@ -41,8 +41,8 @@ export function FeaturesSection() {
           {features.map((feature, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
               <div className="group bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-wt-blue/30 hover:shadow-xl transition-all hover:-translate-y-1 h-full flex flex-col">
-                <div className="w-12 h-12 rounded-xl bg-wt-blue/10 text-wt-blue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-6 h-6" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 mb-6 group-hover:scale-110 transition-transform">
+                  <img src={feature.imgSrc} alt={feature.title} className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 font-mono tracking-tight uppercase">
                   {feature.title}
