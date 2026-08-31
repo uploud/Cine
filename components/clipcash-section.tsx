@@ -35,12 +35,13 @@ export function ClipcashSection() {
             />
           </div>
           
-          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-slate-800 mb-8 bg-slate-900 relative flex items-center justify-center">
-            <video 
-              src="https://i.imgur.com/QBkC2fE.mp4" 
-              controls 
-              playsInline 
-              className="w-full h-auto object-cover"
+          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-slate-800 mb-8 bg-slate-900 relative" style={{ paddingBottom: "56.25%" }}>
+            <iframe 
+              src="https://www.youtube.com/embed/lq_0ELw-ZNM" 
+              title="Demonstração ClipCash" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full border-0"
             />
           </div>
         </ScrollReveal>
