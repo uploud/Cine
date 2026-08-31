@@ -34,6 +34,17 @@ export function ClipcashSection() {
               }}
             />
           </div>
+          
+          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-slate-800 mb-8 bg-slate-900 relative flex items-center justify-center">
+            <video 
+              src="https://i.imgur.com/QBkC2fE.mp4" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={300} duration={700}>
