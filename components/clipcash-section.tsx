@@ -77,6 +77,39 @@ export function ClipcashSection() {
             <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
           </a>
         </ScrollReveal>
+
+        {/* NOVA SKILL DE CARROSSEL */}
+        <ScrollReveal animation="fade-up" delay={200} duration={700}>
+          <div className="mt-24 pt-16 border-t border-slate-800 w-full max-w-5xl mx-auto flex flex-col items-center">
+            <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight uppercase mb-4">
+              SKILL <span className="text-wt-blue">EXCLUSIVA</span>
+            </h2>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-300 mt-2 mb-8 uppercase tracking-wider text-center">
+              estúdio de carrosséis para Instagram e outras plataformas
+            </h3>
+            
+            <div className="w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-slate-800 bg-slate-900 relative flex items-center justify-center">
+              <video 
+                src="https://i.imgur.com/OBoFlqn.mp4" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            <div className="mt-12">
+              <a
+                href="#oferta"
+                className="group relative inline-flex items-center justify-center gap-3 bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-mono font-[700] text-[18px] sm:text-[20px] px-8 py-4 sm:px-10 sm:py-5 rounded-xl shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 hover:-translate-y-0.5 active:scale-[0.98] transition-all w-full sm:w-auto uppercase"
+              >
+                <span>QUERO ACESSAR O ESTÚDIO</span>
+                <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )
