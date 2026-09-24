@@ -36,7 +36,7 @@ export function Oferta() {
         </ul>
 
         <a 
-          href="https://pay.kiwify.com.br/yTa2MmY" 
+          href="https://checkout.wiven.com.br/checkout/cmtrt95b805rc01ptbzpxkqit?offer=GF3QPZE" 
           className="block w-full text-center bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white font-mono font-[700] text-[16px] rounded-[10px] py-[16px] shadow-[0_10px_30px_-14px_rgba(76,141,247,0.9)] hover:opacity-90 transition-opacity mb-4"
         >
           Comprar o WinTube

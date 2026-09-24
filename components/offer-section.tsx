@@ -80,7 +80,7 @@ export function OfferSection() {
 
           {/* Checkout Button */}
           <a
-            href="https://pay.kiwify.com.br/yTa2MmY"
+            href="https://checkout.wiven.com.br/checkout/cmtrt95b805rc01ptbzpxkqit?offer=GF3QPZE"
             className="block w-full text-center bg-green-500 text-white font-black text-[22px] py-4 rounded-xl shadow-[0_10px_30px_-10px_rgba(34,197,94,0.4)] hover:bg-green-600 hover:-translate-y-1 transition-all active:scale-[0.98]"
           >
             COMEÇAR AGORA
