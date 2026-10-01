@@ -117,6 +117,11 @@ function OfferCard({ offer }: { offer: Offer }) {
       >
         COMEÇAR AGORA
       </a>
+      <img
+        src="/selos-compra-segura.png"
+        alt="Compra Segura · Satisfação Garantida · Privacidade Protegida"
+        className="w-full h-auto mt-5 opacity-80"
+      />
       <div className="mt-6 text-center">
         <img src="/wiskills-logo.png" alt="WiSkills" className="h-10 w-10 rounded-full object-cover mx-auto mb-3" />
         <div className="text-sm font-medium text-slate-500 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
