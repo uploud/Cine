@@ -9,8 +9,8 @@ export function AgencyBadge() {
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 bg-slate-50 border border-slate-200 rounded-lg p-6 sm:p-8 md:p-10">
             {/* Logo */}
             <div className="relative flex-shrink-0">
-              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border border-slate-200 bg-white flex items-center justify-center p-4">
-                <img src="/logo.png" alt="WinTube Logo" className="w-full h-auto object-contain" />
+              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border border-slate-200 bg-white">
+                <img src="/wiskills-logo.png" alt="WiSkills Logo" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-sm overflow-hidden">
                 <img
@@ -23,15 +23,18 @@ export function AgencyBadge() {
 
             {/* Content */}
             <div className="text-center md:text-left flex-1">
+              <p className="text-sm sm:text-base font-semibold uppercase tracking-wide text-green-600 mb-2">
+                Você está comprando de uma empresa real
+              </p>
               <h3 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 Você está comprando um produto produzido pela{" "}
-                <span className="text-primary">Wintube</span>
+                <span className="text-primary">WiSkills</span>
               </h3>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
-                Somos uma empresa real, com rosto e reputação - não um anúncio fantasma.
+                Somos uma empresa real, com rosto e reputação — não um anúncio fantasma.
               </p>
               <a
-                href="https://www.instagram.com/wintube.oficial/"
+                href="https://www.instagram.com/wiskills.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white text-base sm:text-lg transition-all hover:opacity-90 active:scale-[0.98]"
@@ -40,7 +43,7 @@ export function AgencyBadge() {
                 }}
               >
                 <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
-                @wintube.oficial
+                @wiskills.com.br
               </a>
             </div>
           </div>
