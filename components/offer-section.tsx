@@ -1,8 +1,6 @@
 import React from "react"
 import { Check } from "lucide-react"
 
-const INSTAGRAM_URL = "https://www.instagram.com/wiskills.com.br/"
-
 type Offer = {
   image: string
   imageClassName: string
@@ -15,6 +13,7 @@ type Offer = {
   price: string
   installments: string
   checkoutUrl: string
+  instagram: string
 }
 
 const offers: Offer[] = [
@@ -22,9 +21,10 @@ const offers: Offer[] = [
     image: "https://i.imgur.com/EYAnXYO.png",
     imageClassName: "h-32 sm:h-40 w-auto mx-auto object-contain",
     title: "Combo Completo",
-    subtitle: "3 skills + tudo incluso",
+    subtitle: "3 ferramentas + tudo incluso",
+    tagline: "acesso vitalício · pagamento único · sem mensalidade",
     items: [
-      "As 3 skills: WinTube, ClipCash e StickReel.",
+      "As 3 ferramentas de canal no YouTube: WinTube, ClipCash e StickReel.",
       "Editor IA de corte e legenda + Assistente IA.",
       "Treinamento WinTube Academy.",
       "Vídeos ilimitados + Grupo Networking VIP.",
@@ -35,6 +35,7 @@ const offers: Offer[] = [
     price: "57,97",
     installments: "6x de R$ 10,62",
     checkoutUrl: "https://checkout.wiven.com.br/checkout/cmtrt95b805rc01ptbzpxkqit?offer=GF3QPZE",
+    instagram: "wintube.oficial",
   },
   {
     image: "/wiskills-logo.png",
@@ -64,6 +65,7 @@ const offers: Offer[] = [
     price: "127,90",
     installments: "6x de R$ 23,43",
     checkoutUrl: "https://checkout.wiven.com.br/checkout/cmuols75d01ta01ptdzosu1k2?offer=1DDU3EJ",
+    instagram: "wiskills.com.br",
   },
 ]
 
@@ -125,8 +127,8 @@ function OfferCard({ offer }: { offer: Offer }) {
       <div className="mt-6 text-center">
         <div className="text-sm font-medium text-slate-500 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
           <Check className="w-4 h-4 text-green-500" /> Você está comprando de uma empresa real.
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-[#4C8DF7] hover:underline">
-            @wiskills.com.br
+          <a href={`https://www.instagram.com/${offer.instagram}/`} target="_blank" rel="noopener noreferrer" className="font-bold text-[#4C8DF7] hover:underline">
+            @{offer.instagram}
           </a>
         </div>
       </div>
