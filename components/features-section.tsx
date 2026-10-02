@@ -29,10 +29,10 @@ export function FeaturesSection() {
         <div className="text-center mb-12 sm:mb-16">
           <ScrollReveal animation="fade-up" duration={700}>
             <p className="text-xs sm:text-sm text-wt-blue font-semibold uppercase tracking-widest mb-3">
-              3 skills, uma assinatura
+              5 skills, uma assinatura
             </p>
             <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight uppercase">
-              São 3 skills trabalhando pra <span className="text-wt-blue">você</span>
+              São 5 skills trabalhando pra <span className="text-wt-blue">você</span>
             </h2>
           </ScrollReveal>
         </div>
