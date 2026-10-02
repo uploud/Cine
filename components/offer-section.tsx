@@ -23,8 +23,11 @@ const offers: Offer[] = [
     title: "Combo Completo",
     subtitle: "3 ferramentas + tudo incluso",
     tagline: "acesso vitalício · pagamento único · sem mensalidade",
+    intro: "As 3 ferramentas:",
     items: [
-      "As 3 ferramentas de canal no YouTube: WinTube, ClipCash e StickReel.",
+      <><strong>WinTube</strong> — vídeo narrado no YouTube, sem aparecer e sem gravar a sua voz.</>,
+      <><strong>ClipCash</strong> — cole o link do vídeo longo e receba os cortes prontos e legendados.</>,
+      <><strong>StickReel</strong> — histórias com bonecos palito, sem rosto e sem gravar voz.</>,
       "Editor IA de corte e legenda + Assistente IA.",
       "Treinamento WinTube Academy.",
       "Vídeos ilimitados + Grupo Networking VIP.",
@@ -35,7 +38,7 @@ const offers: Offer[] = [
     price: "57,97",
     installments: "6x de R$ 10,62",
     checkoutUrl: "https://checkout.wiven.com.br/checkout/cmtrt95b805rc01ptbzpxkqit?offer=GF3QPZE",
-    instagram: "wintube.oficial",
+    instagram: "wiskills.com.br",
   },
   {
     image: "/wiskills-logo.png",
