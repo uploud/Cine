@@ -73,7 +73,7 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.items.map((item, i) => (
           <div key={i} className="flex items-start gap-3">
             <Check className="w-5 h-5 text-green-500 shrink-0" strokeWidth={3} />
-            <span className="font-bold text-slate-900 text-[15px]">{item}</span>
+            <span className="font-bold text-slate-900 text-[15px] [&_strong]:text-[#4C8DF7] [&_strong]:font-black">{item}</span>
           </div>
         ))}
       </div>
