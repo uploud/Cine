@@ -12,7 +12,7 @@ export function Oferta() {
         </div>
         
         <div className="font-mono font-[800] text-[46px] text-white leading-none mb-2">
-          R$ 57,97 <span className="text-wt-muted text-[16px] font-normal tracking-normal align-middle">à vista</span>
+          R$ 67,97 <span className="text-wt-muted text-[16px] font-normal tracking-normal align-middle">à vista</span>
         </div>
         
         <p className="text-wt-muted text-[14px] font-sans mb-8">
