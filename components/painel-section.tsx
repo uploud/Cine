@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
-const PAINEL_URL = "https://painel-skills.vercel.app/"
+const PAINEL_URL = "https://painel-skills.vercel.app/?utm_source=link+da+pagina+PG+1+WINTUBE&utm_medium=WINTUBE&utm_campaign=PG1+WINTUBE"
 
 export function PainelSection() {
   return (
