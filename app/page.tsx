@@ -10,6 +10,7 @@ import { TargetAudienceSection } from "@/components/target-audience-section"
 import { ResultsSection } from "@/components/results-section"
 import { ClipcashSection } from "@/components/clipcash-section"
 import { OfferSection } from "@/components/offer-section"
+import { PainelSection } from "@/components/painel-section"
 import { CommunitySection } from "@/components/community-section"
 import { FaqSection } from "@/components/faq-section"
 import { AgencyBadge } from "@/components/agency-badge"
@@ -51,6 +52,9 @@ export default function Home() {
 
         {/* 12. OFERTA */}
         <OfferSection />
+
+        {/* PAINEL WISKILLS */}
+        <PainelSection />
 
         {/* 13. INSTAGRAM */}
         <AgencyBadge />
