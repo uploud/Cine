@@ -1,7 +1,10 @@
 import React from "react"
 import { Check } from "lucide-react"
+import { OfferCountdown } from "@/components/offer-countdown"
 
 type Offer = {
+  badge?: string
+  countdown?: boolean
   image: string
   imageClassName: string
   title: string
@@ -35,16 +38,56 @@ const offers: Offer[] = [
       "+ Todos os 4 bônus exclusivos.",
     ],
     oldPrice: "197,00",
-    price: "67,97",
-    installments: "6x de R$ 12,45",
+    price: "57,97",
+    installments: "6x de R$ 10,62",
     checkoutUrl: "https://checkout.wiven.com.br/checkout/cmtrt95b805rc01ptbzpxkqit?offer=GF3QPZE",
+    instagram: "wiskills.com.br",
+  },
+  {
+    badge: "Oferta especial · 24h",
+    countdown: true,
+    image: "/wiskills-logo.png",
+    imageClassName: "h-32 w-32 sm:h-40 sm:w-40 mx-auto object-cover rounded-2xl",
+    title: "Combo Completo",
+    subtitle: "11 ferramentas + tudo incluso",
+    tagline: "acesso vitalício · pagamento único · sem mensalidade",
+    intro: "As 11 ferramentas:",
+    items: [
+      <><strong>WinTube</strong> — vídeo narrado no YouTube, sem aparecer e sem gravar a sua voz.</>,
+      <><strong>ClipCash</strong> — cole o link do vídeo longo e receba os cortes prontos e legendados.</>,
+      <><strong>Vendas TikTok Shop</strong> — vídeo do produto com roteiro de venda e legenda no tempo da fala.</>,
+      <><strong>WiAfiliados</strong> — cole o link do produto e receba o vídeo pra Shopee, Shein, Amazon ou Mercado Livre.</>,
+      <><strong>StickReel</strong> — histórias com bonecos palito, sem rosto e sem gravar voz.</>,
+      <><strong>Carrossel IA</strong> — escreva o tema e receba os slides prontos pra postar no Instagram.</>,
+      <><strong>Narração</strong> — seu texto virando narração com voz de IA, sem contratar locutor.</>,
+      <><strong>wiTHUMBVIRAL</strong> — a capa que faz a pessoa parar de rolar e clicar no vídeo.</>,
+      <><strong>WiFive Bordas</strong> — sua moldura, logo e @ em dezenas de cortes de uma vez.</>,
+      <><strong>WiSubnichos Viral</strong> — lista nova de nichos, canais e produtos em alta toda semana, com link e como começar.</>,
+      <><strong>WiVideos Studio</strong> — monte e edite seu vídeo do zero, com cortes, legenda e trilha num só lugar.</>,
+      "Funciona no celular e no computador — Android, iPhone, Windows e Mac.",
+      "Editor IA de corte e legenda + Assistente IA.",
+      "Treinamento WiSkills Academy.",
+      "Vídeos ilimitados + Grupo Networking VIP.",
+      "Guia Anti-Direitos Autorais.",
+      "+ Todos os 4 bônus exclusivos.",
+    ],
+    oldPrice: "397,00",
+    price: "97",
+    installments: "6x de R$ 17,77",
+    checkoutUrl: "https://checkout.wiven.com.br/checkout/cmuols75d01ta01ptdzosu1k2?offer=1DDU3EJ",
     instagram: "wiskills.com.br",
   },
 ]
 
 function OfferCard({ offer }: { offer: Offer }) {
   return (
-    <div className="w-full max-w-[560px] bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 relative flex flex-col z-10 text-slate-900 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
+    <div className={`w-full max-w-[560px] bg-white rounded-2xl p-8 sm:p-10 relative flex flex-col z-10 text-slate-900 ${offer.badge ? "border-2 border-[#4C8DF7] shadow-[0_10px_40px_rgba(76,141,247,0.25)] mt-4 lg:mt-0" : "border border-slate-200 shadow-[0_10px_40px_rgba(0,0,0,0.05)]"}`}>
+
+      {offer.badge && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[linear-gradient(100deg,#4C8DF7_0%,#6A2EF0_100%)] text-white text-xs sm:text-sm font-black uppercase tracking-wider px-5 py-2 rounded-full shadow-lg">
+          {offer.badge}
+        </div>
+      )}
 
       <div className="text-center mb-8">
         <div className="mb-6 pt-2">
@@ -57,6 +100,7 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.tagline && (
           <p className="text-xs text-slate-500 mt-2 font-medium">{offer.tagline}</p>
         )}
+        {offer.countdown && <OfferCountdown />}
       </div>
 
       <div className="space-y-4 mb-8 bg-slate-50 border border-slate-200 rounded-xl p-5 sm:p-6">
