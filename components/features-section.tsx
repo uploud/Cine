@@ -15,9 +15,9 @@ const features = [
     check: "✓ Automático, sem limites"
   },
   {
-    title: "StickReel",
-    description: "Vídeos com bonecos palito sem rosto, sobre qualquer ideia, em minutos.",
-    imgSrc: "https://i.imgur.com/tlQ9Qrq.png",
+    title: "WiFive Bordas",
+    description: "Coloca a moldura da sua página em vários cortes de uma vez, com a sua logo e o seu @, sem precisar editar vídeo por vídeo.",
+    imgSrc: "/wifive-bordas-logo.png",
     check: "✓ Automático, sem limites"
   },
 ]
@@ -42,7 +42,7 @@ export function FeaturesSection() {
             <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
               <div className="group bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-wt-blue/30 hover:shadow-xl transition-all hover:-translate-y-1 h-full flex flex-col">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 mb-6 group-hover:scale-110 transition-transform">
-                  <img src={feature.imgSrc} alt={feature.title} className="w-full h-full object-contain" />
+                  <img src={feature.imgSrc} alt={feature.title} className="w-full h-full object-contain rounded-xl" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 font-mono tracking-tight uppercase">
                   {feature.title}
@@ -57,6 +57,24 @@ export function FeaturesSection() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Vídeos de feedback */}
+        <ScrollReveal animation="fade-up" delay={150} duration={600}>
+          <div className="mt-12 sm:mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto">
+            {["fAmI5K3DEq8", "LAinyWydBXc", "FEBmyH4MZ_I"].map((id) => (
+              <div key={id} className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900 relative aspect-[9/16]">
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}`}
+                  title="Feedback de cliente"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute top-0 left-0 w-full h-full border-0"
+                />
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         <div className="mt-12 sm:mt-16 text-center max-w-4xl mx-auto">
           <ScrollReveal animation="fade-up" delay={200} duration={600}>
