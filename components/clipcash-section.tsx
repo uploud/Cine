@@ -103,9 +103,9 @@ export function ClipcashSection() {
             <p className="text-green-500 font-bold text-base sm:text-lg mb-8">✓ Automático, sem limites</p>
 
             <p className="text-slate-300 font-bold uppercase tracking-widest text-sm mb-4">Assista</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl mx-auto">
-              {["aanWgOTzKYQ", "5VFWIC-TREM"].map((id) => (
-                <div key={id} className="rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-slate-800 bg-slate-900 relative aspect-[9/16] w-full max-w-[320px] mx-auto">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 w-full max-w-4xl mx-auto">
+              {["fAmI5K3DEq8", "LAinyWydBXc", "FEBmyH4MZ_I"].map((id) => (
+                <div key={id} className="rounded-xl sm:rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-slate-800 bg-slate-900 relative aspect-[9/16] w-full">
                   <iframe
                     src={`https://www.youtube.com/embed/${id}`}
                     title="Demonstração WiFive Bordas"

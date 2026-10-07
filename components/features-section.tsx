@@ -58,24 +58,6 @@ export function FeaturesSection() {
           ))}
         </div>
 
-        {/* Vídeos de feedback */}
-        <ScrollReveal animation="fade-up" delay={150} duration={600}>
-          <div className="mt-12 sm:mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-4xl mx-auto">
-            {["fAmI5K3DEq8", "LAinyWydBXc", "FEBmyH4MZ_I"].map((id) => (
-              <div key={id} className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900 relative aspect-[9/16]">
-                <iframe
-                  src={`https://www.youtube.com/embed/${id}`}
-                  title="Feedback de cliente"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute top-0 left-0 w-full h-full border-0"
-                />
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-
         <div className="mt-12 sm:mt-16 text-center max-w-4xl mx-auto">
           <ScrollReveal animation="fade-up" delay={200} duration={600}>
             {/* PRINTS/SCREENSHOTS DO APP WINTUBE */}
