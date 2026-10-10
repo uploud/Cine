@@ -15,9 +15,9 @@ const features = [
     check: "✓ Automático, sem limites"
   },
   {
-    title: "StickReel",
-    description: "Vídeos com bonecos palito sem rosto, sobre qualquer ideia, em minutos.",
-    imgSrc: "https://i.imgur.com/tlQ9Qrq.png",
+    title: "WiAfiliados",
+    description: "Cole o link do produto e receba o vídeo pra Shopee, Shein, Amazon ou Mercado Livre.",
+    imgSrc: "/wiafiliados-logo.png",
     check: "✓ Automático, sem limites"
   },
 ]
@@ -42,7 +42,7 @@ export function FeaturesSection() {
             <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
               <div className="group bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-wt-blue/30 hover:shadow-xl transition-all hover:-translate-y-1 h-full flex flex-col">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 mb-6 group-hover:scale-110 transition-transform">
-                  <img src={feature.imgSrc} alt={feature.title} className="w-full h-full object-contain" />
+                  <img src={feature.imgSrc} alt={feature.title} className="w-full h-full object-contain rounded-2xl" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 font-mono tracking-tight uppercase">
                   {feature.title}
