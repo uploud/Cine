@@ -25,7 +25,6 @@ const offers: Offer[] = [
     imageClassName: "h-32 sm:h-40 w-auto mx-auto object-contain",
     title: "Combo Completo",
     subtitle: "3 ferramentas + tudo incluso",
-    tagline: "acesso vitalício · pagamento único · sem mensalidade",
     intro: "As 3 ferramentas:",
     items: [
       <><strong>WinTube</strong> — vídeo narrado no YouTube, sem aparecer e sem gravar a sua voz.</>,
@@ -50,7 +49,6 @@ const offers: Offer[] = [
     imageClassName: "h-32 w-32 sm:h-40 sm:w-40 mx-auto object-cover rounded-2xl",
     title: "Combo Completo",
     subtitle: "11 ferramentas + tudo incluso",
-    tagline: "acesso vitalício · pagamento único · sem mensalidade",
     intro: "As 11 ferramentas:",
     items: [
       <><strong>WinTube</strong> — vídeo narrado no YouTube, sem aparecer e sem gravar a sua voz.</>,
