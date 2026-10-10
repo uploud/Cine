@@ -29,7 +29,7 @@ const offers: Offer[] = [
     items: [
       <><strong>WinTube</strong> — vídeo narrado no YouTube, sem aparecer e sem gravar a sua voz.</>,
       <><strong>ClipCash</strong> — cole o link do vídeo longo e receba os cortes prontos e legendados.</>,
-      <><strong>StickReel</strong> — histórias com bonecos palito, sem rosto e sem gravar voz.</>,
+      <><strong>WiAfiliados</strong> — cole o link do produto e receba o vídeo pra Shopee, Shein, Amazon ou Mercado Livre.</>,
       "Editor IA de corte e legenda + Assistente IA.",
       "Treinamento WinTube Academy.",
       "Vídeos ilimitados + Grupo Networking VIP.",
