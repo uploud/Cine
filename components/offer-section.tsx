@@ -93,6 +93,7 @@ function OfferCard({ offer }: { offer: Offer }) {
         <div className="mb-6 pt-2">
           <img src={offer.image} alt={offer.title} className={offer.imageClassName} />
         </div>
+        <p className="text-green-500 font-black text-3xl sm:text-4xl tracking-tight mb-3">Acesso Vitalício</p>
         <h3 className="font-mono text-2xl font-black uppercase text-slate-900">{offer.title}</h3>
         <p className="text-sm text-[#4C8DF7] mt-1 font-black uppercase">
           {offer.subtitle}
@@ -169,6 +170,16 @@ export function OfferSection() {
           playsInline
           controls
         />
+      </div>
+
+      <div className="text-center max-w-[720px] mb-10 sm:mb-14">
+        <p className="text-slate-500 font-black uppercase tracking-wider text-sm sm:text-base mb-3">Adquira agora</p>
+        <h2 className="text-slate-900 font-black text-4xl sm:text-6xl leading-[1.05] tracking-tight">
+          Pague Apenas Uma Vez e <span className="text-green-500">Use para Sempre</span>
+        </h2>
+        <p className="text-slate-600 font-medium text-lg sm:text-xl mt-4">
+          Sem créditos, sem mensalidades e sem limites.
+        </p>
       </div>
 
       <div className="w-full max-w-[1160px] flex flex-col lg:flex-row justify-center items-center lg:items-stretch gap-8">
