@@ -92,7 +92,7 @@ export function ClipcashSection() {
         <ScrollReveal animation="fade-up" delay={200} duration={700}>
           <div className="mt-24 pt-16 border-t border-slate-800 w-full max-w-5xl mx-auto flex flex-col items-center">
             <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tight uppercase mb-4">
-              SKILL <span className="text-wt-blue">EXCLUSIVA</span>
+              FERRAMENTA <span className="text-wt-blue">EXCLUSIVA BÔNUS</span>
             </h2>
             <h3 className="text-xl sm:text-2xl font-bold text-slate-300 mt-2 mb-8 uppercase tracking-wider text-center">
               estúdio de carrosséis para Instagram e outras plataformas
