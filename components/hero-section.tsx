@@ -17,7 +17,7 @@ const PAUSE = 2200
 const TRANSITION_DUR = 400
 const TOTAL_CYCLE = PAUSE + TRANSITION_DUR * 2
 
-const CHECKOUT_URL = "https://checkout.wiven.com.br/checkout/cmtrt95b805rc01ptbzpxkqit?offer=GF3QPZE"
+const CHECKOUT_URL = "https://checkout.wiven.com.br/checkout/cmuuje9fm0hby01ogug2ifith?offer=L3XAH06"
 
 export function HeroSection() {
   const [index, setIndex] = useState(0)
