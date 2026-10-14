@@ -24,11 +24,10 @@ const offers: Offer[] = [
     image: "https://i.imgur.com/EYAnXYO.png",
     imageClassName: "h-32 sm:h-40 w-auto mx-auto object-contain",
     title: "Combo Completo",
-    subtitle: "2 ferramentas + tudo incluso",
-    intro: "As 2 ferramentas:",
+    subtitle: "1 ferramenta + tudo incluso",
+    intro: "A ferramenta:",
     items: [
       <><strong>WinTube</strong> — vídeo narrado no YouTube, sem aparecer e sem gravar a sua voz.</>,
-      <><strong>ClipCash</strong> — cole o link do vídeo longo e receba os cortes prontos e legendados.</>,
       "Editor IA de corte e legenda + Assistente IA.",
       "Treinamento WinTube Academy.",
       "Vídeos ilimitados + Grupo Networking VIP.",
