@@ -37,7 +37,7 @@ const offers: Offer[] = [
     ],
     oldPrice: "197,00",
     price: "57,97",
-    installments: "6x de R$ 10,62",
+    installments: "6x de R$ 11,79",
     checkoutUrl: "https://checkout.wiven.com.br/checkout/cmtrt95b805rc01ptbzpxkqit?offer=GF3QPZE",
     instagram: "wiskills.com.br",
   },
