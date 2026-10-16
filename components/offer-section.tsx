@@ -34,7 +34,7 @@ const offers: Offer[] = [
       "Treinamento WinTube Academy.",
       "Vídeos ilimitados + Grupo Networking VIP.",
       "Guia Anti-Direitos Autorais.",
-      "+ Todos os 4 bônus e estúdio de carrosséis para Instagram e outras plataformas.",
+      "+ Todos os 4 bônus e WiFive Bordas: sua moldura, logo e @ em dezenas de cortes de uma vez.",
     ],
     oldPrice: "197,00",
     price: "57,97",
