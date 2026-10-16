@@ -1,0 +1,7 @@
+Coloque aqui seus arquivos:
+
+  midia/videos/   -> seus MP4 (ex: canal-dark.mp4, cortes.mp4)
+  midia/prints/   -> prints de resultado (ex: resultado-1.jpg)
+
+Depois abra o index.html e procure pelos comentarios <!-- TROQUE ... -->
+para apontar cada slot ao seu arquivo.
