@@ -311,6 +311,21 @@ p{margin:0 0 14px}
 .selo{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;font-weight:800;text-transform:uppercase;color:#fff;padding:8px 18px;border-radius:999px;line-height:1;background:linear-gradient(90deg,#ff9500 0%,#ff6b3d 48%,#ff3d6e 100%);box-shadow:0 8px 24px rgba(255,77,110,.4),0 0 0 1px rgba(255,255,255,.14) inset}
 @media(max-width:380px){.selo{font-size:10px;padding:7px 13px;letter-spacing:.06em}}
 
+/* aviso de lançamento: vitalício até 31/10, depois mensalidade */
+.lanc{max-width:760px;margin:0 auto 22px;padding:22px 24px 24px;border-radius:18px;text-align:center;background:linear-gradient(180deg,rgba(124,58,237,.10),rgba(59,130,246,.05));border:1px solid rgba(139,92,246,.45);box-shadow:0 0 50px rgba(124,58,237,.14)}
+.lanc-t{font-weight:700;font-size:17px;line-height:1.5;margin:0 0 8px;color:var(--text)}
+.lanc-t .aviso{color:var(--amber)}
+.lanc-p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 10px}
+.lanc-p b{color:var(--text)}
+.lanc-d{color:#c4b5fd;font-size:14.5px;margin:0 0 16px}
+.lanc-cx{display:flex;justify-content:center;gap:10px}
+.lanc-cx span{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:72px;padding:12px 6px 9px;border-radius:12px;background:rgba(9,9,11,.75);border:1px solid var(--line)}
+.lanc-cx b{font-family:var(--mono);font-size:30px;font-weight:800;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.lanc-cx i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.lanc-pill{display:table;margin:0 auto 34px;padding:11px 20px;border-radius:999px;font-size:14px;color:var(--muted);background:rgba(20,184,166,.07);border:1px solid rgba(45,212,191,.35)}
+.lanc-pill b{color:#2dd4bf}
+@media(max-width:520px){.lanc{padding:18px 14px 20px}.lanc-t{font-size:15.5px}.lanc-cx{gap:6px}.lanc-cx span{min-width:60px}.lanc-cx b{font-size:24px}.lanc-pill{font-size:13px;text-align:center}}
+
 /* contador da oferta */
 .contador{margin:16px 0 4px}
 .contador[hidden]{display:none}
@@ -698,6 +713,13 @@ footer .disc{max-width:720px;margin:0 auto 18px}
     <h2>Pague Apenas Uma Vez e<br><span class="verde">Use para Sempre</span></h2>
     <p class="muted">Sem créditos, sem mensalidades e sem limites.</p>
   </div>
+    <div class="lanc" id="lancamento">
+    <p class="lanc-t">✅ Acesso vitalício de lançamento. <span class="aviso">🔒 Último dia: 31/10. Depois vira mensalidade.</span></p>
+    <p class="lanc-p">Quem entra até lá paga <b>R$ 97 uma única vez</b> e fica com as 11 ferramentas <b>pra sempre</b>.<br>A partir de 01/11, a WiSkills passa a ser por assinatura: <b>R$ 49,90 por mês</b>.</p>
+    <p class="lanc-d">💎 Sem mensalidade e sem renovação: quem compra agora nunca paga a assinatura.</p>
+    <div class="lanc-cx" id="lanc-cx"><span><b data-l="d">00</b><i>dias</i></span><span><b data-l="h">00</b><i>horas</i></span><span><b data-l="m">00</b><i>min</i></span><span><b data-l="s">00</b><i>seg</i></span></div>
+  </div>
+  <p class="lanc-pill">⚡ <b>Preço de lançamento</b> · pague uma vez e use para sempre</p>
   <div class="ofertas" style="grid-template-columns:minmax(0,1fr);max-width:560px">
   <div class="offer offer-destaque">
     <div class="selos-topo"><span class="selo">OFERTA ESPECIAL</span></div>
@@ -709,10 +731,6 @@ footer .disc{max-width:720px;margin:0 auto 18px}
       <h3>COMBO COMPLETO</h3>
       <span class="sep" aria-hidden="true">·</span>
       <div class="sub2">11 FERRAMENTAS + TUDO INCLUSO</div>
-    </div>
-    <div class="contador" id="contador" hidden>
-      <span class="contador-lb">esta oferta termina em</span>
-      <div class="contador-cx"><span class="cx"><b data-cd="h">24</b><i>horas</i></span><span class="cx"><b data-cd="m">00</b><i>min</i></span><span class="cx"><b data-cd="s">00</b><i>seg</i></span></div>
     </div>
     <div class="offer-box"><ul>
       <li class="ferr-titulo"><b>As 11 ferramentas:</b></li>
@@ -901,6 +919,26 @@ footer .disc{max-width:720px;margin:0 auto 18px}
   }
   tick();
   if(fim - Date.now() > 0) box.hidden = false;       /* so aparece com JS ligado */
+  timer = setInterval(tick, 1000);
+})();
+</script>
+<script>
+/* aviso de lançamento: contagem até 31/10/2026 23:59:59 (horário de Brasília) */
+(function(){
+  var cx = document.getElementById("lanc-cx");
+  if(!cx) return;
+  var fim = new Date("2026-10-31T23:59:59-03:00").getTime(), c = {}, timer;
+  ["d","h","m","s"].forEach(function(k){ c[k] = cx.querySelector('[data-l="'+k+'"]'); });
+  function d(n){ return n < 10 ? "0"+n : ""+n; }
+  function tick(){
+    var r = Math.max(0, fim - Date.now()), t = Math.floor(r/1000);
+    c.d.textContent = d(Math.floor(t/86400));
+    c.h.textContent = d(Math.floor(t%86400/3600));
+    c.m.textContent = d(Math.floor(t%3600/60));
+    c.s.textContent = d(t%60);
+    if(r <= 0 && timer) clearInterval(timer);
+  }
+  tick();
   timer = setInterval(tick, 1000);
 })();
 </script>
