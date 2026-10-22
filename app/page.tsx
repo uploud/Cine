@@ -8,7 +8,6 @@ import { ProblemSection } from "@/components/problem-section"
 import { ComparisonSection } from "@/components/comparison-section"
 import { TargetAudienceSection } from "@/components/target-audience-section"
 import { ResultsSection } from "@/components/results-section"
-import { ClipcashSection } from "@/components/clipcash-section"
 import { OfferSection } from "@/components/offer-section"
 import { PainelSection } from "@/components/painel-section"
 import { CommunitySection } from "@/components/community-section"
@@ -37,9 +36,6 @@ export default function Home() {
         <ScrollReveal animation="fade-up" duration={700}>
           <VideoShowcaseSection />
         </ScrollReveal>
-
-        {/* APP CLIP CASH */}
-        <ClipcashSection />
 
         {/* 8. ACESSO VITALÍCIO / COMPARATIVO */}
         <ComparisonSection />
