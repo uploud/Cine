@@ -8,18 +8,6 @@ const features = [
     imgSrc: "https://i.imgur.com/ROnfolB.png",
     check: "✓ Automático, sem limites"
   },
-  {
-    title: "ClipCash",
-    description: "Dezenas de cortes virais em segundos, pro Shorts, TikTok e Reels.",
-    imgSrc: "https://i.imgur.com/p8R31IH.png",
-    check: "✓ Automático, sem limites"
-  },
-  {
-    title: "WiFive Bordas",
-    description: "Sua moldura, logo e @ em dezenas de cortes de uma vez.",
-    imgSrc: "/wifive-bordas-logo.png",
-    check: "✓ Automático, sem limites"
-  },
 ]
 
 export function FeaturesSection() {
@@ -29,15 +17,15 @@ export function FeaturesSection() {
         <div className="text-center mb-12 sm:mb-16">
           <ScrollReveal animation="fade-up" duration={700}>
             <p className="text-xs sm:text-sm text-wt-blue font-semibold uppercase tracking-widest mb-3">
-              3 skills, Acesso Vitalício
+              WinTube, Acesso Vitalício
             </p>
             <h2 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight uppercase">
-              São 3 skills trabalhando pra <span className="text-wt-blue">você</span>
+              Uma skill trabalhando pra <span className="text-wt-blue">você</span>
             </h2>
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-md mx-auto">
           {features.map((feature, i) => (
             <ScrollReveal key={i} animation="fade-up" delay={i * 100} duration={600}>
               <div className="group bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-wt-blue/30 hover:shadow-xl transition-all hover:-translate-y-1 h-full flex flex-col">
