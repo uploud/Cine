@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WinTube – Vídeos de Filmes, Séries e Animes no Automático</title>
+<meta name="description" content="Escolha o vídeo do filme, da série ou do anime e a WinTube entrega o vídeo pronto pro YouTube, com as melhores cenas, filtro de cinema e legenda. Pagamento único de R$ 49,97.">
+<meta name="theme-color" content="#070a1c">
+<link rel="icon" href="/pagina3/midia/logo.png">
+<meta property="og:title" content="WinTube – Vídeos de Filmes, Séries e Animes no Automático">
+<meta property="og:description" content="Vídeos prontos pro seu canal do YouTube, sem aparecer e sem gravar a voz. Por apenas R$ 49,97, pagamento único.">
+<meta property="og:image" content="/pagina3/midia/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===================================================================
+   Links: checkout no botão "Adquirir agora" (data-checkout) e WhatsApp do suporte (data-suporte)
+   =================================================================== */
+:root{
+  --azul:#0ea5ff;
+  --anil:#2f5bff;
+  --roxo:#a524ff;
+  --grad:linear-gradient(90deg,#0ea5ff 0%,#2f5bff 50%,#a524ff 100%);
+  --grad-d:linear-gradient(135deg,#0ea5ff 0%,#2f5bff 45%,#a524ff 100%);
+  --noite:#070a1c;
+  --noite2:#0d1230;
+  --tinta:#0b0f24;
+  --cinza:#5b6075;
+  --linha:#e6e8f2;
+  --claro:#f6f7fc;
+  --verde:#22c55e;
+  --vermelho:#ef4444;
+  --raio:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.poppins{font-family:Poppins,system-ui,sans-serif}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+.grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* faixa de etiqueta */
+.tag{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 Poppins,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:9px 16px;border-radius:99px;background:rgba(47,91,255,.1);color:var(--anil)}
+.tag.escura{background:rgba(255,255,255,.08);color:#cfd8ff;border:1px solid rgba(255,255,255,.12)}
+.titulo{font-weight:800;font-size:clamp(30px,6vw,48px);line-height:1.12;letter-spacing:-.02em;margin:18px 0 14px}
+.sub{font-size:clamp(16px,2.4vw,19px);color:var(--cinza);max-width:640px;margin:0 auto}
+.centro{text-align:center}
+
+/* botão principal */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:440px;
+  font:800 clamp(16px,2.6vw,19px)/1.2 Poppins,sans-serif;text-transform:uppercase;text-decoration:none;color:#fff;
+  padding:20px 26px;border-radius:99px;background:var(--grad);background-size:200% 100%;
+  box-shadow:0 12px 30px -8px rgba(47,91,255,.6),inset 0 1px 0 rgba(255,255,255,.3);
+  transition:transform .2s, box-shadow .2s, background-position .4s;animation:pulso 2.4s infinite}
+.cta:hover{transform:translateY(-2px);background-position:100% 0;box-shadow:0 16px 36px -8px rgba(165,36,255,.6)}
+.cta svg{width:22px;height:22px;flex:none}
+@keyframes pulso{0%,100%{box-shadow:0 12px 30px -8px rgba(47,91,255,.6),0 0 0 0 rgba(47,91,255,.45)}60%{box-shadow:0 12px 30px -8px rgba(47,91,255,.6),0 0 0 14px rgba(47,91,255,0)}}
+.cta-box{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.cta-nota{font-size:14px;color:var(--cinza);display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.cta-nota span{display:inline-flex;gap:6px;align-items:center}
+
+section{padding:76px 0}
+.grade{background-color:#fff;background-image:linear-gradient(var(--linha) 1px,transparent 1px),linear-gradient(90deg,var(--linha) 1px,transparent 1px);background-size:34px 34px;background-position:center}
+.grade-fade{position:relative}
+.grade-fade::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,255,255,0) 0%,#fff 85%);pointer-events:none}
+.grade-fade>*{position:relative}
+
+/* ============ TOPO ============ */
+.topo{background:var(--noite);color:#fff;position:relative;overflow:hidden;padding:26px 0 70px}
+.topo::before{content:"";position:absolute;width:720px;height:720px;left:50%;top:-260px;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(47,91,255,.45) 0%,rgba(165,36,255,.18) 40%,transparent 70%);pointer-events:none}
+.topo::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(#000,transparent 75%);-webkit-mask-image:linear-gradient(#000,transparent 75%);pointer-events:none}
+.topo .wrap{position:relative;z-index:1}
+.logo-topo{width:150px;height:150px;margin:0 auto 6px;border-radius:30px}
+.topo h1{font-weight:900;font-size:clamp(32px,7vw,60px);line-height:1.08;letter-spacing:-.025em;margin:16px auto 16px;max-width:860px}
+.topo .sub{color:#b9c1e6}
+.plataformas{margin:26px auto 0;max-width:600px}
+.plataformas p{font:600 13px/1 Poppins,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#9aa3cc;margin-bottom:14px}
+.plataformas img{width:100%;height:auto;margin:0 auto;filter:drop-shadow(0 8px 18px rgba(14,165,255,.35))}
+.topo .cta-nota{color:#9aa3cc}
+
+/* ============ COMO FUNCIONA (vídeo) ============ */
+.como{background:var(--grad-d);color:#fff;position:relative;overflow:hidden}
+.como .tag{background:rgba(255,255,255,.16);color:#fff}
+.como .sub{color:rgba(255,255,255,.88)}
+.celular{position:relative;width:min(300px,78vw);margin:36px auto 0;padding:10px;border-radius:44px;background:#0b0f24;
+  box-shadow:0 30px 70px -20px rgba(7,10,28,.7),inset 0 0 0 2px rgba(255,255,255,.12)}
+.celular video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:34px;background:#000}
+.som{position:absolute;right:22px;bottom:22px;z-index:3;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center;backdrop-filter:blur(6px)}
+.som svg{width:22px;height:22px}
+.som svg[hidden]{display:none}
+.yt{width:100%;max-width:960px;margin:36px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 20px 50px rgba(11,15,36,.25)}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.aviso-som{margin-top:18px;font-weight:600;display:flex;justify-content:center;align-items:center;gap:8px}
+.aviso-som.escuro-txt{color:var(--cinza)}
+.como .cta{background:#fff;color:var(--anil);animation:none;box-shadow:0 14px 30px -10px rgba(7,10,28,.5)}
+.como .cta:hover{color:var(--roxo)}
+
+/* ============ PASSOS ============ */
+.passos{display:grid;gap:20px;margin-top:44px}
+.passo{background:#fff;border:2px solid var(--linha);border-radius:var(--raio);padding:28px 24px;box-shadow:0 10px 30px -18px rgba(11,15,36,.25)}
+.num{width:58px;height:58px;border-radius:16px;background:var(--grad-d);color:#fff;font:900 30px/58px Poppins,sans-serif;text-align:center;margin-bottom:18px;box-shadow:0 10px 20px -8px rgba(47,91,255,.6)}
+.passo h3{font-size:24px;font-weight:800;margin-bottom:8px}
+.passo h3 em{font-style:normal}
+.passo p{color:var(--cinza)}
+.print{margin:44px auto 0;max-width:760px;border-radius:var(--raio);overflow:hidden;border:2px solid var(--linha);box-shadow:0 30px 60px -30px rgba(11,15,36,.45)}
+
+/* ============ RECURSOS ============ */
+.escuro{background:var(--noite);color:#fff}
+.escuro .sub{color:#aab3da}
+.escuro .tag{background:rgba(255,255,255,.08);color:#cfd8ff}
+.recursos{display:grid;gap:16px;margin-top:44px}
+.rec{border-radius:var(--raio);padding:26px 22px;background:linear-gradient(180deg,var(--noite2),#0a0e26);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
+.rec::after{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--grad);opacity:.8}
+.ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:rgba(47,91,255,.15);color:#7fb4ff;margin-bottom:16px}
+.ico svg{width:26px;height:26px}
+.rec h3{font-size:20px;font-weight:700;margin-bottom:6px}
+.rec p{color:#aab3da;font-size:15.5px}
+
+/* ============ 3 FERRAMENTAS ============ */
+.banner{margin:40px auto 0;max-width:900px;border-radius:var(--raio);overflow:hidden;box-shadow:0 30px 60px -30px rgba(11,15,36,.55)}
+.ferr{display:grid;gap:16px;margin-top:28px}
+.f{display:flex;gap:16px;align-items:flex-start;background:#fff;border:2px solid var(--linha);border-radius:18px;padding:20px}
+.f b{flex:none;width:44px;height:44px;border-radius:12px;background:var(--grad-d);color:#fff;display:grid;place-items:center;font:800 18px Poppins}
+.f h3{font-size:18px;font-weight:700;margin-bottom:2px}
+.f p{color:var(--cinza);font-size:15px}
+
+/* ============ PARA QUEM ============ */
+.quem{display:grid;gap:20px;margin-top:44px}
+.q{border-radius:var(--raio);padding:28px 24px;border:2px solid}
+.q.sim{border-color:rgba(34,197,94,.35);background:#f2fdf6}
+.q.nao{border-color:rgba(239,68,68,.3);background:#fff5f5}
+.q h3{font-size:24px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.q ul{list-style:none;display:grid;gap:14px}
+.q li{display:flex;gap:12px;align-items:flex-start}
+.q li i{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;font:800 14px/1 Poppins;font-style:normal;margin-top:1px}
+.sim li i{background:var(--verde)}
+.nao li i{background:var(--vermelho)}
+
+/* ============ OFERTA ============ */
+.oferta{background:var(--noite);color:#fff;position:relative;overflow:hidden}
+.oferta::before{content:"";position:absolute;width:800px;height:800px;left:50%;top:50%;transform:translate(-50%,-40%);background:radial-gradient(circle,rgba(165,36,255,.3),rgba(47,91,255,.15) 40%,transparent 70%)}
+.oferta .wrap{position:relative}
+.oferta .sub{color:#aab3da}
+.cartao{position:relative;max-width:460px;margin:40px auto 0;border-radius:28px;padding:3px;background:var(--grad-d);box-shadow:0 40px 80px -30px rgba(47,91,255,.7)}
+.cartao-in{border-radius:25px;background:#0b1030;padding:34px 24px 30px;text-align:center}
+.selo{position:absolute;top:-16px;left:50%;transform:translateX(-50%);white-space:nowrap;font:800 13px/1 Poppins;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:99px;background:#fff;color:var(--anil);box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
+.cartao img{width:120px;height:120px;border-radius:24px;margin:6px auto 10px}
+.cartao h3{font-size:26px;font-weight:800}
+.lista{list-style:none;text-align:left;display:grid;gap:12px;margin:22px 0 26px;padding:20px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.lista li{display:flex;gap:10px;align-items:flex-start;font-weight:600;color:#e6eaff}
+.lista li svg{flex:none;width:22px;height:22px;color:#4ade80;margin-top:1px}
+.por{font:600 15px Poppins;color:#aab3da;text-transform:uppercase;letter-spacing:.1em}
+.preco{font:900 clamp(58px,15vw,76px)/1 Poppins,sans-serif;letter-spacing:-.03em;margin:6px 0 4px}
+.preco small{font-size:.4em;vertical-align:.95em;margin-right:4px;font-weight:800}
+.preco sup{font-size:.4em;vertical-align:.95em}
+.unico{display:inline-block;margin-bottom:22px;font-weight:700;color:#4ade80;background:rgba(74,222,128,.1);padding:7px 14px;border-radius:99px;font-size:14px}
+.cartao .cta{max-width:none}
+.empresa{max-width:760px;margin:40px auto 0;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center;
+  padding:30px 22px;border-radius:24px;background:rgba(13,18,48,.85);border:1px solid rgba(255,255,255,.1)}
+.empresa-logo{position:relative;flex:none;width:130px;height:130px;border-radius:50%;padding:6px;background:#11162e;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 16px 34px -12px rgba(47,91,255,.6)}
+.empresa-logo img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.verif{position:absolute;right:2px;bottom:8px;width:34px;height:34px;border-radius:50%;background:#3b82f6;color:#fff;display:grid;place-items:center;font:800 17px/1 Poppins;border:3px solid #11162e}
+.empresa-kicker{font:600 12px/1.3 Poppins,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8d96c2;margin-bottom:10px}
+.empresa h3{font-size:clamp(22px,4vw,30px);font-weight:800;line-height:1.2;margin-bottom:10px}
+.empresa p{color:#aab3da;margin-bottom:20px}
+.ig{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font:700 16px Poppins;padding:14px 24px;border-radius:14px;
+  background:linear-gradient(90deg,#f59e0b,#ef4444 45%,#d946ef);box-shadow:0 10px 26px -10px rgba(217,70,239,.7);transition:transform .2s}
+.ig:hover{transform:translateY(-2px)}
+.ig svg{width:20px;height:20px}
+@media (min-width:760px){.empresa{flex-direction:row;text-align:left;padding:34px 40px;gap:34px}}
+.pagto{margin-top:16px;font-size:13px;color:#8d96c2;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* ============ GARANTIA / SUPORTE ============ */
+.garantia{display:grid;gap:26px;align-items:center;justify-items:center;text-align:center;max-width:820px;margin:0 auto}
+.medalha{width:170px;height:170px;border-radius:50%;background:conic-gradient(from 0deg,#0ea5ff,#2f5bff,#a524ff,#0ea5ff);padding:6px;box-shadow:0 20px 40px -16px rgba(47,91,255,.6)}
+.medalha div{width:100%;height:100%;border-radius:50%;background:#fff;display:grid;place-content:center;text-align:center;border:3px dashed rgba(47,91,255,.35)}
+.medalha strong{font:900 56px/1 Poppins}
+.medalha span{font:800 14px/1.2 Poppins;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+.garantia p{color:var(--cinza);margin-top:10px}
+.zap{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:18px 28px;border-radius:99px;background:#22c55e;color:#fff;text-decoration:none;font:800 16px Poppins;text-transform:uppercase;box-shadow:0 12px 26px -10px rgba(34,197,94,.7)}
+.zap svg{width:24px;height:24px}
+
+/* ============ FAQ ============ */
+.faq{max-width:760px;margin:40px auto 0;display:grid;gap:12px}
+.faq details{background:#fff;border:2px solid var(--linha);border-radius:16px;padding:18px 20px}
+.faq summary{cursor:pointer;font:700 17px Poppins;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:24px;line-height:1;color:var(--anil);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--cinza);margin-top:10px}
+
+footer{background:var(--noite);color:#8d96c2;text-align:center;padding:40px 0;font-size:14px}
+footer img{width:70px;height:70px;border-radius:16px;margin:0 auto 12px}
+
+
+/* aparecer ao rolar */
+.rev{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rev.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none}.cta{animation:none}}
+
+@media (min-width:760px){
+  section{padding:100px 0}
+  .passos{grid-template-columns:repeat(3,1fr)}
+  .recursos{grid-template-columns:repeat(3,1fr)}
+  .recursos .rec:nth-child(4){grid-column:1/2}
+  .ferr{grid-template-columns:repeat(3,1fr)}
+  .quem{grid-template-columns:1fr 1fr}
+  .garantia{grid-template-columns:auto 1fr;text-align:left;justify-items:start}
+}
+.logo-topo{width:170px;height:auto;border-radius:0;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px auto 0;max-width:640px}
+.chips span{font:600 13px/1 Poppins,sans-serif;padding:9px 14px;border-radius:99px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#dbe2ff}
+/* ============ DEPOIMENTOS ============ */
+.deps{columns:2 160px;column-gap:14px;margin-top:40px}
+.deps img{width:100%;height:auto;margin:0 0 14px;border-radius:16px;border:2px solid var(--linha);box-shadow:0 14px 30px -18px rgba(11,15,36,.35);break-inside:avoid;background:#fff}
+@media (min-width:760px){.deps{columns:4 200px}}
+.cartao .logo-oferta{width:200px;height:auto;border-radius:0;margin:6px auto 4px}
+.parc6{color:#aab3da;font-size:15px;margin:-2px 0 16px}
+</style>
+<!-- Pixel Utmify (pixelId 6abc0baa71223e9ed63158f2) -->
+<script>
+  window.pixelId = "6abc0baa71223e9ed63158f2";
+  (function(){
+    var s = document.createElement("script");
+    s.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+    s.async = true; s.defer = true;
+    (document.head || document.documentElement).appendChild(s);
+  })();
+</script>
+</head>
+<body>
+
+<!-- ================= TOPO ================= -->
+<header class="topo centro">
+  <div class="wrap">
+    <img class="logo-topo" src="/pagina3/midia/logo-marca.png" alt="WinTube" width="314" height="178">
+    <span class="tag escura">★ Vídeos pro canal dark</span>
+    <h1>Crie <span class="grad-txt">Vídeos de Filmes, Séries e Animes</span> no automático pro seu canal</h1>
+    <p class="sub">A WinTube pega as melhores cenas, coloca filtro de cinema e legenda e monta o seu vídeo pro YouTube em minutos, sem aparecer e sem gravar a voz.</p>
+    <div class="chips"><span>🎬 Filmes</span><span>📺 Séries</span><span>🍥 Animes</span><span>▶️ YouTube 16:9</span></div>
+    <div class="cta-box">
+      <a class="cta" href="#oferta">Quero acessar agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="como centro" id="como">
+  <div class="wrap">
+    <span class="tag">Como funciona</span>
+    <h2 class="titulo">Veja um vídeo feito com a WinTube</h2>
+    <p class="sub">Assista ao exemplo abaixo: as melhores cenas, o filtro de cinema e a legenda, tudo montado pelo aplicativo.</p>
+    <div class="yt rev">
+      <iframe src="https://www.youtube.com/embed/ANnHwcWenR8?rel=0" title="Vídeo feito com a WinTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="cta-box">
+      <a class="cta" href="#oferta">Quero garantir agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 PASSOS ================= -->
+<section class="grade grade-fade" id="passos">
+  <div class="wrap centro">
+    <span class="tag">3 passos simples</span>
+    <h2 class="titulo">Você gera um vídeo em apenas <span class="grad-txt">3 passos</span></h2>
+    <p class="sub">Veja como é fácil e rápido criar o vídeo do seu canal com a WinTube.</p>
+    <div class="passos" style="text-align:left">
+      <div class="passo rev">
+        <div class="num">1</div>
+        <h3>Escolha o <em class="grad-txt">vídeo</em></h3>
+        <p>Toque e escolha o vídeo do filme, da série ou do anime. Pode escolher vários: a WinTube ouve todos e pega as melhores falas. No computador, dá para colar o link do YouTube.</p>
+      </div>
+      <div class="passo rev">
+        <div class="num">2</div>
+        <h3>Escolha o <em class="grad-txt">visual</em></h3>
+        <p>Escolha o filtro de cinema e o estilo da legenda. A prévia já mostra como vai ficar. Depois, escolha a duração do vídeo.</p>
+      </div>
+      <div class="passo rev">
+        <div class="num">3</div>
+        <h3>Toque em <em class="grad-txt">Gerar meu vídeo</em></h3>
+        <p>A IA ouve o vídeo, escolhe as melhores partes, corta, monta e coloca a legenda sozinha. O vídeo sai deitado (16:9), pronto pro YouTube.</p>
+      </div>
+    </div>
+    <div class="celular rev">
+      <video src="/pagina3/midia/como-usar.mp4" poster="/pagina3/midia/como-usar-capa.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="som" aria-label="Ligar o som">
+        <svg class="som-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
+        <svg class="som-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+      </button>
+    </div>
+    <p class="aviso-som escuro-txt">🔊 Aperte o botão do alto-falante para ouvir!</p>
+    <div class="cta-box">
+      <a class="cta" href="#oferta">Gerar meus vídeos agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECURSOS ================= -->
+<section class="escuro" id="recursos">
+  <div class="wrap centro">
+    <span class="tag">Vídeos de cinema</span>
+    <h2 class="titulo">Poste <span class="grad-txt">muito mais vídeos</span> sem passar horas editando</h2>
+    <p class="sub">Tudo o que um vídeo de canal dark precisa para prender a atenção e crescer.</p>
+    <div class="recursos" style="text-align:left">
+      <div class="rec rev">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></div>
+        <h3>A IA escolhe as melhores cenas</h3>
+        <p>Ela ouve o vídeo inteiro e pega as partes de briga, ação, tiroteio, traição e suspense, deixando de fora a enrolação.</p>
+      </div>
+      <div class="rec rev">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 9h20M2 15h20"/></svg></div>
+        <h3>Visual de cinema</h3>
+        <p>Filtros prontos (Cinema, Drama, Vintage e outros) e as faixas pretas que deixam o vídeo com cara de filme.</p>
+      </div>
+      <div class="rec rev">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M6 12h4M14 12h4M6 15.5h8"/></svg></div>
+        <h3>Legenda automática</h3>
+        <p>12 estilos de legenda, do clássico ao amarelo viral, com tamanho e posição do jeito que você quiser.</p>
+      </div>
+      <div class="rec rev">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="m10 9 5 3-5 3z"/></svg></div>
+        <h3>Vídeo deitado pro YouTube</h3>
+        <p>Sai em 16:9, com 1, 3, 5, 8 ou 10 minutos, pronto pra subir no seu canal.</p>
+      </div>
+      <div class="rec rev">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/><path d="m3 3 18 18"/></svg></div>
+        <h3>Sem aparecer e sem gravar a voz</h3>
+        <p>Você não precisa mostrar o rosto nem narrar. O vídeo usa as próprias falas do filme, da série ou do anime.</p>
+      </div>
+      <div class="rec rev">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Roda no celular e no computador</h3>
+        <p>Tudo acontece no seu aparelho: Android, iPhone, Windows ou Mac. Nenhum vídeo seu é enviado para a internet.</p>
+      </div>
+    </div>
+    <div class="cta-box">
+      <a class="cta" href="#oferta">Criar os vídeos do meu canal
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARA QUEM ================= -->
+<section id="quem">
+  <div class="wrap centro">
+    <span class="tag">Classificador</span>
+    <h2 class="titulo">A WinTube <span class="grad-txt">serve para você?</span></h2>
+    <p class="sub">Descubra se o aplicativo é para o seu tipo de canal.</p>
+    <div class="quem" style="text-align:left">
+      <div class="q sim rev">
+        <h3>✅ Para quem é</h3>
+        <ul>
+          <li><i>✓</i><span>Quem quer ter um canal no YouTube sem aparecer e sem gravar a própria voz.</span></li>
+          <li><i>✓</i><span>Quem tem a rotina corrida e quer vídeos prontos no automático, sem editar nada.</span></li>
+          <li><i>✓</i><span>Quem quer postar com constância vídeos de filmes, séries e animes.</span></li>
+          <li><i>✓</i><span>Quem quer chegar na monetização e ganhar com os vídeos do canal.</span></li>
+        </ul>
+      </div>
+      <div class="q nao rev">
+        <h3>❌ Para quem NÃO é</h3>
+        <ul>
+          <li><i>✕</i><span>Quem tem tempo de sobra e gosta de passar horas em programas de edição.</span></li>
+          <li><i>✕</i><span>Quem não quer postar com frequência nem crescer o canal.</span></li>
+          <li><i>✕</i><span>Quem prefere pagar mensalidade ou créditos por cada vídeo.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-box">
+      <a class="cta" href="#oferta">A WinTube serve para mim
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEPOIMENTOS ================= -->
+<section class="grade grade-fade" id="depoimentos">
+  <div class="wrap centro">
+    <span class="tag">Depoimentos</span>
+    <h2 class="titulo">Resultados de quem <span class="grad-txt">já usa a WinTube</span></h2>
+    <p class="sub">Mensagens e prints de alunos que estão crescendo e monetizando os canais.</p>
+    <div class="deps">
+      <img class="rev" src="/pagina3/midia/depoimentos/d1.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
+      <img class="rev" src="/pagina3/midia/depoimentos/d2.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
+      <img class="rev" src="/pagina3/midia/depoimentos/d3.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
+      <img class="rev" src="/pagina3/midia/depoimentos/d4.png" alt="Depoimento de aluno da WinTube" loading="lazy">
+      <img class="rev" src="/pagina3/midia/depoimentos/d5.png" alt="Depoimento de aluno da WinTube" loading="lazy">
+      <img class="rev" src="/pagina3/midia/depoimentos/d6.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
+      <img class="rev" src="/pagina3/midia/depoimentos/d7.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
+      <img class="rev" src="/pagina3/midia/depoimentos/d8.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
+    </div>
+    <div class="cta-box">
+      <a class="cta" href="#oferta">Quero ter esses resultados
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFERTA ================= -->
+<section class="oferta centro" id="oferta">
+  <div class="wrap">
+    <span class="tag escura">Adquira agora</span>
+    <h2 class="titulo">Sem créditos, <span class="grad-txt">sem mensalidade</span> e sem limites</h2>
+    <p class="sub">Pague uma vez e gere quantos vídeos quiser.</p>
+    <div class="cartao rev">
+      <div class="selo">🔥 Acesso vitalício</div>
+      <div class="cartao-in">
+        <img class="logo-oferta" src="/pagina3/midia/logo-marca.png" alt="WinTube" width="314" height="178" loading="lazy">
+        <ul class="lista">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gerador de vídeos de filmes, séries e animes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Editor IA de corte e legenda + Assistente IA</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Treinamento WinTube Academy</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vídeos ilimitados + Grupo Networking VIP</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Guia Anti-Direitos Autorais</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Versão para celular e computador</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Suporte no WhatsApp</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>7 dias de garantia</li>
+        </ul>
+        <div class="por">De <s>R$ 197,00</s> por apenas</div>
+        <div class="preco"><small>R$</small>49<sup>,97</sup></div>
+        <div class="parc6">ou em até 6x de R$ 10,16</div>
+        <div class="unico">✓ Pagamento único</div>
+        <!-- link do checkout (Wiven) -->
+        <a class="cta" data-checkout href="https://checkout.wiven.com.br/checkout/cmuuje9fm0hby01ogug2ifith?offer=L3XAH06">Adquirir agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="pagto"><span>🔒 Compra segura</span><span>⚡ Acesso imediato</span><span>💳 Pix ou cartão</span></div>
+      </div>
+    </div>
+    <div class="empresa rev">
+      <div class="empresa-logo"><img src="/pagina3/midia/wiskills-logo.webp" alt="WiSkills" width="130" height="130" loading="lazy"><span class="verif">✓</span></div>
+      <div>
+        <div class="empresa-kicker">Você está comprando de uma empresa real</div>
+        <h3>Você está comprando um produto produzido pela WiSkills</h3>
+        <p>Somos uma empresa real, com rosto e reputação, não um anúncio fantasma.</p>
+        <a class="ig" href="https://www.instagram.com/wiskills.com.br/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>@wiskills.com.br</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GARANTIA ================= -->
+<section class="grade grade-fade" id="garantia">
+  <div class="wrap">
+    <div class="garantia rev">
+      <div class="medalha"><div><strong class="grad-txt">7</strong><span>dias de<br>garantia</span></div></div>
+      <div>
+        <span class="tag">Garantia</span>
+        <h2 class="titulo">Teste sem nenhum risco</h2>
+        <p>Você tem <b>7 dias de garantia incondicional</b> para testar a WinTube à vontade e ver se realmente gosta.</p>
+        <p>Se por qualquer motivo não ficar 100% satisfeito, devolvemos o seu dinheiro. Basta pedir o reembolso pelo suporte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUPORTE ================= -->
+<section class="centro">
+  <div class="wrap">
+    <span class="tag">Suporte</span>
+    <h2 class="titulo">Ficou com alguma dúvida?</h2>
+    <p class="sub">Clique no botão abaixo para falar com o nosso suporte no WhatsApp. Estamos prontos para te ajudar!</p>
+    <!-- WhatsApp do suporte: +55 27 99688-0778 -->
+    <a class="zap" data-suporte href="https://wa.me/5527996880778?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20WinTube." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+      Falar com o suporte</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="/pagina3/midia/logo.png" alt="WinTube" width="70" height="70" loading="lazy">
+    <p>© 2026 WinTube · WiSkills · Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script>
+// som do vídeo
+(function(){
+  var cels=[].slice.call(document.querySelectorAll('.celular'));
+  function pintar(c){
+    var v=c.querySelector('video'),b=c.querySelector('.som');
+    b.querySelector('.som-off').hidden=!v.muted;b.querySelector('.som-on').hidden=v.muted;
+    b.setAttribute('aria-label',v.muted?'Ligar o som':'Desligar o som');
+  }
+  cels.forEach(function(c){
+    var v=c.querySelector('video');
+    c.querySelector('.som').addEventListener('click',function(){
+      v.muted=!v.muted;
+      if(!v.muted){
+        // só um vídeo com som por vez
+        cels.forEach(function(o){if(o!==c){o.querySelector('video').muted=true;pintar(o);}});
+        v.currentTime=0;v.play();
+      }
+      pintar(c);
+    });
+  });
+})();
+// animação ao rolar
+(function(){
+  var els=document.querySelectorAll('.rev');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
