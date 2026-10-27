@@ -215,10 +215,18 @@ footer img{width:70px;height:70px;border-radius:16px;margin:0 auto 12px}
 .logo-topo{width:170px;height:auto;border-radius:0;margin-bottom:14px}
 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px auto 0;max-width:640px}
 .chips span{font:600 13px/1 Poppins,sans-serif;padding:9px 14px;border-radius:99px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#dbe2ff}
-/* ============ DEPOIMENTOS ============ */
-.deps{columns:2 160px;column-gap:14px;margin-top:40px}
-.deps img{width:100%;height:auto;margin:0 0 14px;border-radius:16px;border:2px solid var(--linha);box-shadow:0 14px 30px -18px rgba(11,15,36,.35);break-inside:avoid;background:#fff}
-@media (min-width:760px){.deps{columns:4 200px}}
+/* ============ FEEDBACKS ============ */
+.feedbacks{background:#fff}
+.fita{margin:40px 0;padding:24px 0;background:var(--noite);overflow:hidden}
+.fita-move{display:flex;width:max-content;animation:rola 50s linear infinite}
+.fita:hover .fita-move{animation-play-state:paused}
+.fita-set{display:flex;gap:14px;padding-right:14px;align-items:center}
+.fita-set img{height:420px;width:auto;border-radius:12px}
+@keyframes rola{to{transform:translateX(-50%)}}
+.depo{position:relative;width:100%;aspect-ratio:16/9;max-width:860px;margin:0 auto;border-radius:var(--raio);overflow:hidden;background:#000;box-shadow:0 30px 60px -30px rgba(11,15,36,.45)}
+.depo iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:640px){.fita-set img{height:320px}}
+@media (prefers-reduced-motion:reduce){.fita-move{animation:none}.fita{overflow-x:auto}}
 .cartao .logo-oferta{width:200px;height:auto;border-radius:0;margin:6px auto 4px}
 .parc6{color:#aab3da;font-size:15px;margin:-2px 0 16px}
 </style>
@@ -381,22 +389,16 @@ footer img{width:70px;height:70px;border-radius:16px;margin:0 auto 12px}
   </div>
 </section>
 
-<!-- ================= DEPOIMENTOS ================= -->
-<section class="grade grade-fade" id="depoimentos">
-  <div class="wrap centro">
-    <span class="tag">Depoimentos</span>
-    <h2 class="titulo">Resultados de quem <span class="grad-txt">já usa a WinTube</span></h2>
-    <p class="sub">Mensagens e prints de alunos que estão crescendo e monetizando os canais.</p>
-    <div class="deps">
-      <img class="rev" src="/pagina3/midia/depoimentos/d1.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
-      <img class="rev" src="/pagina3/midia/depoimentos/d2.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
-      <img class="rev" src="/pagina3/midia/depoimentos/d3.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
-      <img class="rev" src="/pagina3/midia/depoimentos/d4.png" alt="Depoimento de aluno da WinTube" loading="lazy">
-      <img class="rev" src="/pagina3/midia/depoimentos/d5.png" alt="Depoimento de aluno da WinTube" loading="lazy">
-      <img class="rev" src="/pagina3/midia/depoimentos/d6.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
-      <img class="rev" src="/pagina3/midia/depoimentos/d7.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
-      <img class="rev" src="/pagina3/midia/depoimentos/d8.jpg" alt="Depoimento de aluno da WinTube" loading="lazy">
-    </div>
+<!-- ================= FEEDBACKS ================= -->
+<section class="feedbacks centro" id="depoimentos">
+  <div class="wrap">
+    <span class="tag">Feedbacks</span>
+    <h2 class="titulo">Quem usa a <span class="grad-txt">WinTube</span>, conta</h2>
+    <p class="sub">Mensagens reais de alunos no WhatsApp e no grupo da WiSkills.</p>
+  </div>
+  <div class="fita" aria-label="Prints de feedbacks de alunos"><div class="fita-move"><div class="fita-set"><img src="/pagina3/midia/feedbacks/resultado-1.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 1" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-2.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 2" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-3.png" width="445" height="557" alt="Feedback de aluno WinTube 3" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-4.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 4" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-5.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 5" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-6.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 6" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-7.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 7" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-8.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 8" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-9.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 9" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-10.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 10" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-11.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 11" loading="lazy"></div><div class="fita-set" aria-hidden="true"><img src="/pagina3/midia/feedbacks/resultado-1.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-2.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-3.png" width="445" height="557" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-4.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-5.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-6.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-7.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-8.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-9.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-10.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-11.jpg" width="750" height="1334" alt="" loading="lazy"></div></div></div>
+  <div class="wrap">
+    <div class="depo rev"><iframe src="https://www.youtube-nocookie.com/embed/nrEwFpz4EQ0?rel=0" title="Depoimentos de quem usa a WinTube" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
     <div class="cta-box">
       <a class="cta" href="#oferta">Quero ter esses resultados
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
