@@ -24,15 +24,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Pixel UTMify */}
-        <Script id="utmify-pixel-id" strategy="beforeInteractive">
-          {`window.pixelId = "6abc0baa71223e9ed63158f2";`}
-        </Script>
-        <Script
-          id="utmify-pixel"
-          src="https://cdn.utmify.com.br/scripts/pixel/pixel.js"
-          strategy="afterInteractive"
-        />
+        {/* Tracking Lab */}
+        <Script id="trackinglab" src="https://app.trackinglab.site/v.js?p=f3e79e404ef03efd" strategy="afterInteractive" />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
