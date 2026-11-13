@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WinTube – Vídeos de Filmes, Séries e Animes no Automático</title>
+<title>WinTube – Máquina de Vídeos para Canais Dark</title>
 <meta name="description" content="Escolha o vídeo do filme, da série ou do anime e a WinTube entrega o vídeo pronto pro YouTube, com as melhores cenas, filtro de cinema e legenda. Pagamento único de R$ 49,97.">
 <meta name="theme-color" content="#070a1c">
 <link rel="icon" href="/pagina3/midia/logo.png">
-<meta property="og:title" content="WinTube – Vídeos de Filmes, Séries e Animes no Automático">
+<meta property="og:title" content="WinTube – Máquina de Vídeos para Canais Dark">
 <meta property="og:description" content="Vídeos prontos pro seu canal do YouTube, sem aparecer e sem gravar a voz. Por apenas R$ 49,97, pagamento único.">
 <meta property="og:image" content="/pagina3/midia/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800;900&family=Poppins:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Poppins:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===================================================================
    Links: checkout no botão "Adquirir agora" (data-checkout) e WhatsApp do suporte (data-suporte)
@@ -46,7 +46,7 @@ h1,h2,h3{font-family:Archivo,"Arial Narrow",system-ui,sans-serif;font-stretch:78
 .grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* faixa de etiqueta */
-.tag{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 Poppins,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:9px 16px;border-radius:99px;background:rgba(47,91,255,.1);color:var(--anil)}
+.tag{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 Poppins,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:9px 16px;border-radius:99px;background:rgba(47,91,255,.06);color:var(--anil)}
 .tag.escura{background:rgba(255,255,255,.08);color:#cfd8ff;border:1px solid rgba(255,255,255,.12)}
 .titulo{font-weight:900;font-size:clamp(32px,6.4vw,52px);line-height:1;letter-spacing:-.01em;margin:18px 0 14px}
 .sub{font-size:clamp(16px,2.4vw,19px);color:var(--cinza);max-width:640px;margin:0 auto}
@@ -55,12 +55,12 @@ h1,h2,h3{font-family:Archivo,"Arial Narrow",system-ui,sans-serif;font-stretch:78
 /* botão principal */
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:440px;
   font:800 clamp(16px,2.6vw,19px)/1.2 Poppins,sans-serif;text-transform:uppercase;text-decoration:none;color:#fff;
-  padding:20px 26px;border-radius:99px;background:var(--grad);background-size:200% 100%;
-  box-shadow:0 12px 30px -8px rgba(47,91,255,.6),inset 0 1px 0 rgba(255,255,255,.3);
+  padding:20px 26px;border-radius:99px;background:linear-gradient(90deg,#2fd06b 0%,#16a34a 100%);background-size:200% 100%;
+  box-shadow:0 12px 30px -8px rgba(22,163,74,.4),inset 0 1px 0 rgba(255,255,255,.3);
   transition:transform .2s, box-shadow .2s, background-position .4s;animation:pulso 2.4s infinite}
-.cta:hover{transform:translateY(-2px);background-position:100% 0;box-shadow:0 16px 36px -8px rgba(165,36,255,.6)}
+.cta:hover{transform:translateY(-2px);background-position:100% 0;box-shadow:0 16px 36px -8px rgba(22,163,74,.45)}
 .cta svg{width:22px;height:22px;flex:none}
-@keyframes pulso{0%,100%{box-shadow:0 12px 30px -8px rgba(47,91,255,.6),0 0 0 0 rgba(47,91,255,.45)}60%{box-shadow:0 12px 30px -8px rgba(47,91,255,.6),0 0 0 14px rgba(47,91,255,0)}}
+@keyframes pulso{0%,100%{box-shadow:0 12px 30px -8px rgba(22,163,74,.4),0 0 0 0 rgba(34,197,94,.35)}60%{box-shadow:0 12px 30px -8px rgba(22,163,74,.4),0 0 0 14px rgba(34,197,94,0)}}
 .cta-box{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:12px}
 .cta-nota{font-size:14px;color:var(--cinza);display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 .cta-nota span{display:inline-flex;gap:6px;align-items:center}
@@ -74,7 +74,7 @@ section{padding:76px 0}
 /* ============ TOPO ============ */
 .topo{background:var(--noite);color:#fff;position:relative;overflow:hidden;padding:26px 0 70px}
 .topo::before{content:"";position:absolute;width:720px;height:720px;left:50%;top:-260px;transform:translateX(-50%);
-  background:radial-gradient(circle,rgba(47,91,255,.45) 0%,rgba(165,36,255,.18) 40%,transparent 70%);pointer-events:none}
+  background:radial-gradient(circle,rgba(47,91,255,.27) 0%,rgba(165,36,255,.11) 40%,transparent 70%);pointer-events:none}
 .topo::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(#000,transparent 75%);-webkit-mask-image:linear-gradient(#000,transparent 75%);pointer-events:none}
 .topo .wrap{position:relative;z-index:1}
 .logo-topo{width:150px;height:150px;margin:0 auto 6px;border-radius:30px}
@@ -86,9 +86,7 @@ section{padding:76px 0}
 .topo .cta-nota{color:#9aa3cc}
 
 /* ============ COMO FUNCIONA (vídeo) ============ */
-.como{background:var(--grad-d);color:#fff;position:relative;overflow:hidden}
-.como .tag{background:rgba(255,255,255,.16);color:#fff}
-.como .sub{color:rgba(255,255,255,.88)}
+.como{background:#fff;color:var(--tinta);position:relative;overflow:hidden}
 .celular{position:relative;width:min(300px,78vw);margin:36px auto 0;padding:10px;border-radius:44px;background:#0b0f24;
   box-shadow:0 30px 70px -20px rgba(7,10,28,.7),inset 0 0 0 2px rgba(255,255,255,.12)}
 .celular video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:34px;background:#000}
@@ -96,17 +94,19 @@ section{padding:76px 0}
   background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center;backdrop-filter:blur(6px)}
 .som svg{width:22px;height:22px}
 .som svg[hidden]{display:none}
+.print-depo{width:min(340px,82vw);margin:36px auto 0;border-radius:28px;overflow:hidden;border:8px solid #111;box-shadow:0 24px 60px -18px rgba(0,0,0,.45)}
+.print-depo img{display:block;width:100%;height:auto}
+.demo-v{width:min(360px,86vw);margin:36px auto 0;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 24px 60px -18px rgba(0,0,0,.45)}
+.demo-v video{display:block;width:100%;aspect-ratio:9/16;background:#000}
 .yt{width:100%;max-width:960px;margin:36px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 20px 50px rgba(11,15,36,.25)}
 .yt iframe{width:100%;height:100%;border:0;display:block}
 .aviso-som{margin-top:18px;font-weight:600;display:flex;justify-content:center;align-items:center;gap:8px}
-.aviso-som.escuro-txt{color:var(--cinza)}
-.como .cta{background:#fff;color:var(--anil);animation:none;box-shadow:0 14px 30px -10px rgba(7,10,28,.5)}
-.como .cta:hover{color:var(--roxo)}
+.aviso-som.escuro-txt,.como .aviso-som{color:var(--cinza)}
 
 /* ============ PASSOS ============ */
 .passos{display:grid;gap:20px;margin-top:44px}
 .passo{background:#fff;border:2px solid var(--linha);border-radius:var(--raio);padding:28px 24px;box-shadow:0 10px 30px -18px rgba(11,15,36,.25)}
-.num{width:58px;height:58px;border-radius:16px;background:var(--grad-d);color:#fff;font:900 30px/58px Poppins,sans-serif;text-align:center;margin-bottom:18px;box-shadow:0 10px 20px -8px rgba(47,91,255,.6)}
+.num{width:58px;height:58px;border-radius:16px;background:var(--grad-d);color:#fff;font:900 30px/58px Poppins,sans-serif;text-align:center;margin-bottom:18px;box-shadow:0 10px 20px -8px rgba(47,91,255,.36)}
 .passo h3{font-size:24px;font-weight:800;margin-bottom:8px}
 .passo h3 em{font-style:normal}
 .passo p{color:var(--cinza)}
@@ -123,7 +123,7 @@ section{padding:76px 0}
 .recursos{display:grid;gap:16px;margin-top:44px}
 .rec{border-radius:var(--raio);padding:26px 22px;background:linear-gradient(180deg,var(--noite2),#0a0e26);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
 .rec::after{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--grad);opacity:.8}
-.ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:rgba(47,91,255,.15);color:#7fb4ff;margin-bottom:16px}
+.ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:rgba(47,91,255,.09);color:#7fb4ff;margin-bottom:16px}
 .ico svg{width:26px;height:26px}
 .rec h3{font-size:20px;font-weight:700;margin-bottom:6px}
 .rec p{color:#aab3da;font-size:15.5px}
@@ -150,26 +150,27 @@ section{padding:76px 0}
 
 /* ============ OFERTA ============ */
 .oferta{background:var(--noite);color:#fff;position:relative;overflow:hidden}
-.oferta::before{content:"";position:absolute;width:800px;height:800px;left:50%;top:50%;transform:translate(-50%,-40%);background:radial-gradient(circle,rgba(165,36,255,.3),rgba(47,91,255,.15) 40%,transparent 70%)}
+.oferta::before{content:"";position:absolute;width:800px;height:800px;left:50%;top:50%;transform:translate(-50%,-40%);background:radial-gradient(circle,rgba(165,36,255,.18),rgba(47,91,255,.09) 40%,transparent 70%)}
 .oferta .wrap{position:relative}
 .oferta .sub{color:#aab3da}
-.cartao{position:relative;max-width:460px;margin:40px auto 0;border-radius:28px;padding:3px;background:var(--grad-d);box-shadow:0 40px 80px -30px rgba(47,91,255,.7)}
+.cartao{position:relative;max-width:460px;margin:40px auto 0;border-radius:28px;padding:3px;background:var(--grad-d);box-shadow:0 40px 80px -30px rgba(47,91,255,.42)}
 .cartao-in{border-radius:25px;background:#0b1030;padding:34px 24px 30px;text-align:center}
-.selo{position:absolute;top:-16px;left:50%;transform:translateX(-50%);white-space:nowrap;font:800 13px/1 Poppins;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:99px;background:#fff;color:var(--anil);box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
+.selo{position:absolute;top:-16px;left:50%;transform:translateX(-50%);white-space:nowrap;font:800 13px/1 Poppins;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:99px;background:#22c55e;color:#fff;box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
 .cartao img{width:120px;height:120px;border-radius:24px;margin:6px auto 10px}
 .cartao h3{font-size:26px;font-weight:800}
 .lista{list-style:none;text-align:left;display:grid;gap:12px;margin:22px 0 26px;padding:20px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
 .lista li{display:flex;gap:10px;align-items:flex-start;font-weight:600;color:#e6eaff}
 .lista li svg{flex:none;width:22px;height:22px;color:#4ade80;margin-top:1px}
-.por{font:600 15px Poppins;color:#aab3da;text-transform:uppercase;letter-spacing:.1em}
-.preco{font:900 clamp(58px,15vw,76px)/1 Poppins,sans-serif;letter-spacing:-.03em;margin:6px 0 4px}
+.por{font:800 19px Poppins;color:#4ade80;text-transform:uppercase;letter-spacing:.1em}
+.preco{font:900 clamp(72px,19vw,96px)/1 Poppins,sans-serif;letter-spacing:-.03em;margin:6px 0 4px;color:#22c55e}
 .preco small{font-size:.4em;vertical-align:.95em;margin-right:4px;font-weight:800}
 .preco sup{font-size:.4em;vertical-align:.95em}
 .unico{display:inline-block;margin-bottom:22px;font-weight:700;color:#4ade80;background:rgba(74,222,128,.1);padding:7px 14px;border-radius:99px;font-size:14px}
 .cartao .cta{max-width:none}
+.cartao-in img.selos{width:100%;max-width:380px;height:auto;margin:16px auto 0;border-radius:0;box-shadow:none;opacity:.85}
 .empresa{max-width:760px;margin:40px auto 0;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center;
   padding:30px 22px;border-radius:24px;background:rgba(13,18,48,.85);border:1px solid rgba(255,255,255,.1)}
-.empresa-logo{position:relative;flex:none;width:130px;height:130px;border-radius:50%;padding:6px;background:#11162e;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 16px 34px -12px rgba(47,91,255,.6)}
+.empresa-logo{position:relative;flex:none;width:130px;height:130px;border-radius:50%;padding:6px;background:#11162e;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 16px 34px -12px rgba(47,91,255,.36)}
 .empresa-logo img{width:100%;height:100%;border-radius:50%;object-fit:cover}
 .verif{position:absolute;right:2px;bottom:8px;width:34px;height:34px;border-radius:50%;background:#3b82f6;color:#fff;display:grid;place-items:center;font:800 17px/1 Poppins;border:3px solid #11162e}
 .empresa-kicker{font:600 12px/1.3 Poppins,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8d96c2;margin-bottom:10px}
@@ -184,8 +185,8 @@ section{padding:76px 0}
 
 /* ============ GARANTIA / SUPORTE ============ */
 .garantia{display:grid;gap:26px;align-items:center;justify-items:center;text-align:center;max-width:820px;margin:0 auto}
-.medalha{width:170px;height:170px;border-radius:50%;background:conic-gradient(from 0deg,#0ea5ff,#2f5bff,#a524ff,#0ea5ff);padding:6px;box-shadow:0 20px 40px -16px rgba(47,91,255,.6)}
-.medalha div{width:100%;height:100%;border-radius:50%;background:#fff;display:grid;place-content:center;text-align:center;border:3px dashed rgba(47,91,255,.35)}
+.medalha{width:170px;height:170px;border-radius:50%;background:conic-gradient(from 0deg,#0ea5ff,#2f5bff,#a524ff,#0ea5ff);padding:6px;box-shadow:0 20px 40px -16px rgba(47,91,255,.36)}
+.medalha div{width:100%;height:100%;border-radius:50%;background:#fff;display:grid;place-content:center;text-align:center;border:3px dashed rgba(47,91,255,.21)}
 .medalha strong{font:900 56px/1 Poppins}
 .medalha span{font:800 14px/1.2 Poppins;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
 .garantia p{color:var(--cinza);margin-top:10px}
@@ -219,13 +220,12 @@ footer img{width:70px;height:70px;border-radius:16px;margin:0 auto 12px}
   .quem{grid-template-columns:1fr 1fr}
   .garantia{grid-template-columns:auto 1fr;text-align:left;justify-items:start}
 }
-/* fonte dos títulos (estilo "PARE DE VIBE CODAR") */
-h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:900;letter-spacing:-.04em;line-height:1.02}
-.logo-topo{width:170px;height:auto;border-radius:0;margin-bottom:14px}
-.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px auto 0;max-width:640px}
-.chips span{font:600 13px/1 Poppins,sans-serif;padding:9px 14px;border-radius:99px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#dbe2ff}
-/* ============ FEEDBACKS ============ */
-.feedbacks{background:#fff}
+/* ===== WinTube ===== */
+.logo-topo{width:150px;height:150px;border-radius:0;object-fit:contain}
+.cartao img.logo-oferta{width:130px;height:130px;border-radius:0;object-fit:contain}
+.demo-v.deitado video{aspect-ratio:16/9}
+.demo-v.deitado{width:min(960px,100%)}
+/* feedbacks (faixa de prints) */
 .fita{margin:40px 0;padding:24px 0;background:var(--noite);overflow:hidden}
 .fita-move{display:flex;width:max-content;animation:rola 50s linear infinite}
 .fita:hover .fita-move{animation-play-state:paused}
@@ -236,8 +236,6 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
 .depo iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:640px){.fita-set img{height:320px}}
 @media (prefers-reduced-motion:reduce){.fita-move{animation:none}.fita{overflow-x:auto}}
-.cartao .logo-oferta{width:200px;height:auto;border-radius:0;margin:6px auto 4px}
-.parc6{color:#aab3da;font-size:15px;margin:-2px 0 16px}
 </style>
 <!-- Tracking Lab -->
 <script src="https://app.trackinglab.site/v.js?p=f3e79e404ef03efd" async></script>
@@ -247,11 +245,13 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
 <!-- ================= TOPO ================= -->
 <header class="topo centro">
   <div class="wrap">
-    <img class="logo-topo" src="/pagina3/midia/logo-marca.png" alt="WinTube" width="314" height="178">
-    <span class="tag escura">#1 Gerador de vídeos pro canal dark</span>
+    <img class="logo-topo" src="/pagina3/midia/logo.png" alt="WinTube" width="150" height="150">
+    <span class="tag escura">#1 Máquina de Vídeos para Canais Dark</span>
     <h1>Crie <span class="grad-txt">Vídeos de Filmes, Séries e Animes</span> no automático pro seu canal</h1>
-    <p class="sub">A WinTube pega as melhores cenas, coloca filtro de cinema e legenda e monta o seu vídeo pro YouTube em minutos, sem aparecer e sem gravar a voz.</p>
-    <div class="chips"><span>🎬 Filmes</span><span>📺 Séries</span><span>🍥 Animes</span><span>▶️ YouTube 16:9</span></div>
+    <p class="sub">Escolha o vídeo e a <b>Máquina de Vídeos para Canais Dark</b> faz todo o trabalho: pega as melhores cenas, coloca filtro de cinema e legenda, sem você aparecer e sem gravar a voz.</p>
+    <div class="yt rev">
+      <iframe src="https://www.youtube.com/embed/ANnHwcWenR8?rel=0" title="Vídeo feito com a WinTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
     <div class="cta-box">
       <a class="cta" href="#oferta">Quero acessar agora
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -263,10 +263,10 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
 <section class="como centro" id="como">
   <div class="wrap">
     <span class="tag">Como funciona</span>
-    <h2 class="titulo">Veja um vídeo feito com a WinTube</h2>
-    <p class="sub">Assista ao exemplo abaixo: as melhores cenas, o filtro de cinema e a legenda, tudo montado pelo aplicativo.</p>
-    <div class="yt rev">
-      <iframe src="https://www.youtube.com/embed/ANnHwcWenR8?rel=0" title="Vídeo feito com a WinTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h2 class="titulo">Veja como funciona a <span class="grad-txt">WinTube</span></h2>
+    <p class="sub">Assista ao passo a passo e veja como é simples criar o vídeo do seu canal.</p>
+    <div class="demo-v rev">
+      <video src="/pagina3/midia/como-usar.mp4" poster="/pagina3/midia/como-usar-capa.jpg" controls playsinline preload="metadata"></video>
     </div>
     <div class="cta-box">
       <a class="cta" href="#oferta">Quero garantir agora
@@ -285,27 +285,22 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
       <div class="passo rev">
         <div class="num">1</div>
         <h3>Escolha o <em class="grad-txt">vídeo</em></h3>
-        <p>Toque e escolha o vídeo do filme, da série ou do anime. Pode escolher vários: a WinTube ouve todos e pega as melhores falas. No computador, dá para colar o link do YouTube.</p>
+        <p>Escolha o vídeo do filme, da série ou do anime. Pode escolher vários: a WinTube ouve todos e pega as melhores falas. No computador, dá para colar o link do YouTube.</p>
+        <div class="quadro-passo"><video src="/pagina3/midia/etapa-1.mp4" poster="/pagina3/midia/etapa-1.jpg" muted loop playsinline preload="none" aria-label="Vídeo explicando o passo 1"></video></div>
       </div>
       <div class="passo rev">
         <div class="num">2</div>
         <h3>Escolha o <em class="grad-txt">visual</em></h3>
         <p>Escolha o filtro de cinema e o estilo da legenda. A prévia já mostra como vai ficar. Depois, escolha a duração do vídeo.</p>
+        <div class="quadro-passo"><video src="/pagina3/midia/etapa-2.mp4" poster="/pagina3/midia/etapa-2.jpg" muted loop playsinline preload="none" aria-label="Vídeo explicando o passo 2"></video></div>
       </div>
       <div class="passo rev">
         <div class="num">3</div>
         <h3>Toque em <em class="grad-txt">Gerar meu vídeo</em></h3>
         <p>A IA ouve o vídeo, escolhe as melhores partes, corta, monta e coloca a legenda sozinha. O vídeo sai deitado (16:9), pronto pro YouTube.</p>
+        <div class="quadro-passo"><video src="/pagina3/midia/etapa-3.mp4" poster="/pagina3/midia/etapa-3.jpg" muted loop playsinline preload="none" aria-label="Vídeo explicando o passo 3"></video></div>
       </div>
     </div>
-    <div class="celular rev">
-      <video src="/pagina3/midia/como-usar.mp4" poster="/pagina3/midia/como-usar-capa.jpg" autoplay muted loop playsinline preload="metadata"></video>
-      <button class="som" aria-label="Ligar o som">
-        <svg class="som-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
-        <svg class="som-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
-      </button>
-    </div>
-    <p class="aviso-som escuro-txt">🔊 Aperte o botão do alto-falante para ouvir!</p>
     <div class="cta-box">
       <a class="cta" href="#oferta">Gerar meus vídeos agora
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -391,13 +386,13 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
 </section>
 
 <!-- ================= FEEDBACKS ================= -->
-<section class="feedbacks centro" id="depoimentos">
+<section class="centro" id="depoimentos" style="background:var(--claro)">
   <div class="wrap">
-    <span class="tag">Feedbacks</span>
-    <h2 class="titulo">Quem usa a <span class="grad-txt">WinTube</span>, conta</h2>
+    <span class="tag">Depoimentos</span>
+    <h2 class="titulo">Quem tá usando a <span class="grad-txt">WinTube</span></h2>
     <p class="sub">Mensagens reais de alunos no WhatsApp e no grupo da WiSkills.</p>
   </div>
-  <div class="fita" aria-label="Prints de feedbacks de alunos"><div class="fita-move"><div class="fita-set"><img src="/pagina3/midia/feedbacks/resultado-1.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 1" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-2.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 2" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-3.png" width="445" height="557" alt="Feedback de aluno WinTube 3" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-4.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 4" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-5.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 5" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-6.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 6" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-7.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 7" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-8.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 8" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-9.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 9" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-10.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 10" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-11.jpg" width="750" height="1334" alt="Feedback de aluno WinTube 11" loading="lazy"></div><div class="fita-set" aria-hidden="true"><img src="/pagina3/midia/feedbacks/resultado-1.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-2.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-3.png" width="445" height="557" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-4.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-5.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-6.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-7.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-8.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-9.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-10.jpg" width="750" height="1334" alt="" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-11.jpg" width="750" height="1334" alt="" loading="lazy"></div></div></div>
+  <div class="fita" aria-label="Prints de feedbacks de alunos"><div class="fita-move"><div class="fita-set"><img src="/pagina3/midia/feedbacks/resultado-1.jpg" alt="Feedback de aluno WinTube 1" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-2.jpg" alt="Feedback de aluno WinTube 2" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-3.png" alt="Feedback de aluno WinTube 3" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-4.jpg" alt="Feedback de aluno WinTube 4" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-5.jpg" alt="Feedback de aluno WinTube 5" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-6.jpg" alt="Feedback de aluno WinTube 6" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-7.jpg" alt="Feedback de aluno WinTube 7" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-8.jpg" alt="Feedback de aluno WinTube 8" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-9.jpg" alt="Feedback de aluno WinTube 9" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-10.jpg" alt="Feedback de aluno WinTube 10" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-11.jpg" alt="Feedback de aluno WinTube 11" loading="lazy"></div><div class="fita-set" aria-hidden="true"><img src="/pagina3/midia/feedbacks/resultado-1.jpg" alt="Feedback de aluno WinTube 1" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-2.jpg" alt="Feedback de aluno WinTube 2" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-3.png" alt="Feedback de aluno WinTube 3" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-4.jpg" alt="Feedback de aluno WinTube 4" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-5.jpg" alt="Feedback de aluno WinTube 5" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-6.jpg" alt="Feedback de aluno WinTube 6" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-7.jpg" alt="Feedback de aluno WinTube 7" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-8.jpg" alt="Feedback de aluno WinTube 8" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-9.jpg" alt="Feedback de aluno WinTube 9" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-10.jpg" alt="Feedback de aluno WinTube 10" loading="lazy"><img src="/pagina3/midia/feedbacks/resultado-11.jpg" alt="Feedback de aluno WinTube 11" loading="lazy"></div></div></div>
   <div class="wrap">
     <div class="depo rev"><iframe src="https://www.youtube-nocookie.com/embed/nrEwFpz4EQ0?rel=0" title="Depoimentos de quem usa a WinTube" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
   </div>
@@ -410,11 +405,11 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
     <h2 class="titulo">Sem créditos, <span class="grad-txt">sem mensalidade</span> e sem limites</h2>
     <p class="sub">Pague uma vez e gere quantos vídeos quiser.</p>
     <div class="cartao rev">
-      <div class="selo">🔥 Acesso vitalício</div>
+      <div class="selo">Acesso vitalício</div>
       <div class="cartao-in">
-        <img class="logo-oferta" src="/pagina3/midia/logo-marca.png" alt="WinTube" width="314" height="178" loading="lazy">
+        <img class="logo-oferta" src="/pagina3/midia/logo.png" alt="WinTube" width="130" height="130" loading="lazy">
         <ul class="lista">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gerador de vídeos de filmes, séries e animes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Máquina de Vídeos para Canais Dark</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Editor IA de corte e legenda + Assistente IA</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Treinamento WinTube Academy</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vídeos ilimitados + Grupo Networking VIP</li>
@@ -423,14 +418,13 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Suporte no WhatsApp</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>7 dias de garantia</li>
         </ul>
-        <div class="por">De <s>R$ 197,00</s> por apenas</div>
+        <div class="por">Por apenas</div>
         <div class="preco"><small>R$</small>49<sup>,97</sup></div>
-        <div class="parc6">ou em até 6x de R$ 10,16</div>
-        <div class="unico">✓ Pagamento único</div>
+        <div class="unico">✓ Pagamento único · ou 6x de R$ 10,16</div>
         <!-- link do checkout (Wiven) -->
         <a class="cta" data-checkout href="https://checkout.wiven.com.br/checkout/cmuuje9fm0hby01ogug2ifith?offer=L3XAH06">Adquirir agora
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <div class="pagto"><span>🔒 Compra segura</span><span>⚡ Acesso imediato</span><span>💳 Pix ou cartão</span></div>
+        <img class="selos" src="/pagina3/midia/selos.png" alt="Compra segura, satisfação garantida e privacidade protegida" width="1024" height="95">
       </div>
     </div>
   </div>
@@ -447,6 +441,22 @@ h1,.titulo{font-family:"Inter Tight",Poppins,system-ui,sans-serif;font-weight:90
         <p>Você tem <b>7 dias de garantia incondicional</b> para testar a WinTube à vontade e ver se realmente gosta.</p>
         <p>Se por qualquer motivo não ficar 100% satisfeito, devolvemos o seu dinheiro. Basta pedir o reembolso pelo suporte.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section style="background:var(--claro)">
+  <div class="wrap centro">
+    <span class="tag">Dúvidas</span>
+    <h2 class="titulo">Perguntas frequentes</h2>
+    <div class="faq" style="text-align:left">
+      <details><summary>Preciso saber editar vídeo?</summary><p>Não. Você escolhe o vídeo, o filtro e a legenda e toca em “Gerar meu vídeo”. A WinTube corta, monta e coloca a legenda sozinha.</p></details>
+      <details><summary>Funciona no celular?</summary><p>Sim. A WinTube funciona no celular (Android e iPhone) e no computador (Windows e Mac).</p></details>
+      <details><summary>Tem mensalidade ou limite de vídeos?</summary><p>Não. O pagamento de R$ 49,97 é único e você gera quantos vídeos quiser, sem créditos.</p></details>
+      <details><summary>Preciso aparecer ou gravar a minha voz?</summary><p>Não. O vídeo usa as próprias falas do filme, da série ou do anime. Você não aparece e não narra nada.</p></details>
+      <details><summary>E os direitos autorais?</summary><p>Junto com o acesso vem o Guia Anti-Direitos Autorais, que ensina como postar esse tipo de vídeo com mais segurança.</p></details>
+      <details><summary>Como recebo o acesso?</summary><p>Logo depois que o pagamento é aprovado, você recebe o acesso e o passo a passo para começar.</p></details>
     </div>
   </div>
 </section>
