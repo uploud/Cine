@@ -230,6 +230,12 @@ footer img{width:70px;height:70px;border-radius:16px;margin:0 auto 12px}
 .cartao img.logo-oferta{width:min(300px,80%);height:auto;border-radius:0;margin:6px auto 14px}
 .demo-v.deitado video{aspect-ratio:16/9}
 .demo-v.deitado{width:min(960px,100%)}
+/* feedbacks em vídeo (shorts) */
+.fb-vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:1000px;margin:40px auto 0}
+.fb-vid{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:2px solid rgba(255,255,255,.12);background:#000;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.fb-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fb-vid .vsl{position:absolute;top:10px;left:10px;z-index:2;pointer-events:none;font:800 11px/1 Poppins,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#2f5bff;padding:5px 10px;border-radius:6px}
+@media (min-width:760px){.fb-vids{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
 /* feedbacks (faixa de prints) */
 .fita{margin:40px 0;padding:24px 0;background:var(--noite);overflow:hidden}
 .fita-move{display:flex;width:max-content;animation:rola 50s linear infinite}
@@ -448,6 +454,21 @@ src="https://www.facebook.com/tr?id=1380435710859905&ev=PageView&noscript=1"
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <img class="selos" src="/pagina3/midia/selos.png" alt="Compra segura, satisfação garantida e privacidade protegida" width="1024" height="95">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEEDBACKS EM VÍDEO ================= -->
+<section class="escuro centro" id="feedbacks-video">
+  <div class="wrap">
+    <span class="tag">Feedbacks em vídeo</span>
+    <h2 class="titulo">Veja os resultados de quem <span class="grad-txt">decidiu agir</span></h2>
+    <p class="sub">Alunos mostrando os resultados dos canais, direto do celular.</p>
+    <div class="fb-vids">
+      <div class="fb-vid rev"><span class="vsl">assista</span><iframe src="https://www.youtube.com/embed/rgWNMC3Hu-8?rel=0" title="Feedback de aluno 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="fb-vid rev"><span class="vsl">assista</span><iframe src="https://www.youtube.com/embed/MPv3oWwbCv8?rel=0" title="Feedback de aluno 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="fb-vid rev"><span class="vsl">assista</span><iframe src="https://www.youtube.com/embed/ZdLNn3JfpHc?rel=0" title="Feedback de aluno 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="fb-vid rev"><span class="vsl">assista</span><iframe src="https://www.youtube.com/embed/3GB5dkEu9JA?rel=0" title="Feedback de aluno 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
   </div>
 </section>
