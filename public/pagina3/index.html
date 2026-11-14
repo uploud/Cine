@@ -222,10 +222,15 @@ footer img{width:70px;height:70px;border-radius:16px;margin:0 auto 12px}
   .garantia{grid-template-columns:auto 1fr;text-align:left;justify-items:start}
 }
 /* ===== WinTube ===== */
-/* título do topo no estilo "GERADOR DE VÍDEOS DE CANAL DARK" (mono, maiúsculas) */
-.topo h1{font-family:"JetBrains Mono",ui-monospace,monospace;font-stretch:normal;text-transform:uppercase;font-weight:800;
-  font-size:clamp(28px,4.6vw,52px);line-height:1.15;letter-spacing:-.01em;color:#fff;max-width:1000px}
-.topo h1 .azul-claro{color:#4c8df7}
+/* topo branco no estilo VideoShop: logo, "#1 Gerador..." e título em Poppins */
+.topo{background:#fff;color:#0b0b0b;padding-bottom:60px}
+.topo::before,.topo::after{display:none}
+.tag-topo{display:block;font:800 clamp(14px,1.6vw,18px)/1.2 Poppins,sans-serif;text-transform:uppercase;color:#0b0b0b;margin-top:6px}
+.topo h1{font-family:Poppins,system-ui,sans-serif;font-stretch:normal;text-transform:none;font-weight:800;
+  font-size:clamp(28px,4.4vw,48px);line-height:1.15;letter-spacing:-.02em;color:#0b0b0b;max-width:1100px;margin:14px auto 12px}
+.topo h1 .azul-claro{color:#2f5bff}
+.topo .sub{font-family:Poppins,sans-serif;color:#555;font-size:clamp(15px,1.8vw,19px);max-width:760px}
+.logo-topo{width:min(300px,70vw)!important;margin:4px auto 10px!important}
 .logo-topo{width:min(440px,82vw);height:auto;border-radius:0;margin:10px auto 18px}
 .cartao img.logo-oferta{width:min(300px,80%);height:auto;border-radius:0;margin:6px auto 14px}
 .demo-v.deitado video{aspect-ratio:16/9}
@@ -274,9 +279,9 @@ src="https://www.facebook.com/tr?id=1380435710859905&ev=PageView&noscript=1"
 <header class="topo centro">
   <div class="wrap">
     <img class="logo-topo" src="/pagina3/midia/logo-wintube.png" alt="WinTube" width="847" height="278">
-    <span class="tag escura">#1 Máquina de Vídeos para Canais Dark</span>
-    <h1>Gerador de <span class="azul-claro">Vídeos de Canal Dark</span> automático para criadores de conteúdo</h1>
-    <p class="sub">O único aplicativo que permite criar vídeos ilimitados para seu canal. Sem créditos. Sem mensalidade. Sem precisar aparecer. Tudo em um único lugar.</p>
+    <span class="tag-topo">#1 Gerador de Vídeos para Canal Dark</span>
+    <h1>Cole o Link do Vídeo e Crie Um <span class="azul-claro">Vídeo de Canal Dark</span> no Automático</h1>
+    <p class="sub">A WinTube gera vídeos de Canal Dark prontos para todos os tipos de plataforma.</p>
     <div class="yt rev">
       <iframe src="https://www.youtube.com/embed/ANnHwcWenR8?rel=0" title="Vídeo feito com a WinTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
