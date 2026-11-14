@@ -24,8 +24,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Tracking Lab */}
-        <Script id="trackinglab" src="https://app.trackinglab.site/v.js?p=f3e79e404ef03efd" strategy="afterInteractive" />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
