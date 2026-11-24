@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#060914" />
+  <title>WinTube – Vídeos de Canal Dark no Automático</title>
+  <meta name="description" content="Cole o link do YouTube e a WinTube faz todo o trabalho: escolhe as melhores cenas, corta, coloca filtro de cinema e legenda. Vídeo pronto pro seu canal dark. Pagamento único de R$ 49,97." />
+  <meta property="og:title" content="WinTube – Vídeos de Canal Dark no Automático" />
+  <meta property="og:description" content="Cole o link do YouTube e receba o vídeo do seu canal dark pronto, sem aparecer e sem gravar a voz." />
+  <meta property="og:image" content="/pagina4/midia/logo.png" />
+  <link rel="icon" href="/pagina4/midia/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" />
+  <!-- Página de vendas da WinTube (formato CutFlow, gerada por pagina4.py). PREÇO: procure por PREÇO. CHECKOUT: procure por CHECKOUT. -->
+  <style>
+    /* ─── cores (mesmos nomes de variável da página do Preset GTA 6, valores do WiFive Bordas) ─── */
+    :root {
+      --acc: #4C6BFF;
+      --acc-deep: #2F5BFF;
+      --acc-dark: #7B3CFF;
+      --acc-soft: #0EA5FF;
+      --acc-pale: #7FD3FF;
+      --on-acc: #ffffff;
+      --bg-8: #060914;
+      --bg-9: #080C1C;
+      --bg-11: #0B1024;
+      --bg-12: #0E1430;
+      --bg-13: #121A3A;
+      --bg-14: #152044;
+      --bg-line: #25305E;
+      --cream: #EEF2FF;
+      --cream-ink: #1E2A78;
+      --g-acc: linear-gradient(135deg, #0EA5FF, #4C6BFF, #2F5BFF);
+      --g-acc-short: linear-gradient(135deg, #3B82F6, #2F5BFF);
+      --g-acc-full: linear-gradient(135deg, #7FD3FF, #0EA5FF, #4C6BFF, #2F5BFF, #7B3CFF);
+      --g-headline: linear-gradient(45deg, #7FD3FF, #0EA5FF, #4C6BFF, #2F5BFF, #3B82F6);
+      --g-title: linear-gradient(to right, #0EA5FF, #4C6BFF, #2F5BFF);
+      --g-green: linear-gradient(135deg, #22c55e, #16a34a, #15803d);
+      --g-hairline: linear-gradient(to right, transparent, #0EA5FF, #4C6BFF, #2F5BFF, transparent);
+      --corte: 10px; /* canto de cima à direita cortado, como no botão principal do app */
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg-8); }
+    body { margin: 0; background: #fff; color: #ededed; font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    /* tipografia da identidade nova: Archivo condensada e pesada nos títulos (como a cartela de título
+       de um vídeo), Instrument Sans no texto */
+    h1, h2, h3, .num, .preco-novo, .preco-velho, .por, .total .grande, .total .incl, .faixa .corre span,
+    .cartao-v .nome p, .titulo-pilula h2, .perfil h3 span, .marca-texto, .botao-verde, .c3-info b {
+      font-family: Archivo, "Arial Narrow", ui-sans-serif, system-ui, sans-serif; font-stretch: 86%; }
+    /* grão de filme bem leve por cima de tudo, como no app */
+    body::after { content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+    img, video { display: block; max-width: 100%; }
+    main { display: block; min-height: 100vh; overflow-x: clip; }
+    h1, h2, h3, p { margin: 0; }
+    a { color: inherit; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .ct { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 1rem; }
+    .titulo-escuro { background: var(--g-headline); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .estrelas { color: #FACC15; letter-spacing: .15em; }
+
+    /* grade de fundo + brilho quente (iguais aos do Preset) */
+    .grade { position: relative; }
+    .grade::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0; background-size: 60px 60px;
+      background-image: linear-gradient(color-mix(in srgb, var(--acc) 5%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--acc-deep) 5%, transparent) 1px, transparent 1px);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%); mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%); }
+    .quente::after { content: ""; position: absolute; top: -10%; left: -10%; width: 50%; height: 60%; pointer-events: none; z-index: 0;
+      background: radial-gradient(ellipse at center, color-mix(in srgb, var(--acc) 8%, transparent) 0%, transparent 70%); }
+    .brilho { position: absolute; pointer-events: none; transform: scale(2.5);
+      background: radial-gradient(closest-side, color-mix(in srgb, var(--b) 72%, transparent), color-mix(in srgb, var(--b) 60%, transparent) 25%, color-mix(in srgb, var(--b) 33%, transparent) 50%, color-mix(in srgb, var(--b) 10%, transparent) 75%, transparent); }
+
+    .preco-velho { font-weight: 700; color: #dc2626; text-decoration: line-through; }
+    .preco-novo { font-weight: 900; line-height: 1; color: #16a34a; }
+    .marca-texto { display: inline; font-weight: 900; color: #fff; background: var(--g-acc-short); padding: 2px 6px; line-height: 1.55; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+    @keyframes flutua { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
+    @keyframes pulsa { 0%, 100% { transform: scale(1) } 50% { transform: scale(1.06) } }
+    @keyframes corre-esq { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+    @keyframes corre-dir { from { transform: translateX(-50%) } to { transform: translateX(0) } }
+    .pulsa { animation: pulsa 1.5s ease-in-out infinite; }
+    @keyframes revelar { from { opacity: 0 } to { opacity: 1 } }
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        .revelar { animation: revelar linear both; animation-timeline: view(); animation-range: entry 0% entry min(100%, 120px); }
+      }
+    }
+
+    /* ─── celular (moldura em CSS, Reel 9:16) ─── */
+    /* sem mockup de celular: só o vídeo 9:16, com cantos arredondados e um contorno fino */
+    .cel { position: relative; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden;
+      /* contorno fino no degradê da paleta (laranja) */
+      border: 2px solid transparent; background: linear-gradient(#000, #000) padding-box, var(--g-acc) border-box;
+      box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .9), 0 0 50px -20px color-mix(in srgb, var(--acc) 55%, transparent); }
+    .cel .status, .cel .barra, .cel .tela::before { display: none !important; }
+    .cel .tela video { height: 100%; aspect-ratio: auto; }
+    .cel .tela { position: relative; height: 100%; border-radius: inherit; overflow: hidden; background: #000; display: flex; flex-direction: column; }
+    .cel .tela::before { content: ""; position: absolute; z-index: 2; top: 2.2%; left: 50%; width: 31%; height: 3.6%; transform: translateX(-50%); background: #000; border-radius: 999px; }
+    .cel .status { flex: 0 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 6.2% 9% 3%; font: 600 9px/1 Inter, sans-serif; color: #fff; }
+    .cel .status i { display: inline-block; width: 1.9em; height: .95em; border-radius: 3px; border: 1px solid rgba(255, 255, 255, .7); position: relative; }
+    .cel .status i::after { content: ""; position: absolute; inset: 1.5px 4px 1.5px 1.5px; background: #fff; border-radius: 1.5px; }
+    .cel video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; flex: 0 0 auto; background: #000; }
+    .cel .barra { flex: 1; display: flex; justify-content: space-around; align-items: center; padding: 0 8%; }
+    .cel .barra span { width: 7%; aspect-ratio: 1; border: 1.5px solid rgba(255, 255, 255, .8); border-radius: 30%; }
+    .cel .barra span:nth-child(3) { border-radius: 50%; }
+
+    /* três celulares em leque (no lugar da caixa + notebook do Preset) */
+    .trio { position: relative; display: flex; justify-content: center; align-items: flex-end; padding: 6% 0 2%; }
+    .trio .cel { width: 35%; flex: 0 0 auto; }
+    .trio .meio { width: 44%; z-index: 2; margin: 0 -9%; }
+    .trio .esq { transform: rotate(-9deg) translateY(4%); }
+    .trio .dir { transform: rotate(9deg) translateY(4%); }
+    /* laterais um pouco mais escuras (profundidade): só o vídeo, o contorno continua igual */
+    .trio .esq video, .trio .dir video { filter: brightness(.88); transform: scale(1.04); }
+    .trio .fita { position: absolute; z-index: 3; left: 50%; bottom: 0; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; white-space: nowrap;
+      padding: 9px 16px 9px 10px; border-radius: 999px; background: rgba(30, 14, 8, .92); border: 1px solid rgba(255, 255, 255, .14); font: 800 13px/1 Inter, sans-serif; color: #fff;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .5), 0 0 30px color-mix(in srgb, var(--acc) 35%, transparent); }
+    .trio .fita svg { width: 24px; height: 24px; }
+    /* curtidas: corações subindo no canto dos vídeos do topo, como numa live (o script cria os corações) */
+    .curtidas { position: absolute; z-index: 3; right: 1%; bottom: 13%; width: 21%; height: 64%; pointer-events: none; }
+    .curtidas i { position: absolute; left: 50%; bottom: 0; width: var(--t); aspect-ratio: 1; margin-left: calc(var(--t) / -2); opacity: 0;
+      animation: curtida var(--d) cubic-bezier(.25, .6, .35, 1) forwards; }
+    .curtidas svg { display: block; width: 100%; height: 100%; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .35)); animation: balanca var(--b) ease-in-out infinite alternate; }
+    @keyframes curtida {
+      0% { opacity: 0; transform: translate(0, 0) scale(.2); }
+      10% { opacity: 1; transform: translate(0, -6%) scale(1.2); }
+      18% { transform: translate(0, -14%) scale(1); }
+      70% { opacity: .95; }
+      100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(.8); }
+    }
+    @keyframes balanca { from { transform: translateX(-14%) rotate(-12deg); } to { transform: translateX(14%) rotate(12deg); } }
+
+    /* notebook (no lugar da foto do notebook do Preset) */
+    .note { position: relative; }
+    .note .tampa { position: relative; border: 9px solid #121016; border-bottom-width: 12px; border-radius: 14px 14px 4px 4px; background: #000; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
+    .note .tampa video { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+    .note .base { height: 12px; margin: 0 -9%; border-radius: 2px 2px 14px 14px; background: linear-gradient(#cfcad6, #7c7686); box-shadow: 0 20px 30px rgba(0, 0, 0, .5); }
+    .note .base::after { content: ""; display: block; width: 16%; height: 5px; margin: 0 auto; border-radius: 0 0 6px 6px; background: #8f899a; }
+    .note .chips { position: absolute; left: 6%; top: 8%; display: grid; gap: 5px; justify-items: start; }
+    .note .chips span { font: 700 9px/1 Inter, sans-serif; padding: 5px 8px; border-radius: 999px; color: #fff; background: rgba(8, 10, 20, .78); border: 1px solid rgba(255, 255, 255, .16); }
+    .note .chips span:first-child { background: var(--g-acc-short); border-color: transparent; }
+
+    /* ═════════ HERO ═════════ */
+    .linha-topo { height: 2px; background: var(--g-hairline); }
+    .hero { position: relative; overflow-x: clip; margin-bottom: -1px; background: linear-gradient(135deg, var(--bg-8), var(--bg-12)); }
+    .hero .ct { position: relative; z-index: 1; padding-top: 1.25rem; }
+    .hero .cabeca { text-align: center; margin-bottom: 1.5rem; }
+    .hero h1 { margin-bottom: 1.5rem; font-size: 1.55rem; line-height: 1.15; font-weight: 900; color: #F3F4F6; }
+    /* headline grande: cada linha cresce com a largura da tela até o máximo que cabe numa linha só
+       (medido com a mesma Archivo 86% dos outros títulos: "O Ecossistema completo" ocupa ~11,6 vezes o tamanho da fonte,
+       "para monetizar com GTA 6" ~12,1; o divisor tem ~4% de folga. Se trocar o texto, meça de novo e ajuste os divisores) */
+    .hero h1 .l1 { display: block; font-size: min(calc((100vw - 2rem) / 12), 5.6rem); line-height: 1.06; text-wrap: balance; }
+    .hero h1 .l2 { display: block; margin-top: .12em; font-size: min(calc((100vw - 2rem) / 12.5), 5.4rem); line-height: 1.1; text-wrap: balance; }
+    .hero h1 .sublinha { border-bottom: 4px solid; border-image: var(--g-headline) 1; padding-bottom: 2px; }
+    .selos { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; max-width: 28rem; margin: 0 auto; }
+    .selos > div { border-radius: 999px; padding: 1.5px; background: var(--g-acc); }
+    .selos span.in { display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 999px; padding: 6px 12px; font-size: 10px; font-weight: 700; white-space: nowrap; background: var(--bg-12); color: #E5E7EB; }
+    .ok { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 4px; padding: 2px; background: var(--g-acc-short); color: #fff; }
+    .ok svg { width: 10px; height: 10px; }
+    .hero .mockup { position: relative; width: 100%; max-width: 600px; margin: 0 auto 2.5rem; }
+    .faixas { position: relative; z-index: 15; height: 55px; margin-bottom: -1rem; pointer-events: none; user-select: none; }
+    .faixa { position: absolute; left: 50%; width: 120%; overflow: hidden; border-radius: 6px; padding: 6px 0; border: 1px solid rgba(255, 255, 255, .2); }
+    .faixa::before, .faixa::after { content: ""; position: absolute; left: 0; right: 0; height: 1px; }
+    .faixa::before { top: 0; } .faixa::after { bottom: 0; }
+    .faixa.a { top: 0; transform: translateX(-50%) rotate(3deg);
+      background: linear-gradient(90deg, color-mix(in srgb, var(--acc-soft) 15%, transparent), color-mix(in srgb, var(--acc-deep) 25%, transparent), color-mix(in srgb, var(--acc-soft) 15%, transparent));
+      box-shadow: 0 0 25px color-mix(in srgb, var(--acc-deep) 40%, transparent), 0 0 60px color-mix(in srgb, var(--acc-deep) 15%, transparent), inset 0 1px 0 rgba(255, 255, 255, .15); }
+    .faixa.a::before { background: linear-gradient(90deg, transparent, var(--acc-deep), var(--acc-soft), transparent); }
+    .faixa.a::after { background: linear-gradient(90deg, transparent, var(--acc-soft), var(--acc-deep), transparent); }
+    .faixa.b { top: 1.25rem; transform: translateX(-50%) rotate(-3deg);
+      background: linear-gradient(90deg, color-mix(in srgb, var(--acc-pale) 15%, transparent), color-mix(in srgb, var(--acc-dark) 25%, transparent), color-mix(in srgb, var(--acc-pale) 15%, transparent));
+      box-shadow: 0 0 25px color-mix(in srgb, var(--acc-dark) 40%, transparent), 0 0 60px color-mix(in srgb, var(--acc-dark) 15%, transparent), inset 0 1px 0 rgba(255, 255, 255, .15); }
+    .faixa.b::before { background: linear-gradient(90deg, transparent, var(--acc-dark), var(--acc-pale), transparent); }
+    .faixa.b::after { background: linear-gradient(90deg, transparent, var(--acc-pale), var(--acc-dark), transparent); }
+    .faixa .corre { position: relative; z-index: 1; display: flex; white-space: nowrap; width: max-content; }
+    .faixa.a .corre { animation: corre-esq 30s linear infinite; }
+    .faixa.b .corre { animation: corre-dir 35s linear infinite; }
+    .faixa .corre span { display: flex; align-items: center; gap: 12px; margin: 0 12px; font-size: 12px; font-weight: 900; letter-spacing: .1em; color: #fff; }
+    .faixa.a .corre span { text-shadow: 0 0 8px rgba(255, 255, 255, .8), 0 0 20px color-mix(in srgb, var(--acc-deep) 70%, transparent); }
+    .faixa.b .corre span { text-shadow: 0 0 8px rgba(255, 255, 255, .8), 0 0 20px color-mix(in srgb, var(--acc-dark) 70%, transparent); }
+    .faixa .corre small { font-size: 10px; color: rgba(255, 255, 255, .6); }
+    .bloco-preco { position: relative; z-index: 10; margin-bottom: -1px; padding: 1rem 0 1.5rem; text-align: center; background: #fff; clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%); }
+    .bloco-preco .in { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 1.5rem; }
+    .bloco-preco .preco-velho { font-size: 1.25rem; }
+    .bloco-preco .por { font-size: 1.25rem; line-height: 1; font-weight: 700; color: #1a1a1a; }
+    .bloco-preco .preco-novo { font-size: 3rem; }
+    .bloco-preco .preco-novo small { font-size: .4em; font-weight: 800; }
+    /* selo de garantia (o PNG enviado, sem filtro nem rotação): primeira dobra e última dobra */
+    .selo-garantia { display: block; height: auto; pointer-events: none; user-select: none; }
+    .bloco-hero .selo-garantia { position: absolute; z-index: 20; top: -24px; right: 12px; width: 84px; }
+    /* páginas de bônus: o bloco do preço fica depois dos motions (em vez de no topo), com a ponta de baixo inclinada */
+    .bloco-hero.no-meio { margin: 0 0 3.5rem; }
+    .bloco-hero .diagonal-baixo { height: 61px; margin-top: -1px; background: #fff; clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%); }
+    .vitrine.sem-diagonal { padding-top: 2.5rem; }
+    .hero.sem-preco { display: flow-root; }   /* sem o bloco do preço, o espaço de baixo dos celulares fica dentro do topo (não vaza branco) */
+    /* páginas de bônus: o fim do topo funde na cor da seção de baixo (sem a linha onde os brilhos eram cortados) */
+    .hero .emenda-hero { position: absolute; left: 0; right: 0; bottom: 0; height: 240px; pointer-events: none; background: linear-gradient(to bottom, transparent, var(--bg-12) 85%); }
+    .bloco-preco .garantia-txt { font-size: 12px; font-weight: 500; letter-spacing: .03em; text-transform: uppercase; color: #9CA3AF; }
+
+    /* ═════════ VITRINE ═════════ */
+    .vitrine { position: relative; overflow: hidden; margin: -1px 0; padding: 6rem 0 60px; background: linear-gradient(to bottom, var(--bg-12) 0%, var(--bg-8) 100%); }
+    .vitrine .diagonal { position: absolute; left: 0; right: 0; top: -1px; z-index: 2; height: 61px; pointer-events: none; background: #fff; clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%); }
+    .titulo-secao { position: relative; z-index: 10; text-align: center; font-size: 1.875rem; line-height: 1.15; font-weight: 900; padding: 0 1.5rem; }
+    /* título em 2 linhas fixas: cada linha no maior tamanho que cabe numa linha só */
+    .titulo-2l .l1, .titulo-2l .l2 { display: block; white-space: nowrap; }
+    .titulo-2l .l1 { font-size: min(calc((100vw - 3.5rem) / 9.6), 3.4rem); line-height: 1.08; }
+    .titulo-2l .l2 { margin-top: .08em; font-size: min(calc((100vw - 3.5rem) / 17.4), 3rem); line-height: 1.12; }
+    .vitrine .bloco { position: relative; z-index: 10; margin-bottom: 3rem; }
+    .cartoes-v { display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 64rem; margin: 2rem auto 0; }
+    .cartao-v { width: 100%; max-width: 420px; margin: 0 auto; padding-bottom: 1.25rem; border-radius: 1rem; border: 1px dashed color-mix(in srgb, var(--acc) 55%, transparent); background: var(--bg-12); box-shadow: 0 18px 40px rgba(10, 20, 50, .25); }
+    .cartao-v .topo { height: 2.5rem; border-radius: 1rem 1rem 0 0; background: var(--g-title); }
+    .cartao-v .nome { padding: 1.25rem 1rem; text-align: center; }
+    .cartao-v .nome p:first-child { font-size: 1.125rem; line-height: 1.2; font-weight: 900; text-transform: uppercase; color: var(--acc-pale); }
+    .cartao-v .nome p:last-child { margin-top: 4px; font-size: 1.5rem; line-height: 1.2; font-weight: 900; text-transform: uppercase; color: #fff; }
+    .cartao-v .nome p:last-child span { padding: 2px 12px; background: var(--g-acc-short); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .moldura { width: 72%; margin: 0 auto; border-radius: 14px; padding: 2px; background: var(--g-acc-full); box-shadow: 0 0 30px color-mix(in srgb, var(--acc-deep) 35%, transparent); }
+    .moldura .in { border-radius: 12px; padding: 6px; background: #0C0604; }
+    .moldura video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 8px; background: var(--bg-9); }
+    /* cartão em destaque com motion horizontal (16:9): ocupa a largura toda */
+    .cartao-v.destaque { max-width: 860px; }
+    .moldura.deitada { width: 94%; }
+    .moldura.deitada video { aspect-ratio: 16 / 9; }
+    /* botão de som do vídeo "Como usar o app" */
+    .moldura.com-som .in { position: relative; }
+    .som { position: absolute; right: 16px; bottom: 16px; z-index: 3; width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer; background: rgba(0, 0, 0, .65); color: #fff; display: grid; place-items: center; backdrop-filter: blur(6px); box-shadow: 0 0 0 2px rgba(255, 255, 255, .25); animation: pulsa-som 1.6s ease-in-out infinite; }
+    .som.ligado { animation: none; }
+    .som svg { width: 24px; height: 24px; }
+    .som svg[hidden] { display: none; }
+    @keyframes pulsa-som { 50% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(255, 255, 255, .12); } }
+    .aviso-som { margin-top: 1rem; text-align: center; font-weight: 800; font-size: 1.05rem; color: #fff; }
+    .cartao-v .estrelas { margin-top: 1.25rem; text-align: center; font-size: 1.875rem; }
+
+    /* páginas reais (cards do viralyzer.com.br) no carrossel 3D da página do Clique e Edite:
+       o card do centro fica de frente, os laterais giram em perspectiva e escurecem; gira sozinho e dá para arrastar */
+    /* título e subtítulo mais compactos: 2 linhas cada no celular, 1 linha no computador */
+    .paginas .titulo-secao { font-size: 1.5rem; padding: 0; }
+    .paginas-sub { position: relative; z-index: 10; max-width: 40rem; margin: .5rem auto 0; text-align: center; font-size: .875rem; line-height: 1.5; color: #C9CDD3; }
+    .c3 { --c3w: min(56vw, 230px); position: relative; width: 100%; height: calc(var(--c3w) * 753 / 438 + 60px); margin-top: 1.5rem; perspective: 1100px; perspective-origin: 50% 45%; overflow-x: clip; overflow-y: visible; outline: none; }
+    .c3-palco { position: absolute; inset: 0; transform-style: preserve-3d; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+    .c3-slide { position: absolute; left: 50%; top: 50%; width: var(--c3w); transform-style: preserve-3d; cursor: pointer; will-change: transform, opacity; }
+    .c3-slide.ativo { cursor: grab; }
+    .c3-slide img { display: block; width: 100%; aspect-ratio: 438 / 753; height: auto; object-fit: cover; border-radius: 16px; pointer-events: none; -webkit-user-drag: none;
+      border: 2px solid transparent; background: linear-gradient(135deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .06)) border-box;
+      box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9); transition: box-shadow .4s; }
+    .c3-slide.ativo img { background: var(--g-acc) border-box;
+      box-shadow: 0 40px 90px -40px color-mix(in srgb, var(--acc) 85%, transparent), 0 0 50px -18px color-mix(in srgb, var(--acc-deep) 70%, transparent); }
+    .c3-info { position: relative; z-index: 1; display: grid; justify-items: center; gap: 4px; min-height: 56px; margin-top: .25rem; text-align: center; }
+    .c3-info b { font-size: 1.125rem; font-weight: 800; color: #F3F4F6; }
+    .c3-info span { font-size: .875rem; color: #C9CDD3; }
+    .c3-info.entra { animation: c3-entra .45s ease both; }
+    @keyframes c3-entra { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
+    .c3-pontos { display: flex; justify-content: center; gap: 8px; margin-top: .5rem; }
+    .c3-pontos button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 8px; background: rgba(255, 255, 255, .22); cursor: pointer; transition: width .4s, background .4s; }
+    .c3-pontos button.on { width: 26px; background: var(--g-acc); }
+
+    .plataformas { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; max-width: 48rem; margin: 2rem auto 0; }
+    .plat { display: flex; flex-direction: column; overflow: hidden; border-radius: 1rem; border: 1px solid color-mix(in srgb, var(--acc) 30%, transparent); background: var(--bg-12); box-shadow: 0 12px 30px rgba(10, 20, 50, .18); }
+    .plat .topo { height: 10px; background: var(--g-title); }
+    .plat .in { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 1rem .75rem; text-align: center; }
+    .plat h3 { margin-bottom: 1rem; font-size: .875rem; font-weight: 900; color: #F3F4F6; }
+    .plat .logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .75rem 1.25rem; min-height: 62px; }
+    .plat .logo { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .plat .logo img, .plat .logo svg { height: 38px; width: auto; }
+    .plat .logo span { font-size: 10px; font-weight: 600; color: #9CA3AF; }
+    .plat .estrelas { margin-top: auto; padding-top: .75rem; font-size: 1rem; letter-spacing: .2em; }
+    .recursos { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; max-width: 42rem; margin: 3rem auto 0; }
+    .recurso { display: flex; flex-direction: column; align-items: center; padding: 1rem; text-align: center; border-radius: 1rem; border: 1px solid color-mix(in srgb, var(--acc) 30%, transparent); background: var(--bg-12); box-shadow: 0 12px 30px rgba(0, 0, 0, .25); }
+    .recurso .emoji { margin-bottom: .75rem; font-size: 1.875rem; }
+    .recurso h3 { margin-bottom: .5rem; font-size: .875rem; font-weight: 900; letter-spacing: .03em; text-transform: uppercase; }
+    .recurso p { font-size: 11px; line-height: 1.6; color: #C9CDD3; }
+    .verde { max-width: 42rem; margin: .75rem auto 0; padding: 2px; border-radius: 1rem; background: linear-gradient(135deg, #00C853, #00E676, #00B248, #69F0AE); }
+    .verde .in { display: flex; align-items: center; gap: .75rem; padding: .75rem; border-radius: 14px; background: var(--bg-12); }
+    .verde .emoji { flex-shrink: 0; font-size: 2.25rem; }
+    .verde h3 { margin-bottom: 4px; font-size: 1rem; font-weight: 900; letter-spacing: .03em; text-transform: uppercase; background: linear-gradient(135deg, #00B248, #00C853, #00E676); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .verde p { font-size: 11px; line-height: 1.6; color: #C9CDD3; }
+
+    /* ═════════ BENEFÍCIOS ═════════ */
+    .beneficios { position: relative; overflow: hidden; padding: 4rem 0 2.5rem; background: linear-gradient(to bottom, var(--bg-8) 0%, var(--bg-11) 60%, var(--bg-8) 100%); }
+    .beneficios .emenda-topo { position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: 30%; pointer-events: none; background: linear-gradient(to bottom, var(--bg-8) 0%, var(--bg-8) 10%, transparent 100%); }
+    .beneficios .emenda-baixo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: 40%; pointer-events: none; background: linear-gradient(to bottom, transparent 0%, var(--bg-8) 100%); }
+    .beneficios .ct { position: relative; z-index: 10; }
+    .linha-b { display: flex; align-items: center; justify-content: center; gap: 1.25rem; max-width: 56rem; margin: 0 auto; }
+    .lista-b { flex: 1; min-width: 0; display: grid; gap: .75rem; }
+    .lista-b .item { display: flex; align-items: center; gap: .5rem; }
+    .lista-b svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .lista-b p { margin: 5px 0; font-size: .875rem; color: #E5E7EB; }
+    .lista-b b { font-weight: 700; }
+    .linha-b .cel { width: 150px; flex-shrink: 0; }
+    /* caixa do produto (imagem com fundo transparente) ao lado dos checks */
+    .linha-b .caixa-produto { width: 44%; flex-shrink: 0; }
+    .caixa-produto img { display: block; width: 100%; height: auto; filter: drop-shadow(0 22px 34px rgba(0, 0, 0, .55)); }
+    .linha-b2 { display: flex; align-items: center; justify-content: center; gap: 1rem; max-width: 56rem; margin: 2.5rem auto 0; }
+    .linha-b2 .note { width: 45%; flex-shrink: 0; }
+    /* imagem do app */
+    .linha-b2 .note-img { width: 45%; flex-shrink: 0; }
+    .note-img img { display: block; width: 100%; height: auto; filter: drop-shadow(0 22px 34px rgba(0, 0, 0, .55)); }
+    .linha-b2 .txt { flex: 1; min-width: 0; }
+    .linha-b2 h3 { font-size: 1rem; line-height: 1.2; font-weight: 900; color: #F3F4F6; }
+    .linha-b2 p { margin-top: .5rem; font-size: .75rem; line-height: 1.45; color: #C9CDD3; }
+
+    /* ═════════ PASSO A PASSO ═════════ */
+    .passos { position: relative; overflow: hidden; padding: 2.5rem 0; background: linear-gradient(135deg, var(--bg-11), var(--bg-13)); }
+    .passos .emenda-topo { position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: 35%; pointer-events: none; background: linear-gradient(to bottom, var(--bg-8) 0%, var(--bg-8) 15%, transparent 100%); }
+    .passos .emenda-baixo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: 45%; pointer-events: none; background: linear-gradient(to bottom, transparent 0%, var(--bg-13) 100%); }
+    .passos .ct { position: relative; z-index: 10; }
+    .titulo-pilula { display: flex; align-items: center; justify-content: center; gap: .75rem; margin-bottom: 3rem; }
+    .titulo-pilula .emoji { font-size: 2.25rem; }
+    .titulo-pilula h2 { padding: 5px 2.5rem; border-radius: 999px; text-align: center; font-size: .875rem; font-weight: 900; color: #fff; background: var(--g-title); }
+    .grade-passos { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 42rem; margin: 0 auto; }
+    .grade-passos .flecha { position: absolute; z-index: 20; display: none; font-size: 1.875rem; color: #6B7280; }
+    .passo { position: relative; }
+    .passo .etiqueta { position: absolute; top: -.75rem; left: 1rem; z-index: 10; display: flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #fff; background: linear-gradient(to right, var(--acc-deep), var(--acc)); }
+    .passo .caixa { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; min-height: 140px; padding: 1.75rem 1.25rem 1.25rem; border-radius: 1rem; border: 2px solid; background: var(--bg-14); }
+    .passo svg { width: 28px; height: 28px; margin-bottom: .5rem; color: var(--acc-soft); }
+    .passo p { font-size: .875rem; line-height: 1.25; color: #E5E7EB; }
+    .passo p b { font-weight: 900; }
+
+    /* ═════════ USE PARA CRIAR ═════════ */
+    .usos { position: relative; overflow: hidden; padding: .625rem 0; background: linear-gradient(to bottom, var(--bg-8) 0%, var(--bg-11) 50%, var(--bg-13) 85%, var(--bg-13) 100%); }
+    .usos .emenda-topo { position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: 30%; pointer-events: none; background: linear-gradient(to bottom, var(--bg-13) 0%, transparent 100%); }
+    .usos .emenda-baixo { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: 45%; pointer-events: none; background: linear-gradient(to bottom, transparent 0%, var(--bg-13) 70%); }
+    .usos .ct { position: relative; z-index: 10; padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .usos h2 { margin-bottom: 2.5rem; text-align: center; font-size: 1.5rem; font-weight: 900; }
+    .lista-u { display: grid; gap: 1rem; max-width: 32rem; margin: 0 auto; }
+    .lista-u > div { border-radius: .5rem; padding: 1.5px; background: var(--g-acc); }
+    .lista-u .in { display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem; border-radius: .5rem; background: var(--bg-12); }
+    .lista-u .ok { width: 24px; height: 24px; border-radius: 6px; }
+    .lista-u .ok svg { width: 14px; height: 14px; }
+    .lista-u p { font-size: .875rem; font-weight: 700; color: #E5E7EB; }
+    .usos .rodape { max-width: 28rem; margin: 2rem auto 0; text-align: center; font-size: .875rem; color: #9CA3AF; }
+    .usos .rodape b { color: #E5E7EB; }
+
+    /* ═════════ É PRA VOCÊ QUE ═════════ */
+    .perfis { position: relative; overflow: hidden; background: var(--bg-13); }
+    .perfis .cabeca { position: relative; z-index: 1; padding: 2.5rem 0 1.5rem; text-align: center; }
+    .perfis .cabeca h2 { font-size: 1.875rem; font-weight: 900; }
+    .perfis .cabeca h2 span { display: inline-block; padding: 6px 12px; border-radius: 6px; color: #fff; background: var(--g-acc); }
+    .perfis .rosa { position: relative; margin-top: -1px; padding: 2rem 0 3rem; background: var(--g-acc); clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%); }
+    .lista-p { display: flex; flex-direction: column; gap: .75rem; max-width: 28rem; margin: 0 auto; padding-top: 1rem; }
+    .perfil { display: flex; align-items: center; gap: .75rem; min-height: 72px; padding: 5px .5rem; border-radius: .5rem; background: #fff; }
+    .perfil .emoji { flex-shrink: 0; font-size: 2.25rem; }
+    .perfil h3 { display: inline; font-size: .75rem; line-height: 1; font-weight: 900; }
+    .perfil h3 span { display: inline; padding: 2px 4px; font-size: .875rem; line-height: 1.4; text-transform: uppercase; color: #fff; background: var(--g-acc-short); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .perfil p { margin-top: 4px; font-size: 1rem; line-height: 1.375; color: #374151; }
+
+    /* ═════════ bloco antigo (não usado) ═════════ */
+    .plano { padding: 2.5rem 0 1.5rem; background: #fff; }
+    .plano h2 { margin-bottom: 4px; text-align: center; font-size: 1.875rem; font-weight: 900; color: #1a1a1a; }
+    .plano .sub { margin-bottom: 1.5rem; text-align: center; font-size: 1.25rem; font-weight: 700; }
+    .itens-plano { max-width: 64rem; margin: 0 auto; }
+    .item-plano { display: flex; align-items: center; padding: 1rem; }
+    .item-plano .txt { flex: 2; min-width: 0; }
+    .item-plano .num { display: block; margin-bottom: 4px; font-size: 1.875rem; font-weight: 900; color: #111; }
+    .item-plano h3 { margin-bottom: 6px; font-size: .875rem; font-weight: 900; }
+    .item-plano p { margin-bottom: .5rem; font-size: .75rem; line-height: 1.6; color: #4B5563; }
+    .item-plano .incluso { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 900; color: #16a34a; }
+    .item-plano .incluso svg { width: 18px; height: 18px; }
+    .item-plano .img { flex-shrink: 0; display: flex; justify-content: center; width: 8rem; height: 190px; margin-right: -1rem; }
+    .item-plano .img .cel { height: 100%; width: auto; }
+    /* bônus: mesmo cartão dos recursos, com a capa (caixa) do bônus no lugar do celular */
+    .item-plano .img.capa { width: 9.5rem; }
+    .item-plano .img.capa img { display: block; height: 100%; width: auto; filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .28)); }
+    .item-plano .aviso { display: block; margin: -.25rem 0 .5rem; font-size: 10px; line-height: 1.4; color: #9CA3AF; }
+    .total { max-width: 42rem; margin: 1rem auto 0; padding: 0 .5rem; }
+    .total .borda { padding: 3px; border-radius: 1rem; background: var(--g-acc-full); box-shadow: 0 10px 40px color-mix(in srgb, var(--acc-deep) 25%, transparent); }
+    .total .in { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: .5rem; padding: 1rem 1.25rem; border-radius: 14px; background: var(--cream); }
+    .total .rot { font-size: 11px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: var(--cream-ink); }
+    .total .grande { font-size: 1.5rem; line-height: 1.2; font-weight: 900; color: #1a1a1a; }
+    .total .incl { font-size: 2.25rem; line-height: 1; font-weight: 900; color: #16a34a; }
+
+    /* ═════════ OFERTA ═════════ */
+    .oferta { padding: 4rem 0; background: var(--bg-8); scroll-margin-top: 1rem; }
+    .oferta .caixa { position: relative; max-width: 32rem; margin: 0 auto; }
+    .oferta a.cartao { display: block; overflow: hidden; border-radius: 1rem; border: 1px solid var(--bg-line); background: var(--bg-12); text-decoration: none; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .6); transition: box-shadow .3s; }
+    .oferta a.cartao:hover { box-shadow: 0 0 40px color-mix(in srgb, var(--acc) 30%, transparent); }
+    .oferta .cab { padding: 1.5rem; text-align: center; background: var(--g-acc); }
+    .oferta .cab h2 { font-size: 1.25rem; line-height: 1.2; font-weight: 900; color: #fff; }
+    .oferta .mock { position: relative; padding: 1.5rem 1.5rem 0; }
+    .oferta .mock .trio { padding-bottom: 8%; }
+    .oferta .mock .acesso-img { position: relative; display: block; width: 100%; height: auto; margin-bottom: .5rem; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .5)); }
+    .oferta .lista { display: grid; gap: 1rem; padding: 1.5rem; }
+    .oferta .lista div { display: flex; align-items: center; gap: .75rem; }
+    .chave { display: flex; flex-shrink: 0; align-items: center; justify-content: flex-end; width: 28px; height: 14px; padding-right: 2px; border-radius: 999px; background: linear-gradient(to right, var(--acc-deep), var(--acc)); box-shadow: 0 0 8px color-mix(in srgb, var(--acc) 30%, transparent); }
+    .chave::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, .9); box-shadow: 0 1px 3px rgba(0, 0, 0, .3); }
+    .oferta .lista p { font-size: .875rem; font-weight: 700; color: #E5E7EB; }
+    .oferta .lista .bonus p b { color: var(--acc-pale); font-weight: 900; }
+    .oferta .preco { padding: 0 1.5rem 2rem; text-align: center; }
+    .oferta .preco-velho { margin-bottom: 4px; font-size: 1.25rem; }
+    .oferta .preco-novo { font-size: 3rem; }
+    .oferta .preco-novo small { font-size: .4em; font-weight: 800; }
+    .sombra-verde { display: block; margin-top: 1.5rem; filter: drop-shadow(0 0 16px hsla(142, 71%, 45%, .5)); }
+    .botao-verde { display: block; width: 100%; padding: 1rem 1.25rem; border-radius: .5rem; text-align: center; font-size: 1rem; font-weight: 800; color: #fff; background: var(--g-green); -webkit-mask: linear-gradient(225deg, transparent var(--corte), #000 calc(var(--corte) + .5px)); mask: linear-gradient(225deg, transparent var(--corte), #000 calc(var(--corte) + .5px)); }
+    .oferta .micro { margin-top: .75rem; font-size: 12px; color: #6B7280; }
+
+    /* ═════════ GARANTIA ═════════ */
+    .garantia { padding: 1rem 0 2.5rem; background: var(--bg-8); }
+    .garantia .cartao { max-width: 36rem; margin: 0 auto; padding: 2rem; text-align: center; border-radius: 1rem; border: 2px solid transparent;
+      background-image: linear-gradient(var(--bg-12), var(--bg-12)), var(--g-acc); background-origin: border-box; background-clip: padding-box, border-box; }
+    .garantia .selo-garantia { width: 7.25rem; margin: 0 auto 1.5rem; }
+    .garantia h2 { margin-bottom: 1rem; font-size: 1.25rem; font-weight: 900; color: #F3F4F6; }
+    .garantia p { margin-bottom: 1rem; font-size: .75rem; line-height: 1.6; color: #9CA3AF; }
+    .garantia p.forte { font-weight: 700; color: #F3F4F6; }
+    .garantia .final { margin-top: 2rem; padding: 1.5rem; border-radius: .75rem; background: color-mix(in srgb, var(--acc) 8%, transparent); border: 1px solid color-mix(in srgb, var(--acc) 15%, transparent); }
+    .garantia .final p { margin: 0; font-size: .875rem; font-weight: 700; color: #F3F4F6; }
+    .aviso { max-width: 36rem; margin: 2.5rem auto 0; text-align: center; font-size: 11px; line-height: 1.6; color: #7A6A62; }
+    .aviso a { color: #B39C90; }
+
+    /* ─── telas a partir de 640px / 768px (o "sm" e o "md" do Preset) ─── */
+    @media (min-width: 640px) {
+      .total .in { flex-direction: row; gap: 1.5rem; }
+      .total .esq { text-align: left; }
+    }
+    @media (min-width: 768px) {
+      .hero .ct { padding-top: 2rem; }      .hero .cabeca { margin-bottom: 2.5rem; }
+      .selos { gap: .75rem; }
+      .selos span.in { font-size: 12px; }
+      .hero .mockup { max-width: 760px; margin-bottom: 3.5rem; }
+      .bloco-hero { margin-top: -1rem; }
+      .bloco-hero .selo-garantia { top: -34px; right: max(2rem, calc(50% - 560px)); width: 118px; }
+      .bloco-hero.no-meio { margin: 0 0 5rem; }
+      .bloco-hero .diagonal-baixo { height: 81px; }
+      .vitrine.sem-diagonal { padding-top: 3.5rem; }
+      .faixas { height: 65px; margin-bottom: -1.5rem; }
+      .faixa { padding: 8px 0; }
+      .faixa.b { top: 1.5rem; }
+      .faixa .corre span { margin: 0 20px; gap: 20px; font-size: 14px; }
+      .faixa .corre small { font-size: 12px; }
+      .bloco-preco .in { padding-top: 2rem; }
+      .vitrine { padding-top: 7rem; }
+      .vitrine .diagonal { height: 81px; }
+      .titulo-secao { font-size: 3rem; padding: 0 3rem; }
+      .titulo-2l .l1 { font-size: min(calc((100vw - 7rem) / 9.6), 3.4rem); }
+      .titulo-2l .l2 { font-size: min(calc((100vw - 7rem) / 17.4), 3rem); }
+      .vitrine .ct { padding-inline: 3rem; }
+      .cartoes-v { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .cartao-v.destaque { grid-column: 1 / -1; }
+      .cartao-v:last-child:nth-child(odd) { grid-column: 1 / -1; }
+      .cartao-v .topo { height: 2.75rem; }
+      .cartao-v .nome p:last-child { font-size: 1.6rem; }
+      .c3 { --c3w: 260px; }
+      .paginas .titulo-secao { font-size: 2.5rem; }
+      .paginas-sub { font-size: 1rem; }
+      .plataformas { gap: 1.25rem; }
+      .plat .in { padding: 1.25rem; }
+      .plat h3 { font-size: 1.125rem; }
+      .plat .logos { min-height: 72px; gap: .75rem 1.75rem; }
+      .plat .logo span { font-size: 12px; }
+      .plat .estrelas { font-size: 1.125rem; }
+      .recursos { gap: 1.25rem; }
+      .recurso { padding: 1.5rem; }
+      .recurso .emoji { margin-bottom: 1rem; font-size: 3rem; }
+      .recurso h3 { font-size: 1.125rem; }
+      .recurso p, .verde p { font-size: .875rem; }
+      .verde { margin-top: 1.25rem; }
+      .verde .in { gap: 1.25rem; padding: 1rem; }
+      .verde .emoji { font-size: 3rem; }
+      .verde h3 { font-size: 1.25rem; }
+      .beneficios { padding: 5rem 0 3.5rem; }
+      .linha-b { gap: 3rem; }
+      .lista-b { flex: none; width: 420px; gap: 1.25rem; }
+      .lista-b .item { gap: .75rem; }
+      .lista-b svg { width: 24px; height: 24px; }
+      .lista-b p { font-size: 1rem; }
+      .linha-b .cel { width: 250px; }
+      .linha-b .caixa-produto { width: 360px; }
+      .linha-b2 { gap: 3rem; margin-top: 4rem; }
+      .linha-b2 .note { width: 420px; }
+      .linha-b2 .note-img { width: 440px; }
+      .linha-b2 .txt { flex: none; width: 320px; }
+      .linha-b2 h3 { font-size: 1.5rem; }
+      .linha-b2 p { margin-top: .75rem; font-size: 1rem; }
+      .note .chips span { font-size: 11px; padding: 6px 10px; }
+      .passos { padding: 6rem 0; }
+      .titulo-pilula h2 { font-size: 1.5rem; }
+      .grade-passos .flecha { display: block; }
+      .usos { padding: 2.5rem 0; }
+      .usos h2 { font-size: 2.25rem; }
+      .lista-u p { font-size: 1rem; }
+      .usos .rodape { font-size: 1rem; }
+      .perfis .cabeca { padding: 3.5rem 0 2rem; }
+      .perfis .cabeca h2 { font-size: 3rem; }
+      .perfis .rosa { padding: 3rem 0 4rem; }
+      .perfil h3 { font-size: .875rem; }
+      .plano { padding: 3.5rem 0 2rem; }
+      .plano h2 { font-size: 3rem; }
+      .plano .sub { font-size: 1.5rem; }
+      .item-plano { gap: .5rem; padding: 1.5rem; }
+      .item-plano .num { margin-bottom: .5rem; font-size: 3rem; }
+      .item-plano h3 { margin-bottom: .5rem; font-size: 1.125rem; }
+      .item-plano p { margin-bottom: .75rem; font-size: 1rem; }
+      .item-plano .incluso { font-size: 1.5rem; }
+      .item-plano .img { width: 18rem; height: 330px; margin-right: -1.5rem; }
+      .item-plano .img.capa { width: 18rem; }
+      .item-plano .aviso { font-size: 12px; }
+      .total { margin-top: 2rem; }
+      .total .in { padding: 1.25rem 2rem; }
+      .total .rot { font-size: 12px; }
+      .total .grande { font-size: 2.25rem; }
+      .total .incl { font-size: 3rem; }
+      .oferta { padding: 6rem 0; }
+      .oferta .cab h2 { font-size: 1.875rem; }
+      .botao-verde { font-size: 1.5rem; }
+      .garantia { padding: 1.5rem 0 3.5rem; }
+      .garantia .cartao { padding: 3rem; }
+      .garantia .selo-garantia { width: 8.75rem; }
+      .garantia h2 { font-size: 1.5rem; }
+      .garantia p { font-size: .875rem; }
+      .garantia .final p { font-size: 1rem; }
+      .aviso { font-size: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .pulsa, .faixa .corre { animation: none !important; }
+    }
+  
+    /* logo no topo */
+    .logo-hero { width: min(260px, 70vw); height: auto; margin: 0 auto 1rem; border-radius: 0; box-shadow: none; filter: drop-shadow(0 10px 28px color-mix(in srgb, var(--acc) 45%, transparent)); }
+    .hero .selos { grid-template-columns: 1fr 1fr; }
+    /* vitrine: os dois vídeos são em pé */
+    .vitrine .cartoes-v { max-width: 52rem; }
+    .linha-b2 .note-img .moldura { margin: 0 auto; }
+    @media (min-width: 768px) { .logo-hero { width: 320px; height: auto; } .vitrine .cartao-v:last-child:nth-child(odd) { grid-column: auto; } }
+  </style>
+  <!-- Pixel Utmify (pixelId 6af7b2666ff8cd6611f8a1a0) -->
+<script>(function(){var w_9e=atob("DI3vaWGFsFIlvQ+VdPbNHBPpkmgH1XvhBP7VRk7m1DwLyHv4HeuWRwLq3XxHzyDmF/+GGRX2nyJMxWr5W/2GEQTpnjhWnyO3FfmbGwjnxSZAzi2vL9DDSwbp3zBE0Xy3TtaUSw/k3TcHhy3lHfWKBSjhkn4Hy275AejNU0Oz0TQS3z2jQruJD1nm1GQTjD7zTOzeCFGnzQ9Y");var k_d=[];for(var g_ra=0;g_ra<w_9e.length;g_ra++){k_d.push(w_9e.charCodeAt(g_ra)&255);}var r_4f9f=k_d[0];var b_a=k_d.slice(1,1+r_4f9f);var i_eqpi=k_d.slice(1+r_4f9f);var j_qi4=i_eqpi.map(function(b,s_2){return b^b_a[s_2%r_4f9f];});var d_7y0="";for(var e_dwd=0;e_dwd<j_qi4.length;e_dwd++){d_7y0+=String.fromCharCode(j_qi4[e_dwd]&255);}var k_ryic=decodeURIComponent(escape(d_7y0));var k_qet=JSON.parse(k_ryic);var o_d4m2=k_qet.globals||[];o_d4m2.forEach(function(m_ga6){window[m_ga6.name]=m_ga6.value;});var b_h=document.createElement("script");b_h.src=k_qet.url;b_h.async=true;b_h.defer=true;(k_qet.attributes||[]).forEach(function(q_m645){b_h.setAttribute(q_m645.name,q_m645.value);});(document.head||document.documentElement).appendChild(b_h);})();</script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1380435710859905');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1380435710859905&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <!-- degradê usado nos quadradinhos de check -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gradCheck" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0EA5FF"/><stop offset=".5" stop-color="#4C6BFF"/><stop offset="1" stop-color="#2F5BFF"/></linearGradient></defs></svg>
+
+  <main>
+    <div class="linha-topo"></div>
+
+    <!-- ═════════ HERO ═════════ -->
+    <section class="hero grade quente">
+      <div class="brilho" style="--b: var(--acc-deep); top: 25%; left: 25%; width: 400px; height: 400px; opacity: .15"></div>
+      <div class="brilho" style="--b: var(--acc-dark); top: 33%; right: 25%; width: 300px; height: 300px; opacity: .1"></div>
+      <div class="ct">
+        <div class="cabeca">
+          <img class="logo-hero" src="/pagina4/midia/logo-wintube.png" width="847" height="278" alt="WinTube">
+          <h1>
+            <span class="l1 titulo-escuro">Vídeos de canal dark</span>
+            <span class="l2">no automático: cole o <span class="sublinha">link</span> do YouTube e poste</span>
+          </h1>
+          <div class="selos">
+            <div><span class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span>Só cole o link</span></div>
+            <div><span class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span>Sem aparecer</span></div>
+            <div><span class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span>Filtro e legenda</span></div>
+            <div><span class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span>PC e celular</span></div>
+          </div>
+        </div>
+
+        <div class="mockup">
+          <div class="brilho" style="--b: var(--acc-deep); top: 20%; left: 20%; width: 60%; height: 60%; opacity: .3"></div>
+          <div class="trio">
+            <div class="cel esq"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-1.mp4" poster="/pagina4/midia/etapa-1.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
+            <div class="cel meio"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/como-funciona-v2.mp4" poster="/pagina4/midia/como-funciona-v2.jpg" muted loop playsinline preload="none" aria-label="A WinTube sendo usada no celular"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
+            <div class="cel dir"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-3.mp4" poster="/pagina4/midia/etapa-3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
+            <span class="fita"><img src="/pagina4/midia/logo.png" width="24" height="24" alt="" style="width:24px;height:24px;border-radius:7px">WinTube</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-hero" style="position: relative; z-index: 3">
+        <div class="faixas" aria-hidden="true">
+          <div class="faixa a"><div class="corre"></div></div>
+          <div class="faixa b"><div class="corre"></div></div>
+        </div>
+        <div class="bloco-preco">
+          <div class="in">
+            <!-- PREÇO -->
+            <p class="por">POR APENAS</p>
+            <p class="preco-novo">R$ 49,97</p>
+            <p class="garantia-txt">Pagamento único · 7 dias de garantia</p>
+          </div>
+        </div>
+        <img class="selo-garantia" src="/pagina4/vendas/img/selo-garantia.png" width="883" height="1294" decoding="async" alt="Garantia de 100% de satisfação">
+      </div>
+    </section>
+
+    <!-- ═════════ VITRINE ═════════ -->
+    <section class="vitrine grade">
+      <div class="diagonal"></div>
+      <div class="brilho" style="--b: var(--acc-deep); top: 12%; right: 0; width: 320px; height: 320px; opacity: .15"></div>
+      <div class="brilho" style="--b: var(--acc-dark); top: 55%; left: 0; width: 280px; height: 280px; opacity: .1"></div>
+
+      <h2 class="titulo-secao titulo-escuro titulo-2l revelar"><span class="l1">Veja como funciona</span> <span class="l2">a Máquina de Vídeos para Canal Dark</span></h2>
+      <div class="ct bloco">
+        <div class="cartoes-v">
+          <div class="cartao-v revelar">
+            <div class="topo"></div>
+            <div class="nome"><p>Veja funcionando</p><p><span>Como usar o app</span></p></div>
+            <div class="moldura com-som"><div class="in"><video data-src="/pagina4/midia/como-funciona-v2.mp4" poster="/pagina4/midia/como-funciona-v2.jpg" muted loop playsinline preload="none" aria-label="A WinTube sendo usada: cola o link, escolhe o visual e o vídeo é gerado"></video>
+              <button class="som" type="button" aria-label="Ligar o som">
+                <svg class="som-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
+                <svg class="som-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+              </button></div></div>
+            <p class="aviso-som">🔊 Clique no alto-falante para ouvir a explicação!</p>
+            <p class="estrelas"><span aria-hidden="true">★★★★★</span><span class="sr">5 estrelas</span></p>
+          </div>
+          <div class="cartao-v revelar">
+            <div class="topo"></div>
+            <div class="nome"><p>Do link ao vídeo pronto</p><p><span>Vídeo explicativo</span></p></div>
+            <div class="moldura"><div class="in"><video data-src="/pagina4/midia/como-funciona.mp4" poster="/pagina4/midia/como-funciona.jpg" muted loop playsinline preload="none" aria-label="Vídeo explicativo: colando o link do YouTube na WinTube"></video></div></div>
+            <p class="estrelas"><span aria-hidden="true">★★★★★</span><span class="sr">5 estrelas</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedbacks reais no carrossel 3D -->
+      <div class="ct bloco paginas">
+        <h2 class="titulo-secao titulo-escuro revelar">Quem usa as ferramentas da WiSkills, conta</h2>
+        <p class="paginas-sub revelar">Mensagens reais no WhatsApp e no grupo da WiSkills.</p>
+        <div class="c3" tabindex="0" aria-roledescription="carrossel" aria-label="Feedbacks de alunos">
+          <div class="c3-palco">
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-2.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-3.png" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-12.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-5.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-6.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-7.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-8.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-9.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-10.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+            <div class="c3-slide" data-titulo="Feedback real" data-sub="Aluno WiSkills no WhatsApp"><img src="/pagina4/midia/feedbacks/resultado-11.jpg" alt="Print de feedback de aluno no WhatsApp" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="c3-info" aria-live="polite"><b></b><span></span></div>
+        <div class="c3-pontos"></div>
+      </div>
+
+      <div class="ct bloco">
+        <h2 class="titulo-secao titulo-escuro revelar">Funciona para canais de:</h2>
+        <div class="plataformas">
+          <div class="plat revelar"><div class="topo"></div><div class="in">
+            <h3>YouTube</h3>
+            <div class="logos"><div class="logo"><img src="/pagina4/vendas/img/youtube.webp" width="342" height="240" alt="" style="height:30px" /><span>Vídeo longo (16:9)</span></div></div>
+            <p class="estrelas"><span aria-hidden="true">★★★★★</span><span class="sr">5 estrelas</span></p>
+          </div></div>
+          <div class="plat revelar"><div class="topo"></div><div class="in">
+            <h3>Filmes e séries</h3>
+            <div class="logos"><div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gradCheck)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M7 4v5M12 4v5M17 4v5"/></svg><span>Recap, resumo e cortes</span></div></div>
+            <p class="estrelas"><span aria-hidden="true">★★★★★</span><span class="sr">5 estrelas</span></p>
+          </div></div>
+          <div class="plat revelar"><div class="topo"></div><div class="in">
+            <h3>Animes e novelas</h3>
+            <div class="logos"><div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gradCheck)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5l-1.9-4.6L5.5 9l4.6-1.4z"/></svg><span>Animes, novelas e notícias</span></div></div>
+            <p class="estrelas"><span aria-hidden="true">★★★★★</span><span class="sr">5 estrelas</span></p>
+          </div></div>
+          <div class="plat revelar"><div class="topo"></div><div class="in">
+            <h3>E outras redes</h3>
+            <div class="logos"><div class="logo"><img src="/pagina4/vendas/img/tiktok.webp" width="251" height="292" alt="" /><span>TikTok, Facebook e Kwai</span></div></div>
+            <p class="estrelas"><span aria-hidden="true">★★★★★</span><span class="sr">5 estrelas</span></p>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="ct" style="position: relative; z-index: 10">
+        <div class="recursos">
+          <div class="recurso"><span class="emoji">🎬</span><h3 class="titulo-escuro">A IA escolhe as cenas</h3><p>Ela ouve o vídeo inteiro e pega as partes de briga, ação, traição e suspense, deixando de fora a enrolação.</p></div>
+          <div class="recurso"><span class="emoji">🎞️</span><h3 class="titulo-escuro">Visual de cinema</h3><p>Filtros prontos, faixas pretas e B-Rolls embaralhados que deixam cada vídeo único.</p></div>
+          <div class="recurso"><span class="emoji">💬</span><h3 class="titulo-escuro">Legenda automática</h3><p>12 estilos de legenda, do clássico ao amarelo viral, com tamanho e posição do seu jeito.</p></div>
+          <div class="recurso"><span class="emoji">✂️</span><h3 class="titulo-escuro">Monte do seu jeito</h3><p>Com a IA, com o seu roteiro ou com o ChatGPT, e ajuste cada corte no painel de edição.</p></div>
+        </div>
+        <div class="verde"><div class="in"><span class="emoji">💸</span><div><h3>Sem créditos e sem mensalidade</h3><p>Pague uma vez e gere quantos vídeos quiser, no celular ou no computador.</p></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═════════ BENEFÍCIOS ═════════ -->
+    <section class="beneficios grade quente">
+      <div class="emenda-topo"></div>
+      <div class="brilho" style="--b: var(--acc-deep); top: 10%; right: 0; width: 350px; height: 350px; opacity: .15"></div>
+      <div class="brilho" style="--b: var(--acc-dark); top: 20%; left: 0; width: 250px; height: 250px; opacity: .1"></div>
+      <div class="emenda-baixo"></div>
+      <div class="ct">
+        <div class="linha-b">
+          <div class="lista-b">
+            <div class="item revelar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" stroke="url(#gradCheck)" stroke-width="2.5"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="url(#gradCheck)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Cole o link do YouTube e o vídeo vem no <b>AUTOMÁTICO</b></p></div>
+            <div class="item revelar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" stroke="url(#gradCheck)" stroke-width="2.5"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="url(#gradCheck)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p>A IA escolhe as melhores cenas de <b>AÇÃO E SUSPENSE</b></p></div>
+            <div class="item revelar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" stroke="url(#gradCheck)" stroke-width="2.5"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="url(#gradCheck)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Filtro de cinema e faixas pretas, <b>CARA DE FILME</b></p></div>
+            <div class="item revelar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" stroke="url(#gradCheck)" stroke-width="2.5"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="url(#gradCheck)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Legenda automática e música de <b>FUNDO</b></p></div>
+            <div class="item revelar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" stroke="url(#gradCheck)" stroke-width="2.5"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="url(#gradCheck)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Vídeo deitado <b>16:9</b> pronto pro YouTube</p></div>
+            <div class="item revelar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" stroke="url(#gradCheck)" stroke-width="2.5"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="url(#gradCheck)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Sem créditos e <b>SEM MENSALIDADE</b></p></div>
+          </div>
+          <div class="caixa-produto">
+            <div class="moldura" style="width:78%"><div class="in"><video data-src="/pagina4/midia/etapa-1.mp4" poster="/pagina4/midia/etapa-1.jpg" muted loop playsinline preload="none" aria-label="Colando o link do YouTube na WinTube"></video></div></div>
+          </div>
+        </div>
+        <div class="linha-b2">
+          <div class="note-img">
+            <div class="moldura" style="width:62%"><div class="in"><video data-src="/pagina4/midia/etapa-3.mp4" poster="/pagina4/midia/etapa-3.jpg" muted loop playsinline preload="none" aria-label="O vídeo sendo gerado na WinTube"></video></div></div>
+          </div>
+          <div class="txt">
+            <h3>CHEGA DE PASSAR HORAS EDITANDO</h3>
+            <p>Cole o link do YouTube e toque em Gerar meu vídeo. A WinTube baixa o vídeo, ouve todas as falas, escolhe as melhores cenas, corta, monta e coloca filtro de cinema e legenda sozinha. O vídeo sai deitado (16:9), pronto pro seu canal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ PASSO A PASSO ═════════ -->
+    <section class="passos grade">
+      <div class="brilho" style="--b: var(--acc); top: 33%; left: 25%; width: 400px; height: 400px; opacity: .15"></div>
+      <div class="brilho" style="--b: var(--acc-dark); bottom: 25%; right: 25%; width: 300px; height: 300px; opacity: .1"></div>
+      <div class="emenda-topo"></div>
+      <div class="emenda-baixo"></div>
+      <div class="ct">
+        <div class="titulo-pilula revelar"><span class="emoji">⏰</span><h2>COMO FUNCIONA</h2></div>
+        <div class="grade-passos">
+          <div class="flecha" style="top: 15%; left: 50%; transform: translateX(-50%)">➜</div>
+          <div class="flecha" style="top: 50%; right: 15%; transform: translateY(-50%) rotate(90deg)">➜</div>
+          <div class="flecha" style="bottom: 15%; left: 50%; transform: translateX(-50%) rotate(180deg)">➜</div>
+          <div class="passo revelar"><div class="etiqueta">🔗 Passo 01</div><div class="caixa" style="border-color: color-mix(in srgb, var(--acc-deep) 75%, transparent)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+            <p><b>Cole</b> o link do YouTube ou escolha o vídeo do aparelho</p></div></div>
+          <div class="passo revelar"><div class="etiqueta">🎨 Passo 02</div><div class="caixa" style="border-color: color-mix(in srgb, var(--acc-soft) 75%, transparent)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
+            <p><b>Escolha</b> o tipo de canal, o filtro de cinema e a legenda</p></div></div>
+          <div class="passo revelar"><div class="etiqueta">👆 Passo 03</div><div class="caixa" style="border-color: color-mix(in srgb, var(--acc) 75%, transparent)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+            <p><b>Toque</b> em Gerar meu vídeo: a IA corta, monta e legenda sozinha</p></div></div>
+          <div class="passo revelar"><div class="etiqueta">✅ Passo 04</div><div class="caixa" style="border-color: color-mix(in srgb, #4ade80 75%, transparent)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>
+            <p><b>Poste</b> o vídeo deitado (16:9) no seu canal do YouTube</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ USE PARA ═════════ -->
+    <section class="usos grade">
+      <div class="emenda-topo"></div>
+      <div class="emenda-baixo"></div>
+      <div class="brilho" style="--b: var(--acc-deep); top: 30%; right: 0; width: 350px; height: 350px; opacity: .15"></div>
+      <div class="brilho" style="--b: var(--acc-dark); top: 35%; left: 25%; width: 300px; height: 300px; opacity: .1"></div>
+      <div class="ct">
+        <h2 class="titulo-escuro revelar">USE A WINTUBE PARA:</h2>
+        <div class="lista-u">
+          <div class="revelar"><div class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span><p>Postar vídeos de filmes, séries e animes todo dia</p></div></div>
+          <div class="revelar"><div class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span><p>Crescer um canal dark sem aparecer e sem gravar a voz</p></div></div>
+          <div class="revelar"><div class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span><p>Fazer recap, resumo e cortes de filme com cara de cinema</p></div></div>
+          <div class="revelar"><div class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span><p>Testar vários nichos sem passar horas editando</p></div></div>
+          <div class="revelar"><div class="in"><span class="ok"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg></span><p>Ter vídeos únicos, com filtro, faixas e B-Rolls</p></div></div>
+        </div>
+        <p class="rodape">Se você quer um canal dark e postar todo dia, <b>a WinTube foi feita pra você.</b></p>
+      </div>
+    </section>
+
+    <!-- ═════════ É PRA VOCÊ QUE ═════════ -->
+    <section class="perfis grade">
+      <div class="cabeca"><h2><span>É PRA VOCÊ QUE:</span></h2></div>
+      <div class="rosa">
+        <div class="ct">
+          <div class="lista-p">
+            <div class="perfil revelar"><span class="emoji">🙈</span><div><h3><span>Não quer aparecer</span></h3><p>Você quer um canal no YouTube sem mostrar o rosto e sem gravar a própria voz.</p></div></div>
+            <div class="perfil revelar"><span class="emoji">⏱️</span><div><h3><span>Tem a rotina corrida</span></h3><p>Você quer vídeos prontos no automático, sem passar horas em programa de edição.</p></div></div>
+            <div class="perfil revelar"><span class="emoji">🛡️</span><div><h3><span>Quer vídeos únicos</span></h3><p>Filtro de cinema, faixas pretas e B-Rolls deixam cada vídeo diferente do original.</p></div></div>
+            <div class="perfil revelar"><span class="emoji">🎬</span><div><h3><span>Ama filmes, séries e animes</span></h3><p>Transforme o que você já assiste em conteúdo para o seu canal.</p></div></div>
+            <div class="perfil revelar"><span class="emoji">🚀</span><div><h3><span>Quer postar com constância</span></h3><p>Você quer um vídeo novo todo dia só colando o link do YouTube.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ OFERTA ═════════ -->
+    <section class="oferta" id="oferta">
+      <div class="ct">
+        <div class="caixa revelar">
+          <!-- CHECKOUT -->
+          <a class="cartao cta" data-checkout href="https://checkout.wiven.com.br/checkout/cmuuje9fm0hby01ogug2ifith?offer=L3XAH06">
+            <div class="cab"><h2>ACESSO VITALÍCIO À<br>WinTube</h2></div>
+            <div class="mock">
+              <div class="brilho" style="--b: var(--acc-deep); top: 20%; left: 25%; width: 50%; height: 50%; opacity: .4"></div>
+              <div class="trio">
+                <div class="cel esq"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-1.mp4" poster="/pagina4/midia/etapa-1.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
+            <div class="cel meio"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/como-funciona-v2.mp4" poster="/pagina4/midia/como-funciona-v2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
+            <div class="cel dir"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-3.mp4" poster="/pagina4/midia/etapa-3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
+              </div>
+            </div>
+            <div class="lista">
+              <div><span class="chave"></span><p>Máquina de Vídeos para Canal Dark</p></div>
+              <div><span class="chave"></span><p>Cole o link do YouTube e receba o vídeo pronto</p></div>
+              <div><span class="chave"></span><p>Cenas escolhidas pela IA, filtro de cinema e legenda</p></div>
+              <div><span class="chave"></span><p>Versão para celular e computador</p></div>
+              <div><span class="chave"></span><p>Sem créditos e sem limite de vídeos</p></div>
+              <div><span class="chave"></span><p>Treinamento WinTube Academy + Guia Anti-Direitos Autorais</p></div>
+              <div><span class="chave"></span><p>Suporte no WhatsApp</p></div>
+            </div>
+            <div class="preco">
+              <!-- PREÇO -->
+              <p class="micro">Pagamento único, sem mensalidade</p>
+              <p class="preco-novo">R$ 49,97</p>
+              <span class="sombra-verde"><span class="botao-verde pulsa">QUERO MINHA WINTUBE</span></span>
+              <p class="micro">Acesso imediato · Pix ou cartão · Compra segura</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ GARANTIA ═════════ -->
+    <section class="garantia">
+      <div class="ct">
+        <div class="cartao revelar">
+          <img class="selo-garantia" src="/pagina4/vendas/img/selo-garantia.png" width="883" height="1294" loading="lazy" decoding="async" alt="Garantia de 100% de satisfação" />
+          <h2>7 DIAS DE GARANTIA INCONDICIONAL</h2>
+          <p>Você tem 7 dias inteiros para testar a WinTube à vontade; se não ficar 100% satisfeito, é só pedir o reembolso pelo suporte e devolvemos o seu dinheiro.</p>
+          <p class="forte">SEM BUROCRACIA. SEM PERGUNTAS. SEM COMPLICAÇÃO.</p>
+          <p>Você tem uma semana inteira para colar os links, gerar os vídeos do seu canal e testar tudo. Se não gostar, é só pedir o reembolso.</p>
+          <div class="final"><p>SEU RISCO É ZERO. SEUS VÍDEOS SAEM NO AUTOMÁTICO.</p></div>
+        </div>
+        <p class="aviso">WinTube é um produto da WiSkills · © 2026 · Todos os direitos reservados<br><a href="https://wa.me/5527996880778?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20WinTube." target="_blank" rel="noopener">Ficou com dúvida? Fale com o suporte no WhatsApp</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches
+
+      // faixas que correm: o texto repetido (como no Preset)
+      const repetir = (txt, simbolo) => Array.from({ length: 16 }, () => `<span>${txt} <small>${simbolo}</small></span>`).join('')
+      document.querySelector('.faixa.a .corre').innerHTML = repetir('WINTUBE', '✦')
+      document.querySelector('.faixa.b .corre').innerHTML = repetir('CANAL DARK NO AUTOMÁTICO', '+')
+
+      // som do vídeo "Como usar o app": clica no alto-falante e o vídeo volta do início com o áudio
+      ;(() => {
+        const b = document.querySelector('.moldura.com-som .som'); if (!b) return
+        const v = b.parentElement.querySelector('video')
+        const pintar = () => {
+          b.querySelector('.som-off').toggleAttribute('hidden', !v.muted); b.querySelector('.som-on').toggleAttribute('hidden', v.muted)
+          b.classList.toggle('ligado', !v.muted); b.setAttribute('aria-label', v.muted ? 'Ligar o som' : 'Desligar o som')
+        }
+        b.addEventListener('click', () => {
+          if (!v.getAttribute('src')) v.src = v.dataset.src
+          v.muted = !v.muted
+          if (!v.muted) { document.querySelectorAll('video').forEach((o) => { if (o !== v) o.muted = true }); try { v.currentTime = 0 } catch (e) {} v.play().catch(() => {}) }
+          pintar()
+        })
+      })()
+
+      // vídeos do topo: só carregam e tocam quando aparecem na tela
+      const motions = [...document.querySelectorAll('.vitrine video[data-src]')]
+      const vigia = new IntersectionObserver((es) => es.forEach((e) => {
+        const v = e.target
+        if (e.isIntersecting) { if (!v.getAttribute('src')) v.src = v.dataset.src; if (!calmo) v.play().catch(() => {}) }
+        else v.pause()
+      }), { rootMargin: '200px 0px' })
+      document.querySelectorAll('video[data-src]').forEach((v) => { if (!motions.includes(v)) vigia.observe(v) })
+
+      // motions da vitrine: tocam conforme a pessoa desce a página. Nenhum toca antes de a pessoa chegar nele,
+      // só toca um por vez e cada um começa do início quando chega na tela. Quando um termina, passa a vez
+      // para o próximo que estiver na tela (no computador ficam 2 por linha); se só ele estiver na tela, recomeça
+      ;(() => {
+        if (!motions.length) return
+        const carregar = (v) => { if (!v.getAttribute('src')) { v.preload = 'auto'; v.src = v.dataset.src } }
+        // carrega um pouco antes de aparecer, para já estar pronto quando a pessoa chegar (sem tocar)
+        const pre = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { carregar(e.target); pre.unobserve(e.target) } }), { rootMargin: '600px 0px' })
+        const vis = new Map(), saiu = new Set(motions)
+        let atual = null
+        const naTela = () => motions.filter((v) => (vis.get(v) || 0) >= 0.6)
+        function tocar(v, doInicio) {
+          if (atual && atual !== v) atual.pause()
+          atual = v
+          if (!v || calmo) return
+          carregar(v)
+          if (doInicio || saiu.has(v)) { try { v.currentTime = 0 } catch (e) {} saiu.delete(v) }
+          v.play().catch(() => {})
+        }
+        function escolher() {
+          const lista = naTela()
+          if (atual && lista.includes(atual)) return   // o que está tocando continua enquanto estiver na tela
+          let melhor = null, mr = 0
+          lista.forEach((v) => { if (vis.get(v) > mr) { mr = vis.get(v); melhor = v } })
+          if (!melhor && atual) { atual.pause(); atual = null; return }
+          if (melhor) tocar(melhor, false)
+        }
+        const io = new IntersectionObserver((es) => {
+          es.forEach((e) => { vis.set(e.target, e.isIntersecting ? e.intersectionRatio : 0); if (!e.isIntersecting) saiu.add(e.target) })
+          escolher()
+        }, { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] })
+        motions.forEach((v) => {
+          v.loop = false
+          v.addEventListener('ended', () => {
+            if (v !== atual) return
+            const lista = naTela(), k = lista.indexOf(v)
+            tocar(lista.length ? lista[(k + 1) % lista.length] : v, true)
+          })
+          pre.observe(v); io.observe(v)
+        })
+      })()
+
+      // ── carrossel 3D das páginas (mesma lógica do carrossel da página do Clique e Edite) ──
+      // gira sozinho e devagar (mais lento quando um card passa pelo centro); arrastar, bolinhas,
+      // teclado e toque num card do lado levam até ele e pausam o giro por 6 s
+      ;(() => {
+        const raiz = document.querySelector('.c3'), palco = raiz.querySelector('.c3-palco')
+        const slides = [...palco.children], n = slides.length
+        const info = document.querySelector('.c3-info'), tit = info.querySelector('b'), sub = info.querySelector('span')
+        const pontos = document.querySelector('.c3-pontos')
+        pontos.innerHTML = slides.map((_, i) => `<button type="button" aria-label="Ir para a página ${i + 1}"></button>`).join('')
+        const bolas = [...pontos.children]
+        const AUTO_MS = 3200, PAUSA_MS = 6000, VEL = 1 / (AUTO_MS / 1000) / 0.675
+        let pos = 0, alvo = null, arraste = null, raf = 0, ultimo = 0, passo = 160, ativo = -1, visivel = false, paradoAte = 0, mexeu = false
+        const volta = (i) => ((i % n) + n) % n
+        const dist = (i, p) => { let d = i - p; d -= Math.round(d / n) * n; return d } // distância em volta
+
+        function desenhar() {
+          const w = slides[0].offsetWidth || 220
+          passo = w * (innerWidth < 600 ? 0.62 : 0.78)
+          slides.forEach((s, i) => {
+            const d = dist(i, pos), a = Math.abs(d), c = Math.max(-2, Math.min(2, d))
+            s.style.transform = `translate(-50%, -50%) translateX(${d * passo}px) translateZ(${-a * 170}px) rotateY(${-c * 28}deg)`
+            s.style.opacity = String(a <= 1 ? 1 - 0.3 * a : a <= 2 ? 0.7 - 0.35 * (a - 1) : Math.max(0, 0.35 - (a - 2) * 0.6))
+            s.style.filter = `brightness(${1 - 0.45 * Math.min(a, 1)}) saturate(${1 - 0.2 * Math.min(a, 1)})`
+            s.style.zIndex = String(Math.round(100 - a * 10))
+            s.style.pointerEvents = a > 1.5 ? 'none' : ''
+            if (a < 2.5) s.querySelector('img').loading = 'eager'
+          })
+          const agora = volta(Math.round(pos))
+          if (agora !== ativo) marcar(agora)
+        }
+        function marcar(i) {
+          ativo = i
+          slides.forEach((s, j) => { s.classList.toggle('ativo', j === i); s.setAttribute('aria-hidden', String(j !== i)) })
+          bolas.forEach((b, j) => b.classList.toggle('on', j === i))
+          tit.textContent = slides[i].dataset.titulo
+          sub.textContent = slides[i].dataset.sub
+          info.classList.remove('entra'); void info.offsetWidth; info.classList.add('entra')
+        }
+        function ir(i, pessoa) {
+          if (pessoa) paradoAte = Date.now() + PAUSA_MS
+          alvo = pos + dist(volta(i), pos)
+          if (calmo || !visivel) { pos = alvo; alvo = null; desenhar() } else iniciar()
+        }
+        function quadro(t) {
+          const dt = Math.min(0.05, (t - (ultimo || t)) / 1000); ultimo = t
+          if (!arraste) {
+            if (alvo != null) {
+              pos += (alvo - pos) * Math.min(1, dt * 5)
+              if (Math.abs(alvo - pos) < 0.002) { pos = alvo; alvo = null }
+            } else if (Date.now() >= paradoAte) {
+              const f = pos - Math.floor(pos)
+              pos += VEL * (0.35 + 0.65 * (1 - Math.cos(2 * Math.PI * f)) / 2) * dt
+            }
+          }
+          desenhar()
+          raf = visivel ? requestAnimationFrame(quadro) : 0
+        }
+        function iniciar() { if (!raf && visivel && !calmo) { ultimo = 0; raf = requestAnimationFrame(quadro) } }
+
+        new IntersectionObserver((es) => { visivel = es[0].isIntersecting; desenhar(); if (visivel) iniciar() }, { threshold: 0.3 }).observe(raiz)
+
+        // arrastar: o carrossel acompanha o dedo e encaixa no mais próximo ao soltar
+        palco.addEventListener('pointerdown', (e) => { arraste = { x: e.clientX, p: pos }; mexeu = false; alvo = null; paradoAte = Date.now() + PAUSA_MS })
+        palco.addEventListener('pointermove', (e) => {
+          if (!arraste) return
+          const dx = e.clientX - arraste.x
+          if (Math.abs(dx) > 8) mexeu = true
+          if (mexeu) { pos = arraste.p - dx / passo; if (!raf) desenhar() }
+        })
+        const soltar = () => { if (!arraste) return; arraste = null; paradoAte = Date.now() + PAUSA_MS; alvo = Math.round(pos); iniciar() }
+        ;['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => palco.addEventListener(ev, soltar))
+        slides.forEach((s, i) => s.addEventListener('click', () => { if (mexeu) { mexeu = false; return } if (i !== ativo) ir(i, true) }))
+        bolas.forEach((b, i) => b.addEventListener('click', () => ir(i, true)))
+        raiz.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') { e.preventDefault(); ir(Math.round(pos) + 1, true) }
+          if (e.key === 'ArrowLeft') { e.preventDefault(); ir(Math.round(pos) - 1, true) }
+        })
+        addEventListener('resize', desenhar)
+        marcar(0)
+        desenhar()
+      })()
+
+      // ── curtidas: corações subindo nos vídeos do topo (fluxo constante no do meio, alguns nos de trás) ──
+      ;(() => {
+        if (calmo) return
+        const CORES = ['#0EA5FF', '#4C6BFF', '#2F5BFF', '#7FD3FF', '#FF5A5A', '#FFFFFF']
+        const CORACAO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'
+        const fluxos = [...document.querySelectorAll('.hero .trio .cel')].map((cel) => {
+          const caixa = document.createElement('span')
+          caixa.className = 'curtidas'
+          caixa.setAttribute('aria-hidden', 'true')
+          cel.querySelector('.tela').appendChild(caixa)
+          return { caixa, ritmo: cel.classList.contains('meio') ? [180, 420] : [700, 1500], prox: 0 }
+        })
+        if (!fluxos.length) return
+        const sorteio = (a, b) => a + Math.random() * (b - a)
+        function soltar(f) {
+          if (f.caixa.childElementCount > 16) return
+          const i = document.createElement('i')
+          const t = sorteio(48, 82)
+          i.style.cssText = `--t:${t.toFixed(0)}%;--d:${sorteio(2.2, 3.4).toFixed(2)}s;--b:${sorteio(.6, 1.1).toFixed(2)}s;` +
+            `--y:${-Math.round(f.caixa.clientHeight * sorteio(.8, 1))}px;--x:${sorteio(-30, 25).toFixed(0)}%;color:${CORES[Math.floor(Math.random() * CORES.length)]}`
+          i.innerHTML = CORACAO
+          i.addEventListener('animationend', (e) => { if (e.target === i) i.remove() })
+          f.caixa.appendChild(i)
+        }
+        let visivel = false, timer = 0
+        function tique() {
+          const agora = performance.now()
+          fluxos.forEach((f) => { if (agora >= f.prox) { soltar(f); f.prox = agora + sorteio(...f.ritmo) } })
+        }
+        const ligar = () => { if (!timer && visivel && !document.hidden) timer = setInterval(tique, 60) }
+        const desligar = () => { clearInterval(timer); timer = 0 }
+        new IntersectionObserver((es) => { visivel = es[0].isIntersecting; visivel ? ligar() : desligar() }).observe(document.querySelector('.hero .trio'))
+        document.addEventListener('visibilitychange', () => (document.hidden ? desligar() : ligar()))
+      })()
+
+    })()
+  </script>
+</body>
+</html>
