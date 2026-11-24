@@ -517,10 +517,20 @@
     /* logo no topo */
     .logo-hero { width: min(260px, 70vw); height: auto; margin: 0 auto 1rem; border-radius: 0; box-shadow: none; filter: drop-shadow(0 10px 28px color-mix(in srgb, var(--acc) 45%, transparent)); }
     .hero .selos { grid-template-columns: 1fr 1fr; }
-    .plataformas-topo { width: min(420px, 86vw); height: auto; margin: 1.5rem auto 0; }
+    /* logos das plataformas (a imagem da página antiga) */
+    .plataformas-topo { margin: 1.25rem auto 0; max-width: 34rem; }
+    .plataformas-topo p { margin-bottom: .6rem; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #B9C4F0; }
+    .plataformas-topo img { max-width: 420px; }
+    .plataformas-topo img { width: 100%; height: auto; margin: 0 auto; }
     /* vitrine: os dois vídeos são em pé */
     .vitrine .cartoes-v { max-width: 52rem; }
     .linha-b2 .note-img .moldura { margin: 0 auto; }
+    /* botão de som do celular do meio do topo */
+    .cel .som-topo { top: 10px; right: 10px; bottom: auto; width: 42px; height: 42px; z-index: 4; }
+    .cel .som-topo svg { width: 20px; height: 20px; }
+    .aviso-topo { position: relative; z-index: 4; margin: -1.25rem 0 1.5rem; text-align: center; font-weight: 800; font-size: 1rem; color: #fff; }
+    /* logo no card da oferta */
+    .logo-oferta { position: relative; display: block; width: 130px; height: 130px; margin: .5rem auto 0; border-radius: 30px; box-shadow: 0 14px 40px color-mix(in srgb, var(--acc) 45%, transparent); }
     @media (min-width: 768px) { .logo-hero { width: 320px; height: auto; } .vitrine .cartao-v:last-child:nth-child(odd) { grid-column: auto; } }
   </style>
   <!-- Pixel Utmify (pixelId 6af7b2666ff8cd6611f8a1a0) -->
@@ -544,7 +554,7 @@
     <div class="linha-topo"></div>
 
     <!-- ═════════ HERO ═════════ -->
-    <section class="hero grade quente">
+    <section class="hero grade quente sem-preco">
       <div class="brilho" style="--b: var(--acc-deep); top: 25%; left: 25%; width: 400px; height: 400px; opacity: .15"></div>
       <div class="brilho" style="--b: var(--acc-dark); top: 33%; right: 25%; width: 300px; height: 300px; opacity: .1"></div>
       <div class="ct">
@@ -554,13 +564,16 @@
             <span class="l1 titulo-escuro">Vídeos de canal dark</span>
             <span class="l2">no automático: cole o <span class="sublinha">link</span> do YouTube e poste</span>
           </h1>
-          <img class="plataformas-topo" src="/pagina4/midia/plataformas.png" width="750" height="123" alt="YouTube, TikTok, Instagram, Facebook e Kwai">
+          <div class="plataformas-topo">
+            <p>Funciona para canais de:</p>
+            <img src="/pagina4/midia/plataformas.png" alt="YouTube, TikTok, Instagram, Facebook e Kwai" width="750" height="123">
+          </div>
         </div>
 
         <div class="mockup">
           <div class="brilho" style="--b: var(--acc-deep); top: 20%; left: 20%; width: 60%; height: 60%; opacity: .3"></div>
           <div class="trio">
-            <div class="cel esq"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-1.mp4" poster="/pagina4/midia/etapa-1.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
+            <div class="cel esq"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/criativo.mp4" poster="/pagina4/midia/criativo.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
             <div class="cel meio"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/como-funciona-v2.mp4" poster="/pagina4/midia/como-funciona-v2.jpg" muted loop playsinline preload="none" aria-label="A WinTube sendo usada no celular"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
             <div class="cel dir"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-3.mp4" poster="/pagina4/midia/etapa-3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
             <span class="fita"><img src="/pagina4/midia/logo.png" width="24" height="24" alt="" style="width:24px;height:24px;border-radius:7px">WinTube</span>
@@ -573,21 +586,11 @@
           <div class="faixa a"><div class="corre"></div></div>
           <div class="faixa b"><div class="corre"></div></div>
         </div>
-        <div class="bloco-preco">
-          <div class="in">
-            <!-- PREÇO -->
-            <p class="por">POR APENAS</p>
-            <p class="preco-novo">R$ 49,97</p>
-            <p class="garantia-txt">Pagamento único · 7 dias de garantia</p>
-          </div>
-        </div>
-        <img class="selo-garantia" src="/pagina4/vendas/img/selo-garantia.png" width="883" height="1294" decoding="async" alt="Garantia de 100% de satisfação">
       </div>
     </section>
 
     <!-- ═════════ VITRINE ═════════ -->
-    <section class="vitrine grade">
-      <div class="diagonal"></div>
+    <section class="vitrine grade sem-diagonal">
       <div class="brilho" style="--b: var(--acc-deep); top: 12%; right: 0; width: 320px; height: 320px; opacity: .15"></div>
       <div class="brilho" style="--b: var(--acc-dark); top: 55%; left: 0; width: 280px; height: 280px; opacity: .1"></div>
 
@@ -608,7 +611,12 @@
           <div class="cartao-v revelar">
             <div class="topo"></div>
             <div class="nome"><p>Do link ao vídeo pronto</p><p><span>Vídeo explicativo</span></p></div>
-            <div class="moldura"><div class="in"><video data-src="/pagina4/midia/como-funciona.mp4" poster="/pagina4/midia/como-funciona.jpg" muted loop playsinline preload="none" aria-label="Vídeo explicativo: colando o link do YouTube na WinTube"></video></div></div>
+            <div class="moldura com-som"><div class="in"><video data-src="/pagina4/midia/como-funciona.mp4" poster="/pagina4/midia/como-funciona.jpg" muted loop playsinline preload="none" aria-label="Vídeo explicativo: colando o link do YouTube na WinTube"></video>
+              <button class="som som-extra" type="button" aria-label="Ligar o som">
+                <svg class="som-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
+                <svg class="som-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+              </button></div></div>
+            <p class="aviso-som">🔊 Clique no alto-falante para ouvir!</p>
             <p class="estrelas"><span aria-hidden="true">★★★★★</span><span class="sr">5 estrelas</span></p>
           </div>
         </div>
@@ -777,11 +785,7 @@
             <div class="cab"><h2>ACESSO VITALÍCIO À<br>WinTube</h2></div>
             <div class="mock">
               <div class="brilho" style="--b: var(--acc-deep); top: 20%; left: 25%; width: 50%; height: 50%; opacity: .4"></div>
-              <div class="trio">
-                <div class="cel esq"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-1.mp4" poster="/pagina4/midia/etapa-1.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
-            <div class="cel meio"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/como-funciona-v2.mp4" poster="/pagina4/midia/como-funciona-v2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
-            <div class="cel dir"><span class="tela"><span class="status">9:41<i></i></span><video data-src="/pagina4/midia/etapa-3.mp4" poster="/pagina4/midia/etapa-3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="barra"><span></span><span></span><span></span><span></span></span></span></div>
-              </div>
+              <img class="logo-oferta" src="/pagina4/midia/logo.png" width="150" height="150" loading="lazy" alt="WinTube">
             </div>
             <div class="lista">
               <div><span class="chave"></span><p>Máquina de Vídeos para Canal Dark</p></div>
@@ -819,6 +823,26 @@
       </div>
     </section>
   </main>
+  <script>
+    // som do card "Vídeo pronto": toca no alto-falante e o vídeo volta do início com o áudio
+    (() => {
+      const b = document.querySelector('.som-extra'); if (!b) return
+      const v = b.parentElement.querySelector('video')
+      const pintar = () => {
+        b.querySelector('.som-off').toggleAttribute('hidden', !v.muted); b.querySelector('.som-on').toggleAttribute('hidden', v.muted)
+        b.classList.toggle('ligado', !v.muted); b.setAttribute('aria-label', v.muted ? 'Ligar o som' : 'Desligar o som')
+      }
+      b.addEventListener('click', () => {
+        if (!v.getAttribute('src')) v.src = v.dataset.src
+        v.muted = !v.muted
+        if (!v.muted) { document.querySelectorAll('video').forEach((o) => { if (o !== v) o.muted = true }); try { v.currentTime = 0 } catch (e) {} v.play().catch(() => {}) }
+        pintar()
+      })
+      // se ligar o som de outro vídeo, este volta a ficar mudo
+      document.addEventListener('volumechange', (e) => { if (e.target !== v && e.target.tagName === 'VIDEO' && !e.target.muted && !v.muted) { v.muted = true; pintar() } }, true)
+      v.addEventListener('volumechange', pintar)
+    })()
+  </script>
 
   <script>
     (() => {
